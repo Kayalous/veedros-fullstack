@@ -1,0 +1,229 @@
+/* profile */
+.profile-card {
+	border: none;
+	border-radius: 15px;
+	-webkit-box-shadow: 0 3.3px 10px rgba(0, 0, 0, 0.035),
+		0 26px 80px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 3.3px 10px rgba(0, 0, 0, 0.035), 0 26px 80px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+	position: relative;
+}
+
+.edit-btn {
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	font-weight: 600;
+	z-index: 20;
+}
+
+.profile-card h1 {
+	color: #4d4d4d;
+}
+
+.profile-card h1 .feather {
+	width: 50px;
+	height: 50px;
+}
+
+.profile-card a {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.profile-card h5 {
+	color: #848484;
+}
+
+.profile-card h6 {
+	color: #b8b8b8;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.instructor-img-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.round-md {
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 50%;
+	height: 250px;
+	width: 250px;
+	-webkit-box-shadow: 0 0.7px 2.2px rgba(0, 0, 0, 0.034),
+		0 1.7px 5.3px rgba(0, 0, 0, 0.048), 0 3.3px 10px rgba(0, 0, 0, 0.06),
+		0 5.8px 17.9px rgba(0, 0, 0, 0.072), 0 10.9px 33.4px rgba(0, 0, 0, 0.086),
+		0 26px 80px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 0.7px 2.2px rgba(0, 0, 0, 0.034),
+		0 1.7px 5.3px rgba(0, 0, 0, 0.048), 0 3.3px 10px rgba(0, 0, 0, 0.06),
+		0 5.8px 17.9px rgba(0, 0, 0, 0.072), 0 10.9px 33.4px rgba(0, 0, 0, 0.086),
+		0 26px 80px rgba(0, 0, 0, 0.12);
+}
+
+.round-lg {
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 50%;
+	height: 300px;
+	width: 300px;
+	-webkit-box-shadow: 0 0.7px 2.2px rgba(0, 0, 0, 0.034),
+		0 1.7px 5.3px rgba(0, 0, 0, 0.048), 0 3.3px 10px rgba(0, 0, 0, 0.06),
+		0 5.8px 17.9px rgba(0, 0, 0, 0.072), 0 10.9px 33.4px rgba(0, 0, 0, 0.086),
+		0 26px 80px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 0.7px 2.2px rgba(0, 0, 0, 0.034),
+		0 1.7px 5.3px rgba(0, 0, 0, 0.048), 0 3.3px 10px rgba(0, 0, 0, 0.06),
+		0 5.8px 17.9px rgba(0, 0, 0, 0.072), 0 10.9px 33.4px rgba(0, 0, 0, 0.086),
+		0 26px 80px rgba(0, 0, 0, 0.12);
+}
+
+.profile .meta-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	-ms-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+}
+
+
+
+
+.border-radius-sm {
+	border-radius: 5px !important;
+}
+
+.border-light {
+	border-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.border-medium {
+	border: solid 1.5px rgba(0, 0, 0, 0.08) !important;
+	padding: .4rem .9rem;
+}
+
+.profile-form-field {
+	width: 100% !important;
+	font-weight: 500;
+	font-size: 18px;
+	-webkit-box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
+		0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
+		0 0px 6.5px -7px rgba(0, 0, 0, 0.119),
+		0 0px 12.1px -7px rgba(0, 0, 0, 0.144), 0 0px 29px -7px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
+		0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
+		0 0px 6.5px -7px rgba(0, 0, 0, 0.119),
+		0 0px 12.1px -7px rgba(0, 0, 0, 0.144), 0 0px 29px -7px rgba(0, 0, 0, 0.2);
+}
+
+.profile-form-field:focus {
+	-webkit-box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
+		0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
+		0 0px 6.5px -6px rgba(0, 0, 0, 0.179),
+		0 0px 12.1px -6px rgba(0, 0, 0, 0.216), 0 0px 29px -6px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
+		0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
+		0 0px 6.5px -6px rgba(0, 0, 0, 0.179),
+		0 0px 12.1px -6px rgba(0, 0, 0, 0.216), 0 0px 29px -6px rgba(0, 0, 0, 0.3);
+}
+
+.profile-form-field.is-valid {
+	-webkit-box-shadow: 0px 0px 7px 0px rgba(79, 182, 88, 0.5);
+	box-shadow: 0px 0px 7px 0px rgba(79, 182, 88, 0.5);
+}
+
+.profile-form-field.is-valid:focus {
+	-webkit-box-shadow: 0px 0px 7px 0px rgba(79, 182, 88, 0.5);
+	box-shadow: 0px 0px 7px 0px rgba(79, 182, 88, 0.5);
+}
+
+.profile-form-field.is-invalid {
+	-webkit-box-shadow: 0px 0px 7px 0px rgba(255, 116, 116, 0.5);
+	box-shadow: 0px 0px 7px 0px rgba(255, 116, 116, 0.5);
+}
+
+.profile-form-field.is-invalid:focus {
+	-webkit-box-shadow: 0px 0px 7px 0px rgba(255, 116, 116, 0.5);
+	box-shadow: 0px 0px 7px 0px rgba(255, 116, 116, 0.5);
+}
+
+.profile-social-field {
+	border-right: 10px !important;
+	-webkit-box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
+		0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
+		0 0px 6.5px -7px rgba(0, 0, 0, 0.119),
+		0 0px 12.1px -7px rgba(0, 0, 0, 0.144), 0 0px 29px -7px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
+		0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
+		0 0px 6.5px -7px rgba(0, 0, 0, 0.119),
+		0 0px 12.1px -7px rgba(0, 0, 0, 0.144), 0 0px 29px -7px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.form-control-social:focus .profile-social-field {
+	-webkit-box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
+		0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
+		0 0px 6.5px -6px rgba(0, 0, 0, 0.179),
+		0 0px 12.1px -6px rgba(0, 0, 0, 0.216), 0 0px 29px -6px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
+		0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
+		0 0px 6.5px -6px rgba(0, 0, 0, 0.179),
+		0 0px 12.1px -6px rgba(0, 0, 0, 0.216), 0 0px 29px -6px rgba(0, 0, 0, 0.3);
+}
+
+.profile-social-field .input-group-prepend span {
+	background-color: #fff;
+	color: rgba(0, 0, 0, 0.7);
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.profile-social-field .input-group-prepend {
+	margin-bottom: .7rem;
+	margin-top: .7rem;
+	border-right: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.profile-social-field * {
+	font-weight: 500;
+	font-size: 35px;
+}
+
+.profile-social-field .form-control {
+	border: none;
+	box-shadow: none;
+	padding-bottom: 1.5rem;
+	padding-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+	.profile-card {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+}
