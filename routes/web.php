@@ -11,9 +11,9 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('landing');
-//})->name('landing');
+Route::get('/landing', function () {
+    return view('landing');
+})->name('landing');
 Route::get('/', function () {
     return view('testing');
 })->name('testing');
