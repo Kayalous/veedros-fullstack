@@ -22,12 +22,14 @@
 </head>
 
 <body>
+@if(!Auth::check())
 <!-- Modals  -->
 <div class="modal fade" id="loginModal" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content login-body">
             <div class="modal-body px-5">
-                <form class="login" action="" method="GET" novalidate>
+                <form class="login" action="{{ route('login') }}" method="POST" novalidate>
+                    @csrf
                     <p class="text-center mt-5">
                         Enter your email. <br />
                         We'll send you a magic login link.
@@ -76,7 +78,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content login-body">
             <div class="modal-body px-5">
-                <form class="signup" action="" method="GET" novalidate>
+                <form class="signup" action="{{ route('register') }}" method="POST" novalidate>
+                    @csrf
                     <p class="text-center mt-5">
                         Sign up using your email. <br />
                         We'll send you a link to create your new account.
@@ -88,15 +91,25 @@
                         <div class="invalid-feedback">
                             Please enter a valid email.
                         </div>
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="input-group password-cont mt-4 d-none" id="signup-password-cont">
 
                         <input type="password"
                                class="form-control email-input password-field email-field-props modal-field-props border-0 mx-auto mt-"
-                               placeholder="hunter1" aria-label="password" name="password" id="signup-password-field" />
+                               placeholder="● ● ● ● ● ● ● ●" aria-label="password" name="password" id="signup-password-field" />
                         <div class="invalid-feedback">
                             Your password must be more than 8 characters long.
                         </div>
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="d-flex jusift-content-center mt-3 mb-3">
                         <button type="submit" class="btn btn-veedros btn-veedros-md mx-auto btn-submit" id="signup-button">
@@ -118,7 +131,11 @@
         </div>
     </div>
 </div>
-
+@else
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+@endif
 <!-- Navbar  -->
 <nav class="navbar navbar-expand-sm absolute-top main-navbar navbar-light">
     <a class="navbar-brand logo" href="{{route('landing')}}"><img class="img-fluid" style="width: 120px;" src="images/Veedros Logo.svg"
@@ -139,9 +156,23 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Teach</a>
             </li>
-            <li class="nav-item d-flex align-items-center justify-content-center">
-                <a href="#" class="btn btn-veedros btn-veedros-sm border-0" data-toggle="modal" data-target="#loginModal">
-                    Sign in </a> </li>
+            @if(!Auth::check())
+                <li class="nav-item d-flex align-items-center justify-content-center">
+                    <a href="#" class="btn btn-veedros btn-veedros-sm border-0" data-toggle="modal" data-target="#loginModal">Sign in </a> </li>
+            @else
+                <li class="nav-item d-flex align-items-center justify-content-around">
+                    <div class="row">
+                        <div class="  col-6">
+                            <div id="singleElement" class="shadow tessst" style="background-image: url(images/01.jpg);">
+
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <i class="far fa-bookmark" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </li>
+            @endif
         </ul>
     </div>
 </nav>
@@ -224,9 +255,18 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
 
+<!-- tippy js  -->
+<script src="https://unpkg.com/tippy.js@5"></script>
+<script src="https://unpkg.com/tooltip.js"></script>
 @yield('libraryJS')
 <!-- App javascript  -->
 <script src="scripts/app.js"></script>
+@if(!Auth::check())
+<script src="scripts/auth.js"></script>
+@endif
+<script>
+    feather.replace();
+</script>
 @yield('customJS')
 
 </body>

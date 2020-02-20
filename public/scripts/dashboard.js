@@ -5,6 +5,8 @@ function ProgressCalc() {
     //for (let i =1 ; i<=2 ; i++);
     let prog1 = document.getElementById("prog-bar1")
     prog1.style.setProperty("--width", progress)
+    // let prog2 = document.getElementById("prog-bar2")
+    // prog2.style.setProperty("--width", progress)
 }
 
 ProgressCalc();
@@ -53,8 +55,9 @@ nav_tip.innerHTML = tip_content;
 
 tippy('#singleElement', {
     allowTitleHTML: true,
-    content: 'tip_content',
+    content: tip_content,
     interactive: true,
     placement: "bottom",
-    theme: "veedros"
+    theme: "veedros",
+    trigger: "click focus"
 });

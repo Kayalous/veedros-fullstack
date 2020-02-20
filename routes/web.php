@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/landing', function () {
+Route::get('/', function () {
     return view('landing');
 })->name('landing');
-Route::get('/', function () {
-    return view('testing');
-})->name('testing');
+//Route::get('/', function () {
+//    return view('testing');
+//})->name('testing');
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
@@ -29,3 +29,7 @@ Route::get('/watch', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Auth::routes();
+
+Route::get('auth/token/{token}', 'AuthController@passwordlessAuthenticate');

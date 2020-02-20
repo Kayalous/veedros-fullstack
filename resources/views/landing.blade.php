@@ -20,6 +20,7 @@
                         Learning <br />
                         has never been so easy.
                     </h1>
+                    @if(!Auth::check())
                     <div class="input-group signup-field mr-auto wow fadeInUp" data-wow-delay="0.2s">
                         <input type="email" size="5" class="form-control email-input email-field-props border-0"
                                placeholder="Enter your email" />
@@ -30,6 +31,7 @@
                             </button>
                         </div>
                     </div>
+                    @endif
                     <a href="#featured-courses" class="btn btn-veedros btn-veedros-round border-0 mt-5 wow fadeInUp"
                        data-wow-delay="0.6s">
                         <img class="img-fluid" style="width: 20px;" src="images/down_arrow.svg" alt="">
@@ -98,7 +100,8 @@
             <div class=" row mb-5">
                 <div class="col-xl-6 col-12 Instructor-text ">
                     <h1>
-                        Have a content don't hasitate to join us
+                        Have content? <br>
+                        Don't hesitate to join us!
                     </h1>
                     <p class="p-d-none">Lorem ipsum dolor sit amet, pede suspendisse vivamus quis voluptas excepturi,
                         quisque pede est neque class rhoncus,
@@ -199,9 +202,6 @@
 @endsection
 
 @section('libraryJS')
-    <!-- tippy js  -->
-    <script src="https://unpkg.com/tippy.js@5"></script>
-    <script src="https://unpkg.com/tooltip.js"></script>
     <!-- paper js  -->
     <script src="node_modules/paper/dist/paper-full.js"></script>
     <!-- Owl js -->

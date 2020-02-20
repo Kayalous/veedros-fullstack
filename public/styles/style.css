@@ -8,6 +8,14 @@
 	margin: 0;
 }
 
+.tessst {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
 a:hover {
 	text-decoration: none;
 }
