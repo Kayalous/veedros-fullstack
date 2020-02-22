@@ -16,7 +16,7 @@
 	top: 0%;
 	right: 0%;
 	font-weight: 600;
-	z-index: 20;
+    z-index: 2;
 }
 
 .profile-card h1 {
@@ -226,4 +226,13 @@
 		padding-left: 0px !important;
 		padding-right: 0px !important;
 	}
+}
+.filepond--file-action-button{
+    bottom: 20px;
+    left: calc(50% - 1.625em/2);
+}
+.filepond--progress-indicator,
+.filepond--processing-complete-indicator{
+    bottom: 23px;
+    left: calc(50% - 10px);
 }

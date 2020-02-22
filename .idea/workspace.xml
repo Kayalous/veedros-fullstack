@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc8b854c-d735-42db-85ad-938407689aaf" name="Default Changelist" comment="" />
+    <list default="true" id="9203d179-7a57-4250-b798-682952242161" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/scripts/manage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/verification.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/veedros.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/veedros.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AuthController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/player.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/player.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/landing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/player.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/player.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/testing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/testing.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/ofHH7IzftXyu0zC15RgrLeQMxFdEChfjPw2HSBol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/button.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/button.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/text/button.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/text/button.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -110,6 +166,14 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/sopamo/laravel-filepond" />
+      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/vendor/vimeo/vimeo-api" />
+      <path value="$PROJECT_DIR$/vendor/ankitpokhrel/tus-php" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/manager" />
+      <path value="$PROJECT_DIR$/vendor/vimeo/laravel" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Xx8XwaR3yZvkdqkVAmgz4O7QKx" />
@@ -125,25 +189,45 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/node_modules" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdu\Documents\Web\laravel-development\veedros\public\node_modules" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdu\Documents\Web\laravel-development\veedros\resources\views" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
     </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dc8b854c-d735-42db-85ad-938407689aaf" name="Default Changelist" comment="" />
+      <changelist id="9203d179-7a57-4250-b798-682952242161" name="Default Changelist" comment="" />
       <created>1581976429377</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581976429377</updated>
       <workItem from="1581976437366" duration="17643000" />
+      <workItem from="1582242519868" duration="9991000" />
+      <workItem from="1582294067903" duration="22434000" />
+      <workItem from="1582322535210" duration="14791000" />
+      <workItem from="1582389613808" duration="8792000" />
     </task>
     <task id="LOCAL-00001" summary="Changed routing">
       <created>1581976619797</created>
@@ -170,19 +254,21 @@
     <option name="LAST_COMMIT_MESSAGE" value="Changed routing" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="146" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582148504817">
-      <screen x="0" y="0" width="1366" height="764" />
+    <state x="559" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582317048855">
+      <screen x="0" y="0" width="1815" height="1080" />
     </state>
     <state x="421" y="146" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.764@0.0.1366.764" timestamp="1582148504817" />
+    <state x="559" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582317048855" />
     <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1582201685828">
       <screen x="0" y="0" width="1366" height="764" />
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1366.764@0.0.1366.764" timestamp="1582201685828" />
     <state x="277" y="22" key="CommitChangelistDialog2/0.22.1366.742@0.22.1366.742" timestamp="1581976619319" />
-    <state x="192" y="10" key="SettingsEditor" timestamp="1581977075787">
-      <screen x="0" y="0" width="1366" height="764" />
+    <state x="255" y="14" key="SettingsEditor" timestamp="1582306796525">
+      <screen x="0" y="0" width="1815" height="1080" />
     </state>
     <state x="192" y="10" key="SettingsEditor/0.0.1366.764@0.0.1366.764" timestamp="1581977075787" />
+    <state x="255" y="14" key="SettingsEditor/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582306796525" />
     <state x="192" y="32" key="SettingsEditor/0.22.1366.742@0.22.1366.742" timestamp="1581976574965" />
     <state x="283" y="102" key="Vcs.Push.Dialog.v2" timestamp="1582201693369">
       <screen x="0" y="0" width="1366" height="764" />
@@ -197,9 +283,25 @@
       <screen x="0" y="0" width="1366" height="764" />
     </state>
     <state x="472" y="308" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.764@0.0.1366.764" timestamp="1582201655147" />
-    <state x="348" y="88" width="670" height="676" key="search.everywhere.popup" timestamp="1582206526330">
-      <screen x="0" y="0" width="1366" height="764" />
+    <state x="480" y="247" key="run.anything.popup" timestamp="1582394751613">
+      <screen x="0" y="0" width="1815" height="1080" />
+    </state>
+    <state x="480" y="247" key="run.anything.popup/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582394751613" />
+    <state x="462" y="124" width="891" height="956" key="search.everywhere.popup" timestamp="1582298532036">
+      <screen x="0" y="0" width="1815" height="1080" />
     </state>
     <state x="348" y="88" width="670" height="676" key="search.everywhere.popup/0.0.1366.764@0.0.1366.764" timestamp="1582206526330" />
+    <state x="462" y="124" width="891" height="956" key="search.everywhere.popup/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582298532036" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/manage.blade.php</url>
+          <line>69</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

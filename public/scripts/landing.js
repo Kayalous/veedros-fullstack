@@ -159,7 +159,7 @@ function createTippyTemplates() {
         <hr />
         <div class="row">
           <div class="col-8">
-          
+
             <div class="tip-instructor">
               <div class="">
                 <h6>
@@ -211,7 +211,7 @@ function createTippyTemplates() {
             Apply now
           </button>
         </a>
-      
+
       </div>
       </div>`;
     let tippyTemp = document.createElement("div");
@@ -271,3 +271,5 @@ function afterReveal(el) {
 new WOW({
   callback: afterReveal
 }).init();
+
+

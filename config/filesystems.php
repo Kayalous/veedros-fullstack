@@ -47,6 +47,10 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
+        'profileImages' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/profilePictures'),
+        ],
 
         'public' => [
             'driver' => 'local',

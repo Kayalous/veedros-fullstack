@@ -3,11 +3,21 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\LoginVerificationMail;
+use App\Mail\WelcomeVerificationMail;
 use App\Providers\RouteServiceProvider;
+use App\SocialProvider;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Laravel\Socialite\Facades\Socialite;
+
 
 class RegisterController extends Controller
 {
@@ -65,16 +75,124 @@ class RegisterController extends Controller
     {
         $nameFromEmail = explode("@",$data['email']);
         $nameFromEmail = $nameFromEmail[0];
+
         if($data['password'] != null)
-        return User::create([
+        $user =  User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'name' => $nameFromEmail,
+            'verificationToken' => Str::random(50),
         ]);
         else
-            return User::create([
+            $user = User::create([
                 'email' => $data['email'],
                 'name' => $nameFromEmail,
+                'verificationToken' => Str::random(50),
             ]);
+
+
+        Mail::to("$user->email")->send(new WelcomeVerificationMail($user));
+
+        return $user;
+
+    }
+    /**
+     * Redirect the user to the facebook authentication page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function redirectToProviderFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from facebook.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallbackFacebook()
+    {
+            $socialUser = Socialite::driver('facebook')->user();
+            //Check if it's the first time logging in
+            $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
+            if(!$socialProvider){
+                //Prepare image
+                $url = explode('?', $socialUser->getAvatar());
+                $url = $url[0] . '?type=large';
+                //Download and store image
+                $contents = file_get_contents($url);
+                $name = time() . '.' . 'jpeg';
+                Storage::disk('profileImages')->put($name, $contents);
+                //Create a new user
+                $user = User::firstOrcreate(
+                    ['email' => $socialUser->getEmail()],
+                    ['name' => $socialUser->getName(),
+                    'verificationToken' => null,
+                    'email_verified_at' => Carbon::now()->toDateTimeString(),
+                    'img'=> $name,
+                ]);
+                //Create a new socialProvider
+                $user->socialProviders()->create(
+                    ['provider_id'=> $socialUser->getId(),
+                        'provider'=>'facebook']);
+            }
+            else{
+                //The user already exists, get that one!
+                $user = $socialProvider->user;
+            }
+        //Log the user in
+        Auth::login($user);
+        return redirect('/');
+
+
+
+    }
+
+
+
+
+    /**
+     * Redirect the user to the google authentication page.
+     *
+     */
+    public function redirectToProviderGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleProviderCallbackGoogle()
+    {
+        $socialUser = Socialite::driver('google')->user();
+        //Check if it's the first time logging in
+        $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
+        if(!$socialProvider){
+            //Prepare image
+            $url =$socialUser->getAvatar();
+            //Download and store image
+            $contents = file_get_contents($url);
+            $name = time() . '.' . 'jpeg';
+            Storage::disk('profileImages')->put($name, $contents);
+           //Create a new user
+            $user = User::firstOrcreate(
+                ['email' => $socialUser->getEmail()],
+                ['name' => $socialUser->getName(),
+                    'verificationToken' => null,
+                    'email_verified_at' => Carbon::now()->toDateTimeString(),
+                    'img'=> $name,
+                ]);
+            //Create a new socialProvider
+            $user->socialProviders()->create(
+                ['provider_id'=> $socialUser->getId(),
+                    'provider'=>'google']);
+        }
+        else{
+            //The user already exists, get that one!
+            $user = $socialProvider->user;
+        }
+        //Log the user in
+        Auth::login($user);
+        return redirect('/');
+
     }
 }

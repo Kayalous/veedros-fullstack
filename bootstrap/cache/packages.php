@@ -17,6 +17,17 @@
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
+  'laravel/socialite' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Socialite\\SocialiteServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Socialite' => 'Laravel\\Socialite\\Facades\\Socialite',
+    ),
+  ),
   'laravel/tinker' => 
   array (
     'providers' => 
@@ -43,6 +54,24 @@
     'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    ),
+  ),
+  'sopamo/laravel-filepond' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Sopamo\\LaravelFilepond\\LaravelFilepondServiceProvider',
+    ),
+  ),
+  'vimeo/laravel' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Vimeo\\Laravel\\VimeoServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Vimeo' => 'Vimeo\\Laravel\\Facades\\Vimeo',
     ),
   ),
 );

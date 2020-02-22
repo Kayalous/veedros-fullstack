@@ -1,12 +1,3 @@
-/* ==== nav ==== */
-.tip .iconsize-mine {
-    font-size: 1.3rem;
-}
-
-.tip a {
-    color: black;
-}
-
 /* ============================================================================================== */
 
 .info-bar {
@@ -22,13 +13,6 @@
 
 }
 
-.tessst {
-    width: 1.6rem;
-    height: 1.6rem;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-}
 
 .content-info-bar .left-content .user-photo {
     height: 150px;
@@ -63,20 +47,66 @@
     align-items: center;
 }
 
+/* .edit-container {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.left-content .profile-edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: -webkit-gradient(linear, right top, left top, from(#63C9E2), color-stop(50%, white));
+    background: linear-gradient(to left, #63C9E2 0%, white 95%);
+    padding: 0.2rem;
+    z-index: 999;
+}
+
+.left-content .profile-edit p {
+    font-weight: 500;
+    margin: 0rem;
+} */
+.btn-Edit p {
+    margin: 0;
+    color: white;
+    font-weight: 500;
+    font-size: 0.6rem;
+}
+
+.btn-Edit {
+    padding: 0.2rem 1rem;
+}
+
+.zbi-kbeer {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.zbi {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    z-index: 99999;
+}
+
 /* ======================== edit ======================== */
 .left-content .user-photo {
     position: relative;
     width: 150px;
     height: 150px;
-    cursor: pointer;
     background-size: 120%;
     border-radius: 50%;
     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-    box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, .75);
+    box-shadow: 0px 0rem 0.7rem rgba(0, 0, 0, .5);
 }
 
 .left-content .user-photo:hover {
-    box-shadow: 0px 0.5rem 2rem rgba(0, 0, 0, .75);
+    box-shadow: 0px 0rem 1rem rgba(0, 0, 0, .6);
     background-position: 0% 50%;
 }
 
@@ -107,7 +137,11 @@
     text-align: center;
     color: #fff;
     border-radius: 50%;
-    background: rebeccapurple;
+    background-image: linear-gradient(to right,
+    #a3a1ff,
+    #8486db,
+    #8d8ff5,
+    #9997ec);
     transform: rotate(-180deg) translate(-10rem) rotate(180deg);
     box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, .5);
     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
@@ -117,6 +151,7 @@
 
 .rounded-lg-mine {
     border-radius: 1.2rem !important;
+    margin: 3rem 3rem;
 }
 
 /* ================================================================================================ */
@@ -176,14 +211,6 @@
     }
 
 }
-
-
-
-.info-bar .fas,
-.far {
-    line-height: 1.5;
-}
-
 @media (max-width: 767px) {
 
     .right-content {
@@ -213,6 +240,9 @@
         column-count: 1;
     }
 
+    .rounded-lg-mine {
+        margin: 3rem 0.5rem;
+    }
 }
 
 /* @media (max-width:550px) {
@@ -222,7 +252,7 @@
 
 } */
 
-/* ------------------- dashboard modals title and My progress decoration ------------- */
+/* ------------------- dashboard modals title and My progress dicoration ------------- */
 .dashboard-land .p-title {
     font-size: 1.8rem;
     font-weight: 600;
@@ -252,6 +282,7 @@
 /* --------------------------------------------------------------------------------- */
 
 .info-bar .content-info-bar .left-content .user-name .p1 {
+    color: rgba(0,0,0,0.7);
     font-size: 1.8rem;
     font-weight: 500;
     text-transform: capitalize;
@@ -353,4 +384,33 @@
 ul li a {
     text-decoration: none;
     color: black;
+}
+
+
+
+.dashboard-land .btn-veedros-sm {
+    font-size: 17px;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px -4px rgba(135, 133, 255, 0.5);
+    -webkit-box-shadow: 0 4px 12px -4px rgba(135, 133, 255, 0.5);
+    -moz-box-shadow: 0 4px 12px -4px rgba(135, 133, 255, 0.5);
+}
+
+.dashboard-land .btn-veedros-sm:hover {
+    box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
+    -webkit-box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
+    -moz-box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
+}
+
+.dashboard-land .btn-veedros-sm:focus {
+    box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
+    -webkit-box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
+    -moz-box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
+}
+
+.dashboard-land .btn-veedros-md {
+    font-size: 15px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
 }

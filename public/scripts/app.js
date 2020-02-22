@@ -1,6 +1,6 @@
 let tip_content = `<div class="tip">
 <div class="container">
-    <a href="#">
+    <a href="/profile">
         <div class="row w-100">
             <div class="col-8">
                 <h6 class="text-left">My profile</h6>
@@ -12,7 +12,7 @@ let tip_content = `<div class="tip">
     </a>
 
     <hr>
-    <a href="#">
+    <a href="/dashboard">
         <div class="row w-100">
             <div class="col-8">
 
@@ -28,11 +28,9 @@ let tip_content = `<div class="tip">
 
 
 
-    <a href="#" class="row">
         <button class="btn btn-veedros btn-veedros-sm border-0 m-auto" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             Log out
         </button>
-    </a>
 
 </div>
 </div>`;
@@ -46,5 +44,6 @@ tippy('#singleElement', {
     interactive: true,
     placement: "bottom",
     theme: "veedros",
-    trigger: "click focus"
+    trigger: "click focus",
+    boundary: 'window'
 });

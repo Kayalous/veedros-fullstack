@@ -4,6 +4,8 @@ namespace Illuminate\Foundation\Auth;
 
 use App\Http\Controllers\AuthController;
 use App\LoginToken;
+use App\Mail\LoginVerificationMail;
+use App\Mail\WelcomeVerificationMail;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -72,15 +74,7 @@ trait AuthenticatesUsers
             ]);
             $token = LoginToken::generateFor($user);
             $url = url('/auth/token', $token);
-            Mail::send([], [$user,$url],
-                function ($message) use ($user, $url){
-                    $message->to($user->email)
-                        ->from('veedros@veedros.com')
-                        ->subject('Login to Veedros')
-                        ->setBody("<a href='{{$url}}'>{{$url}}</a>");
-
-                }
-            );
+            Mail::to("$user->email")->send(new LoginVerificationMail($user, $url));
             return true;
         }
             else

@@ -16,7 +16,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'verificationToken', 'phone', 'about', 'position',
+        'img', 'location', 'twitter', 'facebook', 'linkedin', 'email_verified_at'
     ];
 
     /**
@@ -27,13 +28,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function verified()
+    {
+        return $this->email_verified_at;
+    }
+    public function socialProviders(){
+        return $this->hasMany(SocialProvider::class);
+    }
 }

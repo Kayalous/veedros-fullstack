@@ -70,7 +70,6 @@ function userFieldsValidation(
     validatePassword();
   };
   passwordToggle.onclick = function () {
-    console.log("wtf");
     passwordCont.classList.remove("d-none");
     requirePassword = true;
     altCont.classList.remove("d-none");
@@ -109,4 +108,5 @@ $(".btn-veedros-inline-input").click(function () {
     .siblings(".email-input")
     .val();
   $("#signup-email-field").val(landingInput);
+    document.querySelector(".signup").submit();
 });

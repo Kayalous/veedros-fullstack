@@ -5,9 +5,10 @@
     <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
 @endsection
 @section('customCSS')
-    <link rel="stylesheet" href="styles/player.css">
+    <link rel="stylesheet" href="{{asset('styles')}}/player.css">
 @endsection
 @section('content')
+
     <section class="player-container my-5 px-3">
         <div class="video-wrapper my-auto">
             <video id="player" class="video-js vjs-default-skin vjs-16-9" controls preload="auto"
@@ -21,7 +22,7 @@
                 </p>
             </video>
         </div>
-        <section class="sidebar ml-3 py-3">
+        <section class="sidebar ml-3 py-3 px-2">
             <div class="sidebar-wrapper">
                 <h5 class="ml-5">12 Lessons (1h 19m)</h5>
                 <div class="list-group">
@@ -286,7 +287,7 @@
                                         </div>
                                     </div>
                                     <div class="tip-instructor-avatar col-4">
-                                        <img src="images/05.jpg"
+                                        <img src="{{asset('images')}}//05.jpg"
                                              alt="instructor"
                                              class="round" />
                                     </div>
@@ -362,5 +363,5 @@
     <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
 @endsection
 @section('customJS')
-    <script src="scripts/player.js"></script>
+    <script src="{{asset('scripts')}}/player.js"></script>
 @endsection
