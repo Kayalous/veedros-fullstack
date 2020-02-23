@@ -97,20 +97,20 @@
         <div class="container">
             <div class=" row mb-5">
                 <div class="col-xl-6 col-12 Instructor-text ">
-                    <h1>
+                    <h1 class="wow fadeInUp">
                         Have content? <br>
                         Don't hesitate to join us!
                     </h1>
-                    <p class="p-d-none">Lorem ipsum dolor sit amet, pede suspendisse vivamus quis voluptas excepturi,
+                    <p class="p-d-none wow fadeInUp" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, pede suspendisse vivamus quis voluptas excepturi,
                         quisque pede est neque class rhoncus,
                         neque sollicitudin etiam felis elementum cras eu, varius eros at, mauris dictum tempus. Nec consectetuer</p>
                 </div>
-                <div class="col-xl-6 col-12">
-                    <img class="py-4 img-fluid-mine" src="images/sector_2_hero.png" class="" alt="">
+                <div class="col-xl-6 col-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="py-4 img-fluid-mine" src="images/sector_2_hero.png">
                 </div>
             </div>
             <div class="col-lg-6 m-auto">
-                <div class="input-group signup-field mr-auto wow fadeInUp" data-wow-delay="0.2s"
+                <div class="input-group signup-field mr-auto wow fadeInUp" data-wow-delay="0.4s"
                      style="visibility: visible; animation-delay: 0.2s; opacity: 1;">
                     <input type="email" size="5" class="form-control email-input email-field-props border-0"
                            placeholder="Enter your email">

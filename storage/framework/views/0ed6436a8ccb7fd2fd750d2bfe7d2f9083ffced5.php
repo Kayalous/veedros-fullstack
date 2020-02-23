@@ -17,7 +17,7 @@
     <!-- Font Awesome  -->
     <script src="https://kit.fontawesome.com/04f7d66693.js" crossorigin="anonymous"></script>
     <!-- Main CSS -->
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="<?php echo e(asset('styles/style.css')); ?>" />
     <?php echo $__env->yieldContent('customCSS'); ?>
 </head>
 
@@ -69,6 +69,14 @@
                 <div class="register-prompt forgot-password d-none mb-3" id="login-alt-cont">
                     <h6>Forgot password?</h6>
                     <a class="dot-hover dot-hover-red" href="#">Reset now</a>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-center flex-column align-items-center w-100">
+                    <h6>Or you can login with:</h6>
+                    <div class="d-flex justify-content-around align-items-center w-100 mt-3 border-0">
+                        <a href="<?php echo e(route('login.facebook')); ?>" title="Facebook" class="btn btn-facebook btn-lg border-0"><i class="fab fa-facebook-f mr-2"></i>Facebook</a>
+                        <a href="<?php echo e(route('login.google')); ?>" title="Google" class="btn btn-google btn-lg border-0"><i class="fab fa-google mr-2"></i>Google</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -141,6 +149,14 @@ unset($__errorArgs, $__bag); ?>
                     <h6>Prefer using a password?</h6>
                     <a class="signup-with-password dot-hover dot-hover-red" href="#">Sign up with password</a>
                 </div>
+                <hr>
+                <div class="d-flex justify-content-center flex-column align-items-center w-100">
+                    <h6>Or you can sign up with:</h6>
+                    <div class="d-flex justify-content-around align-items-center w-100 mt-3 border-0">
+                        <a href="<?php echo e(route('login.facebook')); ?>" title="Facebook" class="btn btn-facebook btn-lg border-0"><i class="fab fa-facebook-f mr-2"></i>Facebook</a>
+                        <a href="<?php echo e(route('login.google')); ?>" title="Google" class="btn btn-google btn-lg border-0"><i class="fab fa-google mr-2"></i>Google</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -151,8 +167,8 @@ unset($__errorArgs, $__bag); ?>
     </form>
 <?php endif; ?>
 <!-- Navbar  -->
-<nav class="navbar navbar-expand-sm absolute-top main-navbar navbar-light">
-    <a class="navbar-brand logo" href="<?php echo e(route('landing')); ?>"><img class="img-fluid" style="width: 120px;" src="images/Veedros Logo.svg"
+<nav class="navbar navbar-expand-lg absolute-top main-navbar navbar-light">
+    <a class="navbar-brand logo" href="<?php echo e(route('landing')); ?>"><img class="img-fluid" style="width: 120px;" src="<?php echo e(asset('images/Veedros Logo.svg')); ?>"
                                                alt="Logo"></a>
     <button class="navbar-toggler border-0 d-lg-none" type="button" data-toggle="collapse"
             data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
@@ -162,13 +178,13 @@ unset($__errorArgs, $__bag); ?>
     <div class="collapse navbar-collapse no-flex-grow pb-3" id="collapsibleNavId">
         <ul class="navbar-nav nav-items-container">
             <li class="nav-item">
-                <a class="nav-link" href="#">Courses</a>
+                <a class="nav-link dot-hover dot-hover-black" href="#">Courses</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">How it works</a>
+                <a class="nav-link dot-hover dot-hover-black" href="#">How it works</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Teach</a>
+                <a class="nav-link dot-hover dot-hover-black" href="#">Teach</a>
             </li>
             <?php if(!Auth::check()): ?>
                 <li class="nav-item d-flex align-items-center justify-content-center">
@@ -176,10 +192,8 @@ unset($__errorArgs, $__bag); ?>
             <?php else: ?>
                 <li class="nav-item d-flex align-items-center justify-content-around">
                     <div class="row">
-                        <div class="  col-6">
-                            <div id="singleElement" class="shadow tessst" style="background-image: url(images/01.jpg);">
-
-                            </div>
+                        <div class="col-6">
+                                <img id="singleElement" class="nav-photo" src="<?php echo e(asset('uploads/profilePictures/') . '/'.Auth::user()->img); ?>" alt="profile picture">
                         </div>
                         <div class="col-6">
                             <i class="far fa-bookmark" aria-hidden="true"></i>
@@ -200,7 +214,7 @@ unset($__errorArgs, $__bag); ?>
                 <div class="col-12 col-lg-4">
                     <ul class="text-center-mine">
                         <li>
-                            <img class="img-fluid responsive-mine" src="images/Veedros Logo.svg" alt="">
+                            <img class="img-fluid responsive-mine" src="<?php echo e(asset('images/Veedros Logo.svg')); ?>" alt="">
                         </li>
                         <li class="footer-contactus-responsive">
                             Lorem Ipsum is tandard dummy text ever since the 1500s,
@@ -274,12 +288,36 @@ unset($__errorArgs, $__bag); ?>
 <script src="https://unpkg.com/tooltip.js"></script>
 <?php echo $__env->yieldContent('libraryJS'); ?>
 <!-- App javascript  -->
-<script src="scripts/app.js"></script>
+<script src="<?php echo e(asset('scripts/app.js')); ?>"></script>
 <?php if(!Auth::check()): ?>
-<script src="scripts/auth.js"></script>
+<script src="<?php echo e(asset('scripts/auth.js')); ?>"></script>
 <?php endif; ?>
 <script>
     feather.replace();
+</script>
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '236599884010438',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v6.0'
+        });
+
+
+        FB.AppEvents.logPageView();
+
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
 </script>
 <?php echo $__env->yieldContent('customJS'); ?>
 
