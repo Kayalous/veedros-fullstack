@@ -130,7 +130,7 @@ class RegisterController extends Controller
                     ['name' => $socialUser->getName(),
                     'verificationToken' => null,
                     'email_verified_at' => Carbon::now()->toDateTimeString(),
-                    'img'=> $name,
+                    'avatar'=> $name,
                 ]);
                 //Create a new socialProvider
                 $user->socialProviders()->create(
@@ -179,7 +179,7 @@ class RegisterController extends Controller
                 ['name' => $socialUser->getName(),
                     'verificationToken' => null,
                     'email_verified_at' => Carbon::now()->toDateTimeString(),
-                    'img'=> $name,
+                    'avatar'=> $name,
                 ]);
             //Create a new socialProvider
             $user->socialProviders()->create(

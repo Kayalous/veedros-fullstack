@@ -22,7 +22,7 @@
 
         <div class="mx-auto text-center">
             <div class="instructor-img-wrapper mx-auto">
-                <img src="{{asset('uploads/profilePictures/'). '/' .Auth::user()->img}}" alt="instructor" class="round-lg mx-auto img-fluid"/>
+                <img src="{{asset('uploads/profilePictures/'). '/' .Auth::user()->avatar}}" alt="instructor" class="round-lg mx-auto img-fluid"/>
             </div>
             @if(Auth::user()->name != null)
             <h1 class="mt-3">{{Auth::user()->name}}</h1>

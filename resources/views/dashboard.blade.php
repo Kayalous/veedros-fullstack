@@ -17,7 +17,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-5 ">
-                                <div class="user-photo " style="background-image: url(uploads/profilePictures/{{Auth::user()->img}});">
+                                <div class="user-photo " style="background-image: url(uploads/profilePictures/{{Auth::user()->avatar}});">
                                 </div>
                             </div>
                             <div class="col-12 col-md-7  ml-auto">

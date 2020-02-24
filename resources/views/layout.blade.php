@@ -179,7 +179,7 @@
                 <li class="nav-item d-flex align-items-center justify-content-around">
                     <div class="row">
                         <div class="col-6">
-                                <img id="singleElement" class="nav-photo" src="{{asset('uploads/profilePictures/') . '/'.Auth::user()->img}}" alt="profile picture">
+                                <img id="singleElement" class="nav-photo" src="{{asset('uploads/profilePictures/') . '/'.Auth::user()->avatar}}" alt="profile picture">
                         </div>
                         <div class="col-6">
                             <i class="far fa-bookmark" aria-hidden="true"></i>

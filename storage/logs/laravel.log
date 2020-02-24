@@ -4848,3 +4848,20 @@
 #36 /Users/k/Documents/Web/Laravel/veedros/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #37 {main}
 "} 
+[2020-02-23 14:59:38] local.ERROR: No Database connection yet in VoyagerServiceProvider loadAuth()  
+[2020-02-23 16:28:07] local.ERROR: There are no commands defined in the "migration" namespace.
+
+Did you mean this?
+    migrate {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"migration\" namespace.
+
+Did you mean this?
+    migrate at C:\\Users\\Abdu\\Documents\\Web\\laravel-development\\veedros\\vendor\\symfony\\console\\Application.php:598)
+[stacktrace]
+#0 C:\\Users\\Abdu\\Documents\\Web\\laravel-development\\veedros\\vendor\\symfony\\console\\Application.php(651): Symfony\\Component\\Console\\Application->findNamespace('migration')
+#1 C:\\Users\\Abdu\\Documents\\Web\\laravel-development\\veedros\\vendor\\symfony\\console\\Application.php(236): Symfony\\Component\\Console\\Application->find('migration:rollb...')
+#2 C:\\Users\\Abdu\\Documents\\Web\\laravel-development\\veedros\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\Abdu\\Documents\\Web\\laravel-development\\veedros\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\Abdu\\Documents\\Web\\laravel-development\\veedros\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\Users\\Abdu\\Documents\\Web\\laravel-development\\veedros\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 

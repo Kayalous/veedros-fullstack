@@ -32,12 +32,12 @@ class ManageController extends Controller
         $user = Auth::user();
 
         if($request['filepond'] != null){
-            $this->deleteOldImg($user);
+            $this->deleteOldAvatar($user);
             $path = $this->getPathFromServerId($request['filepond']);
             $file = new File($path);
             $newName = time() . '.' . $file->extension();
             $file->move(public_path('uploads/profilePictures'), $newName);
-            $request['img'] = $newName;
+            $request['avatar'] = $newName;
         }
         if($request['password'] != null)
             $request['password'] = bcrypt($request['password']);
@@ -72,10 +72,10 @@ class ManageController extends Controller
         }
         return $filePath;
     }
-    private function deleteOldImg($user){
-        if(\File::exists(public_path("uploads/profilePictures/") . $user->img))
+    private function deleteOldAvatar($user){
+        if(\File::exists(public_path("uploads/profilePictures/") . $user->avatar))
         {
-            \File::delete(public_path("uploads/profilePictures/") . $user->img);
+            \File::delete(public_path("uploads/profilePictures/") . $user->avatar);
         }
     }
 }

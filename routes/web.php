@@ -56,3 +56,8 @@ Route::get('auth/google', 'Auth\RegisterController@redirectToProviderGoogle')->n
 Route::get('auth/google/callback', 'Auth\RegisterController@handleProviderCallbackGoogle');
 
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

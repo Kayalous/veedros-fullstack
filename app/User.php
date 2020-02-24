@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
 
@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password', 'verificationToken', 'phone', 'about', 'position',
-        'img', 'location', 'twitter', 'facebook', 'linkedin', 'email_verified_at'
+        'avatar', 'location', 'twitter', 'facebook', 'linkedin', 'email_verified_at'
     ];
 
     /**
