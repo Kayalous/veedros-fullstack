@@ -17,23 +17,22 @@ Route::get('/', function () {
 
 //User pages
 Route::get('/profile', function () {
-    return view('profile');
+    return view('profile',['user' => \Illuminate\Support\Facades\Auth::user()]);
 })->name('profile')->middleware('auth');
-Route::get('/profile/{id}', function ($id) {
-    return view('profile',['id'=>$id]);
-})->name('profile.id');
-
+Route::get('/profile/{id}','ProfileController@visit')->name('profile.id');
 Route::get('/manage', function () {
     return view('manage');
 })->name('manage')->middleware('auth');
-
 Route::post('/manage', 'ManageController@edit')->name('manage')->middleware('auth');
 Route::post('/uploadAvatar', 'UploadController@UploadAvatar')->name('upload')->middleware('auth');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('auth');
 
+
+//instructor routes
+Route::get('/manage/instructor/courses', 'ManageController@courses')->name('manage.courses');
+Route::get('/manage/instructor/courses/new', 'ManageController@new')->name('manage.courses.new');
 
 
 //video page
@@ -58,6 +57,12 @@ Route::get('auth/google/callback', 'Auth\RegisterController@handleProviderCallba
 
 
 
+
+//Admin routes
+Route::get('/admin/manage/', 'AdminController@show')->name('veedros.admin')->middleware('admin');
+Route::get('/admin/manage/add', 'AdminController@add')->name('veedros.admin.add')->middleware('admin');
+Route::get('/admin/manage/remove', 'AdminController@remove')->name('veedros.admin.remove')->middleware('admin');
+Route::get('/admin/manage/delete', 'AdminController@delete')->name('veedros.admin.delete')->middleware('admin');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

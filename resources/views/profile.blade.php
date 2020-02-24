@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-lg-9 col-12 mx-auto">
                     <div class="card profile-card py-5">
-    @if(Auth::user())
+    @if($user == Auth::user())
     <a href="{{route('manage')}}"
        class="btn btn-secondary-veedros border-medium edit-btn mr-4 mt-4"><i
             data-feather="edit"></i>
@@ -22,40 +22,40 @@
 
         <div class="mx-auto text-center">
             <div class="instructor-img-wrapper mx-auto">
-                <img src="{{asset('uploads/profilePictures/'). '/' .Auth::user()->avatar}}" alt="instructor" class="round-lg mx-auto img-fluid"/>
+                <img src="{{asset('uploads/profilePictures/'). '/' .$user->img}}" alt="profile image" class="round-lg mx-auto img-fluid"/>
             </div>
-            @if(Auth::user()->name != null)
-            <h1 class="mt-3">{{Auth::user()->name}}</h1>
+            @if($user->name != null)
+            <h1 class="mt-3">{{$user->name}}</h1>
             @endif()
-            @if(Auth::user()->position != null)
-                <h5>{{Auth::user()->position}}</h5>
+            @if($user->position != null)
+                <h5>{{$user->position}}</h5>
             @endif()
-            @if(Auth::user()->location != null)
-            <h6><i class="mr-1" data-feather="globe"></i>{{Auth::user()->location}}</h6>
+            @if($user->location != null)
+            <h6><i class="mr-1" data-feather="globe"></i>{{$user->location}}</h6>
             @endif
-            @if(Auth::user()->about != null)
+            @if($user->about != null)
             <hr class="my-5">
             <div class="container mx-2">
-                <h5>{{Auth::user()->about}}</h5>
+                <h5>{{$user->about}}</h5>
             </div>
             @endif
 
-            @if(Auth::user()->twitter != null || Auth::user()->facebook != null || Auth::user()->linkedin != null)
+            @if($user->twitter != null || $user->facebook != null || $user->linkedin != null)
                 <hr class="my-5">
             @endif
             <div class="d-flex justify-content-center align-items-center">
-                @if(Auth::user()->twitter != null)
-                    <a target="_blank" href="//{{Auth::user()->twitter}}">
+                @if($user->twitter != null)
+                    <a target="_blank" href="//{{$user->twitter}}">
                         <h1><i data-feather="twitter"></i></h1>
                     </a>
                 @endif
-                @if(Auth::user()->facebook != null)
-                    <a target="_blank" href="//{{Auth::user()->facebook}}">
+                @if($user->facebook != null)
+                    <a target="_blank" href="//{{$user->facebook}}">
                         <h1><i data-feather="facebook"></i></h1>
                     </a>
                 @endif
-                @if(Auth::user()->linkedin != null)
-                    <a target="_blank" href="//{{Auth::user()->linkedin}}">
+                @if($user->linkedin != null)
+                    <a target="_blank" href="//{{$user->linkedin}}">
                         <h1><i data-feather="linkedin"></i></h1>
                     </a>
                 @endif

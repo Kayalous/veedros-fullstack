@@ -34,7 +34,7 @@ trait AuthenticatesUsers
     {
         $passwordless = $this->validateLogin($request);
         if($passwordless === true)
-            return view('dashboard');
+            return view('landing');
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
@@ -68,12 +68,13 @@ trait AuthenticatesUsers
     protected function validateLogin(Request $request)
     {
         $user = User::where('email', $request['email'])->firstOrFail();
-        if(strlen($request['password']) == 0){
+        if(strlen($request['password']) === 0){
             $request->validate([
                 $this->username() => 'required|string'
             ]);
             $token = LoginToken::generateFor($user);
             $url = url('/auth/token', $token);
+
             Mail::to("$user->email")->send(new LoginVerificationMail($user, $url));
             return true;
         }

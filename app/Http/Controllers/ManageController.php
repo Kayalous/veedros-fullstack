@@ -37,7 +37,7 @@ class ManageController extends Controller
             $file = new File($path);
             $newName = time() . '.' . $file->extension();
             $file->move(public_path('uploads/profilePictures'), $newName);
-            $request['avatar'] = $newName;
+            $request['img'] = $newName;
         }
         if($request['password'] != null)
             $request['password'] = bcrypt($request['password']);
@@ -73,9 +73,13 @@ class ManageController extends Controller
         return $filePath;
     }
     private function deleteOldAvatar($user){
-        if(\File::exists(public_path("uploads/profilePictures/") . $user->avatar))
+        if(\File::exists(public_path("uploads/profilePictures/") . $user->avatar) && $user->avatar !== 'default.png')
         {
             \File::delete(public_path("uploads/profilePictures/") . $user->avatar);
         }
+    }
+    public function courses(){
+        $courses = Auth::user()->instructor->courses;
+        return view('courses',['courses' => $courses]);
     }
 }

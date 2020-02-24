@@ -163,29 +163,61 @@
     </button>
     <div class="collapse navbar-collapse no-flex-grow pb-3" id="collapsibleNavId">
         <ul class="navbar-nav nav-items-container">
+            @if(Auth::user())
+                @if(!Auth::user()->hasRole('admin'))
             <li class="nav-item">
                 <a class="nav-link dot-hover dot-hover-black" href="#">Courses</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link dot-hover dot-hover-black" href="#">How it works</a>
             </li>
+            @if(Auth::user()->instructor)
+                        <li class="nav-item">
+                            <a class="nav-link dot-hover dot-hover-black" href="{{route('manage.courses')}}">Manage your courses</a>
+                        </li>
+                    @else
             <li class="nav-item">
                 <a class="nav-link dot-hover dot-hover-black" href="#">Teach</a>
             </li>
+                @endif
+                @else
+                <li class="nav-item">
+                    <a class="nav-link dot-hover dot-hover-red" href="{{route('veedros.admin')}}">Manage users</a>
+                </li>
+            @endif
+            @else
+                <li class="nav-item">
+                    <a class="nav-link dot-hover dot-hover-black" href="#">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dot-hover dot-hover-black" href="#">How it works</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link dot-hover dot-hover-black" href="#">Teach</a>
+                </li>
+                @endif
+
             @if(!Auth::check())
                 <li class="nav-item d-flex align-items-center justify-content-center">
                     <a href="#" class="btn btn-veedros btn-veedros-sm border-0" data-toggle="modal" data-target="#loginModal">Sign in </a> </li>
             @else
+                @if (Auth::user()->hasRole('admin'))
+                    <li class="nav-item">
+                        <a class="nav-link dot-hover dot-hover-red" href="{{route("voyager.dashboard")}}">Admin dashboard</a>
+                    </li>
+                @endif
                 <li class="nav-item d-flex align-items-center justify-content-around">
                     <div class="row">
                         <div class="col-6">
-                                <img id="singleElement" class="nav-photo" src="{{asset('uploads/profilePictures/') . '/'.Auth::user()->avatar}}" alt="profile picture">
+                                <img id="singleElement" class="nav-photo" src="{{asset('uploads/profilePictures/') . '/'.Auth::user()->img}}" alt="profile picture">
                         </div>
                         <div class="col-6">
                             <i class="far fa-bookmark" aria-hidden="true"></i>
                         </div>
                     </div>
                 </li>
+
             @endif
         </ul>
     </div>

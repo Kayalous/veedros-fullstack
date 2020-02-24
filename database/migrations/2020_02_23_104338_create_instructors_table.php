@@ -16,7 +16,7 @@ class CreateInstructorsTable extends Migration
         Schema::create('instructors', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->references('id')->on('users');
-            $table->bigInteger('experince_id')->unsigned()->references('id')->on('experince');
+            $table->bigInteger('experince_id')->unsigned()->references('id')->on('experince')->nullable();
             $table->timestamps();
         });
     }

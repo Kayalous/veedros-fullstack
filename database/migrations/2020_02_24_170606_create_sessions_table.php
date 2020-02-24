@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSocialProvidersTable extends Migration
+class CreateSessionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateSocialProvidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('social_providers', function (Blueprint $table) {
+        Schema::create('sessions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned()->references('id')->on('users')->onDelete('cascade');
-            $table->string('provider_id');
-            $table->string('provider');
+            $table->bigInteger('chapter_id')->unsigned()->references('id')->on('chapters');
+            $table->string('name');
+            $table->text('about');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateSocialProvidersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('social_providers');
+        Schema::dropIfExists('sessions');
     }
 }

@@ -177,19 +177,50 @@ unset($__errorArgs, $__bag); ?>
     </button>
     <div class="collapse navbar-collapse no-flex-grow pb-3" id="collapsibleNavId">
         <ul class="navbar-nav nav-items-container">
+            <?php if(Auth::user()): ?>
+                <?php if(!Auth::user()->hasRole('admin')): ?>
             <li class="nav-item">
                 <a class="nav-link dot-hover dot-hover-black" href="#">Courses</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link dot-hover dot-hover-black" href="#">How it works</a>
             </li>
+            <?php if(Auth::user()->instructor): ?>
+                        <li class="nav-item">
+                            <a class="nav-link dot-hover dot-hover-black" href="<?php echo e(route('manage.courses')); ?>">Manage your courses</a>
+                        </li>
+                    <?php else: ?>
             <li class="nav-item">
                 <a class="nav-link dot-hover dot-hover-black" href="#">Teach</a>
             </li>
+                <?php endif; ?>
+                <?php else: ?>
+                <li class="nav-item">
+                    <a class="nav-link dot-hover dot-hover-red" href="<?php echo e(route('veedros.admin')); ?>">Manage users</a>
+                </li>
+            <?php endif; ?>
+            <?php else: ?>
+                <li class="nav-item">
+                    <a class="nav-link dot-hover dot-hover-black" href="#">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dot-hover dot-hover-black" href="#">How it works</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link dot-hover dot-hover-black" href="#">Teach</a>
+                </li>
+                <?php endif; ?>
+
             <?php if(!Auth::check()): ?>
                 <li class="nav-item d-flex align-items-center justify-content-center">
                     <a href="#" class="btn btn-veedros btn-veedros-sm border-0" data-toggle="modal" data-target="#loginModal">Sign in </a> </li>
             <?php else: ?>
+                <?php if(Auth::user()->hasRole('admin')): ?>
+                    <li class="nav-item">
+                        <a class="nav-link dot-hover dot-hover-red" href="<?php echo e(route("voyager.dashboard")); ?>">Admin dashboard</a>
+                    </li>
+                <?php endif; ?>
                 <li class="nav-item d-flex align-items-center justify-content-around">
                     <div class="row">
                         <div class="col-6">
@@ -200,6 +231,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </li>
+
             <?php endif; ?>
         </ul>
     </div>

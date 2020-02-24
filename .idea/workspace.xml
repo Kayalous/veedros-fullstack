@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9203d179-7a57-4250-b798-682952242161" name="Default Changelist" comment="">
+    <list default="true" id="dc8b854c-d735-42db-85ad-938407689aaf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/styles/courses.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/courses.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/veedros.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/veedros.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ManageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ManageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Instructor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Instructor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_21_182807_create_social_providers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_21_182807_create_social_providers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_104338_create_instructors_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_104338_create_instructors_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/0ed6436a8ccb7fd2fd750d2bfe7d2f9083ffced5.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0ed6436a8ccb7fd2fd750d2bfe7d2f9083ffced5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/e8a627da92b74786627755f40653891333d7317f.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/e8a627da92b74786627755f40653891333d7317f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/f9cd9287e679c0179c0ece8068475c9167685e5f.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f9cd9287e679c0179c0ece8068475c9167685e5f.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,12 +185,12 @@
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Abdu\Documents\Web\laravel-development\veedros\public\node_modules" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Abdu\Documents\Web\laravel-development\veedros\resources\views" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdu\Documents\Web\laravel-development\veedros\public\node_modules" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -216,7 +220,6 @@
       <workItem from="1582294067903" duration="22434000" />
       <workItem from="1582322535210" duration="14791000" />
       <workItem from="1582389613808" duration="8792000" />
-      <workItem from="1582469425498" duration="4764000" />
     </task>
     <task id="LOCAL-00001" summary="Changed routing">
       <created>1581976619797</created>
@@ -276,14 +279,18 @@
       <screen x="0" y="0" width="1366" height="764" />
     </state>
     <state x="472" y="308" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.764@0.0.1366.764" timestamp="1582201655147" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1582517660035">
+      <screen x="0" y="0" width="1366" height="764" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/0.0.1366.764@0.0.1366.764" timestamp="1582517660035" />
     <state x="480" y="247" key="run.anything.popup" timestamp="1582394751613">
       <screen x="0" y="0" width="1815" height="1080" />
     </state>
     <state x="480" y="247" key="run.anything.popup/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582394751613" />
-    <state x="462" y="124" width="891" height="956" key="search.everywhere.popup" timestamp="1582298532036">
-      <screen x="0" y="0" width="1815" height="1080" />
+    <state x="348" y="88" width="670" height="676" key="search.everywhere.popup" timestamp="1582556733742">
+      <screen x="0" y="0" width="1366" height="764" />
     </state>
-    <state x="348" y="88" width="670" height="676" key="search.everywhere.popup/0.0.1366.764@0.0.1366.764" timestamp="1582206526330" />
+    <state x="348" y="88" width="670" height="676" key="search.everywhere.popup/0.0.1366.764@0.0.1366.764" timestamp="1582556733742" />
     <state x="462" y="124" width="891" height="956" key="search.everywhere.popup/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582298532036" />
   </component>
   <component name="XDebuggerManager">
@@ -293,6 +300,11 @@
           <url>file://$PROJECT_DIR$/resources/views/manage.blade.php</url>
           <line>69</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php</url>
+          <line>165</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

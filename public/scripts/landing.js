@@ -132,8 +132,7 @@ for (let i = 0; i < 6; i++) {
   let mcard = `<div class="card course-card development-card noJquery ${"a" +
     cardClass} wow fadeIn" data-wow-delay="${0.1 *
     i}s" style="background-image: url('images/img_0${i +
-    1}.png')" data-toggle="modal"
-    data-target="#exampleModal">
+    1}.png')">
     <div class="course-card-overlay overlay-${i % 6}"></div>
     <div class="card-body m-0">
       <a href="player.html" class="card-body-inner noscroll card-bg-img"  >

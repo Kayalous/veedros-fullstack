@@ -9,15 +9,15 @@
         <div class="info-bar">
             <div class="content-info-bar">
                 <div class="left-content">
-                    <div class="container zbi-kbeer">
-                        <div class="row justify-content-end zbi">
+                    <div class="container">
+                        <div class="row justify-content-end">
                             <a href="{{route('manage')}}" class="btn btn-veedros btn-Edit">
                                 <p>Edit</p>
                             </a>
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-5 ">
-                                <div class="user-photo " style="background-image: url(uploads/profilePictures/{{Auth::user()->avatar}});">
+                                <div class="user-photo " style="background-image: url(uploads/profilePictures/{{Auth::user()->img}});">
                                 </div>
                             </div>
                             <div class="col-12 col-md-7  ml-auto">

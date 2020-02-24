@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-9 col-12 mx-auto">
                     <div class="card profile-card py-5">
-    <?php if(Auth::user()): ?>
+    <?php if($user == Auth::user()): ?>
     <a href="<?php echo e(route('manage')); ?>"
        class="btn btn-secondary-veedros border-medium edit-btn mr-4 mt-4"><i
             data-feather="edit"></i>
@@ -20,40 +20,40 @@
 
         <div class="mx-auto text-center">
             <div class="instructor-img-wrapper mx-auto">
-                <img src="<?php echo e(asset('uploads/profilePictures/'). '/' .Auth::user()->img); ?>" alt="instructor" class="round-lg mx-auto img-fluid"/>
+                <img src="<?php echo e(asset('uploads/profilePictures/'). '/' .$user->img); ?>" alt="profile image" class="round-lg mx-auto img-fluid"/>
             </div>
-            <?php if(Auth::user()->name != null): ?>
-            <h1 class="mt-3"><?php echo e(Auth::user()->name); ?></h1>
+            <?php if($user->name != null): ?>
+            <h1 class="mt-3"><?php echo e($user->name); ?></h1>
             <?php endif; ?>
-            <?php if(Auth::user()->position != null): ?>
-                <h5><?php echo e(Auth::user()->position); ?></h5>
+            <?php if($user->position != null): ?>
+                <h5><?php echo e($user->position); ?></h5>
             <?php endif; ?>
-            <?php if(Auth::user()->location != null): ?>
-            <h6><i class="mr-1" data-feather="globe"></i><?php echo e(Auth::user()->location); ?></h6>
+            <?php if($user->location != null): ?>
+            <h6><i class="mr-1" data-feather="globe"></i><?php echo e($user->location); ?></h6>
             <?php endif; ?>
-            <?php if(Auth::user()->about != null): ?>
+            <?php if($user->about != null): ?>
             <hr class="my-5">
             <div class="container mx-2">
-                <h5><?php echo e(Auth::user()->about); ?></h5>
+                <h5><?php echo e($user->about); ?></h5>
             </div>
             <?php endif; ?>
 
-            <?php if(Auth::user()->twitter != null || Auth::user()->facebook != null || Auth::user()->linkedin != null): ?>
+            <?php if($user->twitter != null || $user->facebook != null || $user->linkedin != null): ?>
                 <hr class="my-5">
             <?php endif; ?>
             <div class="d-flex justify-content-center align-items-center">
-                <?php if(Auth::user()->twitter != null): ?>
-                    <a target="_blank" href="//<?php echo e(Auth::user()->twitter); ?>">
+                <?php if($user->twitter != null): ?>
+                    <a target="_blank" href="//<?php echo e($user->twitter); ?>">
                         <h1><i data-feather="twitter"></i></h1>
                     </a>
                 <?php endif; ?>
-                <?php if(Auth::user()->facebook != null): ?>
-                    <a target="_blank" href="//<?php echo e(Auth::user()->facebook); ?>">
+                <?php if($user->facebook != null): ?>
+                    <a target="_blank" href="//<?php echo e($user->facebook); ?>">
                         <h1><i data-feather="facebook"></i></h1>
                     </a>
                 <?php endif; ?>
-                <?php if(Auth::user()->linkedin != null): ?>
-                    <a target="_blank" href="//<?php echo e(Auth::user()->linkedin); ?>">
+                <?php if($user->linkedin != null): ?>
+                    <a target="_blank" href="//<?php echo e($user->linkedin); ?>">
                         <h1><i data-feather="linkedin"></i></h1>
                     </a>
                 <?php endif; ?>
