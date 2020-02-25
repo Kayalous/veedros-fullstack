@@ -30,7 +30,7 @@
                 </div>
                         <div class="card course-card development-card noJquery">
                             <div class="card-body m-0">
-                                <a href="{{route('')}}" class="card-body-inner noscroll card-bg-img"  >
+                                <a href="{{route('manage.courses.new')}}" class="card-body-inner noscroll card-bg-img"  >
                                     <div class="play-circle play-circle-05"> <i data-feather="plus"></i></div>
                                     <h4 class="card-title title-mine">
                                         Create a new course.

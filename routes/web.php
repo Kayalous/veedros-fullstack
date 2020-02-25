@@ -32,7 +32,10 @@ Route::get('/dashboard', function () {
 
 //instructor routes
 Route::get('/manage/instructor/courses', 'ManageController@courses')->name('manage.courses');
-Route::get('/manage/instructor/courses/new', 'ManageController@new')->name('manage.courses.new');
+Route::get('/manage/instructor/courses/new', function (){
+    return view('new-course');
+})->name('manage.courses.new');
+Route::post('/manage/instructor/courses/new', 'ManageController@newCourse')->name('manage.courses.new');
 
 
 //video page

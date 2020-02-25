@@ -2,32 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc8b854c-d735-42db-85ad-938407689aaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/styles/courses.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/courses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/new-course.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/new-course.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Course.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ManageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ManageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Instructor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Instructor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_21_182807_create_social_providers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_21_182807_create_social_providers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_104338_create_instructors_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_104338_create_instructors_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/landing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_24_165217_create_courses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_24_165217_create_courses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/manage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/courses.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/courses.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courses.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/0ed6436a8ccb7fd2fd750d2bfe7d2f9083ffced5.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0ed6436a8ccb7fd2fd750d2bfe7d2f9083ffced5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/e8a627da92b74786627755f40653891333d7317f.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/e8a627da92b74786627755f40653891333d7317f.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/f9cd9287e679c0179c0ece8068475c9167685e5f.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f9cd9287e679c0179c0ece8068475c9167685e5f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/d66ffe59eb9724016e63a0d2740cad5c2623d820.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/d66ffe59eb9724016e63a0d2740cad5c2623d820.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +170,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/node_modules" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -260,10 +248,10 @@
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1366.764@0.0.1366.764" timestamp="1582201685828" />
     <state x="277" y="22" key="CommitChangelistDialog2/0.22.1366.742@0.22.1366.742" timestamp="1581976619319" />
-    <state x="255" y="14" key="SettingsEditor" timestamp="1582306796525">
-      <screen x="0" y="0" width="1815" height="1080" />
+    <state x="192" y="10" key="SettingsEditor" timestamp="1582633357978">
+      <screen x="0" y="0" width="1366" height="764" />
     </state>
-    <state x="192" y="10" key="SettingsEditor/0.0.1366.764@0.0.1366.764" timestamp="1581977075787" />
+    <state x="192" y="10" key="SettingsEditor/0.0.1366.764@0.0.1366.764" timestamp="1582633357978" />
     <state x="255" y="14" key="SettingsEditor/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582306796525" />
     <state x="192" y="32" key="SettingsEditor/0.22.1366.742@0.22.1366.742" timestamp="1581976574965" />
     <state x="283" y="102" key="Vcs.Push.Dialog.v2" timestamp="1582201693369">
@@ -279,10 +267,10 @@
       <screen x="0" y="0" width="1366" height="764" />
     </state>
     <state x="472" y="308" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.764@0.0.1366.764" timestamp="1582201655147" />
-    <state width="600" height="424" key="javadoc.popup" timestamp="1582517660035">
+    <state width="600" height="424" key="javadoc.popup" timestamp="1582633299001">
       <screen x="0" y="0" width="1366" height="764" />
     </state>
-    <state width="600" height="424" key="javadoc.popup/0.0.1366.764@0.0.1366.764" timestamp="1582517660035" />
+    <state width="600" height="424" key="javadoc.popup/0.0.1366.764@0.0.1366.764" timestamp="1582633299001" />
     <state x="480" y="247" key="run.anything.popup" timestamp="1582394751613">
       <screen x="0" y="0" width="1815" height="1080" />
     </state>
@@ -303,7 +291,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php</url>
-          <line>165</line>
+          <line>164</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

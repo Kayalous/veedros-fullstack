@@ -90,7 +90,6 @@ class RegisterController extends Controller
                 'verificationToken' => Str::random(50),
             ]);
 
-
         Mail::to("$user->email")->send(new WelcomeVerificationMail($user));
 
         return $user;

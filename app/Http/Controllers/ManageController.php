@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeVerificationMail;
 use App\User;
@@ -26,7 +27,7 @@ class ManageController extends Controller
             'password' => 'nullable|min:8|max:100',
             'position' => 'nullable|max:100',
             'location' => 'nullable|max:100',
-            'about' => 'nullable|max:1000',
+            'about' => 'nullable|max:500',
         ]);
 
         $user = Auth::user();
@@ -81,5 +82,26 @@ class ManageController extends Controller
     public function courses(){
         $courses = Auth::user()->instructor->courses;
         return view('courses',['courses' => $courses]);
+    }
+    public function newCourse(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'nullable|max:100',
+            'price' => 'nullable',
+            'genre' => 'nullable|max:100',
+            'about' => 'nullable|max:500',
+        ]);
+        $instructor = Auth::user()->instructor;
+        $slug = Str::slug($request['name'] . ' ' . $instructor->id, '-');
+        $course = Course::create(
+            ['instructor_id' => $instructor->id,
+                'name'=> $request['name'],
+                'price' => $request['price'],
+                'about' => $request['about'],
+                'slug' => $slug,
+
+                ]
+        );
+return back();
+
     }
 }
