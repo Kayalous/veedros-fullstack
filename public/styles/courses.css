@@ -16,5 +16,21 @@ h2 {
     width: 30px;
     height: 30px;
 }
+.btn-secondary-veedros{
+    color: rgba(0,0,0,.7);
+    font-weight: 600;
+}
+.btn-secondary-veedros .feather{
+    stroke: rgba(0,0,0,.7);
+
+}
+.btn-secondary-veedros-xl{
+    width: 100%;
+
+}
+.btn-secondary-veedros-xl .feather{
+    stroke: #313c8b;
+    stroke-width: 3px;
+}
 
 

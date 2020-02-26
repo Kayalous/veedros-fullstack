@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('landing');
 })->name('landing');
@@ -36,6 +38,14 @@ Route::get('/manage/instructor/courses/new', function (){
     return view('new-course');
 })->name('manage.courses.new');
 Route::post('/manage/instructor/courses/new', 'ManageController@newCourse')->name('manage.courses.new');
+Route::get('/manage/instructor/courses/{slug}', function ($slug){
+    $instructor = Auth::user()->instructor;
+    if(!$instructor)
+        return redirect('/dashboard');
+
+    $course = $instructor->courses()->where('slug', $slug)->firstOrFail();
+    return view("courseManagement", ['course'=>$course]);}
+    )->name('manage.course.content');
 
 
 //video page

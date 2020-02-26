@@ -64,7 +64,7 @@ function validateEmail(emailField) {
 }
 
 function validateTextFields(field) {
-    if(/^[\S]{1,100}$/.test(field.value)){
+    if(/^[\S\s]{1,100}$/.test(field.value)){
         fieldIsValid(field);
         return true;
     }
@@ -79,7 +79,7 @@ function validateTextFields(field) {
     }
 }
 function validateTextArea(field) {
-    if(/^[\S]{1,500}$/.test(field.value)){
+    if(/^[\S\s]{1,500}$/.test(field.value)){
         fieldIsValid(field);
         return true;
     }
