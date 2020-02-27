@@ -216,9 +216,9 @@
                         </li>
                     </ul>
                     <br>
-                    <div class="row w-md-100 w-75 ">
+                    <div class="row w-md-100 w-75 mx-auto">
                         <div class="col-6">
-                            <div class="badge tip-badge">
+                            <div class="badge tip-badge py-1">
                                 <h4 class="badge-item">
                                     <i class="fas fa-hand-holding-usd"></i>
                                     <span>1200 EGP</span>
@@ -226,7 +226,7 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="badge tip-badge">
+                            <div class="badge tip-badge py-1">
                                 <h4 class="badge-item">
                                     <i class="far fa-clock"></i>
                                     <span>16 Hours</span>

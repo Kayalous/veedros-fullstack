@@ -175,5 +175,9 @@
     <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 @endsection
 @section('customJS')
+    <script>
+        let currentAvatar = `{{Auth::user()->img}}`;
+    </script>
     <script src="scripts/manage.js"></script>
+
 @endsection

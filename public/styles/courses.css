@@ -20,17 +20,84 @@ h2 {
     color: rgba(0,0,0,.7);
     font-weight: 600;
 }
+.btn-secondary-veedros:focus{
+    color: rgba(0,0,0,.7);
+}
 .btn-secondary-veedros .feather{
     stroke: rgba(0,0,0,.7);
 
 }
 .btn-secondary-veedros-xl{
     width: 100%;
-
+    margin-left: 4rem ;
+    margin-right: 4rem ;
 }
 .btn-secondary-veedros-xl .feather{
     stroke: #313c8b;
     stroke-width: 3px;
 }
+.course-form-field {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.65);
+    font-weight: 600;
+    font-size: 20px;
+    -webkit-box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
+    0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
+    0 0px 6.5px -7px rgba(0, 0, 0, 0.119),
+    0 0px 12.1px -7px rgba(0, 0, 0, 0.144), 0 0px 29px -7px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
+    0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
+    0 0px 6.5px -7px rgba(0, 0, 0, 0.119),
+    0 0px 12.1px -7px rgba(0, 0, 0, 0.144), 0 0px 29px -7px rgba(0, 0, 0, 0.2);
+    resize: none;
+    overflow: hidden;
+    min-height: 50px;
+    max-height: 100px;
+}
+.course-form-field:focus {
+    -webkit-box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
+    0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
+    0 0px 6.5px -6px rgba(0, 0, 0, 0.179),
+    0 0px 12.1px -6px rgba(0, 0, 0, 0.216), 0 0px 29px -6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
+    0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
+    0 0px 6.5px -6px rgba(0, 0, 0, 0.179),
+    0 0px 12.1px -6px rgba(0, 0, 0, 0.216), 0 0px 29px -6px rgba(0, 0, 0, 0.3);
+}
 
+.course-form-field.is-valid {
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(79, 182, 88, 0.5);
+    box-shadow: 0px 0px 7px 0px rgba(79, 182, 88, 0.5);
+}
+
+.course-form-field.is-valid:focus {
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(79, 182, 88, 0.5);
+    box-shadow: 0px 0px 7px 0px rgba(79, 182, 88, 0.5);
+}
+
+.course-form-field.is-invalid {
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(255, 116, 116, 0.5);
+    box-shadow: 0px 0px 7px 0px rgba(255, 116, 116, 0.5);
+}
+
+.course-form-field.is-invalid:focus {
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(255, 116, 116, 0.5);
+    box-shadow: 0px 0px 7px 0px rgba(255, 116, 116, 0.5);
+}
+.price{
+    width: 100px !important;
+    text-align: center;
+}
+.about{
+    max-height: none;
+}
+.badge-item{
+    justify-content: center !important;
+}
+.form-control:disabled, .form-control[readonly]{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    background-color: #fff;
+}
 

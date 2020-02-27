@@ -35,7 +35,7 @@ class ManageController extends Controller
         if($request['filepond'] != null){
             $this->deleteOldAvatar($user);
             $path = $this->getPathFromServerId($request['filepond']);
-            $file = new File($path);
+            $file = new \Illuminate\Http\File($path);
             $newName = time() . '.' . $file->extension();
             $file->move(public_path('uploads/profilePictures'), $newName);
             $request['img'] = $newName;
@@ -80,42 +80,7 @@ class ManageController extends Controller
         }
     }
 
-    public function courses(){
-        $courses = Auth::user()->instructor->courses;
-        return view('courses',['courses' => $courses]);
-    }
 
-    public function newCourse(Request $request){
-        $validatedData = $request->validate([
-            'name' => 'nullable|max:100',
-            'price' => 'nullable',
-            'genre' => 'nullable|max:100',
-            'about' => 'nullable|max:500',
-        ]);
-        $instructor = Auth::user()->instructor;
-        //making the slug
-        $random = Str::random(5);
-        $slug = Str::slug($request['name'] . ' ' . $random, '-');
-        //creating course path
-        $path = base_path() . '/public';
-        File::makeDirectory($path . '/uploads/courses/'. Auth::user()->id . '/' . $slug .'/images/', 0755, true, true);
-        //transferring course image from temp storage to perm storage
-        $path = $this->getPathFromServerId($request['filepond']);
-        $file = new \Illuminate\Http\File($path);
-        $newName = time() . '.' . $file->extension();
-        $file->move(public_path('uploads/courses/') . Auth::user()->id . '/' . $slug . '/images/', $newName);
-        //create the course
-        $course = Course::create(
-            ['instructor_id' => $instructor->id,
-                'name'=> $request['name'],
-                'price' => $request['price'],
-                'about' => $request['about'],
-                'slug' => $slug,
-                'img' => $newName
-                ]
-        );
-        //return the new course page
-        return redirect('/manage/instructor/courses/'.$slug);
 
-    }
+
 }

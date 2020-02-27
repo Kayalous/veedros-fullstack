@@ -33,13 +33,15 @@ Route::get('/dashboard', function () {
 
 
 //instructor routes
-Route::get('/manage/instructor/courses', 'ManageController@courses')->name('manage.courses');
+Route::get('/manage/instructor/courses', 'CourseController@courses')->name('manage.courses');
 Route::get('/manage/instructor/courses/new', function (){
     return view('new-course');
 })->name('manage.courses.new');
-Route::post('/manage/instructor/courses/new', 'ManageController@newCourse')->name('manage.courses.new');
+Route::post('/manage/instructor/courses/new', 'CourseController@newCourse')->name('manage.courses.new');
+Route::post('/manage/instructor/course/about', 'CourseController@editAbout')->name('manage.courses.about');
 Route::get('/manage/instructor/courses/{slug}', function ($slug){
     $instructor = Auth::user()->instructor;
+
     if(!$instructor)
         return redirect('/dashboard');
 

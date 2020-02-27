@@ -38,6 +38,14 @@ FilePond.setOptions({
             'X-CSRF-TOKEN': '{{ csrf_token() }}'
         }
     },
+    files: [
+        {
+            // the server file reference
+            source: `uploads/profilePictures/${currentAvatar}`,
+
+        }
+    ]
+
 });
 
 
