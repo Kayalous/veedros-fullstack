@@ -187,7 +187,7 @@ unset($__errorArgs, $__bag); ?>
             </li>
             <?php if(Auth::user()->instructor): ?>
                         <li class="nav-item">
-                            <a class="nav-link dot-hover dot-hover-black" href="<?php echo e(route('manage.courses')); ?>">Manage your courses</a>
+                            <a class="nav-link dot-hover dot-hover-black" href="<?php echo e(route('manage.courses')); ?>">Manage my courses</a>
                         </li>
                     <?php else: ?>
             <li class="nav-item">
@@ -318,6 +318,8 @@ unset($__errorArgs, $__bag); ?>
 <!-- tippy js  -->
 <script src="https://unpkg.com/tippy.js@5"></script>
 <script src="https://unpkg.com/tooltip.js"></script>
+<!-- Sweetalert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <?php echo $__env->yieldContent('libraryJS'); ?>
 <!-- App javascript  -->
 <script src="<?php echo e(asset('scripts/app.js')); ?>"></script>
@@ -352,7 +354,49 @@ unset($__errorArgs, $__bag); ?>
 
 </script>
 <?php echo $__env->yieldContent('customJS'); ?>
+<?php if(Session::has('success')): ?>
+    <script>
+        Swal.fire({
+            toast:true,
+            position: 'top',
+            icon: 'success',
+            title: '<?php echo e(Session::get('success')); ?>',
+            showConfirmButton: false,
+            timer: 10000
+        })
+    </script>
+<?php endif; ?>
 
+<?php if(Session::has('failure')): ?>
+    <script>
+        Swal.fire({
+            toast:true,
+            position: 'top',
+            icon: 'error',
+            title: '<?php echo e(Session::get('failure')); ?>',
+            showConfirmButton: false,
+            timer: 10000
+        })
+    </script>
+<?php endif; ?>
+
+<?php if(Session::has('message')): ?>
+    <script>
+        Swal.fire({
+            toast:true,
+            position: 'top',
+            icon: 'warning',
+            title: '<?php echo e(Session::get('message')); ?>',
+            showConfirmButton: false,
+            timer: 10000
+        })
+    </script>
+<?php endif; ?>
+<?php if(Session::has('login-form')): ?>
+    <script>
+        $('#loginModal').modal('show')
+    </script>
+<?php endif; ?>
 </body>
 
 </html>

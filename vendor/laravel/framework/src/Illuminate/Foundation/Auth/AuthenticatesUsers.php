@@ -33,8 +33,10 @@ trait AuthenticatesUsers
     public function login(Request $request)
     {
         $passwordless = $this->validateLogin($request);
-        if($passwordless === true)
-            return view('landing');
+        if($passwordless === true){
+            \Session::flash('success','An email was sent to you at ' . $request['email'] . ' with a link to login.');
+            return redirect('/');
+        }
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
@@ -54,7 +56,8 @@ trait AuthenticatesUsers
         // user surpasses their maximum number of attempts they will get locked out.
         $this->incrementLoginAttempts($request);
 
-        return $this->sendFailedLoginResponse($request);
+        \Session::flash('failure','The credentials you entered were incorrect. Please try again.');
+        return redirect('/');
     }
 
     /**
@@ -67,7 +70,11 @@ trait AuthenticatesUsers
      */
     protected function validateLogin(Request $request)
     {
-        $user = User::where('email', $request['email'])->firstOrFail();
+        $user = User::where('email', $request['email'])->first();
+        if($user === null){
+            \Session::flash('failure','The credentials you entered were incorrect. Please try again.');
+            return redirect('/');
+        }
         if(strlen($request['password']) === 0){
             $request->validate([
                 $this->username() => 'required|string'

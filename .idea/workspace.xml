@@ -2,20 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc8b854c-d735-42db-85ad-938407689aaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/scripts/manage-course.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ManageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ManageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Instructor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Instructor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/manage-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/manage-course.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/manage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/courses.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/courses.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/new-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/new-course.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/courseManagement.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courseManagement.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/player.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/player.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/landing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/0ed6436a8ccb7fd2fd750d2bfe7d2f9083ffced5.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0ed6436a8ccb7fd2fd750d2bfe7d2f9083ffced5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/773d4c28af34f70afc8aad5ebf2b30850cd1a7ed.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/773d4c28af34f70afc8aad5ebf2b30850cd1a7ed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/f2aec2b76f70cbcbabcd7be9a835457c099a4a42.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f2aec2b76f70cbcbabcd7be9a835457c099a4a42.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,10 +252,10 @@
       <screen x="0" y="0" width="1366" height="764" />
     </state>
     <state x="445" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.764@0.0.1366.764" timestamp="1582454917810" />
-    <state x="559" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582838374316">
-      <screen x="0" y="0" width="1815" height="1080" />
+    <state x="421" y="146" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582926176739">
+      <screen x="0" y="0" width="1366" height="764" />
     </state>
-    <state x="421" y="146" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.764@0.0.1366.764" timestamp="1582667515144" />
+    <state x="421" y="146" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.764@0.0.1366.764" timestamp="1582926176739" />
     <state x="559" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582838374316" />
     <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1582201685828">
       <screen x="0" y="0" width="1366" height="764" />
@@ -275,14 +285,15 @@
       <screen x="0" y="0" width="1366" height="764" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.0.1366.764@0.0.1366.764" timestamp="1582633299001" />
-    <state x="480" y="247" key="run.anything.popup" timestamp="1582394751613">
-      <screen x="0" y="0" width="1815" height="1080" />
-    </state>
-    <state x="480" y="247" key="run.anything.popup/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582394751613" />
-    <state x="348" y="88" width="670" height="676" key="search.everywhere.popup" timestamp="1582669062178">
+    <state x="361" y="175" key="run.anything.popup" timestamp="1582972355812">
       <screen x="0" y="0" width="1366" height="764" />
     </state>
-    <state x="348" y="88" width="670" height="676" key="search.everywhere.popup/0.0.1366.764@0.0.1366.764" timestamp="1582669062178" />
+    <state x="361" y="175" key="run.anything.popup/0.0.1366.764@0.0.1366.764" timestamp="1582972355812" />
+    <state x="480" y="247" key="run.anything.popup/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582394751613" />
+    <state x="348" y="88" width="670" height="676" key="search.everywhere.popup" timestamp="1582972384016">
+      <screen x="0" y="0" width="1366" height="764" />
+    </state>
+    <state x="348" y="88" width="670" height="676" key="search.everywhere.popup/0.0.1366.764@0.0.1366.764" timestamp="1582972384016" />
     <state x="462" y="124" width="891" height="956" key="search.everywhere.popup/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582298532036" />
   </component>
   <component name="XDebuggerManager">

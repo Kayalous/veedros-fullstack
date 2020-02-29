@@ -80,10 +80,6 @@
         </div>
     </section>
 @endsection
-@section('libraryJS')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
-@endsection
 @section('customJS')
     <script>
         async function removeInstructor(id) {

@@ -26,6 +26,8 @@ FilePond.create(
         imageResizeTargetHeight: 440,
         styleLoadIndicatorPosition: 'bottom',
         styleButtonRemoveItemPosition: 'bottom',
+        acceptedFileTypes: ['image/*'],
+
     }
 );
 

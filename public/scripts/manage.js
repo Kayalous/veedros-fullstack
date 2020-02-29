@@ -27,6 +27,8 @@ FilePond.create(
         styleLoadIndicatorPosition: 'bottom',
         styleButtonRemoveItemPosition: 'bottom',
         stylePanelLayout: 'compact circle',
+        acceptedFileTypes: ['image/*'],
+
     }
 );
 

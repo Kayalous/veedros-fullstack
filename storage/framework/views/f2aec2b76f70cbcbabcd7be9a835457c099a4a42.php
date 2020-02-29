@@ -173,7 +173,11 @@
     <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('customJS'); ?>
+    <script>
+        let currentAvatar = `<?php echo e(Auth::user()->img); ?>`;
+    </script>
     <script src="scripts/manage.js"></script>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/k/Documents/Web/Laravel/veedros/resources/views/manage.blade.php ENDPATH**/ ?>

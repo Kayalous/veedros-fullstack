@@ -25,8 +25,7 @@
                         <input type="email" size="5" class="form-control email-input email-field-props border-0"
                                placeholder="Enter your email" />
                         <div class="btn-container email-field-props">
-                            <button class="btn btn-veedros btn-veedros-inline-input border-0" type="button" data-toggle="modal"
-                                    data-target="#signupModal">
+                            <button class="btn btn-veedros btn-veedros-inline-input border-0" type="button">
                                 Get started
                             </button>
                         </div>
@@ -212,4 +211,5 @@
 
 @section('customJS')
     <script src="scripts/landing.js"></script>
+
 @endsection

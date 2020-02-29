@@ -31,6 +31,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('auth');
 
+Route::group(['middleware' => ['instructor']], function () {
 
 //instructor routes
 Route::get('/manage/instructor/courses', 'CourseController@courses')->name('manage.courses');
@@ -39,6 +40,9 @@ Route::get('/manage/instructor/courses/new', function (){
 })->name('manage.courses.new');
 Route::post('/manage/instructor/courses/new', 'CourseController@newCourse')->name('manage.courses.new');
 Route::post('/manage/instructor/course/about', 'CourseController@editAbout')->name('manage.courses.about');
+Route::post('/manage/instructor/course/price', 'CourseController@editPrice')->name('manage.courses.price');
+Route::post('/manage/instructor/course/objective', 'CourseController@editObjective')->name('manage.courses.objective');
+Route::post('/manage/instructor/course/recommendation', 'CourseController@editRecommendation')->name('manage.courses.recommendation');
 Route::get('/manage/instructor/courses/{slug}', function ($slug){
     $instructor = Auth::user()->instructor;
 
@@ -48,7 +52,9 @@ Route::get('/manage/instructor/courses/{slug}', function ($slug){
     $course = $instructor->courses()->where('slug', $slug)->firstOrFail();
     return view("courseManagement", ['course'=>$course]);}
     )->name('manage.course.content');
+});
 
+Route::post('/manage/instructor/courses/{slug}/thumbnail', 'CourseController@editThumbnail');
 
 //video page
 Route::get('/watch/{course}/{section}/{lesson}', 'VideoController@watch');

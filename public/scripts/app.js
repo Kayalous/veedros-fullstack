@@ -10,8 +10,6 @@ let tip_content = `<div class="tip">
             </div>
         </div>
     </a>
-
-    <hr>
     <a href="/dashboard">
         <div class="row w-100">
             <div class="col-8">
@@ -23,8 +21,7 @@ let tip_content = `<div class="tip">
             </div>
         </div>
     </a>
-
-    <hr>
+        <br>
 
 
 

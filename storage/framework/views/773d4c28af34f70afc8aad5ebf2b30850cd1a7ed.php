@@ -23,8 +23,7 @@
                         <input type="email" size="5" class="form-control email-input email-field-props border-0"
                                placeholder="Enter your email" />
                         <div class="btn-container email-field-props">
-                            <button class="btn btn-veedros btn-veedros-inline-input border-0" type="button" data-toggle="modal"
-                                    data-target="#signupModal">
+                            <button class="btn btn-veedros btn-veedros-inline-input border-0" type="button">
                                 Get started
                             </button>
                         </div>
@@ -210,6 +209,7 @@
 
 <?php $__env->startSection('customJS'); ?>
     <script src="scripts/landing.js"></script>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/k/Documents/Web/Laravel/veedros/resources/views/landing.blade.php ENDPATH**/ ?>

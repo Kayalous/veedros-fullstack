@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class Instructor
 {
@@ -15,6 +16,9 @@ class Instructor
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(Auth::user())
+           if(Auth::user()->instructor)
+                return $next($request);
+           return redirect('/');
     }
 }

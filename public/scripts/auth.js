@@ -33,6 +33,8 @@ function userFieldsValidation(
   submitButton.onclick = function (e) {
     e.preventDefault();
     if (validateEmail() && validatePassword()) {
+        submitButton.innerHTML = '<span class="spinner-grow text-light spinner-grow-sm"></span>';
+        submitButton.disabled = true;
       form.submit();
     }
   };
@@ -75,6 +77,23 @@ function userFieldsValidation(
     altCont.classList.remove("d-none");
     magicLink.classList.add("d-none");
   };
+    $(".btn-veedros-inline-input").click(function () {
+        let landingInput = $(this)
+            .parent()
+            .siblings(".email-input")
+            .val();
+        $("#signup-email-field").val(landingInput);
+
+        if (/\S+@\S+\.\S+/.test(landingInput)){
+            document.querySelector(".signup").submit();
+            document.querySelector(".btn-veedros-inline-input").innerHTML = '<span class="spinner-grow text-light spinner-grow-sm mr-2"></span> Loading...';
+            document.querySelector(".btn-veedros-inline-input").disabled = true;
+        }
+        else{
+            validateEmail()
+            $('#signupModal').modal('show')
+        }
+    });
 }
 //login validation
 userFieldsValidation(
@@ -102,11 +121,4 @@ userFieldsValidation(
   document.querySelector("#signup-magic-link")
 );
 
-$(".btn-veedros-inline-input").click(function () {
-  let landingInput = $(this)
-    .parent()
-    .siblings(".email-input")
-    .val();
-  $("#signup-email-field").val(landingInput);
-    document.querySelector(".signup").submit();
-});
+
