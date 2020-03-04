@@ -45,17 +45,17 @@
             @endif
             <div class="d-flex justify-content-center align-items-center">
                 @if($user->twitter != null)
-                    <a target="_blank" href="//{{$user->twitter}}">
+                    <a target="_blank" rel="noopener" href="//{{$user->twitter}}">
                         <h1><i data-feather="twitter"></i></h1>
                     </a>
                 @endif
                 @if($user->facebook != null)
-                    <a target="_blank" href="//{{$user->facebook}}">
+                    <a target="_blank" rel="noopener" href="//{{$user->facebook}}">
                         <h1><i data-feather="facebook"></i></h1>
                     </a>
                 @endif
                 @if($user->linkedin != null)
-                    <a target="_blank" href="//{{$user->linkedin}}">
+                    <a target="_blank" rel="noopener" href="//{{$user->linkedin}}">
                         <h1><i data-feather="linkedin"></i></h1>
                     </a>
                 @endif

@@ -205,7 +205,7 @@ addObjButton.onclick = () => {
     }
     else
     {
-        //code to alert that the user needs to submit the last entry before creating a new one
+        showAlertMessage('You need to submit the last objective before adding a new one.')
     }
 
 }
@@ -220,7 +220,7 @@ let recommendationUrl = `${baseUrl}manage/instructor/course/recommendation`;
 stageButtonsAndInputsToController(editRecButtons, editRecFields, recommendationUrl, "recommendation")
 let lastRecSubmitted = true;
 addRecButton.onclick = () => {
-    if(lastObjSubmitted){
+    if(lastRecSubmitted){
         //Update container
         recContainer = document.querySelector('#rec-container');
         //Insert new row into rec container
@@ -249,7 +249,7 @@ addRecButton.onclick = () => {
     }
     else
     {
-        //code to alert that the user needs to submit the last entry before creating a new one
+        showAlertMessage('You need to submit the last recommendation before adding a new one.')
     }
 
 }
@@ -346,6 +346,17 @@ function showSuccessMessage(message){
         toast:true,
         position: 'top',
         icon: 'success',
+        title: message,
+        showConfirmButton: false,
+        timer: 2000
+    })
+}
+
+function showAlertMessage(message){
+    Swal.fire({
+        toast:true,
+        position: 'top',
+        icon: 'warning',
         title: message,
         showConfirmButton: false,
         timer: 2000

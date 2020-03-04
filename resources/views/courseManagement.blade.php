@@ -23,7 +23,7 @@
     </div>
     <section class="container" id="course-info">
                 <div class="col-12 pb-5">
-                    <h2 id="thumb">Course thumbnail</h2>
+                    <h2 id="thumb">Edit course thumbnail</h2>
                     <form action="{{url()->current()}}/thumbnail" method="POST" id="img-form">
                         @csrf
                     <div class="row mb-5" id="img-edit-container">
@@ -65,7 +65,7 @@
                     </div>
                     </form>
 
-                    <h2>About this course</h2>
+                    <h2>Describe your course</h2>
                     <div class="row">
                     <textarea id="about" rows="7" maxlength="500" class="about form-control course-form-field border-light border-radius-sm col-10" readonly>{{$course->about}}</textarea>
                         <div class="d-flex justify-content-center align-items-center">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <br>
-                    <h2>You will learn</h2>
+                    <h2>What topics will you cover through this course?</h2>
                     <ul class="ml-5" id="obj-container">
                         @foreach($course->objectives as $objective)
                         <li class="row mb-2">
@@ -100,7 +100,6 @@
                             <i data-feather="plus"></i>
                                 Add a new objective.
                             </h2>
-
                         </button>
                     </div>
                     <br>
@@ -119,7 +118,7 @@
                         </div>
                     </div>
                     <br>
-                    <h2>Recommended to</h2>
+                    <h2>Who would you recommend this course to?</h2>
                     <ul class="ml-5" id="rec-container">
                         @foreach($course->recommendations as $recommendation)
                             <li class="row mb-2">

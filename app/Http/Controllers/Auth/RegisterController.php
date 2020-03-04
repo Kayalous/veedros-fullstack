@@ -59,6 +59,12 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        if(User::where('email' ,$data['email'])->count() !== 0){
+            \Session::flash('message',"You already have an account. Try logging in instead.");
+            \Session::flash('login-form',"");
+            \Session::flash('email-sendback', $data['email']);
+        }
+
         return Validator::make($data, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['nullable','string', 'min:8'],
@@ -92,6 +98,10 @@ class RegisterController extends Controller
 
         Mail::to("$user->email")->send(new WelcomeVerificationMail($user));
 
+        if($this->getEmailProvider($data['email']) !== 'unknown')
+            \Session::flash('inbox-link', $this->getEmailProvider($data['email']));
+
+        \Session::flash('success','Welcome to Veedros! A link to verify your account was sent to you at ' . $data['email']);
         return $user;
 
     }
@@ -150,6 +160,24 @@ class RegisterController extends Controller
 
 
 
+    public function getEmailProvider($email){
+        //Try to guess the user's email provider to get a link to their inbox.
+        $emailProvider = explode("@",$email)[1];
+        $emailProvider = explode('.', $emailProvider)[0];
+
+        //gmail
+        if($emailProvider == 'gmail')
+            return 'mail.google.com/mail/';
+        //yahoo
+        if ($emailProvider == 'yahoo'){
+            return 'mail.yahoo.com/mb/';
+        }
+
+        return 'unknown';
+    }
+
+
+
 
     /**
      * Redirect the user to the google authentication page.
@@ -160,6 +188,11 @@ class RegisterController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
+    /**
+     * Obtain the user information from google.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function handleProviderCallbackGoogle()
     {
         $socialUser = Socialite::driver('google')->user();

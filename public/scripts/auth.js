@@ -85,7 +85,7 @@ function userFieldsValidation(
         $("#signup-email-field").val(landingInput);
 
         if (/\S+@\S+\.\S+/.test(landingInput)){
-            document.querySelector(".signup").submit();
+            document.querySelector("#signup-button").click();
             document.querySelector(".btn-veedros-inline-input").innerHTML = '<span class="spinner-grow text-light spinner-grow-sm mr-2"></span> Loading...';
             document.querySelector(".btn-veedros-inline-input").disabled = true;
         }

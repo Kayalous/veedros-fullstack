@@ -2414,3 +2414,6 @@ ul {
  .navbar .tip .row:hover .far{
      color: rgba(0,0,0,0.8);
 }
+.swal2-confirm a{
+    color: white;
+}

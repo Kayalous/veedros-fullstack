@@ -4,28 +4,29 @@
     <list default="true" id="dc8b854c-d735-42db-85ad-938407689aaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Instructor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Instructor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Veedros Logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Veedros Logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/manage-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/manage-course.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/manage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/new-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/new-course.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/pixelated-girls-wupro/images/1582843562.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/yello-95jpn/images/1582838695.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582810309.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/courseManagement.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courseManagement.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/landing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courses.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/0ed6436a8ccb7fd2fd750d2bfe7d2f9083ffced5.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0ed6436a8ccb7fd2fd750d2bfe7d2f9083ffced5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/773d4c28af34f70afc8aad5ebf2b30850cd1a7ed.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/773d4c28af34f70afc8aad5ebf2b30850cd1a7ed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/f2aec2b76f70cbcbabcd7be9a835457c099a4a42.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f2aec2b76f70cbcbabcd7be9a835457c099a4a42.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +209,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9203d179-7a57-4250-b798-682952242161" name="Default Changelist" comment="" />
+      <changelist id="dc8b854c-d735-42db-85ad-938407689aaf" name="Default Changelist" comment="" />
       <created>1581976429377</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -218,6 +219,10 @@
       <workItem from="1582294067903" duration="22434000" />
       <workItem from="1582322535210" duration="14791000" />
       <workItem from="1582389613808" duration="8792000" />
+      <workItem from="1583071695772" duration="662000" />
+      <workItem from="1583172702767" duration="2975000" />
+      <workItem from="1583183035908" duration="4293000" />
+      <workItem from="1583288819514" duration="438000" />
     </task>
     <task id="LOCAL-00001" summary="Changed routing">
       <created>1581976619797</created>
@@ -303,11 +308,6 @@
           <url>file://$PROJECT_DIR$/resources/views/manage.blade.php</url>
           <line>69</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php</url>
-          <line>164</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

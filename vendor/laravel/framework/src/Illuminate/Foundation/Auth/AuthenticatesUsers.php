@@ -30,11 +30,15 @@ trait AuthenticatesUsers
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
     public function login(Request $request)
     {
         $passwordless = $this->validateLogin($request);
         if($passwordless === true){
-            \Session::flash('success','An email was sent to you at ' . $request['email'] . ' with a link to login.');
+            if($this->getEmailProvider($request['email']) !== 'unknown')
+                \Session::flash('inbox-link', $this->getEmailProvider($request['email']));
+                \Session::flash('success','An email was sent to you at ' . $request['email'] . ' with a link to login.');
+
             return redirect('/');
         }
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
@@ -91,6 +95,23 @@ trait AuthenticatesUsers
             'password' => 'required|string',
         ]);
     }
+
+    public function getEmailProvider($email){
+        //Try to guess the user's email provider to get a link to their inbox.
+        $emailProvider = explode("@",$email)[1];
+        $emailProvider = explode('.', $emailProvider)[0];
+
+        //gmail
+        if($emailProvider == 'gmail')
+            return 'mail.google.com/mail/';
+        //yahoo
+        if ($emailProvider == 'yahoo'){
+            return 'mail.yahoo.com/mb/';
+        }
+
+        return 'unknown';
+    }
+
 
 
     /**

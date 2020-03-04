@@ -99,11 +99,6 @@
                         <div class="invalid-feedback">
                             Please enter a valid email.
                         </div>
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
                     </div>
                     <div class="input-group password-cont mt-4 d-none" id="signup-password-cont">
 
@@ -113,11 +108,6 @@
                         <div class="invalid-feedback">
                             Your password must be more than 8 characters long.
                         </div>
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
                     </div>
                     <div class="d-flex jusift-content-center mt-3 mb-3">
                         <button type="submit" class="btn btn-veedros btn-veedros-md mx-auto btn-submit" id="signup-button">
@@ -201,11 +191,16 @@
             @if(!Auth::check())
                 <li class="nav-item d-flex align-items-center justify-content-center">
                     <a href="#" class="btn btn-veedros btn-veedros-sm border-0" data-toggle="modal" data-target="#loginModal">Sign in </a> </li>
-            @else
+                @else
                 @if (Auth::user()->hasRole('admin'))
                     <li class="nav-item">
                         <a class="nav-link dot-hover dot-hover-red" href="{{route("voyager.dashboard")}}">Admin dashboard</a>
                     </li>
+                        @if(Auth::user()->instructor)
+                            <li class="nav-item">
+                                <a class="nav-link dot-hover dot-hover-black" href="{{route('manage.courses')}}">Manage my courses</a>
+                            </li>
+                            @endif
                 @endif
                 <li class="nav-item d-flex align-items-center justify-content-around">
                     <div class="row">
@@ -223,7 +218,7 @@
     </div>
 </nav>
 @yield('content')
-<!-- =====================================  FOOTER ========================================= -->
+<!--===================================== FOOTER =========================================-->
 <section>
 
     <div class=" footer px-2  py-5">
@@ -282,7 +277,7 @@
                                 Us</button>
                         </li>
                     </ul>
-                    </divc>
+                    </div>
                 </div>
             </div>
         </div>
@@ -291,7 +286,7 @@
 <div class="text-center Copyright">
     <p class="">Veedros All rights reseved 2020</p>
 </div>
-<!-- ============== END ====================  FOOTER ============== END ================= -->
+<!--============== END ==================== FOOTER ============== END =================-->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -340,6 +335,7 @@
 
 </script>
 @yield('customJS')
+
 @if(Session::has('success'))
     <script>
         Swal.fire({
@@ -347,8 +343,16 @@
             position: 'top',
             icon: 'success',
             title: '{{ Session::get('success') }}',
+            @if(Session::has('inbox-link'))
+            html: '<br />',
+            showConfirmButton: true,
+            confirmButtonText: '<a target="_blank" rel="noopener" href="//{{Session::get('inbox-link')}}">Go to your inbox now!</a>',
+            timer: 30000,
+
+            @else
             showConfirmButton: false,
             timer: 10000
+            @endif
         })
     </script>
 @endif
@@ -378,11 +382,19 @@
         })
     </script>
 @endif
-@if(Session::has('login-form'))
+
+@if(Session::has('email-sendback'))
     <script>
-        $('#loginModal').modal('show')
+    document.querySelector('#login-email-field').value = '{{Session::get('email-sendback')}}';
     </script>
 @endif
+
+@if(Session::has('login-form'))
+        <script>
+            $('#loginModal').modal('show')
+        </script>
+@endif
+
 </body>
 
 </html>

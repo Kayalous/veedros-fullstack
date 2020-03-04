@@ -55,10 +55,6 @@ function validateTextFields(field) {
         fieldIsValid(field);
         return true;
     }
-    else if (field.value.length === 0) {
-        fieldIsNeutral(field)
-        return true;
-    }
     else
     {
         fieldIsInvalid(field);
@@ -71,10 +67,6 @@ function validateTextArea(field) {
         fieldIsValid(field);
         return true;
     }
-    else if (field.value.length === 0) {
-        fieldIsNeutral(field)
-        return true;
-    }
     else
     {
         fieldIsInvalid(field);
@@ -83,12 +75,8 @@ function validateTextArea(field) {
 }
 
 function validateNumberField(field) {
-    if(/^[0-9]{8,14}$/.test(field.value)){
+    if(/^[0-9]{0,6}$/.test(field.value)){
         fieldIsValid(field);
-        return true;
-    }
-    else if (field.value.length === 0) {
-        fieldIsNeutral(field)
         return true;
     }
     else
@@ -112,18 +100,14 @@ function fieldIsNeutral(field){
 }
 function validateInputs() {
     namef = document.querySelector("#name");
-    numberf = document.querySelector("#phone");
-    email = document.querySelector("#email");
-    position = document.querySelector("#position");
-    locationf = document.querySelector("#location");
+    price = document.querySelector("#phone");
+    genre = document.querySelector("#email");
     about = document.querySelector("#about");
     if (
         validateTextFields(namef) &&
-        validateNumberField(numberf) &&
-        validateEmail(email) &&
-        validatePassword(password, passwordRepeat) &&
-        validateTextFields(position) &&
-        validateTextFields(locationf) &&
+        validateNumberField(price) &&
+        validateTextFields(genre) &&
+        validateTextFields(genre) &&
         validateTextArea(about)) {
         return true;
     } else {
