@@ -17,6 +17,8 @@ class CreateSessionsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('chapter_id')->unsigned()->references('id')->on('chapters');
             $table->string('name');
+            $table->string('link');
+            $table->string('slug')->unique();
             $table->text('about');
             $table->timestamps();
         });

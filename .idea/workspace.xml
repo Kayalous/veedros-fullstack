@@ -2,31 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc8b854c-d735-42db-85ad-938407689aaf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Veedros Logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Veedros Logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/manage-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/manage-course.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/new-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/new-course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Chapter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_24_170100_create_chapters_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_24_170100_create_chapters_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_24_170606_create_sessions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_24_170606_create_sessions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/landing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/pixelated-girls-wupro/images/1582843562.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/yello-95jpn/images/1582838695.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582810309.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/advanced-maths-sqfb0/images/1582897660.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/computer-sci-101-yytaw/images/1582896628.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/digital-electronics-bpztv/images/1582669472.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/fly-frzhb/images/1582998197.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/instructorite-nmdnm/images/1582893346.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/k-zrd0y/images/1582880702.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/management-101-jglqg/images/1582893302.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/meme-creation-6h4ec/images/1582808800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/pixelated-girls-wupro/images/1583190149.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/trucks-lppac/images/1582895163.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/2/yello-95jpn/images/1583008247.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/3/digital-electronics-sxcll/images/1583011698.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582662753.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582662866.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582662976.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582663012.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582663902.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582664036.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582808548.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582899728.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1582986242.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1583009647.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1583288132.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/default-avatar.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/courseManagement.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courseManagement.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/landing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,12 +199,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdu\Documents\Web\laravel-development\veedros\public\node_modules" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Abdu\Documents\Web\laravel-development\veedros\resources\views" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Abdu\Documents\Web\laravel-development\veedros\public\node_modules" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -222,7 +237,9 @@
       <workItem from="1583071695772" duration="662000" />
       <workItem from="1583172702767" duration="2975000" />
       <workItem from="1583183035908" duration="4293000" />
-      <workItem from="1583288819514" duration="438000" />
+      <workItem from="1583288819514" duration="1871000" />
+      <workItem from="1583431880413" duration="25000" />
+      <workItem from="1584207824929" duration="8154000" />
     </task>
     <task id="LOCAL-00001" summary="Changed routing">
       <created>1581976619797</created>
@@ -257,11 +274,12 @@
       <screen x="0" y="0" width="1366" height="764" />
     </state>
     <state x="445" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.764@0.0.1366.764" timestamp="1582454917810" />
-    <state x="421" y="146" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582926176739">
-      <screen x="0" y="0" width="1366" height="764" />
+    <state x="563" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584212383368">
+      <screen x="0" y="0" width="1826" height="1080" />
     </state>
     <state x="421" y="146" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.764@0.0.1366.764" timestamp="1582926176739" />
     <state x="559" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582838374316" />
+    <state x="563" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1826.1080/-1837.3.1837.1080@0.0.1826.1080" timestamp="1584212383368" />
     <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1582201685828">
       <screen x="0" y="0" width="1366" height="764" />
     </state>

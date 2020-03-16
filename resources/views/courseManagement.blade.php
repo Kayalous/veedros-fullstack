@@ -54,7 +54,7 @@
                         </div>
                         <div id="edit-img" class="col-lg-4 mx-auto">
                             <div class="card course-card development-card noJquery"
-                                 style="background-image: url('{{asset('uploads/courses'). '/' . Auth::user()->id .'/' . $course->slug . '/images/' . $course->img}}')">
+                                 style="background-image: url('{{asset('uploads/courses'). '/' . $course->instructor_id .'/' . $course->slug . '/images/' . $course->img}}')">
                                 <div class="card-body m-0">
                                     <a href="#thumb" class="card-body-inner noscroll card-bg-img"  >
                                         <div class="play-circle play-circle-0"> <i style="stroke: #313c8b" data-feather="edit"></i> </div>
@@ -179,7 +179,7 @@
     <script>
         let baseUrl = `{{asset("")}}`;
         let slug = `{{$course->slug}}`;
-        let courseImgUrl = `${baseUrl}/uploads/courses/{{Auth::user()->id}}/${slug}/images/{{$course->img}}`;
+        let courseImgUrl = `${baseUrl}/uploads/courses/{{$course->instructor_id}}/${slug}/images/{{$course->img}}`;
     </script>
     <script src="{{asset('scripts')}}/manage-course.js"></script>
 @endsection

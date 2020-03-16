@@ -17,6 +17,7 @@ class CreateChaptersTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('course_id')->unsigned()->references('id')->on('courses');
             $table->string('name');
+            $table->string('slug')->unique();
             $table->text('about');
             $table->timestamps();
         });

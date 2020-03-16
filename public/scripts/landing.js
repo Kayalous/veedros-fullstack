@@ -127,26 +127,26 @@ let cardClass;
 let cardArr = [];
 let tippyArr = [];
 let dest = document.querySelector(".card-columns");
-for (let i = 0; i < 6; i++) {
-  cardClass = i;
-  let mcard = `<div class="card course-card development-card noJquery ${"a" +
-    cardClass} wow fadeIn" data-wow-delay="${0.1 *
-    i}s" style="background-image: url('images/img_0${i +
-    1}.png')">
-    <div class="course-card-overlay overlay-${i % 6}"></div>
-    <div class="card-body m-0">
-      <a href="player.html" class="card-body-inner noscroll card-bg-img"  >
-        <div class="play-circle play-circle-${i %
-          6}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
-        <h4 class="card-title title-mine">
-          Full Stack Web Development
-        </h4>
-      </a>
-    </div>
-    </div>`;
-  dest.innerHTML += mcard;
-  cardArr.push(mcard);
-}
+// for (let i = 0; i < 6; i++) {
+//   cardClass = i;
+//   let mcard = `<div class="card course-card development-card noJquery ${"a" +
+//     cardClass} wow fadeIn" data-wow-delay="${0.1 *
+//     i}s" style="background-image: url('images/img_0${i +
+//     1}.png')">
+//     <div class="course-card-overlay overlay-${i % 6}"></div>
+//     <div class="card-body m-0">
+//       <a href="player.html" class="card-body-inner noscroll card-bg-img"  >
+//         <div class="play-circle play-circle-${i %
+//           6}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
+//         <h4 class="card-title title-mine">
+//           Full Stack Web Development
+//         </h4>
+//       </a>
+//     </div>
+//     </div>`;
+//   dest.innerHTML += mcard;
+//   cardArr.push(mcard);
+// }
 
 function createTippyTemplates() {
   for (let i = 0; i < cardArr.length; i++) {
@@ -219,7 +219,7 @@ function createTippyTemplates() {
     populateTippies();
   }
 }
-createTippyTemplates();
+// createTippyTemplates();
 
 function populateTippies() {
   for (i = 0; i < tippyArr.length; i++) {

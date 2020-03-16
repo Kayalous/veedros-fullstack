@@ -14,7 +14,8 @@
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('landing');
+    $courses = \App\Course::get();
+    return view('landing', ['courses' => $courses]);
 })->name('landing');
 
 //User pages
@@ -57,7 +58,7 @@ Route::get('/manage/instructor/courses/{slug}', function ($slug){
 Route::post('/manage/instructor/courses/{slug}/thumbnail', 'CourseController@editThumbnail');
 
 //video page
-Route::get('/watch/{course}/{section}/{lesson}', 'VideoController@watch');
+Route::get('/watch/{slug}/{chapterName}/{sessionName}', 'VideoController@watch');
 
 //Auth routes
 Auth::routes();

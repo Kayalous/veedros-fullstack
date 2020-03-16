@@ -43,12 +43,12 @@ class CourseController extends Controller
         $slug = Str::slug($request['name'] . ' ' . $random, '-');
         //creating course path
         $path = base_path() . '/public';
-        fileFacede::makeDirectory($path . '/uploads/courses/'. Auth::user()->id . '/' . $slug .'/images/', 0755, true, true);
+        fileFacede::makeDirectory($path . '/uploads/courses/'. Auth::user()->instructor->id . '/' . $slug .'/images/', 0755, true, true);
         //transferring course image from temp storage to perm storage
         $path = $this->getPathFromServerId($request['filepond']);
         $file = new File($path);
         $newName = time() . '.' . $file->extension();
-        $file->move(public_path('uploads/courses/') . Auth::user()->id . '/' . $slug . '/images/', $newName);
+        $file->move(public_path('uploads/courses/') . Auth::user()->instructor->id . '/' . $slug . '/images/', $newName);
         //create the course
         $course = Course::create(
             ['instructor_id' => $instructor->id,
@@ -109,15 +109,15 @@ class CourseController extends Controller
         ]);
         $course = Auth::user()->instructor->courses->where('slug', $request['slug'])->first();
         //deleting old picture
-        if(\File::exists(public_path('uploads/courses/') . Auth::user()->id . '/' . $slug . '/images/'. $course->img))
+        if(\File::exists(public_path('uploads/courses/') . Auth::user()->instructor->id . '/' . $slug . '/images/'. $course->img))
         {
-            \File::delete(public_path('uploads/courses/') . Auth::user()->id . '/' . $slug . '/images/'. $course->img);
+            \File::delete(public_path('uploads/courses/') . Auth::user()->instructor->id . '/' . $slug . '/images/'. $course->img);
         }
         //transferring course image from temp storage to perm storage
         $path = $this->getPathFromServerId($request['filepond']);
         $file = new File($path);
         $newName = time() . '.' . $file->extension();
-        $file->move(public_path('uploads/courses/') . Auth::user()->id . '/' . $slug . '/images/', $newName);
+        $file->move(public_path('uploads/courses/') . Auth::user()->instructor->id . '/' . $slug . '/images/', $newName);
         //update course
         $course->update(['img' => $newName]);
         \Session::flash('success',"Your course's thumbnail was updated successfully.");

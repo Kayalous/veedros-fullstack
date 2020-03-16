@@ -1274,8 +1274,8 @@ ul {
 }
 
 .course-card {
-	width: auto !important;
-	min-width: 200px;
+	/*width: auto !important;*/
+	/*min-width: 200px;*/
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out !important;
 	border: none;
