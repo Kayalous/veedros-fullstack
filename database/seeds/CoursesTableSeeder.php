@@ -15,7 +15,9 @@ class CoursesTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        for($i = 0; $i<50; $i++){
+        //Generates 10 random courses each with 5 chapters and 5 sessions each chapter
+
+        for($i = 0; $i<10; $i++){
             $name = $faker->name;
             $random = Str::random(5);
             $slug = Str::slug($name . ' ' . $random, '-');
@@ -27,6 +29,31 @@ class CoursesTableSeeder extends Seeder
                 'about' => $faker->address,
                 'slug' => $slug
             ]);
+                for($j = 1; $j<6; $j++){
+                    $name = $faker->name;
+                    $random = Str::random(5);
+                    $slug = Str::slug($name . ' ' . $random, '-');
+
+                    \App\Chapter::create([
+                        'course_id' => $i,
+                        'name' => $name,
+                        'slug' => $slug,
+                        'about' => $faker->address
+                    ]);
+                        for($k = 1; $k<6; $k++){
+                            $name = $faker->name;
+                            $random = Str::random(5);
+                            $slug = Str::slug($name . ' ' . $random, '-');
+
+                            \App\Session::create([
+                                'chapter_id' => ($j + 5 * $i),
+                                'name' => $name,
+                                'slug' => $slug,
+                                'about' => $faker->address,
+                                'link' => 'https://www.youtube.com/watch?v=SEhSs5Uemsk'
+                            ]);
+                        }
+                }
         }
 
 

@@ -11,13 +11,12 @@ use Illuminate\Http\Request;
 class VideoController extends Controller
 {
     public function watch($courseSlug, $chapterSlug, $sessionSlug){
+        $chapter = Chapter::where('slug', $chapterSlug)->firstOrFail();
         $course = Course::where('slug', $courseSlug)->firstOrFail();
-        $chapter = $course->chapters->where('slug', $chapterSlug)->first();
-        $session = $chapter->sessions->where('slug', $sessionSlug)->first();
-        dd($course);
+        $session = Session::where('slug', $sessionSlug)->firstOrFail();
         return view('player',
-                ['course' => $course,
-                'section' => $chapter,
-                'lesson' => $session]);
+                ['controllerCourse' => $course,
+                'controllerChapter' => $chapter,
+                'controllerSession' => $session]);
     }
 }

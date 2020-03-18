@@ -4,6 +4,7 @@ namespace App;
 
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\URL;
 
 class Course extends Model
 {
@@ -21,5 +22,25 @@ class Course extends Model
     }
     public function recommendations(){
         return $this->hasMany(Recommendation::class);
+    }
+    public static function getFirstSession(Course $course){
+        //Base url
+        $url = URL::to('watch/');
+        //With course slug
+        $url = $url . '/'. $course->slug;
+        //With first chapter slug
+        $firstChapter = $course->chapters()->firstOrFail();
+        $url = $url . '/'. $firstChapter->slug;
+        //With first session slug
+        $firstSession = $firstChapter->sessions()->firstOrFail();
+        $url = $url . '/'. $firstSession->slug;
+        return $url;
+    }
+    public static function getTotalSessionCount(Course $course){
+        $sessionCount = 0;
+        foreach ($course->chapters as $chapter){
+            $sessionCount += $chapter->sessions->count();
+        }
+        return $sessionCount;
     }
 }

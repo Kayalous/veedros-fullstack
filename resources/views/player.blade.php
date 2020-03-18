@@ -3,6 +3,8 @@
 @section('libraryCSS')
     <!-- video js CSS  -->
     <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
+    <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
+
 @endsection
 @section('customCSS')
     <link rel="stylesheet" href="{{asset('styles')}}/player.css">
@@ -12,8 +14,9 @@
     <section class="player-container my-5 px-3">
         <div class="video-wrapper my-auto">
             <video id="player" class="video-js vjs-default-skin vjs-16-9" controls preload="auto"
-                   width="640" height="264" data-setup="{}">
-                <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4" />
+                   width="640" height="264"
+                   data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "{{$controllerSession->link}}"}], "youtube": { "ytControls": 2 } }'
+            >
                 <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading
                     to a web browser that
@@ -24,148 +27,25 @@
         </div>
         <section class="sidebar ml-3 py-3 px-2">
             <div class="sidebar-wrapper">
-                <h5 class="ml-5">12 Lessons (1h 19m)</h5>
+                <h5 class="ml-5">{{\App\Course::getTotalSessionCount($controllerCourse)}} Lessons (1h 19m)</h5>
                 <div class="list-group">
-                    <button class="list-group-item collapse-button mx-auto" data-toggle="collapse"
-                            href="#collapse1">
-                        <span>Section 1 </span>
+                    @for($i = 0; $i < count($controllerCourse->chapters); $i++)
+                    <button class="list-group-item collapse-button mx-auto {{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? 'watching' : ''}}" data-toggle="collapse"
+                            href="#collapse{{$i}}">
+                        <span>Section {{$i + 1}} </span>
                         <div class="vertical-seperator"></div>
-                        Some lesson
+                        {{$controllerCourse->chapters[$i]->name}}
                         <div class="chevron"><i data-feather="chevron-down"></i></div>
                     </button>
-                    <div class="list-group collapse py-2 show" id="collapse1">
-                        <a href="#" class="list-group-item list-group-item-action active"><i
-                                data-feather="play" class="mr-3"></i>Introduction</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
+                    <div class="list-group collapse my-2 {{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? 'show' : ''}}" id="collapse{{$i}}">
+                        @foreach($controllerCourse->chapters[$i]->sessions as $session)
+                        <a href="{{asset('watch/') . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug}}" class="list-group-item list-group-item-action
+                        {{ ( Request::url() === asset('watch/') . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug) ? 'active' : '' }}
+                            "><i
+                                data-feather="play" class="mr-3"></i>{{$session->name}}</a>
+                        @endforeach
                     </div>
-                    <button class="list-group-item collapse-button mx-auto" data-toggle="collapse"
-                            href="#collapse2">
-                        <span>Section 2 </span>
-                        <div class="vertical-seperator"></div>
-                        Some lesson
-                        <div class="chevron"><i data-feather="chevron-down"></i></div>
-                    </button>
-                    <div class="list-group collapse py-2 show" id="collapse2">
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="play" class="mr-3"></i>Introduction</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                    </div>
-                    <button class="list-group-item collapse-button mx-auto" data-toggle="collapse"
-                            href="#collapse3">
-                        <span>Section 3 </span>
-                        <div class="vertical-seperator"></div>
-                        Some lesson
-                        <div class="chevron"><i data-feather="chevron-down"></i></div>
-                    </button>
-                    <div class="list-group collapse py-2 show" id="collapse3">
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="play" class="mr-3"></i>Introduction</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                    </div>
-                    <button class="list-group-item collapse-button mx-auto" data-toggle="collapse"
-                            href="#collapse4">
-                        <span>Section 4 </span>
-                        <div class="vertical-seperator"></div>
-                        Some lesson
-                        <div class="chevron"><i data-feather="chevron-down"></i></div>
-                    </button>
-                    <div class="list-group collapse py-2 show" id="collapse4">
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="play" class="mr-3"></i>Introduction</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Balancing the
-                            Exposure
-                            Triangle</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                data-feather="lock" class="mr-3"></i>Understanding your
-                            DSLR</a>
-                    </div>
+                    @endfor
                 </div>
             </div>
         </section>
@@ -361,6 +241,10 @@
 @section('libraryJS')
     <!-- video js -->
     <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
+    <script src="{{asset('node_modules')}}/vjs-youtube/dist/Youtube.min.js"></script>
+    <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
+
+
 @endsection
 @section('customJS')
     <script src="{{asset('scripts')}}/player.js"></script>

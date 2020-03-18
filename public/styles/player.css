@@ -79,7 +79,6 @@
 .sidebar .list-group a {
     opacity: 0.9;
 }
-
 .sidebar label {
     text-transform: uppercase;
     letter-spacing: 0.4px;
@@ -141,6 +140,11 @@
     font-weight: 700;
     color: rgba(0, 0, 0, 0.6) !important;
 }
+.collapse-button.watching{
+    background-image: -webkit-linear-gradient(0deg,
+    #7473EB60,
+    #3EB5FE60) !important;
+}
 
 .collapse-button:focus {
     border: none !important;
@@ -171,6 +175,9 @@
 
 .collapse-button:hover .chevron {
     background-color: #EEE;
+}
+.collapse-button.watching:hover .chevron {
+    background-color: #eeeeee80;
 }
 
 .collapse-button.activated .chevron .feather {
@@ -399,4 +406,13 @@
 .card-comment .col-3 h6 .feather {
     stroke: #D8D8D8;
     width: 20px;
+}
+.vjs-control-bar{
+    display: none !important;
+}
+.vjs-big-play-button{
+    top: 50% !important;
+    left: 50% !important;
+    margin-top: calc(-50px/2);
+    margin-left: calc(-90px/2);
 }

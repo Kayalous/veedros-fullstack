@@ -14,7 +14,7 @@
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    $courses = \App\Course::get();
+    $courses = \App\Course::all()->take(6);
     return view('landing', ['courses' => $courses]);
 })->name('landing');
 
