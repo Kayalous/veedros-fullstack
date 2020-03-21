@@ -45,8 +45,7 @@
     text-overflow: ellipsis;
 }
 
-.sidebar .list-group a::after {
-    content: "1:45";
+.sidebar .list-group .duration {
     opacity: 0.4;
     margin-left: auto;
     color: rgba(0, 0, 0, 0.9);

@@ -43,7 +43,10 @@
                         <a href="{{asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug}}" class="list-group-item list-group-item-action
                         {{ ( Request::url() === asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug) ? 'active' : '' }}
                             ">
-                            <i data-feather="play" class="mr-3"></i>{{$session->name}}</a>
+                            <i data-feather="play" class="mr-3"></i>
+                            {{$session->name}}
+                            <span class="duration">{{$session->duration}}</span>
+                        </a>
                         @endforeach
                     </div>
                     @endfor
@@ -173,8 +176,8 @@
 
             <br>
             <div class="w-100 text-center my-5">
-                <button class="btn btn-veedros btn-veedros-xl border-0">
-                    Apply now<i data-feather="shopping-cart" class="mr-3"></i></button>
+                <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros btn-veedros-xl border-0">
+                    Apply now<i data-feather="shopping-cart" class="mr-3"></i></a>
             </div>
 
             <div class="d-lg-none d-block mx-auto mb-5 w-100">
@@ -188,7 +191,7 @@
                         <div class="card-body-inner noscroll card-bg-img">
                             <div class="play-circle play-circle-2"> <img
                                     style="height:40px; width:40px "
-                                    src="images/Play_button.svg" alt="" /> </div>
+                                    src="{{asset('images')}}/Play_button.svg" alt="" /></div>
                             <h4 class="card-title title-mine">
                                 Full Stack Web Development
                             </h4>
@@ -207,16 +210,12 @@
             @csrf
             <div class="col-12 profile-form-field  border-light border-radius-sm py-3 px-4">
                 <div class="my-2 px-1 row">
-                    <div class="col-11 m-0 pl-4 p-0">
+                    <div class="col-12 m-0 pl-4 p-0">
                                     <textarea class="border-0 w-100 outline-0 text-muted" rows="5" cols="50" id="comment-textarea"
                                               name="body"
                                               maxlength="1000" style="resize: none;"
                                               placeholder="Your comment on this session."></textarea>
                         <input class="d-none" id="session-id" name="session_id" value="{{$controllerSession->id}}">
-                    </div>
-                    <div class="col-1 m-0 p-0 d-flex justify-content-end align-items-start">
-                        <button class="btn btn-secondary-veedros ml-auto more" type="button"><i
-                                data-feather="more-vertical"></i></button>
                     </div>
                 </div>
                 <div class="row">

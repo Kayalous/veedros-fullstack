@@ -41,16 +41,29 @@ class CoursesTableSeeder extends Seeder
                         for($k = 1; $k<6; $k++){
                             $name = $faker->name;
                             $slug = Str::slug($name, '-');
-
+                            $minutes = rand(0,10);
+                            $seconds = rand(10,59);
+                            $duration = $minutes . ':' . $seconds;
                             \App\Session::create([
                                 'chapter_id' => ($j + 5 * $i),
                                 'name' => $name,
                                 'slug' => $slug,
                                 'about' => $faker->address,
+                                'duration' =>$duration,
                                 'link' => 'https://www.youtube.com/watch?v=SEhSs5Uemsk'
                             ]);
+
                         }
                 }
+        }
+        for($i = 1; $i <= 10; $i++){
+
+                for($j = 0; $j < 10; $j ++)
+                    \App\Objective::create(['course_id' => $i,
+                        'objective' => $faker->city]);
+                for($j = 0; $j < 3; $j ++)
+                     \App\Recommendation::create(['course_id' => $i,
+                        'recommendation' => $faker->colorName]);
         }
 
 

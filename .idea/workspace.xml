@@ -3,21 +3,36 @@
   <component name="ChangeListManager">
     <list default="true" id="dc8b854c-d735-42db-85ad-938407689aaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VideoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Instructor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Instructor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_104338_create_instructors_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_104338_create_instructors_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_24_170606_create_sessions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_24_170606_create_sessions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enroll.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enroll.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/CoursesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CoursesTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/01_–_1@2x.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/01_–_1@2xCropp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/UIUX-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/digitalmarketing850.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/hqdefault.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icons-courses/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/shutterstock_648907024.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/shutterstock_96451256.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/player.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/player.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/1/easter-dach-dds-fzjwf/images/1584213534.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/courses/1/pokemon-td8v2/images/1584209495.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1584209272.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1584209330.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1584367914.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1584380634.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1584640250.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1584642750.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/profilePictures/1584663172.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/player.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/player.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
@@ -224,6 +239,7 @@
       <workItem from="1584365804636" duration="14370000" />
       <workItem from="1584636127254" duration="22967000" />
       <workItem from="1584728003521" duration="1121000" />
+      <workItem from="1584818161090" duration="3946000" />
     </task>
     <task id="LOCAL-00001" summary="Changed routing">
       <created>1581976619797</created>
@@ -258,12 +274,12 @@
       <screen x="0" y="0" width="1366" height="764" />
     </state>
     <state x="445" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.764@0.0.1366.764" timestamp="1582454917810" />
-    <state x="561" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584639154762">
+    <state x="561" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584818756942">
       <screen x="0" y="0" width="1821" height="1080" />
     </state>
     <state x="421" y="146" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.764@0.0.1366.764" timestamp="1582926176739" />
     <state x="559" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1815.1080/-1837.3.1837.1080@0.0.1815.1080" timestamp="1582838374316" />
-    <state x="561" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1821.1080/-1837.3.1837.1080@0.0.1821.1080" timestamp="1584639154762" />
+    <state x="561" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1821.1080/-1837.3.1837.1080@0.0.1821.1080" timestamp="1584818756942" />
     <state x="563" y="206" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1826.1080/-1837.3.1837.1080@0.0.1826.1080" timestamp="1584212383368" />
     <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1582201685828">
       <screen x="0" y="0" width="1366" height="764" />
