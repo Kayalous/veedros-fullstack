@@ -49,7 +49,7 @@ let tip_content = `<div class="tip">
 
 
 
-        <button class="btn btn-veedros btn-veedros-sm border-0 m-auto" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <button class=" btn btn-veedros btn-veedros-sm border-0 m-auto" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             Log out
         </button>
 
