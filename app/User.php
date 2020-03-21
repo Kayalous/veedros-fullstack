@@ -39,4 +39,7 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
     public function instructor(){
         return $this->hasOne(Instructor::class);
     }
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }

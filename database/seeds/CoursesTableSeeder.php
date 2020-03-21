@@ -19,8 +19,7 @@ class CoursesTableSeeder extends Seeder
 
         for($i = 0; $i<10; $i++){
             $name = $faker->name;
-            $random = Str::random(5);
-            $slug = Str::slug($name . ' ' . $random, '-');
+            $slug = Str::slug($name, '-');
             \App\Course::create([
                 'name' => $name,
                 'instructor_id' => 1,
@@ -31,8 +30,7 @@ class CoursesTableSeeder extends Seeder
             ]);
                 for($j = 1; $j<6; $j++){
                     $name = $faker->name;
-                    $random = Str::random(5);
-                    $slug = Str::slug($name . ' ' . $random, '-');
+                    $slug = Str::slug($name, '-');
 
                     \App\Chapter::create([
                         'course_id' => $i,
@@ -42,8 +40,7 @@ class CoursesTableSeeder extends Seeder
                     ]);
                         for($k = 1; $k<6; $k++){
                             $name = $faker->name;
-                            $random = Str::random(5);
-                            $slug = Str::slug($name . ' ' . $random, '-');
+                            $slug = Str::slug($name, '-');
 
                             \App\Session::create([
                                 'chapter_id' => ($j + 5 * $i),

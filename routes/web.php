@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('landing', ['courses' => $courses]);
 })->name('landing');
 
+
 //User pages
 Route::get('/profile', function () {
     return view('profile',['user' => \Illuminate\Support\Facades\Auth::user()]);
@@ -32,9 +33,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('auth');
 
-Route::group(['middleware' => ['instructor']], function () {
+
 
 //instructor routes
+Route::group(['middleware' => ['instructor']], function () {
 Route::get('/manage/instructor/courses', 'CourseController@courses')->name('manage.courses');
 Route::get('/manage/instructor/courses/new', function (){
     return view('new-course');
@@ -58,11 +60,12 @@ Route::get('/manage/instructor/courses/{slug}', function ($slug){
 Route::post('/manage/instructor/courses/{slug}/thumbnail', 'CourseController@editThumbnail');
 
 //video page
-Route::get('/watch/{slug}/{chapterName}/{sessionName}', 'VideoController@watch');
+Route::get('/watch/{instructorDisplayName}/{courseName}/{chapterName}/{sessionName}', 'VideoController@watch')->middleware('enrolled');
+Route::post('/comment', 'VideoController@comment');
+
 
 //Auth routes
 Auth::routes();
-
 
 //verification routes
 Route::get('auth/token/{token}', 'AuthController@passwordlessAuthenticate');
@@ -75,8 +78,6 @@ Route::get('auth/facebook/callback', 'Auth\RegisterController@handleProviderCall
 //google
 Route::get('auth/google', 'Auth\RegisterController@redirectToProviderGoogle')->name('login.google');
 Route::get('auth/google/callback', 'Auth\RegisterController@handleProviderCallbackGoogle');
-
-
 
 
 

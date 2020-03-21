@@ -8,6 +8,7 @@
 @endsection
 @section('customCSS')
     <link rel="stylesheet" href="{{asset('styles')}}/player.css">
+    <link rel="stylesheet" href="{{asset('styles')}}/profile.css">
 @endsection
 @section('content')
 
@@ -30,8 +31,8 @@
                 <h5 class="ml-5">{{\App\Course::getTotalSessionCount($controllerCourse)}} Lessons (1h 19m)</h5>
                 <div class="list-group">
                     @for($i = 0; $i < count($controllerCourse->chapters); $i++)
-                    <button class="list-group-item collapse-button mx-auto {{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? 'watching' : ''}}" data-toggle="collapse"
-                            href="#collapse{{$i}}">
+                    <button class="list-group-item collapse-button mx-auto {{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? 'watching ' : ''}}" aria-expanded="{{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? "true" : "false"}}" data-toggle="collapse"
+                            href="#collapse{{$i}}" >
                         <span>Section {{$i + 1}} </span>
                         <div class="vertical-seperator"></div>
                         {{$controllerCourse->chapters[$i]->name}}
@@ -39,10 +40,10 @@
                     </button>
                     <div class="list-group collapse my-2 {{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? 'show' : ''}}" id="collapse{{$i}}">
                         @foreach($controllerCourse->chapters[$i]->sessions as $session)
-                        <a href="{{asset('watch/') . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug}}" class="list-group-item list-group-item-action
-                        {{ ( Request::url() === asset('watch/') . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug) ? 'active' : '' }}
-                            "><i
-                                data-feather="play" class="mr-3"></i>{{$session->name}}</a>
+                        <a href="{{asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug}}" class="list-group-item list-group-item-action
+                        {{ ( Request::url() === asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug) ? 'active' : '' }}
+                            ">
+                            <i data-feather="play" class="mr-3"></i>{{$session->name}}</a>
                         @endforeach
                     </div>
                     @endfor
@@ -57,43 +58,16 @@
                 <div class="col-xl-8 col-lg-7 seperator-right">
                     <h2>About this course</h2>
                     <h5>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero totam
-                        fugiat consectetur soluta, praesentium quis pariatur aspernatur.
+                        {{$controllerCourse->about}}
                     </h5>
                     <br>
                     <h2>You will learn</h2>
                     <ul class="ml-5">
+                        @foreach($controllerCourse->objectives as $objective)
                         <li>
-                            <h5><i data-feather="check" class="mr-3"></i>Scene transitions
-                            </h5>
+                            <h5><i data-feather="check" class="mr-3"></i>{{$objective->objective}}</h5>
                         </li>
-                        <li>
-                            <h5><i data-feather="check" class="mr-3"></i>Particle system
-                            </h5>
-                        </li>
-                        <li>
-                            <h5><i data-feather="check" class="mr-3"></i>Parallax animation
-                            </h5>
-                        </li>
-                        <li>
-                            <h5><i data-feather="check" class="mr-3"></i>Interactable UI
-                            </h5>
-                        </li>
-                        <li>
-                            <h5><i data-feather="check" class="mr-3"></i>A fully playable
-                                character
-                            </h5>
-                        </li>
-                        <li>
-                            <h5><i data-feather="check" class="mr-3"></i>Heart and score
-                            </h5>
-                        </li>
-                        <li>
-                            <h5><i data-feather="check" class="mr-3"></i>Enemies</h5>
-                        </li>
-                        <li>
-                            <h5><i data-feather="check" class="mr-3"></i>Sounds</h5>
-                        </li>
+                        @endforeach
                     </ul>
                     <br>
                     <div class="row w-md-100 w-75 mx-auto">
@@ -101,7 +75,7 @@
                             <div class="badge tip-badge py-1">
                                 <h4 class="badge-item">
                                     <i class="fas fa-hand-holding-usd"></i>
-                                    <span>1200 EGP</span>
+                                    <span>{{$controllerCourse->price}} EGP</span>
                                 </h4>
                             </div>
                         </div>
@@ -117,21 +91,15 @@
                     <br>
                     <h2>Recommended to</h2>
                     <ul class="ml-5">
+                        @foreach($controllerCourse->recommendations as $rec)
                         <li>
-                            <h5><i data-feather="arrow-right" class="mr-3"></i>AAST Students
-                                -
-                                Computer Engineering department 7th term
-                            </h5>
+                            <h5><i data-feather="arrow-right" class="mr-3"></i>{{$rec->recommendation}}</h5>
                         </li>
-                        <li>
-                            <h5><i data-feather="arrow-right" class="mr-3"></i>FOE -
-                                Communications
-                                Department 8th term</h5>
-                        </li>
+                        @endforeach
                     </ul>
 
-
                 </div>
+
                 <div class="col-xl-4 col-lg-5">
                     <div class="d-lg-block d-md-flex flex-reverse-mine w-100 ">
                         <div class="flex-around flex-column-mine mb-lg-5 mr-lg-5-mine pt-5">
@@ -144,30 +112,28 @@
 
                         </div>
                         <div class="ml-lg-5-mine">
-                            <h2 class="ml-5">Author</h2>
+                            <h2 class="ml-5">Course Author</h2>
                             <div class="mx-3 mt-3">
                                 <div
                                     class="row box-shadow-md py-3 pl-4 pr-5 border-radius-md">
                                     <div class="col-8">
-                                        <div class="tip-instructor">
-                                            <div class="">
-                                                <h5>
-                                                    <b>Ahmed
-                                                        Saeed</b>
+                                        <div class="tip-instructor h-100">
+                                            <div class="h-100">
+                                                <h5 style="line-height: 1">
+                                                    <b>{{$instructor->user->name}}</b>
                                                     <br />
-                                                    <span>TA at
-                                                                                                                AAST</span>
+                                                    <span>{{$instructor->user->position}}</span>
                                                     <br />
                                                 </h5>
-                                                <a href="{{route('profile')}}"
-                                                   class="btn btn-veedros btn-veedros-sm border-0 mt-1">
+                                                <a href="{{route('profile') . '/' . $instructor->id}}"
+                                                   class="btn btn-veedros btn-veedros-sm border-0 mt-auto">
                                                     Visit profile
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="tip-instructor-avatar col-4">
-                                        <img src="{{asset('images')}}//05.jpg"
+                                        <img src="{{asset('uploads/profilePictures') . '/' . $instructor->user->img}}"
                                              alt="instructor"
                                              class="round" />
                                     </div>
@@ -215,7 +181,7 @@
                 <hr>
                 <h2 class="ml-5">See also</h2>
                 <div class="card course-card development-card noJquery"
-                     style="background-image: url('images/img_03.png')" data-toggle="modal"
+                     style="background-image: url('{{asset('images')}}/img_03.png')" data-toggle="modal"
                      data-target="#exampleModal">
                     <div class="course-card-overlay overlay-2"></div>
                     <div class="card-body m-0">
@@ -235,6 +201,57 @@
                 </div>
             </div>
         </div>
+        <br>
+        <h2 class="mt-5">Leave a comment</h2>
+        <form action="{{asset("/comment")}}" method="POST" class="row mt-4 px-4">
+            @csrf
+            <div class="col-12 profile-form-field  border-light border-radius-sm py-3 px-4">
+                <div class="my-2 px-1 row">
+                    <div class="col-11 m-0 pl-4 p-0">
+                                    <textarea class="border-0 w-100 outline-0 text-muted" rows="5" cols="50" id="comment-textarea"
+                                              name="body"
+                                              maxlength="1000" style="resize: none;"
+                                              placeholder="Your comment on this session."></textarea>
+                        <input class="d-none" id="session-id" name="session_id" value="{{$controllerSession->id}}">
+                    </div>
+                    <div class="col-1 m-0 p-0 d-flex justify-content-end align-items-start">
+                        <button class="btn btn-secondary-veedros ml-auto more" type="button"><i
+                                data-feather="more-vertical"></i></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary-veedros ml-auto submit" id="comment-submit" type="submit"><i
+                            data-feather="arrow-right"></i></button>
+                </div>
+            </div>
+        </form>
+        <br>
+        <hr>
+        <h2 class="mb-5">Comments ({{$controllerSession->comments->count()}})</h2>
+        <div class="container mb-5 pb-5">
+            @foreach($controllerSession->comments as $comment)
+                <div class="row mb-4">
+                    <div class="tip-instructor-avatar align-items-start col-2">
+                        <img src="{{asset('uploads/profilePictures') . '/' .$comment->user->img}}" alt="comment avatar" class="round round-sm" />
+                    </div>
+                    <div class="col-10 d-flex align-items-center w-100">
+                        <div class="card card-comment border-0">
+                            <div class="card-body row">
+                                <div class="col-9">
+                                    <a href="{{asset('profile') . '/' . $comment->user->id}}">{{$comment->user->name}}</a>
+                                    <p class="mt-2">{!! nl2br(e($comment->body)) !!}</p>
+                                </div>
+                                <div class="col-3 d-flex flex-column justify-content-end">
+                                    <button class="btn btn-secondary-veedros mx-auto more"><i
+                                            data-feather="heart"></i></button>
+                                    <h6><i data-feather="globe" class="mr-1"></i>{{$comment->created_at->diffForHumans()}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </section>
 @endsection
 
@@ -243,8 +260,6 @@
     <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
     <script src="{{asset('node_modules')}}/vjs-youtube/dist/Youtube.min.js"></script>
     <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
-
-
 @endsection
 @section('customJS')
     <script src="{{asset('scripts')}}/player.js"></script>

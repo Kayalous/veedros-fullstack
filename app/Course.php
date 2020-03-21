@@ -26,6 +26,8 @@ class Course extends Model
     public static function getFirstSession(Course $course){
         //Base url
         $url = URL::to('watch/');
+        //With instructor display name
+        $url = $url . '/' . $course->instructor->display_name;
         //With course slug
         $url = $url . '/'. $course->slug;
         //With first chapter slug

@@ -39,8 +39,7 @@ class CourseController extends Controller
             $request['price'] = 0;
         $instructor = Auth::user()->instructor;
         //making the slug
-        $random = Str::random(5);
-        $slug = Str::slug($request['name'] . ' ' . $random, '-');
+        $slug = Str::slug($request['name'], '-');
         //creating course path
         $path = base_path() . '/public';
         fileFacede::makeDirectory($path . '/uploads/courses/'. Auth::user()->instructor->id . '/' . $slug .'/images/', 0755, true, true);

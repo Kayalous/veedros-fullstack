@@ -180,7 +180,7 @@
     background-color: #eeeeee80;
 }
 
-.collapse-button.activated .chevron .feather {
+.collapse-button[aria-expanded="false"] .chevron .feather {
     transform: rotate(180deg);
 }
 
@@ -195,6 +195,7 @@
     font-weight: 600;
     line-height: 1.6;
 }
+
 
 #course-info h2 {
     font-weight: 700;
@@ -401,6 +402,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.card-comment a {
+    color: rgba(0, 0, 0, 0.45);
+    font-weight: 600;
+    line-height: 1.6;
+    transition: all 0.1s ease-in-out;
+}
+.card-comment a:hover {
+    color: rgba(0, 0, 0, 0.65);
 }
 
 .card-comment .col-3 h6 .feather {

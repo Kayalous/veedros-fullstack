@@ -11,7 +11,5 @@ elementsArray.forEach(function (elem) {
         elem.classList.toggle('activated')
     });
 });
-let player = videojs(document.querySelector('#player'));
 
-console.log(player.tech_.ytPlayer.getAvailableQualityLevels());
-// player.controlBar.addChild('QualitySelector');
+

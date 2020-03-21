@@ -6,6 +6,7 @@ use App\Instructor;
 use App\SocialProvider;
 use App\User;
 use Illuminate\Http\Request;
+use Psy\Util\Str;
 
 class AdminController extends Controller
 {
@@ -15,8 +16,13 @@ class AdminController extends Controller
     }
     //adds a new instructor
     public function add(Request $request){
+        $user = User::where('id', $request["id"])->firstOrFail();
+        $random = \Illuminate\Support\Str::random(5);
+        $displayName = $user->name . ' ' . $random;
+        $displayName = \Illuminate\Support\Str::slug($displayName, '-');
         Instructor::firstOrCreate([
-            'user_id' => $request["id"]
+            'user_id' => $request["id"],
+            'display_name' => $displayName
         ]);
         return back();
     }
