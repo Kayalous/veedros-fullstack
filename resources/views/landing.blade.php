@@ -9,52 +9,40 @@
 @endsection
 
 @section('content')
-    <div class="slash slash-to-right"></div>
-
     <!-- Hero  -->
     <section class="hero">
         <div class="container">
             <div class="row ">
                 <div class="col-lg-6 hero-header-text ">
-                    <h1 class="d-lg-block d-none wow fadeInUp">
-                        Learning <br />
-                        has never been so easy.
+                    <h1 class="d-lg-block d-none mb-3">
+                        Learn, easily
                     </h1>
-                    @if(!Auth::check())
-                    <div class="input-group signup-field mr-auto wow fadeInUp" data-wow-delay="0.2s">
-                        <input type="email" size="5" class="form-control email-input email-field-props border-0"
-                               placeholder="Enter your email" />
-                        <div class="btn-container email-field-props">
-                            <button class="btn btn-veedros btn-veedros-inline-input border-0" type="button">
-                                Get started
-                            </button>
-                        </div>
-                    </div>
-                    @endif
-                    <a href="#featured-courses" class="btn btn-veedros btn-veedros-round border-0 mt-5 wow fadeInUp"
-                       data-wow-delay="0.6s">
-                        <img class="img-fluid" style="width: 20px;" src="images/down_arrow.svg" alt="">
+                    <h4>With Veedros learning's as easy as it gets.</h4>
+
+                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-lg border-0 mt-5 mr-auto"
+                       >
+                        Explore now
                     </a>
                 </div>
                 <div class="col-lg-6 hero-illustrations mx-auto">
-                    <h1 class="d-lg-none d-block text-center wow fadeInUp">
+                    <h1 class="d-lg-none d-block text-center ">
                         Learning
                         has never been so easy.
                     </h1>
 
-                    <div class="illustration-container illustration-container-lg d-md-flex-center wow fadeInUp"
-                         data-wow-delay="0.2s">
+                    <div class="illustration-container illustration-container-lg d-md-flex-center "
+                         >
                         <canvas id="blob"> </canvas>
                         <img src="images/hero-01-withoutbg.png" alt=""
                              class="img-fluid illustration illustration-lg illustration-anim-1" />
                     </div>
                     <div class="row w-100 d-md-flex-center">
-                        <div class="illustration-container illustration-container-sm  wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="illustration-container illustration-container-sm  " data-wow-delay="0.4s">
                             <canvas id="blob2" class="blob-position-md "> </canvas>
                             <img src="images/hero-02-withoutbg.png" alt=""
                                  class="img-fluid illustration illustration-md illustration-position-md illustration-anim-2" />
                         </div>
-                        <div class="illustration-container col-4 illustration-container-sm mt-illustration  wow fadeInUp"
+                        <div class="illustration-container col-4 illustration-container-sm mt-illustration  "
                              data-wow-delay="0.6s">
                             <canvas id="blob3"> </canvas>
                             <img src="images/hero-03.png" alt=""
@@ -66,23 +54,27 @@
         </div>
 
     </section>
-
+    <section class="happy-users my-3">
+        <div>
+            <h1 class="text-center mb-0">6K<span>+</span></h1>
+            <h2 class="mt-0">Happy students</h2>
+        </div>
+    </section>
     <!-- Featured courses  -->
     <section class="featured-courses my-5 pt-5" id="featured-courses">
         <div class="container container-mine pt-3">
             <div class="row">
-                <div class="header-text mb-2 wow fadeInUp">
+                <div class="header-text d-block mb-2 ">
                     <h1>
-                        A powerful set of courses<br />
-                        presented to you.
+                        A powerful set of courses
                     </h1>
+                    <h4>that will change your career.</h4>
                 </div>
                 <div class="col-12">
                     <div class="course-cards-container card-columns my-5 py-3">
                         @foreach($courses as $course)
                             <div class="card course-card development-card noJquery" style="background-image: url({{asset('/uploads/courses/1/pokemon-td8v2/images/1584209495.png')}})">
 {{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
-                                 <div class="course-card-overlay overlay-1 w-100"></div>
                                  <div class="card-body m-0">
                                        <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
                                              <div class="play-circle play-circle-1"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
@@ -97,8 +89,8 @@
                 </div>
             </div>
             <div class="row">
-                <button class="btn btn-veedros btn-veedros-lg border-0 mx-auto wow fadeInUp" type="button">
-                    More courses.
+                <button class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto " type="button">
+                    <span class="mx-3">All courses</span>
                 </button>
             </div>
         </div>
@@ -107,111 +99,117 @@
     <!-- ===================================== Sign up instructor ===================================== -->
 
 
-    <div class="Instructor-slash Instructor-slash-to-right"></div>
-    <div class=" Instructor_join">
-        <div class="container">
-            <div class=" row mb-5">
-                <div class="col-xl-6 col-12 Instructor-text ">
-                    <h1 class="wow fadeInUp">
-                        Have content? <br>
-                        Don't hesitate to join us!
-                    </h1>
-                    <p class="p-d-none wow fadeInUp" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, pede suspendisse vivamus quis voluptas excepturi,
-                        quisque pede est neque class rhoncus,
-                        neque sollicitudin etiam felis elementum cras eu, varius eros at, mauris dictum tempus. Nec consectetuer</p>
-                </div>
-                <div class="col-xl-6 col-12 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="py-4 img-fluid-mine" src="images/sector_2_hero.png">
-                </div>
+    <section class="mt-5">
+        <div class="row">
+            <div class="col-lg-6 m-0 px-0">
+                <img class="img-fluid" src="{{asset('images/')}}/teach-960x775.jpg" alt="Teach with us image">
             </div>
-            <div class="col-lg-6 m-auto">
-                <div class="input-group signup-field mr-auto wow fadeInUp" data-wow-delay="0.4s"
-                     style="visibility: visible; animation-delay: 0.2s; opacity: 1;">
-                    <input type="email" size="5" class="form-control email-input email-field-props border-0"
-                           placeholder="Enter your email">
-                    <div class="btn-container email-field-props">
-                        <button class="btn btn-veedros btn-veedros-inline-input border-0" type="button" data-toggle="modal"
-                                data-target="#signupModal">
-                            Join us
+            <div class="col-lg-6 m-0 px-0 py-5 teach-with-us-container d-flex flex-column justify-content-center align-items-center">
+                <div class="teach-with-us-content">
+                    <h1>Have content?</h1>
+                    <br>
+                    <h2>If you...</h2>
+                    <h4><i data-feather="check" class="mr-2"></i>Don't know how to organize your content.</h4>
+                    <h4><i data-feather="check" class="mr-2"></i>Don't know how/where to start.</h4>
+                    <h4><i data-feather="check" class="mr-2"></i>Don't know how to promote your vision.</h4>
+                    <br>
+                    <h4>We can give you a hand with that!</h4>
+                    <div class="row">
+                        <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
+                            <span class="mx-3">Let's talk!</span>
                         </button>
                     </div>
+
                 </div>
             </div>
-
         </div>
+    </section>
 
 
-
-    </div>
 
     <!-- ============== END ================== Sign up instructor =============== END ================== -->
+    <div class="faq row justify-content-center align-items-center py-3">
+        <a class="text-center" href="#">FAQ?</a>
+    </div>
 
-    <!-- =====================================  instructor carousel ===================================== -->
-    <section class="carousel mb-5">
-        <div class="container">
-            <div class="row wow carousel-header ml-5 mb-4 fadeInUp">
-                <h1>Meet our heroes</h1>
-            </div>
-            <div class="row wow fadeIn" data-wow-delay="0.6s">
-                <div class="owl-carousel owl-theme contener_general">
-
-                    <div class=" carreaux_presentation_light carousel-card" style="background-image:url(images/01.jpg)">
-                        <div class="sliding-info">
-                            <div class="deroul_left">Ahmed saad</div>
-                            <div class="deroul_right">Weed development</div>
-                        </div>
-                        <div class="carousel-card-overlay overlay-0"></div>
-                    </div>
-
-                    <div class=" carreaux_presentation_light carousel-card" style="background-image:url(images/02.jpg)">
-                        <div class="sliding-info">
-                            <div class="deroul_left">Ahmed saad</div>
-                            <div class="deroul_right">Weed development</div>
-                        </div>
-                        <div class="carousel-card-overlay overlay-1"></div>
-                    </div>
-
-                    <div class=" carreaux_presentation_light carousel-card" style="background-image:url(images/04.jpg)">
-                        <div class="sliding-info">
-                            <div class="deroul_left">Ahmed saad</div>
-                            <div class="deroul_right">Weed development</div>
-                        </div>
-                        <div class="carousel-card-overlay overlay-2"></div>
-                    </div>
-
-                    <div class=" carreaux_presentation_light carousel-card" style="background-image:url(images/05.jpg)">
-                        <div class="sliding-info">
-                            <div class="deroul_left">Ahmed saad</div>
-                            <div class="deroul_right">Weed development</div>
-                        </div>
-                        <div class="carousel-card-overlay overlay-3"></div>
-                    </div>
-
-                    <div class=" carreaux_presentation_light carousel-card" style="background-image:url(images/07.jpg)">
-                        <div class="sliding-info">
-                            <div class="deroul_left">Ahmed saad</div>
-                            <div class="deroul_right">Weed development</div>
-                        </div>
-                        <div class="carousel-card-overlay overlay-4"></div>
-                    </div>
-
-                    <div class=" carreaux_presentation_light carousel-card" style="background-image:url(images/07.jpg)">
-                        <div class="sliding-info">
-                            <div class="deroul_left">Ahmed saad</div>
-                            <div class="deroul_right">Weed development</div>
-                        </div>
-                        <div class="carousel-card-overlay overlay-5"></div>
-                    </div>
-
+    <section class="testimonials my-5 py-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-3 mx-auto">
+                <h1>Hey, you help us too.</h1>
+                <br>
+                <h4>We really appreciate your feedback. Don't hesitate to let us know what you think, it really helps.</h4>
+                <br>
+                <div class="row">
+                    <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
+                        <span class="mx-3">Give us a review</span>
+                    </button>
                 </div>
             </div>
+            <div class="col-lg-8">
+                <section class="carousel">
+                    <div class="container">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="review-carousel owl-carousel owl-theme w-100">
+                                @for($i = 0; $i<5; $i++)
+                                <div class="carousel-column">
+                                    @for($j = 0; $j<2; $j++)
+                                        <div class="review p-3 mx-2 my-4 ">
+                                        <div class="user-info row py-3">
+                                        <div class="tip-instructor-avatar col-lg-2 ml-5 ">
+                                            <img src="{{asset('images')}}/05.jpg" alt="" class="round">
+                                        </div>
+                                            <div class="rating-container col-lg-8 d-flex flex-column justify-content-center">
+                                                <h6 class="m-0">Ahmed Zakii</h6>
+                                                <div class="d-flex ratings col-6 px-0 m-0">
+                                                    <img src="{{asset('images/icons')}}/Star.svg" alt="star">
+                                                    <img src="{{asset('images/icons')}}/Star.svg" alt="star">
+                                                    <img src="{{asset('images/icons')}}/Star.svg" alt="star">
+                                                    <img src="{{asset('images/icons')}}/Star.svg" alt="star">
+                                                    <img src="{{asset('images/icons')}}/Star.svg" alt="star">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequatur ea et, expedita facilis inventore labore molestias officia praesentium quasi qui quidem repellat repellendus rerum sapiente sequi soluta totam voluptas.</div>
+                                    </div>
+                                    @endfor
+                                </div>
+                                @endfor
 
+
+
+
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- style="background-image: url('images/01.png')" -->
+
+                </section>
+            </div>
         </div>
-        <!-- style="background-image: url('images/01.png')" -->
-
     </section>
+    <!-- =====================================  instructor carousel ===================================== -->
+
     <!-- =============== END ===============  instructor carousel ======== END ========---========== -->
 
+    <section class="academies">
+        <div class="container h-100">
+            <div class="d-flex justify-content-center align-items-center flex-column h-100 w-100">
+                <h1 class="text-center">We help Academies to expand online</h1>
+                <br>
+                <h4>We can help you reach a broader audience and increase your passive income.</h4>
+                <br>
+                <div class="row">
+                    <button class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto " type="button">
+                        <span class="mx-3">Let's talk</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('libraryJS')

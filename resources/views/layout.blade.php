@@ -18,6 +18,7 @@
     <script src="https://kit.fontawesome.com/04f7d66693.js" crossorigin="anonymous"></script>
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('styles/style.css')}}" />
+    <link rel="stylesheet" href="{{asset('styles/new_style.css')}}" />
     @yield('customCSS')
 </head>
 
@@ -51,7 +52,7 @@
                         </div>
                     </div>
                     <div class="d-flex jusift-content-center mt-3 mb-3">
-                        <button type="submit" id="login-button" class="btn btn-veedros btn-veedros-md mx-auto btn-submit">
+                        <button type="submit" id="login-button" class="btn btn-veedros-new btn-veedros-md mx-auto btn-submit">
                             Sign in
                         </button>
                     </div>
@@ -110,7 +111,7 @@
                         </div>
                     </div>
                     <div class="d-flex jusift-content-center mt-3 mb-3">
-                        <button type="submit" class="btn btn-veedros btn-veedros-md mx-auto btn-submit" id="signup-button">
+                        <button type="submit" class="btn btn-veedros-new btn-veedros-md mx-auto btn-submit" id="signup-button">
                             Sign up
                         </button>
                     </div>
@@ -156,18 +157,18 @@
             @if(Auth::user())
                 @if(!Auth::user()->hasRole('admin'))
             <li class="nav-item">
-                <a class="nav-link dot-hover dot-hover-black" href="#">Courses</a>
+                <a class="nav-link" href="#">Courses</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link dot-hover dot-hover-black" href="#">How it works</a>
+                <a class="nav-link" href="#">How it works</a>
             </li>
             @if(Auth::user()->instructor)
                         <li class="nav-item">
-                            <a class="nav-link dot-hover dot-hover-black" href="{{route('manage.courses')}}">Manage my courses</a>
+                            <a class="nav-link" href="{{route('manage.courses')}}">Manage my courses</a>
                         </li>
                     @else
             <li class="nav-item">
-                <a class="nav-link dot-hover dot-hover-black" href="#">Teach</a>
+                <a class="nav-link" href="#">Teach</a>
             </li>
                 @endif
                 @else
@@ -177,20 +178,20 @@
             @endif
             @else
                 <li class="nav-item">
-                    <a class="nav-link dot-hover dot-hover-black" href="#">Courses</a>
+                    <a class="nav-link" href="#">Courses</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link dot-hover dot-hover-black" href="#">How it works</a>
+                    <a class="nav-link" href="#">How it works</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link dot-hover dot-hover-black" href="#">Teach</a>
+                    <a class="nav-link" href="#">Teach</a>
                 </li>
                 @endif
 
             @if(!Auth::check())
                 <li class="nav-item d-flex align-items-center justify-content-center">
-                    <a href="#" class="btn btn-veedros btn-veedros-sm border-0" data-toggle="modal" data-target="#loginModal">Sign in </a> </li>
+                    <a href="#" class="btn btn-veedros-new btn-veedros-sm border-0" data-toggle="modal" data-target="#loginModal">Sign in </a> </li>
                 @else
                 @if (Auth::user()->hasRole('admin'))
                     <li class="nav-item">
@@ -218,75 +219,20 @@
     </div>
 </nav>
 @yield('content')
-<!--===================================== FOOTER =========================================-->
-<section>
+<!-- =====================================  FOOTER ========================================= -->
+<div class="container">
+    <div class="text-center Copyright">
+        <p class="">Veedros All rights reseved 2020</p>
+        <div>
+            <a href=""><img class="mx-3" src="images/twitter.svg" alt=""></a>
+            <a href=""><img src="images/LinkedIn.svg" alt=""></a>
 
-    <div class=" footer px-2  py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-4">
-                    <ul class="text-center-mine">
-                        <li>
-                            <img class="img-fluid responsive-mine" src="{{asset('images/Veedros Logo.svg')}}" alt="">
-                        </li>
-                        <li class="footer-contactus-responsive">
-                            Lorem Ipsum is tandard dummy text ever since the 1500s,
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-12 col-lg-4">
-                    <ul class=" text-center footer-CHT">
-                        <li class="w-33">
-                            <a class="footer-text" href="">Courses</a>
-                        </li>
-                        <li class="w-33 ">
-                            <a class="footer-text footer-text-color" href=""> How it works</a>
-                        </li>
-                        <li class="w-33 ">
-                            <a class="footer-text footer-text-color" href=""> Teach</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-12 col-lg-4">
-                    <ul class="text-center footer-md-respon footer-contactus-responsive">
-                        <li class="d-flex justify-content-center d-inline-block-mine">
-                            <div class="w-footer-icon m-auto ">
-                                <div class="row">
-                                    <div class="col-3 col-lg-6">
-                                        <a href="#"><i class="fab fa-facebook-f " aria-hidden="true"></i></a>
-                                    </div>
-                                    <div class="col-3 col-lg-6">
-                                        <a href=" #"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                                    </div>
-                                    <div class="col-3 col-lg-6">
-                                        <a href="#"><i class="fab fa-facebook-f " aria-hidden="true"></i></a>
-                                    </div>
-                                    <div class="col-3 col-lg-6">
-                                        <a href=" #"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </li>
-
-                        <li class="d-inline-block-mine">
-                            <button type="button" class="btn nav-btn btn-outline-dark btn-sm rounded-mine">contact
-                                Us</button>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-            </div>
         </div>
-</section>
 
-<div class="text-center Copyright">
-    <p class="">Veedros All rights reseved 2020</p>
+    </div>
 </div>
-<!--============== END ==================== FOOTER ============== END =================-->
+
+<!-- ============== END ====================  FOOTER ============== END ================= -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
