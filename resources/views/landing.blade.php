@@ -102,7 +102,7 @@
     <section class="mt-5">
         <div class="row">
             <div class="col-lg-6 m-0 px-0">
-                <img class="img-fluid" src="{{asset('images/')}}/teach-960x775.jpg" alt="Teach with us image">
+                <img class="img-fluid" src="{{asset('images/')}}/Teach-960x775.jpg" alt="Teach with us image">
             </div>
             <div class="col-lg-6 m-0 px-0 py-5 teach-with-us-container d-flex flex-column justify-content-center align-items-center">
                 <div class="teach-with-us-content">
@@ -161,11 +161,11 @@
                                             <div class="rating-container col-lg-8 d-flex flex-column justify-content-center">
                                                 <h6 class="m-0">Ahmed Zakii</h6>
                                                 <div class="d-flex ratings col-6 px-0 m-0">
-                                                    <img src="{{asset('images/icons')}}/Star.svg" alt="star">
-                                                    <img src="{{asset('images/icons')}}/Star.svg" alt="star">
-                                                    <img src="{{asset('images/icons')}}/Star.svg" alt="star">
-                                                    <img src="{{asset('images/icons')}}/Star.svg" alt="star">
-                                                    <img src="{{asset('images/icons')}}/Star.svg" alt="star">
+                                                    <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
+                                                    <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
+                                                    <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
+                                                    <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
+                                                    <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
                                                 </div>
                                             </div>
                                         </div>
