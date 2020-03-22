@@ -87,7 +87,7 @@
                                        <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
                                              <div class="play-circle play-circle-1"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
                                              <h4 class="card-title title-mine w-100">
-                                                   {{$course->slug}}
+                                                   {{$course->name}}
                                                  </h4>
                                            </a>
                                      </div>

@@ -256,7 +256,7 @@
 
 @section('libraryJS')
     <!-- video js -->
-    <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
+    <script src="https://vjs.zencdn.net/7.6.6/video.min.js"></script>
     <script src="{{asset('node_modules')}}/vjs-youtube/dist/Youtube.min.js"></script>
     <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
 @endsection

@@ -4,12 +4,4 @@ window.addEventListener('resize', () => {
 });
 feather.replace();
 
-let elementsArray = document.querySelectorAll(".collapse-button");
-
-elementsArray.forEach(function (elem) {
-    elem.addEventListener("click", function () {
-        elem.classList.toggle('activated')
-    });
-});
-
 
