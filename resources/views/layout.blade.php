@@ -224,8 +224,8 @@
     <div class="text-center Copyright">
         <p class="">Veedros All rights reseved 2020</p>
         <div>
-            <a href=""><img class="mx-3" src="images/twitter.svg" alt=""></a>
-            <a href=""><img src="images/LinkedIn.svg" alt=""></a>
+            <a href=""><img class="mx-3" src="{{asset('images/Icons')}}/twitter.svg" alt=""></a>
+            <a href=""><img src="{{asset('images/Icons')}}/LinkedIn.svg" alt=""></a>
 
         </div>
 
