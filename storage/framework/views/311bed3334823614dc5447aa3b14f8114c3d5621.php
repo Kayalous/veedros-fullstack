@@ -1,1 +1,0 @@
-<?php /**PATH /Users/k/Documents/Web/Laravel/veedros/resources/views/testing.blade.php ENDPATH**/ ?>
