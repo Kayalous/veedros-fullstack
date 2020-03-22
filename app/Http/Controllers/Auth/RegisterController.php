@@ -126,7 +126,7 @@ class RegisterController extends Controller
             $socialUser = Socialite::driver('facebook')->user();
         } catch (InvalidStateException $e) {
             $socialUser = Socialite::driver('facebook')->stateless()->user();
-        }
+        } finally {
             //Check if it's the first time logging in
             $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
             if(!$socialProvider){
@@ -141,10 +141,10 @@ class RegisterController extends Controller
                 $user = User::firstOrcreate(
                     ['email' => $socialUser->getEmail()],
                     ['name' => $socialUser->getName(),
-                    'verificationToken' => null,
-                    'email_verified_at' => Carbon::now()->toDateTimeString(),
-                    'img'=> $name,
-                ]);
+                        'verificationToken' => null,
+                        'email_verified_at' => Carbon::now()->toDateTimeString(),
+                        'img'=> $name,
+                    ]);
                 //Create a new socialProvider
                 $user->socialProviders()->create(
                     ['provider_id'=> $socialUser->getId(),
@@ -154,9 +154,11 @@ class RegisterController extends Controller
                 //The user already exists, get that one!
                 $user = $socialProvider->user;
             }
-        //Log the user in
-        Auth::login($user);
-        return redirect('/');
+            //Log the user in
+            Auth::login($user);
+            return redirect('/');
+
+        }
 
 
 
@@ -203,36 +205,38 @@ class RegisterController extends Controller
             $socialUser = Socialite::driver('google')->user();
         } catch (InvalidStateException $e) {
             $socialUser = Socialite::driver('google')->stateless()->user();
+        } finally {
+            //Check if it's the first time logging in
+            $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
+            if(!$socialProvider){
+                //Prepare image
+                $url =$socialUser->getAvatar();
+                //Download and store image
+                $contents = file_get_contents($url);
+                $name = time() . '.' . 'jpeg';
+                Storage::disk('profileImages')->put($name, $contents);
+                //Create a new user
+                $user = User::firstOrcreate(
+                    ['email' => $socialUser->getEmail()],
+                    ['name' => $socialUser->getName(),
+                        'verificationToken' => null,
+                        'email_verified_at' => Carbon::now()->toDateTimeString(),
+                        'img'=> $name,
+                    ]);
+                //Create a new socialProvider
+                $user->socialProviders()->create(
+                    ['provider_id'=> $socialUser->getId(),
+                        'provider'=>'google']);
+            }
+            else{
+                //The user already exists, get that one!
+                $user = $socialProvider->user;
+            }
+            //Log the user in
+            Auth::login($user);
+            return redirect('/');
         }
-        //Check if it's the first time logging in
-        $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
-        if(!$socialProvider){
-            //Prepare image
-            $url =$socialUser->getAvatar();
-            //Download and store image
-            $contents = file_get_contents($url);
-            $name = time() . '.' . 'jpeg';
-            Storage::disk('profileImages')->put($name, $contents);
-           //Create a new user
-            $user = User::firstOrcreate(
-                ['email' => $socialUser->getEmail()],
-                ['name' => $socialUser->getName(),
-                    'verificationToken' => null,
-                    'email_verified_at' => Carbon::now()->toDateTimeString(),
-                    'img'=> $name,
-                ]);
-            //Create a new socialProvider
-            $user->socialProviders()->create(
-                ['provider_id'=> $socialUser->getId(),
-                    'provider'=>'google']);
-        }
-        else{
-            //The user already exists, get that one!
-            $user = $socialProvider->user;
-        }
-        //Log the user in
-        Auth::login($user);
-        return redirect('/');
+
 
     }
 }
