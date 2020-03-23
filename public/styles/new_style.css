@@ -33,16 +33,16 @@
     color: #fff;
     -webkit-transform: translateY(-1px);
     transform: translateY(-1px);
-    box-shadow: 0 2px 15px 0 #65D3BF;
-    -webkit-box-shadow: 0 2px 15px 0 #65D3BF;
-    -moz-box-shadow: 0 2px 15px 0 #65D3BF;
+    box-shadow: 0 2px 2px 0 #65D3BF;
+    -webkit-box-shadow: 0 2px 2px 0 #65D3BF;
+    -moz-box-shadow: 0 2px 2px 0 #65D3BF;
 }
 
 .btn-veedros-new:focus {
     outline: none;
-    box-shadow: 0 2px 15px 0 #65D3BF;
-    -webkit-box-shadow: 0 2px 15px 0 #65D3BF;
-    -moz-box-shadow: 0 2px 15px 0 #65D3BF;
+    box-shadow: 0 2px 2px 0 #65D3BF;
+    -webkit-box-shadow: 0 2px 2px 0 #65D3BF;
+    -moz-box-shadow: 0 2px 2px 0 #65D3BF;
 }
 
 .btn-veedros-new:active {
@@ -53,9 +53,9 @@
     transform: translateY(4px) scale(0.95);
     outline: none !important;
     border: none !important;
-    box-shadow: 0 4px 25px 0 rgba#65D3BF;
-    -webkit-box-shadow: 0 4px 25px 0 #65D3BF !important;
-    -moz-box-shadow: 0 4px 25px 0 #65D3BF;
+    box-shadow: 0 4px 4px 0 rgba#65D3BF;
+    -webkit-box-shadow: 0 4px 4px 0 #65D3BF !important;
+    -moz-box-shadow: 0 4px 4px 0 #65D3BF;
 }
 
 /* veedros-nav-item */
