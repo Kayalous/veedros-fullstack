@@ -1,5 +1,5 @@
 * {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Roboto', sans-serif;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -394,9 +394,13 @@ hr {
 
 .hero-header-text h1 {
     font-weight: 700;
-    font-size: 4.2rem;
+    font-size: 75px;
     color: #313c8b;
     margin-bottom: 4rem;
+}
+
+.hero-header-text p {
+    font-size: 25px;
 }
 
 .signup-field {
@@ -611,8 +615,8 @@ hr {
 }
 
 .btn-veedros-md {
-    font-size: 20px !important;
-    padding: 0.5rem 1.5rem !important;
+    font-size: 16px !important;
+    padding: 215px 50px !important;
     border-radius: 30px;
 }
 

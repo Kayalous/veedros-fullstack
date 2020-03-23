@@ -15,9 +15,9 @@
                     <h1 class="d-lg-block d-none mb-3">
                         Learn, easily
                     </h1>
-                    <h4>With Veedros learning's as easy as it gets.</h4>
+                    <p>With Veedros learning's as easy as it gets.</p>
 
-                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-lg border-0 mt-5 mr-auto"
+                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-md border-0 mt-5 mr-auto"
                        >
                         Explore now
                     </a>
