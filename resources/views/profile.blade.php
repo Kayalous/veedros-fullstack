@@ -84,7 +84,7 @@
             {{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
             <div class="card-body m-0">
                 <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
-                    <div class="play-circle play-circle-1"> <img style="height:40px; width:40px " src="{{asset('images')}}/Play_button.svg" alt=""/> </div>
+                    <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="{{asset('images')}}/Play_button.svg" alt=""/> </div>
                     <h4 class="card-title title-mine w-100">
                         {{$course->name}}
                     </h4>

@@ -61,7 +61,7 @@
         </div>
     </section>
     <!-- Featured courses  -->
-    <section class="featured-courses my-5 pt-5" id="featured-courses">
+    <section class="featured-courses my-5 py-5" id="featured-courses">
         <div class="container container-mine pt-3">
             <div class="row">
                 <div class="header-text d-block mb-2 ">
@@ -77,7 +77,7 @@
 {{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
                                  <div class="card-body m-0">
                                        <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
-                                             <div class="play-circle play-circle-1"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
+                                             <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
                                              <h4 class="card-title title-mine w-100">
                                                    {{$course->name}}
                                                  </h4>
@@ -89,9 +89,9 @@
                 </div>
             </div>
             <div class="row">
-                <button class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto " type="button">
+                <a href="courses/" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">
                     <span class="mx-3">All courses</span>
-                </button>
+                </a>
             </div>
         </div>
     </section>

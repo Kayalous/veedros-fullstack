@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('landing', ['courses' => $courses]);
 })->name('landing');
 
+Route::get('/courses', function () {
+    $courses = \App\Course::paginate(6);
+    return view('allCourses', ['courses' => $courses]);
+})->name('courses');
 
 //User pages
 Route::get('/profile', function () {

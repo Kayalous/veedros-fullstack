@@ -17,7 +17,7 @@ class CoursesTableSeeder extends Seeder
         $faker = Faker::create();
         //Generates 10 random courses each with 5 chapters and 5 sessions each chapter
 
-        for($i = 0; $i<10; $i++){
+        for($i = 1; $i<=10; $i++){
             $name = $faker->name;
             $slug = Str::slug($name, '-');
             \App\Course::create([
