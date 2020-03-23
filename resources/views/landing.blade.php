@@ -22,7 +22,9 @@
                        <span>Explore now</span>
                         
                     </a>
+                    
                 </div>
+                <div class="sharethis-inline-share-buttons"></div>
                 <div class="col-lg-6 hero-illustrations mx-auto">
                     <h1 class="d-lg-none d-block text-center ">
                         Learning

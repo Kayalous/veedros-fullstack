@@ -37,9 +37,6 @@
                                     
                                 </a>
                             </li>
-                            <li>
-                            <div class="sharethis-inline-share-buttons"></div>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -142,9 +139,9 @@
                                 </div>
                                 <hr>
                                 <div class="d-flex justify-content-end mb-3 ">
-                                    <!-- <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
+                                    <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
                                         share
-                                    </button> -->
+                                    </button>
                                     <!-- <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" 
                                     data-layout="button" data-size="large"><a target="_blank" 
                                     href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" 
