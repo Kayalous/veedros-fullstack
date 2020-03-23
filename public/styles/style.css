@@ -616,7 +616,9 @@ hr {
 
 .btn-veedros-md {
     font-size: 16px !important;
-    padding: 215px 50px !important;
+    /* padding: 215px 50px !important; */
+    width: 215px;
+    height: 50px;
     border-radius: 30px;
 }
 
