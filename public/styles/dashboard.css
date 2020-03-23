@@ -1,29 +1,83 @@
+/* ==== nav tip ==== */
+.tip .iconsize-mine {
+    font-size: 1.3rem;
+}
+
+.tip a {
+    color: black;
+}
+
+.tip h6 {
+    text-align: left;
+}
+
+/* custom size for share btn */
+.btn-veedros-sm {
+    font-size: 20px !important;
+}
+
 /* ============================================================================================== */
 
 .info-bar {
-    background: -webkit-gradient(linear, right top, left top, from(#63C9E2), color-stop(50%, white));
-    background: linear-gradient(to left, #63C9E2 0%, white 95%);
-    height: 100%;
-    padding: 1rem;
-    width: 80%;
-    margin: auto;
-    margin-top: 5em;
+    margin-top: 7em;
     margin-bottom: 5em;
-    border-radius: 12px;
-
 }
 
+.nav-photo {
+    position: relative;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
 
-.content-info-bar .left-content .user-photo {
-    height: 150px;
-    width: 150px;
+.nav-item .nav-photo .notification {
+    display: block;
+    position: absolute;
+    width: 0.8rem;
+    height: 0.8rem;
+    font-size: 0.6rem;
+    background-color: red;
+    border-radius: 50%;
+    top: -10%;
+    right: -10%;
+}
+
+.container-notification {
+    position: relative;
+}
+
+.container-notification .notification {
+    display: block;
+    position: absolute;
+    width: 0.7rem;
+    height: 0.7rem;
+    font-size: 0.5rem;
+    background-color: red;
+    border-radius: 50%;
+    top: -10%;
+    right: -20%;
+    color: white;
+}
+
+.nav-item .nav-photo .notification p {
+    color: white;
+}
+
+.content-info-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-info-bar .user-photo {
+    height: 230px;
+    width: 230px;
     background-position: center;
     background-size: cover;
     border-radius: 50%;
-}
 
-.user-name {
-    margin-left: auto;
 }
 
 .ml-auto {
@@ -38,38 +92,8 @@
 }
 
 
-.content-info-bar {
-    height: 100%;
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-/* .edit-container {
-    display: flex;
-    justify-content: flex-end;
 
-}
-
-.left-content .profile-edit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: -webkit-gradient(linear, right top, left top, from(#63C9E2), color-stop(50%, white));
-    background: linear-gradient(to left, #63C9E2 0%, white 95%);
-    padding: 0.2rem;
-    z-index: 999;
-}
-
-.left-content .profile-edit p {
-    font-weight: 500;
-    margin: 0rem;
-} */
 .btn-Edit p {
     margin: 0;
     color: white;
@@ -81,71 +105,10 @@
     padding: 0.2rem 1rem;
 }
 
-.zbi-kbeer {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-}
 
-.zbi {
-    position: absolute;
-    top: 12px;
-    right: 0;
-    z-index: 99999;
-}
+
 
 /* ======================== edit ======================== */
-.left-content .user-photo {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    background-size: 120%;
-    border-radius: 50%;
-    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-    box-shadow: 0px 0rem 0.7rem rgba(0, 0, 0, .5);
-}
-
-.left-content .user-photo:hover {
-    box-shadow: 0px 0rem 1rem rgba(0, 0, 0, .6);
-    background-position: 0% 50%;
-}
-
-.left-content .user-photo:hover .text {
-    transform: rotate(-45deg) translate(0px) rotate(-315deg);
-    background: rgba(102, 51, 153, .5);
-    width: 150px;
-    letter-spacing: 0.2rem;
-    line-height: 150px;
-    height: 150px;
-    margin-top: -4.65rem;
-    margin-left: -2.35rem;
-    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1), letter-spacing 1.5s ease-out;
-}
-
-.left-content .user-photo .text {
-    display: block;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    line-height: 3rem;
-    left: 25%;
-    top: 50%;
-    margin-top: -5rem;
-    margin-left: -5rem;
-    font-size: 1rem;
-    font-family: Raleway, sans-serif;
-    text-align: center;
-    color: #fff;
-    border-radius: 50%;
-    background-image: linear-gradient(to right,
-    #a3a1ff,
-    #8486db,
-    #8d8ff5,
-    #9997ec);
-    transform: rotate(-180deg) translate(-10rem) rotate(180deg);
-    box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, .5);
-    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-}
 
 /* ================== edit ================== */
 
@@ -199,8 +162,7 @@
     transition: width ease-in-out 0.5;
     /* calc(var(--width, 0) * 1%) */
     max-width: 100%;
-    background: rgb(63, 94, 251);
-    background: linear-gradient(90deg, rgba(63, 94, 251, 1) 0%, rgba(64, 180, 255, 1) 100%);
+    background-color: #65D3BF;
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
@@ -211,20 +173,15 @@
     }
 
 }
+
+.info-bar .fas,
+.far {
+    line-height: 1.5;
+}
+
 @media (max-width: 767px) {
 
-    .right-content {
-        width: 75%;
-        margin: auto;
-    }
-
-
-    .user-name {
-        margin: auto;
-        margin-top: 1rem;
-    }
-
-    .left-content .user-photo {
+    .user-photo {
         margin: auto;
     }
 
@@ -245,12 +202,6 @@
     }
 }
 
-/* @media (max-width:550px) {
-    .right-content p {
-        font-size: 13.8px;
-    }
-
-} */
 
 /* ------------------- dashboard modals title and My progress dicoration ------------- */
 .dashboard-land .p-title {
@@ -281,18 +232,15 @@
 
 /* --------------------------------------------------------------------------------- */
 
-.info-bar .content-info-bar .left-content .user-name .p1 {
-    color: rgba(0,0,0,0.7);
-    font-size: 1.8rem;
-    font-weight: 500;
+.info-bar .content-info-bar .user-name .p1 {
+    font-size: 2.3rem;
+    font-weight: 800;
     text-transform: capitalize;
     margin-bottom: 0rem;
     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
-.info-bar .content-info-bar .left-content .user-name .p2 {
-    font-size: 0.8rem;
-    font-weight: lighter;
+.info-bar .content-info-bar .user-name .p2 {
     text-transform: capitalize;
     margin-bottom: 0rem;
     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
@@ -300,38 +248,23 @@
 
 /* ============================================= */
 
-.info-bar .content-info-bar .right-content .p1 {
-    font-size: 1.9rem;
-    font-weight: 600;
-    text-transform: capitalize;
-    margin-bottom: 0rem;
-    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-}
 
-.info-bar .content-info-bar .right-content .p2 {
-    font-size: 0.86rem;
-    color: white;
-    text-transform: capitalize;
-    margin-bottom: 0rem;
-    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-}
-
-
+/*
 @media (max-width:888px) and (min-width:768px) {
-    .info-bar .content-info-bar .left-content .user-name .p1 {
+    .info-bar .content-info-bar .user-name .p1 {
         font-size: 1.4rem;
         transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
     }
 }
 
 @media (max-width:806px)and (min-width:768px) {
-    .info-bar .content-info-bar .left-content .user-name .p2 {
+    .info-bar .content-info-bar .user-name .p2 {
         font-size: 0.7rem;
         transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
     }
 }
 
-
+ */
 
 
 
@@ -339,44 +272,6 @@
 
 
 /* ======================== edit ======================== */
-.right-content .user-photo {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-}
-
-.right-content .user-photo .text {
-    display: block;
-    position: absolute;
-    width: 15px;
-    height: 15px;
-
-    left: 52%;
-    bottom: 59%;
-    margin-top: -5rem;
-    /* margin-left: -5rem; */
-    font-size: 0.7rem;
-    font-family: Raleway, sans-serif;
-    text-align: center;
-
-    border-radius: 50%;
-    background: white;
-    transform: scale(1);
-    transition: all 0.5s ease;
-}
-
-.right-content .user-photo:hover .text {
-    transform: scale(1.2);
-
-}
-
-
-.right-content a {
-    text-decoration: none;
-    color: black;
-}
 
 
 /* ================== edit ================== */
@@ -387,7 +282,7 @@ ul li a {
 }
 
 
-
+/*
 .dashboard-land .btn-veedros-sm {
     font-size: 17px;
     padding: 0.3rem 1rem;
@@ -397,20 +292,42 @@ ul li a {
     -moz-box-shadow: 0 4px 12px -4px rgba(135, 133, 255, 0.5);
 }
 
-.dashboard-land .btn-veedros-sm:hover {
-    box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
-    -webkit-box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
-    -moz-box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
-}
-
-.dashboard-land .btn-veedros-sm:focus {
-    box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
-    -webkit-box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
-    -moz-box-shadow: 0 8px 12px -4px rgba(135, 133, 255, 0.5);
-}
-
 .dashboard-land .btn-veedros-md {
     font-size: 15px;
     padding: 0.5rem 1.5rem;
     border-radius: 30px;
+} */
+
+
+.nav-item .nav-link p {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0.2rem;
+}
+
+@media (max-width:768px) {
+
+    .nav-item-edit {
+        flex-grow: 0 !important;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .nav-link-mine {
+        transition: all 0.2s ease-in-out;
+    }
+
+    .nav-item .nav-link .target {
+        display: inline-block;
+        margin-bottom: 0;
+        margin-left: 0.2rem;
+    }
+
+    .d-none-tab .target {
+        display: none !important;
+    }
+
+    .active.d-none-tab .target {
+        display: initial !important;
+
+    }
 }

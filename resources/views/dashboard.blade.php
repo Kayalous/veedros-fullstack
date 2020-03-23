@@ -5,85 +5,85 @@
 @endsection
 
 @section('content')
-    <section>
-        <div class="info-bar">
+    <div class="new-bg"></div>
+    <section class="info-bar">
+        <div class="container ">
             <div class="content-info-bar">
-                <div class="left-content">
-                    <div class="container">
-                        <div class="row justify-content-end">
-                            <a href="{{route('manage')}}" class="btn btn-veedros btn-Edit">
-                                <p>Edit</p>
-                            </a>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-5 ">
-                                <div class="user-photo " style="background-image: url(uploads/profilePictures/{{Auth::user()->img}});">
-                                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 ">
+                        <div class="user-photo " style="background-image: url({{asset('uploads/profilePictures/') . '/'.Auth::user()->img}});">
+                            <div class="edit-container">
                             </div>
-                            <div class="col-12 col-md-7  ml-auto">
-                                <div class="user-name">
-                                    <p class="p1">{{Auth::user()->name}}</p>
-                                    @if(Auth::user()->location != null)
-                                    <p class="p2 text-muted"><i
-                                            class="fas fa-globe-americas mr-2"></i>{{Auth::user()->location}}</p>
-                                        @endif
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
-
-                </div>
-                <div class="right-content">
-                    <div class="">
-                        <div class="row">
-                            <div class="col-6 ">
-                                <div class=" text-center "">
-                                <p class=" p1"><i class=" far fa-play-circle"></i> 3</p>
-                                <P class="p2 ">Registered <br> Courses</P>
-                            </div>
-                        </div>
-                        <div class=" col-6 ">
-                            <div class=" text-center">
-                                <div class="user-photo ">
-                                    <a href="#">
-                                        <p class="p1">2</p>
-                                    </a>
-                                    <div class='text'>
-                                        <p><i class="fas fa-plus"></i></p>
-                                    </div>
-
-                                </div>
-                                <P class="p2 ">to reach your discount</P>
-                            </div>
-                        </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center col-md-6">
+                        <ul class="user-name">
+                            <li>
+                                <p class="p1">{{Auth::user()->name}}</p>
+                            </li>
+                            <li class="d-flex my-2">
+                                <img src="Icons/Location.svg" alt="">
+                                <P class="p2 px-4 text-muted">
+                                    {{Auth::user()->location}}</P>
+                            </li>
+                            <li>
+                                <a href="{{asset("profile")}}" class="btn btn-veedros-new veedros-bg-color btn-veedros-md  btn- border-0 my-1 "
+                                        type="button">
+                                    view profile
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
 
         </div>
-        </div>
+
+
+
         </div>
     </section>
     <!-- ================ END =================== information bar ================== END ====================== -->
 
     <!-- ================  =================== TABS ==================  ====================== -->
 
-
-
     <div class="container">
-        <ul class="nav nav-pills nav-justified">
-            <li class="nav-item shadow m-1">
-                <a href="#My_Courses" class="nav-link active" data-toggle="tab"> <i
-                        class="far iconsize-mine fa-play-circle"></i> My Courses</a>
+        <ul class="nav nav-pills nav-justified justify-content-center">
+            <li id="courses-tab" class="nav-item nav-item-edit shadow-sm m-1">
+                <a href="#My_Courses" class="nav-link d-none-tab active" data-toggle="tab">
+                    <p class="p1 container-notification">
+                        <i class="far iconsize-mine fa-play-circle" aria-hidden="true"></i>
+
+                        <!-- <span id="courses-notification" class="notification">2</span> -->
+
+                    </p>
+
+                    <p class="target">My Courses</p>
+                </a>
             </li>
-            <li class="nav-item shadow m-1">
-                <a href="#Saved" class="nav-link " data-toggle="tab"><i class="far fa-bookmark" aria-hidden="true"></i>
-                    Saved</a>
+            <li id="saved-tab" class="nav-item nav-item-edit shadow-sm m-1">
+                <a href="#Saved" class="nav-link d-none-tab" data-toggle="tab">
+                    <p class="p1 container-notification">
+                        <i class="far fa-bookmark" aria-hidden="true"></i>
+
+                        <span id="saved-notification" class="notification">2</span>
+
+                    </p>
+
+                    <p class="target">Saved</p>
+                </a>
             </li>
-            <li class="nav-item disabled shadow m-1">
-                <a href="#Recommended" class="nav-link" data-toggle="tab"><i class="far fa-thumbs-up"></i> Recommended
+            <li id="recommended-tab" class="nav-item nav-item-edit disabled shadow-sm m-1">
+                <a href="#Recommended" class="nav-link d-none-tab" data-toggle="tab">
+                    <p class="p1 container-notification"><i class="far fa-thumbs-up" aria-hidden="true"></i>
+
+                        <span id="recommended-notification" class="notification">+5</span>
+
+                    </p>
+                    <p class="target">Recommended</p>
                 </a>
             </li>
         </ul>
@@ -91,7 +91,7 @@
             <!-- My Courses -->
             <!-- My Courses -->
             <!-- My Courses -->
-            <div id="My_Courses" class="tab-pane fade in  active show">
+            <div id="My_Courses" class="tab-pane fade in active show" style="overflow: initial !important;">
                 <div class="dashboard-land ">
 
                     <div class="row shadow-lg  rounded-lg-mine">
@@ -136,10 +136,10 @@
                                 </div>
                                 <hr>
                                 <div class="d-flex justify-content-end mb-3 ">
-                                    <button class="btn btn-veedros btn-veedros-sm btn- border-0 mx-2" type="button">
+                                    <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
                                         share
                                     </button>
-                                    <button class="btn btn-veedros btn-veedros-sm border-0 " type="button">
+                                    <button class="btn btn-veedros btn-veedros-md border-0 " type="button">
                                         Keep Going
                                     </button>
                                 </div>
@@ -191,10 +191,10 @@
                                 </div>
                                 <hr>
                                 <div class="d-flex justify-content-end mb-3 ">
-                                    <button class="btn btn-veedros btn-veedros-sm btn- border-0 mx-2" type="button">
+                                    <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
                                         share
                                     </button>
-                                    <button class="btn btn-veedros btn-veedros-sm border-0 " type="button">
+                                    <button class="btn btn-veedros btn-veedros-md border-0 " type="button">
                                         Keep Going
                                     </button>
                                 </div>
@@ -246,10 +246,10 @@
                                 </div>
                                 <hr>
                                 <div class="d-flex justify-content-end mb-3 ">
-                                    <button class="btn btn-veedros btn-veedros-sm btn- border-0 mx-2" type="button">
+                                    <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
                                         share
                                     </button>
-                                    <button class="btn btn-veedros btn-veedros-sm border-0 " type="button">
+                                    <button class="btn btn-veedros btn-veedros-md border-0 " type="button">
                                         Keep Going
                                     </button>
                                 </div>
@@ -265,7 +265,7 @@
             <!-- Saved -->
             <!-- Saved -->
             <!-- Saved -->
-            <div id="Saved" class="tab-pane fade ">
+            <div id="Saved" class="tab-pane fade">
                 <div class="dashboard-land">
                     <div class="container">
                         <div class="row ">
@@ -471,8 +471,6 @@
 
         </div>
     </div>
-
-    <!-- ================ END =================== TABS ================== END ====================== -->
 @endsection
 
 @section('customJS')
