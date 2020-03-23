@@ -262,7 +262,6 @@ hr {
 .hero {
     /* height: 100vh; */
     min-height: 800px;
-    padding-top: 75px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -391,7 +390,6 @@ hr {
     align-content: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
 }
 
 .hero-header-text h1 {
