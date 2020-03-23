@@ -19,7 +19,8 @@
 
                     <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-md border-0 mt-5 mr-auto"
                        >
-                        Explore now
+                       <span>Explore now</span>
+                        
                     </a>
                 </div>
                 <div class="col-lg-6 hero-illustrations mx-auto">
@@ -87,8 +88,8 @@
                 </div>
             </div>
             <div class="row">
-                <a href="courses/" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">
-                    <span class="mx-3">All courses</span>
+                <a href="courses/" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto">
+                    <span >All courses</span>
                 </a>
             </div>
         </div>

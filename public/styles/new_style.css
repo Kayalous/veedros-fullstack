@@ -18,6 +18,9 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

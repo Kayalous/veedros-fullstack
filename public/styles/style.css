@@ -472,7 +472,6 @@ hr {
 .btn-veedros {
     font-size: 20px;
     font-weight: 300;
-    letter-spacing: 1px;
     padding: 0.3rem 2rem;
     color: #fff;
     cursor: pointer;
@@ -498,7 +497,11 @@ hr {
     -webkit-box-shadow: 0 4px 25px 0 rgba(135, 133, 255, 0.75);
     -moz-box-shadow: 0 4px 25px 0 rgba(135, 133, 255, 0.75);
     white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 
 
