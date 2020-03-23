@@ -4,10 +4,10 @@
     <link rel="stylesheet" href="{{asset('styles/profile.css')}}">
 @endsection
 @section('content')
-    <div class="slash slash-to-right"></div>
+    <div class="new-bg"></div>
 
     <!-- Profile  -->
-    <section class="profile my-5 py-5">
+    <section class="profile my-5 py-5" @if(!$user->instructor)style="height: 100vh"@endif>
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-12 mx-auto">
@@ -34,14 +34,12 @@
             <h6><i class="mr-1" data-feather="globe"></i>{{$user->location}}</h6>
             @endif
             @if($user->about != null)
-            <hr class="my-5">
             <div class="container mx-2">
                 <h5>{{$user->about}}</h5>
             </div>
             @endif
 
             @if($user->twitter != null || $user->facebook != null || $user->linkedin != null)
-                <hr class="my-5">
             @endif
             <div class="d-flex justify-content-center align-items-center">
                 @if($user->twitter != null)
@@ -69,6 +67,7 @@
 </div>
 </section>
 
+    @if($user->instructor)
 <section class="featured courses mt-5 pt-5">
 
 <div class="container container-mine">
@@ -80,55 +79,24 @@
 </div>
 <div class="col-12">
 <div class="course-cards-container card-columns mb-5 py-3">
-    <div class="card course-card development-card noJquery"
-         style="background-image: url('images/img_01.png')" data-toggle="modal"
-         data-target="#exampleModal">
-        <div class="course-card-overlay overlay-0"></div>
-        <div class="card-body m-0">
-            <div class="card-body-inner noscroll card-bg-img">
-                <div class="play-circle play-circle-0"><img style="height:40px; width:40px "
-                                                            src="{{asset('images')}}/Play_button.svg" alt="play button"/>
-                </div>
-                <h4 class="card-title title-mine">
-                    Full Stack Web Development
-                </h4>
+    @foreach($courses as $course)
+        <div class="card course-card development-card noJquery" style="background-image: url({{asset('/uploads/courses/1/pokemon-td8v2/images/1584209495.png')}})">
+            {{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
+            <div class="card-body m-0">
+                <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
+                    <div class="play-circle play-circle-1"> <img style="height:40px; width:40px " src="{{asset('images')}}/Play_button.svg" alt=""/> </div>
+                    <h4 class="card-title title-mine w-100">
+                        {{$course->name}}
+                    </h4>
+                </a>
             </div>
         </div>
-    </div>
-    <div class="card course-card development-card noJquery"
-         style="background-image: url('images/img_02.png')" data-toggle="modal"
-         data-target="#exampleModal">
-        <div class="course-card-overlay overlay-1"></div>
-        <div class="card-body m-0">
-            <div class="card-body-inner noscroll card-bg-img">
-                <div class="play-circle play-circle-1"><img style="height:40px; width:40px "
-                                                            src="{{asset('images')}}/Play_button.svg" alt="play button"/>
-                </div>
-                <h4 class="card-title title-mine">
-                    Full Stack Web Development
-                </h4>
-            </div>
-        </div>
-    </div>
-    <div class="card course-card development-card noJquery"
-         style="background-image: url('images/img_03.png')" data-toggle="modal"
-         data-target="#exampleModal">
-        <div class="course-card-overlay overlay-2"></div>
-        <div class="card-body m-0">
-            <div class="card-body-inner noscroll card-bg-img">
-                <div class="play-circle play-circle-2"><img style="height:40px; width:40px "
-                                                            src="{{asset('images')}}/Play_button.svg" alt="play button"/>
-                </div>
-                <h4 class="card-title title-mine">
-                    Full Stack Web Development
-                </h4>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
+    @endforeach
 
+</div>
+</div>
+</div>
+</div>
 </section>
+@endif
 @endsection

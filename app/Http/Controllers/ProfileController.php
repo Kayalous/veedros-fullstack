@@ -8,6 +8,10 @@ class ProfileController extends Controller
 {
     public function visit($id){
         $user = \App\User::where('id',$id)->firstOrFail();
-        return view("profile",['user'=>$user]);
+        $courses = null;
+        if($user->instructor){
+            $courses = $user->instructor->courses()->take(3)->get();
+        }
+        return view("profile",['user'=>$user, 'courses'=>$courses]);
     }
 }
