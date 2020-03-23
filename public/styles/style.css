@@ -16,7 +16,7 @@ a:hover {
 
 body {
     width: 100vw !important;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 /*social buttons*/
 .btn-facebook {

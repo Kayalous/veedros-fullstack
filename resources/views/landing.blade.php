@@ -10,7 +10,7 @@
 
 @section('content')
     <!-- Hero  -->
-    <section class="hero">
+    <section class="hero overflow-hidden">
         <div class="container">
             <div class="row ">
                 <div class="col-lg-6 hero-header-text ">
