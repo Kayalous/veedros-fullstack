@@ -17,7 +17,7 @@
                     </h1>
                     <h4>With Veedros learning's as easy as it gets.</h4>
 
-                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-md border-0 mt-5 mr-auto"
+                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-lg border-0 mt-5 mr-auto"
                        >
                         Explore now
                     </a>
@@ -35,7 +35,7 @@
                              class="img-fluid illustration illustration-lg illustration-anim-1" />
                     </div>
                     <div class="row w-100 d-md-flex-center">
-                        <div class="illustration-container  " data-wow-delay="0.4s">
+                        <div class="illustration-container illustration-container-sm  " data-wow-delay="0.4s">
                             <canvas id="blob2" class="blob-position-md "> </canvas>
                             <img src="images/hero-02-withoutbg.png" alt=""
                                  class="img-fluid illustration illustration-md illustration-position-md illustration-anim-2" />
