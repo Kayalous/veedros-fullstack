@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <section class="my-5">
+    <section class="my-5 pt-5">
         <div class="container">
             <ul class="nav nav-pills nav-justified">
                 <li class="nav-item shadow m-1">

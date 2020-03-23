@@ -32,10 +32,12 @@
                 <div class="list-group">
                     @for($i = 0; $i < count($controllerCourse->chapters); $i++)
                     <button class="list-group-item collapse-button mx-auto {{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? 'watching ' : ''}}" aria-expanded="{{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? "true" : "false"}}" data-toggle="collapse"
-                            href="#collapse{{$i}}" >
-                        <span>Section {{$i + 1}} </span>
+                            href="#collapse{{$i}}" title="{{$controllerCourse->chapters[$i]->name}}" >
+                        <span>Chapter {{$i + 1}} </span>
                         <div class="vertical-seperator"></div>
+                        <span class="chapter-name">
                         {{$controllerCourse->chapters[$i]->name}}
+                        </span>
                         <div class="chevron"><i data-feather="chevron-down"></i></div>
                     </button>
                     <div class="list-group collapse my-2 {{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? 'show' : ''}}" id="collapse{{$i}}">
@@ -44,7 +46,9 @@
                         {{ ( Request::url() === asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug) ? 'active' : '' }}
                             ">
                             <i data-feather="play" class="mr-3"></i>
+                            <span>
                             {{$session->name}}
+                            </span>
                             <span class="duration">{{$session->duration}}</span>
                         </a>
                         @endforeach
@@ -129,7 +133,7 @@
                                                     <span>{{$instructor->user->position}}</span>
                                                     <br />
                                                 </h5>
-                                                <a href="{{route('profile') . '/' . $instructor->id}}"
+                                                <a href="{{route('profile') . '/' . $instructor->user->id}}"
                                                    class="btn btn-veedros-new btn-veedros-sm border-0 mt-auto">
                                                     Visit profile
                                                 </a>

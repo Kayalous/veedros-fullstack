@@ -36,6 +36,13 @@
     transition: all 0.1s ease-in-out;
     border-radius: 5px;
 }
+.sidebar .list-group-item span {
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
 
 .sidebar .list-group a {
     font-weight: 600;
@@ -168,7 +175,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 40px;
     border-radius: 10px;
     transition: all 0.1s ease-in-out;
 }
@@ -428,4 +434,15 @@
     left: 50% !important;
     margin-top: calc(-50px/2);
     margin-left: calc(-90px/2);
+}
+.collapse-button span{
+    width: 85px;
+}
+
+.collapse-button .chapter-name{
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
 }

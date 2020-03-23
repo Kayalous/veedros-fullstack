@@ -101,24 +101,27 @@
 
     <section class="mt-5">
         <div class="row">
-            <div class="col-lg-6 m-0 px-0">
-                <img class="img-fluid" src="{{asset('images/')}}/Teach-960x775.jpg" alt="Teach with us image">
+            <div class="col-lg-6 m-0 px-0 overflow-hidden teach-img">
+{{--                <img class="teach-img" src="{{asset('images/')}}/Teach-960x775.jpg" alt="Teach with us image">--}}
             </div>
-            <div class="col-lg-6 m-0 px-0 py-5 teach-with-us-container d-flex flex-column justify-content-center align-items-center">
+            <div class="col-lg-6 m-0 py-5 teach-with-us-container d-flex flex-column justify-content-center align-items-center">
                 <div class="teach-with-us-content">
-                    <h1>Have content?</h1>
-                    <br>
-                    <h2>If you...</h2>
-                    <h4><i data-feather="check" class="mr-2"></i>Don't know how to organize your content.</h4>
-                    <h4><i data-feather="check" class="mr-2"></i>Don't know how/where to start.</h4>
-                    <h4><i data-feather="check" class="mr-2"></i>Don't know how to promote your vision.</h4>
-                    <br>
-                    <h4>We can give you a hand with that!</h4>
-                    <div class="row">
-                        <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
-                            <span class="mx-3">Let's talk!</span>
-                        </button>
+                    <div class="container">
+                        <h1>Have content?</h1>
+                        <br>
+                        <h2>If you...</h2>
+                        <h4><i data-feather="check" class="mr-2"></i>Don't know how to organize your content.</h4>
+                        <h4><i data-feather="check" class="mr-2"></i>Don't know how/where to start.</h4>
+                        <h4><i data-feather="check" class="mr-2"></i>Don't know how to promote your vision.</h4>
+                        <br>
+                        <h4>We can give you a hand with that!</h4>
+                        <div class="row">
+                            <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
+                                <span class="mx-3">Let's talk!</span>
+                            </button>
+                        </div>
                     </div>
+
 
                 </div>
             </div>
@@ -134,7 +137,8 @@
 
     <section class="testimonials my-5 py-5">
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-3 mx-auto">
+            <div class="col-lg-4 mx-auto pl-5">
+                <div class="container">
                 <h1>Hey, you help us too.</h1>
                 <br>
                 <h4>We really appreciate your feedback. Don't hesitate to let us know what you think, it really helps.</h4>
@@ -143,6 +147,7 @@
                     <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
                         <span class="mx-3">Give us a review</span>
                     </button>
+                </div>
                 </div>
             </div>
             <div class="col-lg-8">
@@ -155,10 +160,10 @@
                                     @for($j = 0; $j<2; $j++)
                                         <div class="review p-3 mx-2 my-4 ">
                                         <div class="user-info row py-3">
-                                        <div class="tip-instructor-avatar col-lg-2 ml-5 ">
+                                        <div class="tip-instructor-avatar col-lg-2 ml-4 ">
                                             <img src="{{asset('images')}}/05.jpg" alt="" class="round">
                                         </div>
-                                            <div class="rating-container col-lg-8 d-flex flex-column justify-content-center">
+                                            <div class="rating-container ml-2 col-lg-8 d-flex flex-column justify-content-center">
                                                 <h6 class="m-0">Ahmed Zakii</h6>
                                                 <div class="d-flex ratings col-6 px-0 m-0">
                                                     <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
@@ -200,7 +205,7 @@
             <div class="d-flex justify-content-center align-items-center flex-column h-100 w-100">
                 <h1 class="text-center">We help Academies to expand online</h1>
                 <br>
-                <h4>We can help you reach a broader audience and increase your passive income.</h4>
+                <h4 class="text-center">We can help you reach a broader audience and increase your passive income.</h4>
                 <br>
                 <div class="row">
                     <button class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto " type="button">
@@ -213,15 +218,10 @@
 @endsection
 
 @section('libraryJS')
-    <!-- paper js  -->
-    <script src="node_modules/paper/dist/paper-full.js"></script>
     <!-- Owl js -->
     <script src="owlCarousel/js/owl.carousel.min.js"></script>
-    <!-- Wow.js  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 @endsection
 
 @section('customJS')
     <script src="scripts/landing.js"></script>
-
 @endsection

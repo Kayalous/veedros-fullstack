@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-    <div class="slash slash-to-right"></div>
+    <div class="new-bg"></div>
 
     <!-- Profile edit  -->
     <section class="profile my-5 py-5">

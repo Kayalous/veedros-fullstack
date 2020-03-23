@@ -3,6 +3,7 @@
 
 <head>
     <title>Veedros</title>
+    <link rel="icon" href="{{asset('images')}}/Veedros_Logo.png">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -152,7 +153,7 @@
             aria-label="Toggle navigation">
         <i data-feather="menu"></i>
     </button>
-    <div class="collapse navbar-collapse no-flex-grow pb-3" id="collapsibleNavId">
+    <div class="collapse navbar-collapse no-flex-grow" id="collapsibleNavId">
         <ul class="navbar-nav nav-items-container">
             @if(Auth::user())
                 @if(!Auth::user()->hasRole('admin'))

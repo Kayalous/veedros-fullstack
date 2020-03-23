@@ -1844,8 +1844,8 @@ ul {
     -o-object-fit: cover;
     object-fit: cover;
     border-radius: 50%;
-    height: 80px;
-    width: 80px;
+    height: 80px !important;
+    width: 80px !important;
     -webkit-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.45);
     box-shadow: 0 1px 20px rgba(0, 0, 0, 0.45);
 }
@@ -2383,7 +2383,7 @@ color-stop(65%, white));
 }
 
 .teach-with-us-content h1 {
-    font-size: 72px;
+    font-size: 5rem;
     font-weight: 700;
 }
 .teach-with-us-content h2,
@@ -2403,7 +2403,7 @@ color-stop(65%, white));
     color: #1b1e21;
 }
 .testimonials h1{
-    font-size: 72px;
+    font-size: 5rem;
     font-weight: 700;
 }
 .testimonials h2,
@@ -2452,7 +2452,7 @@ color-stop(65%, white));
 }
 
 .academies h1{
-    font-size: 72px;
+    font-size: 5rem;
     font-weight: 700;
 }
 .academies h2,
@@ -2479,9 +2479,21 @@ color-stop(65%, white));
         margin-top: 0.7rem;
     }
 
-
 }
+@media (max-width: 1200px) {
 
+    .academies h1 {
+        font-size: 2.5rem;
+    }
+
+    .testimonials h1 {
+        font-size: 2.5rem;
+    }
+
+    .teach-with-us-content h1 {
+        font-size: 2.5rem;
+    }
+}
 
 
 .nav-photo {
@@ -2531,4 +2543,16 @@ img{
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+.teach-img{
+    width: 100%;
+    height: auto;
+    background: url(../images/Teach-960x775.jpg) center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media (max-width: 992px) {
+    .teach-img {
+        height: 300px;
+    }
 }
