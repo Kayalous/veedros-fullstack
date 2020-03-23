@@ -205,7 +205,7 @@
 
 /* ------------------- dashboard modals title and My progress dicoration ------------- */
 .dashboard-land .p-title {
-    font-size: 1.8rem;
+    font-size: 30px;
     font-weight: 600;
     color: #0373BD;
     text-transform: capitalize;
@@ -215,6 +215,7 @@
 }
 
 .dashboard-land .p-description {
+    font-size: 20px;
     margin-top: 20px;
     word-break: inherit;
 }
@@ -222,7 +223,7 @@
 .dashboard-land .p-prog {
     color: rgb(9, 130, 211);
     font-weight: 400 !important;
-    font-size: 1.4rem;
+    font-size: 27px;
     margin-bottom: 1rem !important;
     font-weight: lighter;
     text-transform: capitalize;
@@ -244,6 +245,11 @@
     text-transform: capitalize;
     margin-bottom: 0rem;
     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+
+.nav-item-edit p {
+    font-size: 20px;
 }
 
 /* ============================================= */
@@ -271,10 +277,7 @@
 
 
 
-/* ======================== edit ======================== */
 
-
-/* ================== edit ================== */
 
 ul li a {
     text-decoration: none;

@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
     <div class="new-bg"></div>
     <section class="info-bar">
         <div class="container ">
@@ -29,10 +31,14 @@
                                     {{Auth::user()->location}}</P>
                             </li>
                             <li>
-                                <a href="{{asset("profile")}}" class="btn btn-veedros-new veedros-bg-color btn-veedros-md  btn- border-0 my-1 "
+                                <a href="{{asset("profile")}}" class="btn btn-veedros-new btn-veedros-regular  btn- border-0 my-1 "
                                         type="button">
-                                    view profile
+                                        <span>view profile</span>
+                                    
                                 </a>
+                            </li>
+                            <li>
+                            <div class="sharethis-inline-share-buttons"></div>
                             </li>
                         </ul>
                     </div>
@@ -76,7 +82,7 @@
                     <p class="target">Saved</p>
                 </a>
             </li>
-            <li id="recommended-tab" class="nav-item nav-item-edit disabled shadow-sm m-1">
+            <!-- <li id="recommended-tab" class="nav-item nav-item-edit disabled shadow-sm m-1">
                 <a href="#Recommended" class="nav-link d-none-tab" data-toggle="tab">
                     <p class="p1 container-notification"><i class="far fa-thumbs-up" aria-hidden="true"></i>
 
@@ -85,7 +91,7 @@
                     </p>
                     <p class="target">Recommended</p>
                 </a>
-            </li>
+            </li> -->
         </ul>
         <div class="tab-content ">
             <!-- My Courses -->
@@ -136,9 +142,14 @@
                                 </div>
                                 <hr>
                                 <div class="d-flex justify-content-end mb-3 ">
-                                    <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
+                                    <!-- <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
                                         share
-                                    </button>
+                                    </button> -->
+                                    <!-- <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" 
+                                    data-layout="button" data-size="large"><a target="_blank" 
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" 
+                                    class="fb-xfbml-parse-ignore">Share</a></div> -->
+                                    
                                     <button class="btn btn-veedros btn-veedros-md border-0 " type="button">
                                         Keep Going
                                     </button>
@@ -368,7 +379,7 @@
             <!-- Recommended -->
             <!-- Recommended -->
             <!-- Recommended -->
-            <div id="Recommended" class="tab-pane fade">
+            <!-- <div id="Recommended" class="tab-pane fade">
                 <div class="dashboard-land">
                     <div class="container">
                         <div class="row ">
@@ -467,7 +478,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>

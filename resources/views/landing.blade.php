@@ -17,7 +17,7 @@
                     </h1>
                     <p>With Veedros learning's as easy as it gets.</p>
 
-                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-md border-0 mt-5 mr-auto"
+                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-regular border-0 mt-5 mr-auto"
                        >
                        <span>Explore now</span>
                         
