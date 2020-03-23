@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="{{asset('styles/style.css')}}" />
     <link rel="stylesheet" href="{{asset('styles/new_style.css')}}" />
     @yield('customCSS')
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e792c766caf2b00125bec34&product=inline-share-buttons&cms=website' async='async'></script>
 </head>
 
 <body>
