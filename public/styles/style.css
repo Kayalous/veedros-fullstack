@@ -15,7 +15,6 @@ a:hover {
 }
 
 body {
-    position: relative;
     width: 100vw !important;
     overflow-x: hidden;
 }
@@ -65,7 +64,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-image: url(../course-header-1920x300.jpg);
+    background-image: url(../images/course-header-1920x300.jpg);
     /* background-position: right; */
     background-size: cover;
     background-repeat: no-repeat;
@@ -2348,7 +2347,7 @@ color-stop(65%, white));
     z-index: -1;
 }
 .happy-users h1, .happy-users h2{
-    color: #4C616B;
+    color: #4C616B !important;
 }
 .happy-users h1{
     font-size: 92px;

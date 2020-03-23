@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="{{asset('styles')}}/profile.css">
 @endsection
 @section('content')
-
-    <section class="player-container my-5 px-3">
+    <div class="new-bg"></div>
+    <section class="player-container my-5 pt-5 px-3">
         <div class="video-wrapper my-auto">
             <video id="player" class="video-js vjs-default-skin vjs-16-9" controls preload="auto"
                    width="640" height="264"
@@ -73,6 +73,15 @@
                         @endforeach
                     </ul>
                     <br>
+                    <h2>Recommended to</h2>
+                    <ul class="ml-5">
+                        @foreach($controllerCourse->recommendations as $rec)
+                        <li>
+                            <h5><i data-feather="circle" style="color: #65D3BF; fill: currentColor" class="mr-3"></i>{{$rec->recommendation}}</h5>
+                        </li>
+                        @endforeach
+                    </ul>
+                    <br>
                     <div class="row w-md-100 w-75 mx-auto">
                         <div class="col-6">
                             <div class="badge tip-badge py-1">
@@ -92,23 +101,15 @@
                         </div>
                     </div>
                     <br>
-                    <h2>Recommended to</h2>
-                    <ul class="ml-5">
-                        @foreach($controllerCourse->recommendations as $rec)
-                        <li>
-                            <h5><i data-feather="arrow-right" class="mr-3"></i>{{$rec->recommendation}}</h5>
-                        </li>
-                        @endforeach
-                    </ul>
 
                 </div>
 
                 <div class="col-xl-4 col-lg-5">
                     <div class="d-lg-block d-md-flex flex-reverse-mine w-100 ">
                         <div class="flex-around flex-column-mine mb-lg-5 mr-lg-5-mine pt-5">
-                            <button class="btn btn-veedros btn-veedros-md border-0 py-3">
+                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-3">
                                 Share <i data-feather="share" class="ml-2"></i></button>
-                            <button class="btn btn-veedros btn-veedros-md border-0 py-3">
+                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-3">
                                 Save <i data-feather="bookmark"
                                         class="ml-2"></i></button>
                             <hr class="d-md-none mt-5">
@@ -129,7 +130,7 @@
                                                     <br />
                                                 </h5>
                                                 <a href="{{route('profile') . '/' . $instructor->id}}"
-                                                   class="btn btn-veedros btn-veedros-sm border-0 mt-auto">
+                                                   class="btn btn-veedros-new btn-veedros-sm border-0 mt-auto">
                                                     Visit profile
                                                 </a>
                                             </div>
@@ -149,26 +150,15 @@
                     <br>
 
                     <div class="d-none d-lg-block">
-                        <h2 class="ml-5">See also</h2>
-                        <div class="card course-card development-card noJquery"
-                             style="background-image: url('images/img_03.png')"
-                             data-toggle="modal" data-target="#exampleModal">
-                            <div class="course-card-overlay overlay-2"></div>
-                            <div class="card-body m-0">
-                                <div class="card-body-inner noscroll card-bg-img">
-                                    <div class="play-circle play-circle-2"> <img
-                                            style="height:40px; width:40px "
-                                            src="images/Play_button.svg"
-                                            alt="" /> </div>
-                                    <h4 class="card-title title-mine">
-                                        Full Stack Web Development
-                                    </h4>
-                                </div>
+                        <section class="happy-users my-3">
+                            <div>
+                                <h1 class="text-center mb-0">500<span>+</span></h1>
+                                <h2 class="mt-0">Happy students</h2>
                             </div>
-                        </div>
+                        </section>
                         <div class="text-center">
-                            <button class="btn btn-veedros btn-veedros-md border-0 py-2">
-                                Load more</button>
+                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-2">
+                                Explore more</button>
                         </div>
                     </div>
                 </div>
@@ -176,8 +166,8 @@
 
             <br>
             <div class="w-100 text-center my-5">
-                <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros btn-veedros-xl border-0">
-                    Apply now<i data-feather="shopping-cart" class="mr-3"></i></a>
+                <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
+                    Apply now<i data-feather="shopping-cart" class="ml-3"></i></a>
             </div>
 
             <div class="d-lg-none d-block mx-auto mb-5 w-100">
@@ -199,7 +189,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-veedros btn-veedros-md border-0 py-2">
+                    <button class="btn btn-veedros-new btn-veedros-md border-0 py-2">
                         Load more</button>
                 </div>
             </div>

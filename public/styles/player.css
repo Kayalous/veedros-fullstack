@@ -9,7 +9,8 @@
 }
 
 .sidebar {
-    background-color: #fff;
+    background-color: #ffffff55;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -203,6 +204,9 @@
 
 #course-info .feather {
     color: #0D984F;
+}
+#course-info .btn-veedros-new .feather {
+    color: white;
 }
 
 #course-info .badge-item {
