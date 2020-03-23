@@ -1,0 +1,34 @@
+.teach-header {
+    background-image: url(../images/helpSection-1920x800.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.feather {
+    color: #0D984F;
+}
+
+.header h1 {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+
+.input-sm {
+    width: 13%;
+    display: inline-block;
+}
+
+.input-md {
+    width: 86%;
+    display: inline-block;
+}
+

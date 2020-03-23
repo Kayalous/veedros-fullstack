@@ -4,8 +4,6 @@
     <!-- Owl CSS  -->
     <link rel="stylesheet" href="owlCarousel/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="owlCarousel/css/owl.theme.default.min.css" />
-    <!-- Wow.js CSS  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 @endsection
 
 @section('content')
@@ -116,9 +114,9 @@
                         <br>
                         <h4>We can give you a hand with that!</h4>
                         <div class="row">
-                            <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
+                            <a href="{{asset("teach")}}" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
                                 <span class="mx-3">Let's talk!</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
 
