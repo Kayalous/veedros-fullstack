@@ -40,7 +40,7 @@
                                                        name="name"
                                                        id="name"
                                                        class="form-control profile-form-field email-field-props border-light border-radius-sm"
-                                                       placeholder="Yassen Ali" />
+                                                       placeholder="John Smith" />
                                             </div>
                                             <div class="input-group mb-2">
                                                 <h5>Phone number</h5>
@@ -48,7 +48,7 @@
                                                        name="phone"
                                                        id="phone"
                                                        class="form-control profile-form-field email-field-props border-light border-radius-sm"
-                                                       placeholder="+20 114 720 0863" />
+                                                       placeholder="Your phone number here" />
                                             </div>
                                             <div class="input-group mb-2">
                                                 <h5>Change email</h5>
@@ -128,7 +128,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><img style="width: 25px; height: 25px" src="{{asset('images/Icons')}}/twitter.svg"></span>
                                             </div>
-                                            <input name="twitter" id="twitter" type="text" class="form-control form-control-social border-0">
+                                            <input name="twitter" id="twitter" type="text" class="form-control form-control-social border-0 my-auto">
                                         </div>
                                     </div>
                                     <div class="col-lg-7 col-md-9 mx-auto my-3">
@@ -136,7 +136,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><img style="width: 25px; height: 25px " src="{{asset('images/Icons')}}/LinkedIn.svg"></span>
                                             </div>
-                                            <input name="linkedin" id="linkedin" type="text" class="form-control form-control-social border-0">
+                                            <input name="linkedin" id="linkedin" type="text" class="form-control form-control-social border-0 my-auto">
                                         </div>
                                     </div>
                                     <div class="col-lg-7 col-md-9 mx-auto my-3">
@@ -144,14 +144,14 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><img style="width: 25px; height: 25px " src="{{asset('images/Icons')}}/facebook.svg"></span>
                                             </div>
-                                            <input name="facebook" id="facebook" type="text" class="form-control form-control-social border-0">
+                                            <input name="facebook" id="facebook" type="text" class="form-control form-control-social border-0 my-auto">
                                         </div>
                                     </div>
                                 </div>
 
 
                                 <div class="w-100 text-center mt-5">
-                                    <button type="submit" id="btnsubmit" class="btn btn-veedros-new btn-veedros-lg mx-auto border-0">
+                                    <button type="submit" id="btnsubmit" class="btn btn-veedros-new btn-veedros-md mx-auto border-0">
                                         <h4 class="my-0 mx-5">Save</h4>
                                     </button>
                                 </div>

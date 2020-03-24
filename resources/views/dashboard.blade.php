@@ -130,14 +130,14 @@
                                 <hr class="my-4">
                                 <div class="d-flex justify-content-end mb-3 ">
                                     <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
-                                        share
+                                        Share <img class="ml-2" src="{{asset('images/Icons')}}/share.svg" alt="">
                                     </button>
                                     <!-- <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/"
                                     data-layout="button" data-size="large"><a target="_blank"
                                     href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
                                     class="fb-xfbml-parse-ignore">Share</a></div> -->
 
-                                    <a href="{{\App\Course::getFirstSession($course)}}" class="btn btn-veedros btn-veedros-md border-0 " type="button">
+                                    <a href="{{\App\Course::getFirstSession($course)}}" class="btn btn-veedros btn-veedros-sm border-0 " type="button">
                                         Keep Going
                                     </a>
                                 </div>
