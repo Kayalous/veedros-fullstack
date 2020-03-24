@@ -154,8 +154,8 @@
                         <div class="flex-around flex-column-mine mb-lg-5 mr-lg-5-mine pt-5">
                             <button class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-2">
                                 Share <img class="ml-2" src="{{asset('images/Icons')}}/share.svg" alt="Share icon"></button>
-                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-2">
-                                Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon"></button>
+                            <a href="{{asset('save') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-2">
+                                Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon"></a>
                             <hr class="d-md-none mt-5">
 
                         </div>

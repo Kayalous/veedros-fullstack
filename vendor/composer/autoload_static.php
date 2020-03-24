@@ -617,6 +617,7 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Recommendation' => __DIR__ . '/../..' . '/app/Recommendation.php',
+        'App\\Saved' => __DIR__ . '/../..' . '/app/Saved.php',
         'App\\Session' => __DIR__ . '/../..' . '/app/Session.php',
         'App\\SocialProvider' => __DIR__ . '/../..' . '/app/SocialProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',

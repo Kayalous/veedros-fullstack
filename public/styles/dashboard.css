@@ -334,3 +334,10 @@ ul li a {
 
     }
 }
+#Saved h1{
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -75,6 +75,7 @@ Route::post('/manage/instructor/courses/{slug}/thumbnail', 'CourseController@edi
 Route::get('/watch/{instructorDisplayName}/{courseName}/{chapterName}/{sessionName}', 'VideoController@watch')->middleware('enrolled');
 Route::post('/comment', 'VideoController@comment');
 Route::get('/enroll/{course_id}', 'EnrollController@enroll');
+Route::get('/save/{course_id}', 'CourseController@addToSaved');
 
 
 //Auth routes

@@ -6,6 +6,7 @@ use App\Course;
 use App\Http\Controllers\Controller;
 use App\Objective;
 use App\Recommendation;
+use App\Saved;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\File as fileFacede;
 
@@ -170,4 +171,17 @@ class CourseController extends Controller
 
     }
 
+
+    public function addToSaved($course_id){
+        $course = Course::where('id', $course_id)->firstOrFail();
+        $user = Auth::user();
+        if($user === null)
+        {
+            //The user is not signed in
+
+        }
+        Saved::firstOrCreate(['course_id' => $course->id, 'user_id' => $user->id]);
+        return back();
+
+    }
 }
