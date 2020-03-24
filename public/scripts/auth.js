@@ -33,7 +33,7 @@ function userFieldsValidation(
   submitButton.onclick = function (e) {
     e.preventDefault();
     if (validateEmail() && validatePassword()) {
-        submitButton.innerHTML = '<span class="spinner-grow text-light spinner-grow-sm"></span>';
+        submitButton.innerHTML = '<span class="spinner-grow text-light spinner-grow-sm mr-2"></span> Loading...';
         submitButton.disabled = true;
       form.submit();
     }
