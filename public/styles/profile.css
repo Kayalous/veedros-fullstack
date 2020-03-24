@@ -185,7 +185,11 @@
 	border-radius: 10px;
 	overflow: hidden;
 }
-
+.form-control-social.is-valid{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
 .form-control-social:focus .profile-social-field {
 	-webkit-box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
 		0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
@@ -212,7 +216,7 @@
 
 .profile-social-field * {
 	font-weight: 500;
-	font-size: 35px;
+	font-size: 20px;
 }
 
 .profile-social-field .form-control {

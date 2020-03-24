@@ -8,6 +8,21 @@
     margin: 0;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    background-color: rgba(0,0,0,0) !important;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
 
 
 a:hover {
@@ -471,7 +486,7 @@ hr {
 /* Veedros button  */
 .btn-veedros {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 700;
     padding: 0.3rem 2rem;
     color: #fff;
     cursor: pointer;
@@ -493,9 +508,6 @@ hr {
             #8486db,
             #8d8ff5,
             #9997ec);
-    box-shadow: 0 4px 25px 0 rgba(135, 133, 255, 0.75);
-    -webkit-box-shadow: 0 4px 25px 0 rgba(135, 133, 255, 0.75);
-    -moz-box-shadow: 0 4px 25px 0 rgba(135, 133, 255, 0.75);
     white-space: nowrap;
     display: flex;
     justify-content: center;
@@ -517,16 +529,10 @@ hr {
     color: #fff;
     -webkit-transform: translateY(-1px);
     transform: translateY(-1px);
-    box-shadow: 0 8px 25px 0 rgba(135, 133, 255, 0.75);
-    -webkit-box-shadow: 0 8px 25px 0 rgba(135, 133, 255, 0.75);
-    -moz-box-shadow: 0 8px 25px 0 rgba(135, 133, 255, 0.75);
 }
 
 .btn-veedros:focus {
     outline: none;
-    box-shadow: 0 8px 25px 0 rgba(135, 133, 255, 0.75);
-    -webkit-box-shadow: 0 8px 25px 0 rgba(135, 133, 255, 0.75);
-    -moz-box-shadow: 0 8px 25px 0 rgba(135, 133, 255, 0.75);
 }
 
 .btn-veedros:active {
@@ -537,9 +543,6 @@ hr {
     transform: translateY(4px) scale(0.95);
     outline: none !important;
     border: none !important;
-    box-shadow: 0 4px 25px 0 rgba(135, 133, 255, 0.75);
-    -webkit-box-shadow: 0 4px 25px 0 rgba(135, 133, 255, 0.75);
-    -moz-box-shadow: 0 4px 25px 0 rgba(135, 133, 255, 0.75);
 }
 
 .btn-veedros-alt-white {
@@ -2448,6 +2451,10 @@ ul {
 .testimonials h1 {
     font-size: 5rem;
     font-weight: 700;
+
+}
+.testimonials{
+    background-color: #FDF8F5;
 }
 
 .testimonials h2,
