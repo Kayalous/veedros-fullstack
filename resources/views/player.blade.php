@@ -45,9 +45,13 @@
                         <a href="{{asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug}}" class="list-group-item list-group-item-action
                         {{ ( Request::url() === asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug) ? 'active' : '' }}
                             ">
-                            <i data-feather="play" class="mr-3"></i>
                             <span>
-                            {{$session->name}}
+                                @if($loop->iteration <= 3)
+                            <img class="mr-2" src="{{asset('images/Icons')}}/VideoPlay.svg" alt="Play icon">
+                                @else
+
+                                @endif
+                                    {{$session->name}}
                             </span>
                             <span class="duration">{{$session->duration}}</span>
                         </a>
@@ -81,7 +85,7 @@
                     <ul class="ml-5">
                         @foreach($controllerCourse->recommendations as $rec)
                         <li>
-                            <h5><i data-feather="circle" style="color: #65D3BF; fill: currentColor" class="mr-3"></i>{{$rec->recommendation}}</h5>
+                            <h5><i data-feather="circle" style="color: #65D3BF; fill: currentColor; width: 22px; height: 22px" class="mr-3"></i>{{$rec->recommendation}}</h5>
                         </li>
                         @endforeach
                     </ul>
@@ -111,11 +115,10 @@
                 <div class="col-xl-4 col-lg-5">
                     <div class="d-lg-block d-md-flex flex-reverse-mine w-100 ">
                         <div class="flex-around flex-column-mine mb-lg-5 mr-lg-5-mine pt-5">
-                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-3">
-                                Share <i data-feather="share" class="ml-2"></i></button>
-                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-3">
-                                Save <i data-feather="bookmark"
-                                        class="ml-2"></i></button>
+                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-2">
+                                Share <img class="ml-2" src="{{asset('images/Icons')}}/share.svg" alt="Share icon"></button>
+                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-2">
+                                Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Share icon"></button>
                             <hr class="d-md-none mt-5">
 
                         </div>
@@ -161,7 +164,7 @@
                             </div>
                         </section>
                         <div class="text-center">
-                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-2">
+                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-2 mx-auto">
                                 Explore more</button>
                         </div>
                     </div>
@@ -171,7 +174,7 @@
             <br>
             <div class="w-100 text-center my-5">
                 <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
-                    Apply now<i data-feather="shopping-cart" class="ml-3"></i></a>
+                    Enroll now<i data-feather="shopping-cart" class="ml-3"></i></a>
             </div>
 
             <div class="d-lg-none d-block mx-auto mb-5 w-100">

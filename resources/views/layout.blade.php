@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     @yield('libraryCSS')
     <!-- Font Awesome  -->
     <script src="https://kit.fontawesome.com/04f7d66693.js" crossorigin="anonymous"></script>
@@ -162,7 +162,7 @@
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{asset("teach")}}">Teach</a>
-               
+
             </li>
             @if(Auth::user()->instructor)
                         <li class="nav-item">

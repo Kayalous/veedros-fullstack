@@ -33,8 +33,10 @@
     transform: translateY(-1px);
 }
 
-a:focus {
-    outline: none;
+.btn-veedros-new:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .btn-veedros-new:focus {}
@@ -58,8 +60,8 @@ a:focus {
 .btn-veedros-regular {
     font-size: 16px !important;
     font-weight: 400;
-    width: 215px;
-    height: 50px;
+    max-width: 215px;
+    max-height: 50px;
     border-radius: 50px;
 }
 

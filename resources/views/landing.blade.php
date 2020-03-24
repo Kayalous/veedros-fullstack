@@ -8,44 +8,37 @@
 
 @section('content')
     <!-- Hero  -->
-    <section class="hero overflow-hidden">
-        <div class="container">
+    <section class="hero pt-5 overflow-hidden">
+        <div class="container mt-5">
             <div class="row ">
                 <div class="col-lg-6 hero-header-text ">
-                    <h1 class="d-lg-block d-none mb-3">
+                    <h1 class="mb-3">
                         Learn, easily
                     </h1>
-                    <p>With Veedros learning's as easy as it gets.</p>
+                    <p class="">With Veedros learning's as easy as it gets.</p>
 
                     <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-regular border-0 mt-5 mr-auto"
                        >
                        <span>Explore now</span>
-                        
                     </a>
-                    
                 </div>
                 <div class="col-lg-6 hero-illustrations mx-auto">
-                    <h1 class="d-lg-none d-block text-center ">
-                        Learning
-                        has never been so easy.
-                    </h1>
-
                     <div class="illustration-container illustration-container-lg d-md-flex-center "
                          >
                         <canvas id="blob"> </canvas>
-                        <img src="images/hero-01-withoutbg.png" alt=""
+                        <img src="{{asset('images')}}/hero-01-withoutbg.png" alt=""
                              class="img-fluid illustration illustration-lg illustration-anim-1" />
                     </div>
                     <div class="row w-100 d-md-flex-center">
                         <div class="illustration-container illustration-container-sm  " data-wow-delay="0.4s">
                             <canvas id="blob2" class="blob-position-md "> </canvas>
-                            <img src="images/hero-02-withoutbg.png" alt=""
+                            <img src="{{asset('images')}}/hero-02-withoutbg.png" alt=""
                                  class="img-fluid illustration illustration-md illustration-position-md illustration-anim-2" />
                         </div>
                         <div class="illustration-container col-4 illustration-container-sm mt-illustration  "
                              data-wow-delay="0.6s">
                             <canvas id="blob3"> </canvas>
-                            <img src="images/hero-03.png" alt=""
+                            <img src="{{asset('images')}}/hero-03.png" alt=""
                                  class="img-fluid illustration illustration-sm illustration-position-sm illustration-anim-3" />
                         </div>
                     </div>

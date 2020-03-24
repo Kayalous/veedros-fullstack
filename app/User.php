@@ -42,4 +42,7 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+    public function isEnrolledInCourse(Course $course){
+        dd($this);
+    }
 }

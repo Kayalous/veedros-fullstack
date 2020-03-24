@@ -122,11 +122,8 @@ class RegisterController extends Controller
      */
     public function handleProviderCallbackFacebook()
     {
-        try {
-            $socialUser = Socialite::driver('facebook')->user();
-        } catch (InvalidStateException $e) {
+
             $socialUser = Socialite::driver('facebook')->stateless()->user();
-        } finally {
             //Check if it's the first time logging in
             $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
             if(!$socialProvider){
@@ -162,7 +159,6 @@ class RegisterController extends Controller
 
 
 
-    }
 
 
 
@@ -201,11 +197,7 @@ class RegisterController extends Controller
      */
     public function handleProviderCallbackGoogle()
     {
-        try {
-            $socialUser = Socialite::driver('google')->user();
-        } catch (InvalidStateException $e) {
             $socialUser = Socialite::driver('google')->stateless()->user();
-        } finally {
             //Check if it's the first time logging in
             $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
             if(!$socialProvider){
@@ -236,7 +228,4 @@ class RegisterController extends Controller
             Auth::login($user);
             return redirect('/');
         }
-
-
-    }
 }
