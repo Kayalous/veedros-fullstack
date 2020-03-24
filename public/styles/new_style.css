@@ -39,8 +39,6 @@
     box-shadow: none !important;
 }
 
-.btn-veedros-new:focus {}
-
 .btn-veedros-new:active {
     moz-transition: all 0.1s ease-in-out;
     -webkit-transition: all 0.1s ease-in-out;
@@ -66,7 +64,7 @@
 }
 
 .btn-veedros-wide {
-    font-size: 20px;
+    font-size: 16px;
     width: 500px;
     height: 50px;
     border-radius: 50px;
