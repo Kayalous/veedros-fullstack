@@ -2,10 +2,6 @@
 
 
 /* custom size for share btn */
-.btn-veedros-sm {
-    font-size: 20px !important;
-}
-
 /* ============================================================================================== */
 
 .info-bar {
@@ -156,10 +152,10 @@
 
 }
 
-.info-bar .fas,
+/* .info-bar .fas,
 .far {
     line-height: 1.5;
-}
+} */
 
 @media (max-width: 767px) {
 
@@ -237,51 +233,14 @@
 /* ============================================= */
 
 
-/*
-@media (max-width:888px) and (min-width:768px) {
-    .info-bar .content-info-bar .user-name .p1 {
-        font-size: 1.4rem;
-        transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-    }
-}
-
-@media (max-width:806px)and (min-width:768px) {
-    .info-bar .content-info-bar .user-name .p2 {
-        font-size: 0.7rem;
-        transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-    }
-}
-
- */
 
 
 
-
-
-
-
-
-ul li a {
+ul .nav-item-edit a {
     text-decoration: none;
     color: black;
 }
 
-
-/*
-.dashboard-land .btn-veedros-sm {
-    font-size: 17px;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px -4px rgba(135, 133, 255, 0.5);
-    -webkit-box-shadow: 0 4px 12px -4px rgba(135, 133, 255, 0.5);
-    -moz-box-shadow: 0 4px 12px -4px rgba(135, 133, 255, 0.5);
-}
-
-.dashboard-land .btn-veedros-md {
-    font-size: 15px;
-    padding: 0.5rem 1.5rem;
-    border-radius: 30px;
-} */
 
 
 .nav-item .nav-link p {
@@ -316,7 +275,8 @@ ul li a {
 
     }
 }
-#Saved h1{
+
+#Saved h1 {
     font-weight: 700;
     font-size: 50px;
     text-align: center;
