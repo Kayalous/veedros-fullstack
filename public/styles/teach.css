@@ -17,7 +17,7 @@
 }
 
 .header h1 {
-    font-size: 4rem;
+    font-size: 80px;
     font-weight: 900;
 }
 
@@ -31,23 +31,29 @@
     width: 86%;
     display: inline-block;
 }
+
 .profile-form-field {
     width: 100% !important;
     font-weight: 500;
     font-size: 18px;
     -webkit-box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
-    0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
-    0 0px 15.5px -7px rgba(0, 0, 0, 0.145);
+        0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
+        0 0px 15.5px -7px rgba(0, 0, 0, 0.145);
     box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
-    0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
-    0 0px 15.5px -7px rgba(0, 0, 0, 0.145);
+        0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
+        0 0px 15.5px -7px rgba(0, 0, 0, 0.145);
 }
 
 .profile-form-field:focus {
     -webkit-box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
-    0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
-    0 0px 15.5px -6px rgba(0, 0, 0, 0.210);
+        0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
+        0 0px 15.5px -6px rgba(0, 0, 0, 0.210);
     box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
-    0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
-    0 0px 15.5px -6px rgba(0, 0, 0, 0.210);
+        0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
+        0 0px 15.5px -6px rgba(0, 0, 0, 0.210);
+}
+
+.teach-with-us-content h4,
+h2 {
+    font-size: 22px;
 }
