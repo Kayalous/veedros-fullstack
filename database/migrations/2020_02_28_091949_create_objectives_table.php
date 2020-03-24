@@ -15,8 +15,10 @@ class CreateObjectivesTable extends Migration
     {
         Schema::create('objectives', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('course_id')->unsigned()->references('id')->on('courses');
+            $table->bigInteger('course_id')->unsigned()->references('id')->on('courses')->nullable();
+            $table->bigInteger('session_id')->unsigned()->references('id')->on('sessions')->nullable();
             $table->text('objective');
+            $table->text('title')->nullable();
             $table->timestamps();
         });
     }

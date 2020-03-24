@@ -210,9 +210,6 @@
                         <div class="col-6">
                                 <img id="singleElement" class="nav-photo" src="{{asset('uploads/profilePictures/') . '/'.Auth::user()->img}}" alt="profile picture">
                         </div>
-                        <div class="col-6">
-                            <img src="{{asset('images/Icons/VideoPlay.svg')}}" alt="">
-                        </div>
                     </div>
                 </li>
 

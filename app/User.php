@@ -43,6 +43,10 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
         return $this->hasMany(Comment::class);
     }
     public function isEnrolledInCourse(Course $course){
-        dd($this);
+        $enrollment = Enroll::where(['user_id' => $this->id, 'course_id' => $course->id])->first();
+        if($enrollment !== null)
+            return true;
+        else
+            return false;
     }
 }

@@ -46,10 +46,20 @@
                         {{ ( Request::url() === asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug) ? 'active' : '' }}
                             ">
                             <span>
-                                @if($loop->iteration <= 3)
-                            <img class="mr-2" src="{{asset('images/Icons')}}/VideoPlay.svg" alt="Play icon">
+                                @if(Auth::user())
+                                    @if($loop->iteration <= 3 && $i === 0 || Auth::user()->isEnrolledInCourse($controllerCourse))
+                                        <img class="mr-2" src="{{asset('images/Icons')}}/VideoPlay.svg" alt="Play icon">
+                                    @else
+                                        <img class="mr-2" src="{{asset('images/Icons')}}/VideoLock.svg" alt="Lock icon">
+                                    @endif
                                 @else
+                                    @if($loop->iteration <= 3 && $i === 0)
+                                        <img class="mr-2" src="{{asset('images/Icons')}}/VideoPlay.svg" alt="Play icon">
 
+                                    @else
+                                        <img class="mr-2" src="{{asset('images/Icons')}}/VideoLock.svg" alt="Lock icon">
+
+                                    @endif
                                 @endif
                                     {{$session->name}}
                             </span>
@@ -67,6 +77,7 @@
         <div>
             <div class="row flex-column-reverse-mine">
                 <div class="col-xl-8 col-lg-7 seperator-right">
+                    @if(!$controllerSession->isFirstSession())
                     <h2>About this course</h2>
                     <h5>
                         {{$controllerCourse->about}}
@@ -110,6 +121,32 @@
                     </div>
                     <br>
 
+
+                    @else
+                        <h2>Session Milestones</h2>
+                        <ul class="ml-5 mt-3">
+                            @foreach($controllerSession->objectives as $objective)
+                            <li class="row mt-3">
+                                <div class="col-1">
+                                    <i data-feather="check"></i>
+                                </div>
+                                <div class="col-11 pr-5">
+                                    <h5>
+                                        {{$objective->title}}
+                                    </h5>
+                                    <h6>
+                                        {{$objective->objective}}
+                                    </h6>
+                                </div>
+                            </li>
+                            @endforeach
+                        </ul>
+                        <div class="w-100 text-center my-5 mx-auto">
+                            <button class="btn btn-veedros btn-veedros-xxl btn-veedros-alt-white border-0">
+                                Download session attachments<i data-feather="download"></i></button>
+                        </div>
+
+                    @endif
                 </div>
 
                 <div class="col-xl-4 col-lg-5">
@@ -118,12 +155,12 @@
                             <button class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-2">
                                 Share <img class="ml-2" src="{{asset('images/Icons')}}/share.svg" alt="Share icon"></button>
                             <button class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-2">
-                                Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Share icon"></button>
+                                Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon"></button>
                             <hr class="d-md-none mt-5">
 
                         </div>
                         <div class="ml-lg-5-mine">
-                            <h2 class="ml-5">Course Author</h2>
+                            <h2 class="ml-5">Author</h2>
                             <div class="mx-3 mt-3">
                                 <div
                                     class="row box-shadow-md py-3 pl-4 pr-5 border-radius-md">
@@ -171,12 +208,21 @@
                 </div>
             </div>
 
-            <br>
-            <div class="w-100 text-center my-5">
-                <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
-                    Enroll now<i data-feather="shopping-cart" class="ml-3"></i></a>
-            </div>
-
+            @if(Auth::user())
+                @if(!Auth::user()->isEnrolledInCourse($controllerCourse))
+                    <br>
+                    <div class="w-100 text-center my-5">
+                        <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
+                            Enroll now<i data-feather="shopping-cart" class="ml-3"></i></a>
+                    </div>
+                @endif
+            @else
+                <br>
+                <div class="w-100 text-center my-5">
+                    <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
+                        Enroll now<i data-feather="shopping-cart" class="ml-3"></i></a>
+                </div>
+            @endif
             <div class="d-lg-none d-block mx-auto mb-5 w-100">
                 <hr>
                 <h2 class="ml-5">See also</h2>
@@ -201,6 +247,7 @@
                 </div>
             </div>
         </div>
+        @if($controllerSession->isFirstSession())
         <br>
         <h2 class="mt-5">Leave a comment</h2>
         <form action="{{asset("/comment")}}" method="POST" class="row mt-4 px-4">
@@ -248,6 +295,7 @@
                 </div>
             @endforeach
         </div>
+        @endif
     </section>
 @endsection
 

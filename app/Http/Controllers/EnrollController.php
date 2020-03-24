@@ -14,6 +14,12 @@ class EnrollController extends Controller
     public function enroll($course_id){
         $course = Course::where('id', $course_id)->firstOrFail();
         $user = Auth::user();
+        if($user === null)
+        {
+            \Session::flash('message',"You need to be logged in to enroll in this course.");
+            \Session::flash('login-form',"");
+            return back();
+        }
         $enrollmentStatus = self::enrollUser($user, $course);
         if($enrollmentStatus === true)
             \Session::flash('success',"Awesome! you're now enrolled in " . $course->name .  ".");

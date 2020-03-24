@@ -11,4 +11,7 @@ class Objective extends Model
     public function course(){
         return $this->belongsTo(Course::class);
     }
+    public function session(){
+        return $this->belongsTo(Session::class);
+    }
 }
