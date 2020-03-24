@@ -28,8 +28,13 @@ class ManageController extends Controller
             'position' => 'nullable|max:100',
             'location' => 'nullable|max:100',
             'about' => 'nullable|max:500',
+            'twitter' => 'nullable|max:500',
+            'facebook' => 'nullable|max:500',
+            'linkedin' => 'nullable|max:500'
         ]);
-
+        $request['twitter'] = preg_replace('#^https?://#', '', $request['twitter']);
+        $request['facebook'] = preg_replace('#^https?://#', '', $request['facebook']);
+        $request['linkedin'] = preg_replace('#^https?://#', '', $request['linkedin']);
         $user = Auth::user();
 
         if($request['filepond'] != null){
