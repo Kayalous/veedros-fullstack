@@ -31,7 +31,7 @@
                 <h5>{{$user->position}}</h5>
             @endif()
             @if($user->location != null)
-            <h6><i class="mr-1" data-feather="globe"></i>{{$user->location}}</h6>
+            <h6><img class="mr-2" src="{{asset('images/Icons')}}/Location.svg" alt="">{{$user->location}}</h6>
             @endif
             @if($user->about != null)
             <div class="container mx-2">
@@ -44,17 +44,17 @@
             <div class="d-flex justify-content-center align-items-center">
                 @if($user->twitter != null)
                     <a target="_blank" rel="noopener" href="//{{$user->twitter}}">
-                        <h1><i data-feather="twitter"></i></h1>
+                        <h1><img src="{{asset('images/Icons')}}/twitter.svg"></h1>
                     </a>
                 @endif
                 @if($user->facebook != null)
                     <a target="_blank" rel="noopener" href="//{{$user->facebook}}">
-                        <h1><i data-feather="facebook"></i></h1>
+                        <h1><img src="{{asset('images/Icons')}}/facebook.svg"></h1>
                     </a>
                 @endif
                 @if($user->linkedin != null)
                     <a target="_blank" rel="noopener" href="//{{$user->linkedin}}">
-                        <h1><i data-feather="linkedin"></i></h1>
+                        <h1><img src="{{asset('images/Icons')}}/LinkedIn.svg"></h1>
                     </a>
                 @endif
             </div>

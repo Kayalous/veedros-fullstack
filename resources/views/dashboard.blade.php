@@ -25,11 +25,13 @@
                             <li>
                                 <p class="p1">{{Auth::user()->name}}</p>
                             </li>
+                            @if(Auth::user()->location)
                             <li class="d-flex my-2">
-                                <img src="Icons/Location.svg" alt="">
+                                <img src="{{asset('images/Icons')}}/Location.svg" alt="">
                                 <P class="p2 px-4 text-muted">
                                     {{Auth::user()->location}}</P>
                             </li>
+                            @endif
                             <li>
                                 <a href="{{asset("profile")}}" class="btn btn-veedros-new btn-veedros-regular  btn- border-0 my-1 "
                                         type="button">

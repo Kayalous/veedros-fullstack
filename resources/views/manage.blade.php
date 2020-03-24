@@ -126,7 +126,7 @@
                                     <div class="col-lg-7 col-md-9 mx-auto my-3">
                                         <div class="input-group border-light profile-social-field">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i data-feather="twitter"></i></span>
+                                                <span class="input-group-text"><img style="width: 25px; height: 25px" src="{{asset('images/Icons')}}/twitter.svg"></span>
                                             </div>
                                             <input name="twitter" id="twitter" type="text" class="form-control form-control-social border-0">
                                         </div>
@@ -134,7 +134,7 @@
                                     <div class="col-lg-7 col-md-9 mx-auto my-3">
                                         <div class="input-group border-light profile-social-field">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i data-feather="linkedin"></i></span>
+                                                <span class="input-group-text"><img style="width: 25px; height: 25px " src="{{asset('images/Icons')}}/LinkedIn.svg"></span>
                                             </div>
                                             <input name="linkedin" id="linkedin" type="text" class="form-control form-control-social border-0">
                                         </div>
@@ -142,7 +142,7 @@
                                     <div class="col-lg-7 col-md-9 mx-auto my-3">
                                         <div class="input-group border-light profile-social-field">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i data-feather="facebook"></i></span>
+                                                <span class="input-group-text"><img style="width: 25px; height: 25px " src="{{asset('images/Icons')}}/facebook.svg"></span>
                                             </div>
                                             <input name="facebook" id="facebook" type="text" class="form-control form-control-social border-0">
                                         </div>
