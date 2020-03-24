@@ -1,0 +1,61 @@
+.academic-header {
+    background-image: url(../images/Acadmic-1920x800.jpg);
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 43rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.academic-header h1 {
+    color: #172345;
+    font-size: 5rem;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.partners-header {
+
+    background-color: #FDF8F5;
+}
+
+.partners-header h2 {
+    color: rgb(88, 102, 109);
+    padding: 3rem 10rem;
+    font-size: 2vw;
+}
+
+ul li label {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+
+.input-sm {
+    width: 13%;
+    display: inline-block;
+}
+
+.input-md {
+    width: 86%;
+    display: inline-block;
+}
+
+.logo-center {
+    border: 1px solid #dee2e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-center img {
+    padding: 4vw;
+    max-width: 90%;
+    height: auto;
+}

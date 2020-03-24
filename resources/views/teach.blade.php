@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('customCSS')
+    <link rel="stylesheet" href="{{asset('styles/profile.css')}}">
     <link rel="stylesheet" href="{{asset('styles/teach.css')}}">
-    <link rel="stylesheet" href="styles/profile.css">
 @endsection
 @section('libraryCSS')
     <!-- Owl CSS  -->

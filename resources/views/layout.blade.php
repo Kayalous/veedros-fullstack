@@ -170,7 +170,7 @@
                         </li>
                     @else
             <li class="nav-item">
-            <a class="nav-link" href="#">Academic</a>
+            <a class="nav-link" href="{{asset("academic")}}">Academic</a>
             </li>
                 @endif
                 @else
@@ -183,7 +183,7 @@
                     <a class="nav-link" href="{{asset("courses")}}">Courses</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">How it works</a>
+                    <a class="nav-link" href="{{asset("academic")}}">How it works</a>
                 </li>
 
                 <li class="nav-item">

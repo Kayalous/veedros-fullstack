@@ -23,7 +23,9 @@
                         <div class="card-body">
                             <form id="form" action="{{route('manage')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-
+                                <h2 class="text-center" style="font-size: 35px;font-weight: 700;color: #313c8b;">Edit your profile</h2>
+                                <h5 class="text-center">Fill in any details you want to edit and leave other fields blank</h5>
+                                <br>
                                 <div class="mx-auto text-center">
                                     <div class="row">
                                         <div class="col-lg-5 my-auto">
@@ -49,12 +51,12 @@
                                                        placeholder="+20 114 720 0863" />
                                             </div>
                                             <div class="input-group mb-2">
-                                                <h5>Email</h5>
+                                                <h5>Change email</h5>
                                                 <input type="text"
                                                        name="email"
                                                        id="email"
                                                        class="form-control profile-form-field email-field-props border-light border-radius-sm"
-                                                       placeholder="abdulrhmanelkayal88@gmail.com" />
+                                                       placeholder="example@gmail.com" />
                                             </div>
 
 
@@ -63,7 +65,7 @@
                                     <div class="row mt-4">
                                         <div class="col-md-6">
                                             <div class="input-group mb-2">
-                                                <h5>Password</h5>
+                                                <h5>New password</h5>
                                                 <div class="d-flex w-100">
                                                     <input type="password"
                                                            name="password"
@@ -149,7 +151,7 @@
 
 
                                 <div class="w-100 text-center mt-5">
-                                    <button type="submit" id="btnsubmit" class="btn btn-veedros btn-veedros-lg border-0">
+                                    <button type="submit" id="btnsubmit" class="btn btn-veedros-new btn-veedros-lg mx-auto border-0">
                                         <h4 class="my-0 mx-5">Save</h4>
                                     </button>
                                 </div>

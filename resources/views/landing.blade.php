@@ -17,7 +17,7 @@
                     </h1>
                     <p class="">With Veedros learning's as easy as it gets.</p>
 
-                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-regular border-0 mt-5 mr-auto"
+                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-md border-0 mt-5 mr-auto"
                        >
                        <span>Explore now</span>
                     </a>
@@ -201,9 +201,9 @@
                 <h4 class="text-center">We can help you reach a broader audience and increase your passive income.</h4>
                 <br>
                 <div class="row">
-                    <button class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto " type="button">
+                    <a href="{{asset('academic')}}" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
                         <span class="mx-3">Let's talk</span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
