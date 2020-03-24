@@ -24,6 +24,15 @@ class Course extends Model
     public function recommendations(){
         return $this->hasMany(Recommendation::class);
     }
+
+    public function users(){
+        return $this->belongsToMany('App\User', 'enrolls', 'course_id', 'user_id');
+    }
+
+    public function saves(){
+        return $this->belongsToMany('App\User', 'saveds', 'course_id', 'user_id');
+    }
+
     public static function getFirstSession(Course $course){
             //Base url
             $url = URL::to('watch/');

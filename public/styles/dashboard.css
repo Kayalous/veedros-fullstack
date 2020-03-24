@@ -1,15 +1,5 @@
 /* ==== nav tip ==== */
-.tip .iconsize-mine {
-    font-size: 1.3rem;
-}
 
-.tip a {
-    color: black;
-}
-
-.tip h6 {
-    text-align: left;
-}
 
 /* custom size for share btn */
 .btn-veedros-sm {
@@ -23,14 +13,6 @@
     margin-bottom: 5em;
 }
 
-.nav-photo {
-    position: relative;
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-}
 
 .nav-item .nav-photo .notification {
     display: block;
@@ -333,4 +315,11 @@ ul li a {
         display: initial !important;
 
     }
+}
+#Saved h1{
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }

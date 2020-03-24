@@ -53,6 +53,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Recommendation' => $baseDir . '/app/Recommendation.php',
+    'App\\Saved' => $baseDir . '/app/Saved.php',
     'App\\Session' => $baseDir . '/app/Session.php',
     'App\\SocialProvider' => $baseDir . '/app/SocialProvider.php',
     'App\\User' => $baseDir . '/app/User.php',

@@ -49,4 +49,12 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
         else
             return false;
     }
+
+    public function courses(){
+        return $this->belongsToMany('App\Course', 'enrolls', 'user_id', 'course_id');
+    }
+
+    public function saves(){
+        return $this->belongsToMany('App\Course', 'saveds', 'user_id', 'course_id');
+    }
 }
