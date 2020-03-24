@@ -73,9 +73,9 @@
 <div class="container container-mine">
 <div class="row">
 <div class="header-text ml-5">
-<h1>
+<h3>
     Courses by this instructor
-</h1>
+</h3>
 </div>
 <div class="col-12">
 <div class="course-cards-container card-columns mb-5 py-3">

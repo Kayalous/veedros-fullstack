@@ -275,7 +275,7 @@ hr {
 /* Hero  */
 
 .hero {
-     height: 100vh;
+    height: 100vh;
     min-height: 800px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -803,17 +803,19 @@ hr {
         justify-content: center;
         align-items: center;
     }
-    .hero-illustrations{
+
+    .hero-illustrations {
         margin-top: 3rem;
     }
+
     .hero .hero-header-text,
-    .hero .hero-header-text .btn-veedros-new
-    {
+    .hero .hero-header-text .btn-veedros-new {
         margin-left: auto;
         margin-right: auto;
     }
+
     .hero .hero-header-text h1,
-    .hero .hero-header-text p{
+    .hero .hero-header-text p {
         text-align: center !important;
     }
 }
@@ -1324,6 +1326,11 @@ ul {
     font-weight: 600;
 }
 
+.header-text h4 {
+
+    font-size: 25px;
+}
+
 .course-card {
     width: 100%;
     max-height: 405px;
@@ -1613,6 +1620,7 @@ ul {
 /* Category colors end*/
 
 .title-mine {
+    font-size: 30px;
     line-height: 1.3;
     min-height: 6rem;
     font-weight: 600;
@@ -2413,7 +2421,7 @@ ul {
 }
 
 .happy-users h1 {
-    font-size: 92px;
+    font-size: 80px;
     font-weight: 900;
     line-height: 1;
 }
@@ -2425,8 +2433,13 @@ ul {
 }
 
 .teach-with-us-content h1 {
-    font-size: 5rem;
+    font-size: 80px;
     font-weight: 700;
+}
+
+.teach-with-us-content h4,
+h2 {
+    font-size: 22px;
 }
 
 .teach-with-us-content h2,
@@ -2449,7 +2462,7 @@ ul {
 }
 
 .testimonials h1 {
-    font-size: 5rem;
+    font-size: 80px;
     font-weight: 700;
 
 }
@@ -2459,6 +2472,7 @@ ul {
 
 .testimonials h2,
 .testimonials h4 {
+    font-size: 22px;
     color: #4C616B;
     margin-bottom: 1.5rem;
 }
@@ -2509,12 +2523,13 @@ ul {
 }
 
 .academies h1 {
-    font-size: 5rem;
+    font-size: 80px;
     font-weight: 700;
 }
 
 .academies h2,
 .academies h4 {
+    font-size: 22px;
     color: #4C616B;
     margin-bottom: 1.5rem;
 }
@@ -2545,15 +2560,15 @@ ul {
 @media (max-width: 1200px) {
 
     .academies h1 {
-        font-size: 2.5rem;
+        font-size: 40px;
     }
 
     .testimonials h1 {
-        font-size: 2.5rem;
+        font-size: 40px;
     }
 
     .teach-with-us-content h1 {
-        font-size: 2.5rem;
+        font-size: 40px;
     }
 }
 
@@ -2627,4 +2642,23 @@ img {
     .teach-img {
         height: 300px;
     }
+}
+
+
+/* new size */
+.happy-users h2 {
+    font-size: 14px;
+}
+
+.trusted-Route {
+    padding-top: 6rem;
+}
+
+.trusted-Route img {
+    width: 15%;
+    display: block;
+}
+
+.trusted-Route click-route {
+    font-size: 14px;
 }

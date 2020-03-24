@@ -71,9 +71,9 @@
                     <h1>Have content?</h1>
                     <br>
                     <h2>If you...</h2>
-                    <h4><i data-feather="check" class="mr-2"></i>Don't know how to organize your content.</h4>
-                    <h4><i data-feather="check" class="mr-2"></i>Don't know how/where to start.</h4>
-                    <h4><i data-feather="check" class="mr-2"></i>Don't know how to promote your vision.</h4>
+                    <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to organize your content.</h4>
+                    <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how/where to start.</h4>
+                    <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to promote your vision.</h4>
                     <br>
                     <h4>We can give you a hand with that!</h4>
                 </div>
