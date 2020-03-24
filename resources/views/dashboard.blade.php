@@ -113,20 +113,19 @@
                             </div>
                         <div class="col-lg-8 col-12">
                             <div class="container">
-                                <div class="row">
+                                <div class="w-100">
                                     <p class="p-title">{{$course->name}}</p>
-                                    <br>
                                     <p class="p-description d-none-mine">{{$course->about}}</p>
                                 </div>
 
-                                <hr>
+                                <hr class="my-4">
 
                                 <div class="row">
                                     <p class="p-prog">My Progress</p>
                                     <br>
                                     <div id="prog-bar1" class="progress-bar" style="--width:50;"></div>
                                 </div>
-                                <hr>
+                                <hr class="my-4">
                                 <div class="d-flex justify-content-end mb-3 ">
                                     <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
                                         share
