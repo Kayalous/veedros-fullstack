@@ -214,13 +214,9 @@
 }
 
 .profile-social-field * {
-<<<<<<< HEAD
 	font-weight: 500;
 	font-size: 20px;
-=======
     font-weight: 500;
-    font-size: 35px;
->>>>>>> 6b72c1b86e1423093d2bbefee4f44122876e2c86
 }
 
 .profile-social-field .form-control {
