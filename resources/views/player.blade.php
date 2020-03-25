@@ -159,11 +159,16 @@
                         <div class="flex-around flex-column-mine mb-lg-5 mr-lg-5-mine pt-5">
 
                             <a href="{{asset('save') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-auto">
-                                @if(!Auth::user()->hasSavedThisCourse($controllerCourse))
+                                @if(!Auth::user())
                                     Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon">
                                 @else
-                                    Saved <i class="ml-2" data-feather="check"></i>
-                                @endif</a>
+                                    @if(!Auth::user()->hasSavedThisCourse($controllerCourse))
+                                        Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon">
+                                    @else
+                                        Saved <i class="ml-2" data-feather="check"></i>
+                                    @endif
+                                @endif
+                            </a>
                             <hr class="d-md-none mt-5">
 
                         </div>
