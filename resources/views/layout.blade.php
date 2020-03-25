@@ -158,10 +158,10 @@
             @if(Auth::user())
                 @if(!Auth::user()->hasRole('admin'))
             <li class="nav-item">
-                <a class="nav-link" href="{{asset('courses')}}">Courses</a>
+                <a class="nav-link" href="{{asset("courses")}}">Courses</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="{{asset('teach')}}">Teach</a>
+            <a class="nav-link" href="{{asset("teach")}}">Teach</a>
 
             </li>
             @if(Auth::user()->instructor)
@@ -170,7 +170,7 @@
                         </li>
                     @else
             <li class="nav-item">
-            <a class="nav-link" href="{{asset('academic')}}">Academic</a>
+            <a class="nav-link" href="{{asset("academic")}}">Academic</a>
             </li>
                 @endif
                 @else
