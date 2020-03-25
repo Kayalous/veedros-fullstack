@@ -139,8 +139,9 @@
             </div>
         </div>
         <div class=" text-center my-5">
-            <button class="btn btn-veedros-new d-inline-block btn-veedros-md border-0">
-                Confirm</button>
+                <a  class="btn btn-veedros-new  btn-veedros-md border-0 mx-auto ">
+                        <span class="mx-3 text-white">Confirm</span>
+                    </a>
         </div>
     </section>
 @endsection

@@ -31,7 +31,7 @@
                             </li>
                             @endif
                             <li>
-                                <a href="{{asset("profile")}}" class="btn btn-veedros-new btn-veedros-regular  btn- border-0 my-1 "
+                                <a href="{{asset("profile")}}" class="btn btn-veedros-new btn-veedros-md border-0 my-1 "
                                         type="button">
                                         <span>view profile</span>
 
@@ -60,8 +60,6 @@
                     <p class="p1 container-notification">
                         <i class="far iconsize-mine fa-play-circle" aria-hidden="true"></i>
 
-                        <!-- <span id="courses-notification" class="notification">2</span> -->
-
                     </p>
 
                     <p class="target">My Courses</p>
@@ -77,16 +75,6 @@
                     <p class="target">Saved</p>
                 </a>
             </li>
-            <!-- <li id="recommended-tab" class="nav-item nav-item-edit disabled shadow-sm m-1">
-                <a href="#Recommended" class="nav-link d-none-tab" data-toggle="tab">
-                    <p class="p1 container-notification"><i class="far fa-thumbs-up" aria-hidden="true"></i>
-
-                        <span id="recommended-notification" class="notification">+5</span>
-
-                    </p>
-                    <p class="target">Recommended</p>
-                </a>
-            </li> -->
         </ul>
         <div class="tab-content ">
             <!-- My Courses -->
@@ -129,10 +117,9 @@
                                     <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
                                         Share <img class="ml-2" src="{{asset('images/Icons')}}/share.svg" alt="">
                                     </button>
-                                    <!-- <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/"
-                                    data-layout="button" data-size="large"><a target="_blank"
-                                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-                                    class="fb-xfbml-parse-ignore">Share</a></div> -->
+                                    <a class="btn btn-veedros btn-veedros-sm border-0 " type="button">
+                                    Share <img class="ml-2" src="{{asset('images/Icons')}}/share.svg" alt="">
+                                    </a>
 
                                     <a href="{{\App\Course::getFirstSession($course)}}" class="btn btn-veedros btn-veedros-sm border-0 " type="button">
                                         Keep Going
@@ -289,5 +276,6 @@
 @endsection
 
 @section('customJS')
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=#{property?._id}&product=custom-share-buttons"></script>
     <script src="scripts/dashboard.js"></script>
 @endsection
