@@ -17,7 +17,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    background-color: rgba(0,0,0,0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
     border: none;
     outline: none;
     -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
@@ -275,7 +275,7 @@ hr {
 /* Hero  */
 
 .hero {
-    height: 100vh;
+    /* height: 100vh; */
     min-height: 800px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2466,7 +2466,8 @@ h2 {
     font-weight: 700;
 
 }
-.testimonials{
+
+.testimonials {
     background-color: #FDF8F5;
 }
 
@@ -2644,6 +2645,13 @@ img {
     }
 }
 
+.partners-logo {
+    background-color: #FDF8F5;
+}
+
+.partners-logo img {
+    width: 100%;
+}
 
 /* new size */
 .happy-users h2 {
@@ -2652,6 +2660,7 @@ img {
 
 .trusted-Route {
     padding-top: 6rem;
+    padding-bottom: 3rem;
 }
 
 .trusted-Route img {

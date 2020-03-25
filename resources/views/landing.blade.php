@@ -50,7 +50,36 @@
                 </div>
             </div>
         </div>
+        
+    </section>
+    
+    <section class="partners-logo">
+        
+    <div class="row justify-content-center py-3">
+            <div class="col-lg-1 col-md-2 col-sm-3 col-5">
+                <img class="" src="{{asset('images/partners/ACCA.png')}}" alt="ACCA">
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-5">
+                <img class="" src="{{asset('images/partners/DME.png')}}" alt="DME">
+            </div>
+            <div class="col-lg-1  col-md-2 col-sm-3 col-5">
+                <img class="" src="{{asset('images/partners/edexcel.png')}}" alt="edexcel">
+            </div>
+            <div class="col-lg-1  col-md-2 col-sm-3 col-5">
+                <img class="" src="{{asset('images/partners/Northampton.png')}}" alt="Northampton">
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-5">
+                <img class="" src="{{asset('images/partners/OTRAC.png')}}" alt="OTRAC">
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-5">
+                <img class="" src="{{asset('images/partners/Pearson.png')}}" alt="Pearson">
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-5">
+                <img class="" src="{{asset('images/partners/Trade.png')}}" alt="Trade">
+            </div>
 
+        </div>
+        
     </section>
     <section class="happy-users my-3">
         <div>
