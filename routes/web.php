@@ -28,7 +28,7 @@ Route::get('/academic', function () {
 
 Route::get('/route', function () {
     return view('route');
-})->name('route');
+})->name('route')->middleware('auth');
 
 Route::get('/courses', function () {
     $courses = \App\Course::paginate(6);
