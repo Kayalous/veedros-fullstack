@@ -89,7 +89,7 @@ function validateTextFields(field) {
     }
 }
 function validateTextArea(field) {
-    if(/^[\S\s]{1,500}$/.test(field.value)){
+    if(/^[\S\s]{1,1000}$/.test(field.value)){
         fieldIsValid(field);
         return true;
     }
@@ -247,3 +247,9 @@ showPasswordButton.onclick = function (e) {
     feather.replace();
 
 };
+
+let aboutField = document.querySelector("#about");
+aboutField.onkeypress = () => {
+document.querySelector('#about-counter').innerHTML = aboutField.value.count();
+}
+

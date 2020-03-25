@@ -26,6 +26,10 @@ Route::get('/academic', function () {
     return view('academies');
 })->name('academic');
 
+Route::get('/route', function () {
+    return view('route');
+})->name('route');
+
 Route::get('/courses', function () {
     $courses = \App\Course::paginate(6);
     return view('allCourses', ['courses' => $courses]);

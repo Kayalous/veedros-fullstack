@@ -22,7 +22,6 @@
 
             <div class="card-columns">
                 @foreach($courses as $course)
-                <div class="card-kmine">
                     <div class="card course-card development-card noJquery" style="background-image: url({{asset('/uploads/courses/1/pokemon-td8v2/images/1584209495.png')}})">
                         {{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
                         <div class="card-body m-0">
@@ -34,7 +33,6 @@
                             </a>
                         </div>
                     </div>
-                </div>
                     @endforeach
             </div>
 

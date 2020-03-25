@@ -24,7 +24,7 @@
                     <div class="trusted-Route">
                         <small>Tursted by</small>
                         <img class="img-fluid" src="{{('images/Route_logo.png')}}" alt="">
-                        <small class="click-route">If you're Route's student please <a href="">click here</a></small>
+                        <small class="click-route">If you're Route's student please <a href="{{asset('route')}}">click here</a></small>
                     </div>
                 </div>
                 <div class="col-lg-6 hero-illustrations mx-auto">
@@ -50,11 +50,11 @@
                 </div>
             </div>
         </div>
-        
+
     </section>
-    
+
     <section class="partners-logo">
-        
+
     <div class="row justify-content-center py-3">
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
                 <img class="" src="{{asset('images/partners/ACCA.png')}}" alt="ACCA">
@@ -79,7 +79,7 @@
             </div>
 
         </div>
-        
+
     </section>
     <section class="happy-users my-3">
         <div>
@@ -148,8 +148,6 @@
                             </a>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>

@@ -117,7 +117,8 @@
                                                 <h5>About you</h5>
                                                 <textarea id="about" rows="5" cols="50" maxlength="500" name="about"
                                                           class="form-control profile-form-field email-field-props border-light border-radius-sm"
-                                                          placeholder="Tell us more about you!"></textarea>
+                                                          placeholder="Tell us more about you!" style="resize: none"></textarea>
+                                                <h6 class="mt-1"><span id="about-counter"></span>/1000 characters</h6>
                                             </div>
                                         </div>
                                     </div>
