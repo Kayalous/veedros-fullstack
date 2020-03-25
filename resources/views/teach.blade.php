@@ -86,6 +86,7 @@
     <section class="my-5 teach-form">
         <div class="row">
             <div class="col-12 form-bg col-lg-6">
+                <div class="form-overlay"></div>
                 <div class="form-content w-100 m-5">
                     <ul>
                         <li>

@@ -74,18 +74,32 @@ h2 {
 @media (max-width: 992px) {
     .form-bg::after {
         background-image: url(../images/Teach-960x775.jpg);
+        transform: scaleX(-1);
+        transition: all cubic-bezier(0.6, -0.28, 0.735, 0.045);
         content: '';
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
         width: 100%;
         height: 100%;
-        opacity: 0.4;
         position: absolute;
+        z-index: -2;
+    }
+
+    .form-bg .form-overlay::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #65D3BF;
+        opacity: 0.5;
         z-index: -1;
     }
 
     .d-none-sm {
+        transition: all 0.5s ease-in-out;
         display: none;
     }
 }
