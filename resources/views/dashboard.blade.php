@@ -72,8 +72,6 @@
                     <p class="p1 container-notification">
                         <i class="far fa-bookmark" aria-hidden="true"></i>
 
-                        <span id="saved-notification" class="notification">2</span>
-
                     </p>
 
                     <p class="target">Saved</p>
