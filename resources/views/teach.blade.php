@@ -63,12 +63,12 @@
 
         </section>
 
-        <div class="row justify-content-end m-auto w-75">
+        <div class="row justify-content-end m-auto w-50">
 
 
             <div class="teach-with-us-content my-5">
                 <div class="container">
-                    <h1>Have <br> content!</h1>
+                    <h1>Have <br> content !</h1>
                     <br>
                     <h2>If you...</h2>
                     <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to organize your content.</h4>
@@ -85,7 +85,7 @@
     </section>
     <section class="my-5 teach-form">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="form-content mx-5">
                     <ul>
                         <li>
@@ -130,7 +130,7 @@
                 </div>
 
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
 
                 <img class="" style="transform: scaleX(-1);" src="images/Teach-960x775.jpg" alt="">
 
