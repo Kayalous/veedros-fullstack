@@ -155,10 +155,10 @@
                             <h6>share course :</h6>
                         <div class="sharethis-inline-share-buttons" 
                         data-url=""
-                        data-title="llolololololo"
+                        data-title=""
                         data-image=""
-                        data-description="adaksjdasdhakcn"
-                        data-message="vovovovovovovovovo"
+                        data-description=""
+                        data-message=""
                         ></div>
                         </div>
 
