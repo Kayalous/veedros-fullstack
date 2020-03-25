@@ -143,7 +143,7 @@
                         <br>
                         <h4>We can give you a hand with that!</h4>
                         <div class="row">
-                            <a href="{{asset("teach")}}" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
+                            <a href="{{asset("teach")}}" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto ">
                                 <span class="mx-3">Let's talk!</span>
                             </a>
                         </div>
