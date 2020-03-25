@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-12 col-md-5 col-lg-3">
                     <div class="card course-card development-card noJquery" style="background-color: #A7A7A7"
                         data-toggle="modal" data-target="#exampleModal">
