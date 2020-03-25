@@ -169,9 +169,10 @@
                 <h4>We really appreciate your feedback. Don't hesitate to let us know what you think, it really helps.</h4>
                 <br>
                 <div class="row">
-                    <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
-                        <span class="mx-3">Give us a review</span>
-                    </button>
+                <a  class="btn btn-veedros-new btn-veedros-md border-0 mx-auto"
+                       >
+                       <span>Give us a review</span>
+                    </a>
                 </div>
                 </div>
             </div>
