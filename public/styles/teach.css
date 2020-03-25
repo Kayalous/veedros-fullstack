@@ -60,7 +60,7 @@ h2 {
 
 
 .form-bg {
-    background-image: url({{esset('images/Teach-960x775.jpg');
+    background-image: url(../images/Teach-960x775.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
