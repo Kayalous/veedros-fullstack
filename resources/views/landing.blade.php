@@ -234,7 +234,7 @@
                 <h4 class="text-center">We can help you reach a broader audience and increase your passive income.</h4>
                 <br>
                 <div class="row">
-                    <a href="{{asset('academic')}}" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
+                    <a href="{{asset('academic')}}" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto ">
                         <span class="mx-3">Let's talk</span>
                     </a>
                 </div>
