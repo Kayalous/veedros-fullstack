@@ -85,7 +85,7 @@
     </section>
     <section class="my-5 teach-form">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 form-bg ">
                 <div class="form-content mx-5">
                     <ul>
                         <li>
@@ -130,12 +130,12 @@
                 </div>
 
             </div>
-            <div class="col-12 col-md-6">
+            <!-- <div class="col-12 col-md-6">
 
                 <img class="" style="transform: scaleX(-1);" src="images/Teach-960x775.jpg" alt="">
 
 
-            </div>
+            </div> -->
         </div>
         <div class=" text-center my-5">
             <button class="btn btn-veedros-new d-inline-block btn-veedros-md border-0">
