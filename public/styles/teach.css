@@ -71,7 +71,7 @@ h2 {
     flex-direction: column; */
 }
 
-@media ((min-width: 992px)) {
+@media ((max-width: 992px)) {
     .form-bg::after {
         background-image: url(../images/Teach-960x775.jpg);
         content: '';
