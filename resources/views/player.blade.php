@@ -155,17 +155,21 @@
                             <h6>share course :</h6>
                         <div class="sharethis-inline-share-buttons"></div>
                         </div>
-                    
+
                         <div class="flex-around flex-column-mine mb-lg-5 mr-lg-5-mine pt-5">
-                                
-                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-auto">
-                                Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon"></button>
+
+                            <a href="{{asset('save') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-auto">
+                                @if(!Auth::user()->hasSavedThisCourse($controllerCourse))
+                                    Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon">
+                                @else
+                                    Saved <i class="ml-2" data-feather="check"></i>
+                                @endif</a>
                             <hr class="d-md-none mt-5">
 
                         </div>
-                       
+
                         <div class="ml-lg-5-mine">
-                        
+
                             <h2 class="ml-5">Author</h2>
                             <div class="mx-3 mt-3">
                                 <div
@@ -213,7 +217,19 @@
                     </div>
                 </div>
             </div>
+            <div class="d-lg-none d-block mx-auto mb-5 w-100">
 
+                <section class="happy-users my-3">
+                    <div>
+                        <h1 class="text-center mb-0">500<span>+</span></h1>
+                        <h2 class="mt-0">Happy students</h2>
+                    </div>
+                </section>
+                <div class="text-center">
+                    <button class="btn btn-veedros-new btn-veedros-md border-0 py-2 mx-auto">
+                        Explore more</button>
+                </div>
+            </div>
             @if(Auth::user())
                 @if(!Auth::user()->isEnrolledInCourse($controllerCourse))
                     <br>
@@ -229,29 +245,7 @@
                         Enroll now<i data-feather="shopping-cart" class="ml-3"></i></a>
                 </div>
             @endif
-            <div class="d-lg-none d-block mx-auto mb-5 w-100">
-                <hr>
-                <h2 class="ml-5">See also</h2>
-                <div class="card course-card development-card noJquery"
-                     style="background-image: url('{{asset('images')}}/img_03.png')" data-toggle="modal"
-                     data-target="#exampleModal">
-                    <div class="course-card-overlay overlay-2"></div>
-                    <div class="card-body m-0">
-                        <div class="card-body-inner noscroll card-bg-img">
-                            <div class="play-circle play-circle-2"> <img
-                                    style="height:40px; width:40px "
-                                    src="{{asset('images')}}/Play_button.svg" alt="" /></div>
-                            <h4 class="card-title title-mine">
-                                Full Stack Web Development
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button class="btn btn-veedros-new btn-veedros-md border-0 py-2">
-                        Load more</button>
-                </div>
-            </div>
+
         </div>
         @if($controllerSession->isFirstSession())
         <br>
@@ -312,7 +306,7 @@
     <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
 @endsection
 @section('customJS')
-<script type="text/javascript" 
+<script type="text/javascript"
         src="//platform-api.sharethis.com/js/sharethis.js#property=#property=5e792c766caf2b00125bec34&product=inline-share-buttons"></script>
     <script src="{{asset('scripts')}}/player.js"></script>
 @endsection

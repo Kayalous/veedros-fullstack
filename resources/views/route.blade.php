@@ -17,9 +17,9 @@
         <div class="container">
             <div class="row">
                 <div class="header">
-                    <h2>Hi, Ahmed78D</h2>
+                    <h2>Hi, {{  explode(" ", Auth::user()->name)[0]  }}</h2>
                     <br>
-                    <p>Avalible sessions</p>
+                    <p>Available sessions</p>
                     <small>Please enter course's passcode to see the updates</small>
                 </div>
             </div>
@@ -59,8 +59,6 @@
                         </ul>
                     </div>
                 </div>
-
-
 
                 <div class="col-12 col-md-5 col-lg-3">
                     <div class="card course-card development-card noJquery" style="background-color: #A7A7A7"

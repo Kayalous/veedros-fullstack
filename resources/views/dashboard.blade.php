@@ -94,6 +94,7 @@
             <!-- My Courses -->
             <div id="My_Courses" class="tab-pane fade in active show" style="overflow: initial !important;">
                 <div class="dashboard-land ">
+                    @if(Auth::user()->courses()->count() > 0)
                     @foreach(Auth::user()->courses as $course)
                         <div class="row shadow-lg  rounded-lg-mine">
                             <div class="col-lg-4 col-12">
@@ -143,7 +144,9 @@
                         </div>
                     </div>
                     @endforeach
-
+                    @else
+                        <h1 class="my-5 py-5 text-muted">You're not enrolled in any courses yet.</h1>
+                    @endif
                 </div>
 
             </div>

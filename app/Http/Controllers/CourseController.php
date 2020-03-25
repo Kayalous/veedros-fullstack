@@ -178,9 +178,19 @@ class CourseController extends Controller
         if($user === null)
         {
             //The user is not signed in
-
+            \Session::flash('message',"You need to be logged in to save this course.");
+            \Session::flash('login-form',"");
+            return back();
+        }
+        $saved = Saved::where(['course_id' => $course->id, 'user_id' => $user->id])->get();
+        if(count($saved) > 0)
+        {
+            Saved::destroy($saved[0]->id);
+            \Session::flash('success',"Unsaved!");
+            return back();
         }
         Saved::firstOrCreate(['course_id' => $course->id, 'user_id' => $user->id]);
+        \Session::flash('success',"Saved!");
         return back();
 
     }

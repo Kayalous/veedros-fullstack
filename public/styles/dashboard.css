@@ -276,7 +276,8 @@ ul .nav-item-edit a {
     }
 }
 
-#Saved h1 {
+#Saved h1,
+#My_Courses h1{
     font-weight: 700;
     font-size: 50px;
     text-align: center;

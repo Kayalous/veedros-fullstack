@@ -57,4 +57,12 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
     public function saves(){
         return $this->belongsToMany('App\Course', 'saveds', 'user_id', 'course_id');
     }
+    public function hasSavedThisCourse(Course $course){
+        $saved = Saved::where(['course_id' => $course->id, 'user_id' => $this->id])->get();
+        if(count($saved) > 0)
+            return true;
+
+        return false;
+
+    }
 }
