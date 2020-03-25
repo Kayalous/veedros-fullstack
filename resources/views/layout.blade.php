@@ -182,13 +182,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{asset("courses")}}">Courses</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset("academic")}}">How it works</a>
-                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{asset("teach")}}">Teach</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset("academic")}}">Academic</a>
+                </li>
+
+               
                 @endif
 
             @if(!Auth::check())
