@@ -1,0 +1,71 @@
+.route-header {
+    background-image: url(../images/route-1920x800.jpg);
+
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+}
+
+.content {
+
+    text-align: center;
+}
+
+.route-header h1 {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.content img {
+    width: 20%;
+    height: auto;
+
+}
+
+.avalible-sessions h2 {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.avalible-sessions p {
+    margin-top: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0em;
+}
+
+.avalible-sessions .card-body-inner label {
+    color: gold;
+}
+
+.avalible-sessions .profile-form-field {
+    width: 100% !important;
+    font-weight: 500;
+    font-size: 16px;
+    -webkit-box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
+        0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
+        0 0px 15.5px -7px rgba(0, 0, 0, 0.145);
+    box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
+        0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
+        0 0px 15.5px -7px rgba(0, 0, 0, 0.145);
+}
+
+.avalible-sessions .profile-form-field:focus {
+    -webkit-box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
+        0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
+        0 0px 15.5px -6px rgba(0, 0, 0, 0.210);
+    box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
+        0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
+        0 0px 15.5px -6px rgba(0, 0, 0, 0.210);
+}
+
+.avalible-sessions .border-light {
+    border-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.avalible-sessions .border-radius-sm {
+    border-radius: 10px !important;
+}
