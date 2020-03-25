@@ -63,12 +63,12 @@
 
         </section>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-end m-auto w-75">
 
 
-            <div class="teach-with-us-content">
+            <div class="teach-with-us-content my-5">
                 <div class="container">
-                    <h1>Have content?</h1>
+                    <h1>Have <br> content!</h1>
                     <br>
                     <h2>If you...</h2>
                     <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to organize your content.</h4>
@@ -138,7 +138,7 @@
             </div>
         </div>
         <div class=" text-center my-5">
-            <button class="btn btn-veedros-new btn-veedros-xl border-0">
+            <button class="btn btn-veedros-new d-inline-block btn-veedros-md border-0">
                 Confirm</button>
         </div>
     </section>
