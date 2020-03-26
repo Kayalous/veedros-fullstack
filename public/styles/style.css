@@ -2545,7 +2545,11 @@ h2 {
     }
 
     .header-text h1 {
-        font-size: 60px;
+        font-size: 50px;
+    }
+
+    .header-text h4 {
+        font-size: 20px;
     }
 
     .testimonials .ratings {
