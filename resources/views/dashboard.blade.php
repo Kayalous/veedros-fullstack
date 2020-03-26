@@ -121,12 +121,6 @@
                                     data-description=""
                                     data-message=""
                                     ></div>
-                                    <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
-                                        Share <img class="ml-2" src="{{asset('images/Icons')}}/share.svg" alt="">
-                                    </button>
-                                    <a class="btn btn-veedros btn-veedros-sm border-0 " type="button">
-                                    Share <img class="ml-2" src="{{asset('images/Icons')}}/share.svg" alt="">
-                                    </a>
 
                                     <a href="{{\App\Course::getFirstSession($course)}}" class="btn btn-veedros btn-veedros-sm border-0 " type="button">
                                         Keep Going
