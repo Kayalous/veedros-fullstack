@@ -71,16 +71,16 @@
                         <li class="form-show">
                         <div class="form-group">
                             <label for="">Email</label>
-                            <input type="email" name="" id="" maxlength="" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder=""
+                            <input type="email" name="" id="" maxlength="" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com"
                                    aria-describedby="helpId">
                         </div>
                     </li>
                     <li class="form-show">
                         <div class="form-group">
                             <label class="d-block" for="">Phone Number</label>
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-sm" maxlength="5" placeholder=""
+                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-sm" maxlength="5" placeholder="0020"
                                    aria-describedby="helpId">
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-md" maxlength="20" placeholder=""
+                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-md" maxlength="20" placeholder="10xxxxxxxx"
                                    aria-describedby="helpId">
                         </div>
                     </li>
@@ -101,7 +101,7 @@
                             <div class="form-group">
                                 <label for="">Tell us about your services</label>
                                 <textarea class="form-control profile-form-field email-field-props border-light border-radius-sm" maxlength="2000" id="exampleFormControlTextarea1"
-                                          rows="6"></textarea>
+                                          rows="6" placeholder="Tell us about your services..."></textarea>
                                 <small id="helpId" class="text-muted">The more details the better!</small>
                             </div>
                         </li>
@@ -114,16 +114,16 @@
                     <li class="form-hide">
                         <div class="form-group">
                             <label for="">Email</label>
-                            <input type="email" name="" id="" maxlength="" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder=""
+                            <input type="email" name="" id="" maxlength="" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com"
                                    aria-describedby="helpId">
                         </div>
                     </li>
                     <li class="form-hide">
                         <div class="form-group">
                             <label class="d-block" for="">Phone Number</label>
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-sm" maxlength="5" placeholder=""
+                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-sm" maxlength="5" placeholder="0020"
                                    aria-describedby="helpId">
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-md" maxlength="20" placeholder=""
+                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-md" maxlength="20" placeholder="10xxxxxxxx"
                                    aria-describedby="helpId">
                         </div>
                     </li>
