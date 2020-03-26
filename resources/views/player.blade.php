@@ -151,19 +151,25 @@
 
                 <div class="col-xl-4 col-lg-5">
                     <div class="d-lg-block d-md-flex flex-reverse-mine w-100 ">
-                        <div>
-                            <h6>share course :</h6>
-                        <div class="sharethis-inline-share-buttons" 
-                        data-url=""
-                        data-title=""
-                        data-image=""
-                        data-description=""
-                        data-message=""
-                        ></div>
+                   
+                        <div class="modal fade" id="ShareModal" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content login-body">
+                                    <div class="modal-body px-5">
+                                    <div class="sharethis-inline-share-buttons" 
+                                        data-url=""
+                                        data-title=""
+                                        data-image=""
+                                        data-description=""
+                                        data-message=""
+                                        ></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
+                        
                         <div class="flex-around flex-column-mine mb-lg-5 mr-lg-5-mine pt-5">
-
+                        <a href="#" class="btn btn-veedros-new btn-veedros-small border-0" data-toggle="modal" data-target="#ShareModal">share </a>
                             <a href="{{asset('save') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-md border-0 py-3 mx-auto">
                                 @if(!Auth::user())
                                     Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon">
