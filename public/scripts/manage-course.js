@@ -38,12 +38,9 @@ FilePond.setOptions({
             'X-CSRF-TOKEN': '{{ csrf_token() }}'
         }
     }
+});
 
-});
 const pond = document.querySelector('.filepond--root');
-pond.addEventListener('FilePond:addfile', e => {
-    console.log(e);
-});
 
 function auto_grow(element) {
     element.style.height = "5px";

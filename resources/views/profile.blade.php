@@ -67,7 +67,7 @@
 </div>
 </section>
 
-    @if($user->instructor)
+    @if($user->instructor && $courses !== null)
 <section class="featured courses mt-5 pt-5">
 
 <div class="container container-mine">

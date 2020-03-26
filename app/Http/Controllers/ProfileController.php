@@ -12,6 +12,7 @@ class ProfileController extends Controller
         if($user->instructor){
             $courses = $user->instructor->courses()->take(3)->get();
         }
+        dd($courses);
         return view("profile",['user'=>$user, 'courses'=>$courses]);
     }
 }

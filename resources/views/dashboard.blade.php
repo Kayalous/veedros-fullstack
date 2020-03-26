@@ -11,7 +11,7 @@
             <div class="content-info-bar">
                 <div class="row">
                     <div class="col-12 col-md-6 ">
-                        <div class="user-photo " style="background-image: url({{asset('uploads/profilePictures/') . '/'.Auth::user()->img}});">
+                        <div class="user-photo " style="background-image: url({{Auth::user()->img}});">
                             <div class="edit-container">
                             </div>
 
@@ -114,7 +114,7 @@
                                 </div>
                                 <hr class="my-4">
                                 <div class="d-flex justify-content-between mb-3 ">
-                                <div class="sharethis-inline-share-buttons" 
+                                <div class="sharethis-inline-share-buttons"
                                     data-url="{{\App\Course::getFirstSession($course)}}"
                                     data-title=""
                                     data-image=""
@@ -168,14 +168,14 @@
                     </div>
                 </div>
             </div>
-            
+
 
         </div>
     </div>
 @endsection
 
 @section('customJS')
-<script type='text/javascript' 
+<script type='text/javascript'
 src='https://platform-api.sharethis.com/js/sharethis.js#property=5e792c766caf2b00125bec34&product=inline-share-buttons' async='async'></script>
     <script src="scripts/dashboard.js"></script>
 @endsection

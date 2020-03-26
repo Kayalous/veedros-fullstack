@@ -43,7 +43,7 @@ FilePond.setOptions({
     files: [
         {
             // the server file reference
-            source: `uploads/profilePictures/${currentAvatar}`,
+            source: `${currentAvatar}`,
 
         }
     ]

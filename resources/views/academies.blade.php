@@ -1,6 +1,8 @@
 @extends('layout')
 
 @section('customCSS')
+    <link rel="stylesheet" href="{{asset('styles/profile.css')}}">
+    <link rel="stylesheet" href="{{asset('styles/teach.css')}}">
     <link rel="stylesheet" href="{{asset('styles/academies.css')}}">
 @endsection
 @section('libraryCSS')
@@ -78,9 +80,7 @@
                     <li class="form-show">
                         <div class="form-group">
                             <label class="d-block" for="">Phone Number</label>
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-sm" maxlength="5" placeholder=""
-                                   aria-describedby="helpId">
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-md" maxlength="20" placeholder=""
+                            <input type="number" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-md" maxlength="15" placeholder=""
                                    aria-describedby="helpId">
                         </div>
                     </li>
@@ -121,9 +121,7 @@
                     <li class="form-hide">
                         <div class="form-group">
                             <label class="d-block" for="">Phone Number</label>
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-sm" maxlength="5" placeholder=""
-                                   aria-describedby="helpId">
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-md" maxlength="20" placeholder=""
+                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm " placeholder=""
                                    aria-describedby="helpId">
                         </div>
                     </li>

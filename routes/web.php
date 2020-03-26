@@ -46,7 +46,7 @@ Route::get('/courses', function () {
 
 //User pages
 Route::get('/profile', function () {
-    return view('profile',['user' => \Illuminate\Support\Facades\Auth::user()]);
+    return view('profile',['user' => \Illuminate\Support\Facades\Auth::user(), 'courses' => null]);
 })->name('profile')->middleware('auth');
 Route::get('/profile/{id}','ProfileController@visit')->name('profile.id');
 Route::get('/manage', function () {
