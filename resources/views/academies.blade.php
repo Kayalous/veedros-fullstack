@@ -59,7 +59,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6">
-                <div class="form-content mx-5">
+                <div class="form-content ">
                     <ul>
                         <li>
                             <div class="form-group">
