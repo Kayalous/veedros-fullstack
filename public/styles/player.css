@@ -211,6 +211,11 @@
     font-weight: 700;
     color: #313c8b;
 }
+#course-info h1 {
+    font-size: 55px;
+    font-weight: 700;
+    color: #313c8b;
+}
 
 #course-info .feather {
     color: #0D984F;

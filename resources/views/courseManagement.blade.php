@@ -9,20 +9,19 @@
     <link href="https://unpkg.com/filepond-plugin-file-poster/dist/filepond-plugin-file-poster.css" rel="stylesheet">
 
 @endsection
-@section('libraryCSS')
-    @endsection
 @section('customCSS')
     <link rel="stylesheet" href="{{asset('styles')}}/player.css">
     <link rel="stylesheet" href="{{asset('styles')}}/courses.css">
 @endsection
 
 @section('content')
-    <div class="container mt-5">
-
-    <h1>Manage {{$course->name}} </h1>
+    <div class="container mt-5 pt-5">
     </div>
     <section class="container" id="course-info">
-                <div class="col-12 pb-5">
+        <h1 class="mt-5">Basic information for {{$course->name}} </h1>
+
+        <div class="col-12 py-5">
+
                     <h2 id="thumb">Edit course thumbnail</h2>
                     <form action="{{url()->current()}}/thumbnail" method="POST" id="img-form">
                         @csrf
@@ -54,7 +53,7 @@
                         </div>
                         <div id="edit-img" class="col-lg-4 mx-auto">
                             <div class="card course-card development-card noJquery"
-                                 style="background-image: url('{{asset('uploads/courses'). '/' . $course->instructor_id .'/' . $course->slug . '/images/' . $course->img}}')">
+                                 style="background-image: url('{{$course->img}}')">
                                 <div class="card-body m-0">
                                     <a href="#thumb" class="card-body-inner noscroll card-bg-img"  >
                                         <div class="play-circle play-circle-0"> <i style="stroke: #313c8b" data-feather="edit"></i> </div>
@@ -146,10 +145,10 @@
                         </button>
                     </div>
 
-                    <div class="w-100 text-center mt-5">
-                        <button type="submit" id="btnsubmit" class="btn btn-veedros btn-veedros-lg border-0">
+                    <div class="row text-center mt-5">
+                        <a href="{{asset('manage/instructor/courses') . '/' . $course->slug . '/advanced'}}" type="submit" id="btnsubmit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">
                             <h4 class="my-0 mx-5">Continue</h4>
-                        </button>
+                        </a>
                     </div>
                 </div>
 

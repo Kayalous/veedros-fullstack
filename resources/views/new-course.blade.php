@@ -54,7 +54,8 @@
                                                        name="price"
                                                        id="price"
                                                        class="form-control profile-form-field email-field-props border-light border-radius-sm col-10"
-                                                       placeholder="399" />
+                                                       placeholder="399"
+                                                style=""/>
                                                 <div class="col-2 py-auto d-flex justify-content-center align-items-center">
                                                 <h5 class="m-0">
                                                     EGP
@@ -84,7 +85,7 @@
                                 </div>
 
                                 <div class="w-100 text-center mt-5">
-                                    <button type="submit" id="btnsubmit" class="btn btn-veedros btn-veedros-lg border-0">
+                                    <button type="submit" id="btnsubmit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">
                                         <h4 class="my-0 mx-5">Continue</h4>
                                     </button>
                                 </div>

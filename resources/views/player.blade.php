@@ -196,7 +196,7 @@
                                         </div>
                                     </div>
                                     <div class="tip-instructor-avatar col-4">
-                                        <img src="{{asset('uploads/profilePictures') . '/' . $instructor->user->img}}"
+                                        <img src="{{$instructor->user->img}}"
                                              alt="instructor"
                                              class="round" />
                                     </div>
@@ -280,7 +280,7 @@
             @foreach($controllerSession->comments as $comment)
                 <div class="row mb-4">
                     <div class="tip-instructor-avatar align-items-start col-2">
-                        <img src="{{asset('uploads/profilePictures') . '/' .$comment->user->img}}" alt="comment avatar" class="round round-sm" />
+                        <img src="{{$comment->user->img}}" alt="comment avatar" class="round round-sm" />
                     </div>
                     <div class="col-10 d-flex align-items-center w-100">
                         <div class="card card-comment border-0">

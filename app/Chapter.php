@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Chapter extends Model
 {
-    
+    protected $fillable = ['name', 'course_id', 'slug', 'about'];
     public function course(){
         return $this->belongsTo(Course::class);
     }

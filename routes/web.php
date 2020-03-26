@@ -26,6 +26,15 @@ Route::get('/academic', function () {
     return view('academies');
 })->name('academic');
 
+Route::get('/testing', function () {
+    return view('testing');
+})->name('testing');
+Route::post('/testing/upload', function () {
+    dd(request()->file('file')->store('hello-aws', 's3'));
+    return back();
+})->name('test.upload');
+
+
 Route::get('/route', function () {
     return view('route');
 })->name('route')->middleware('auth');
@@ -62,16 +71,28 @@ Route::post('/manage/instructor/course/about', 'CourseController@editAbout')->na
 Route::post('/manage/instructor/course/price', 'CourseController@editPrice')->name('manage.courses.price');
 Route::post('/manage/instructor/course/objective', 'CourseController@editObjective')->name('manage.courses.objective');
 Route::post('/manage/instructor/course/recommendation', 'CourseController@editRecommendation')->name('manage.courses.recommendation');
-Route::get('/manage/instructor/courses/{slug}', function ($slug){
+Route::get('/manage/instructor/courses/{courseSlug}', function ($courseSlug){
     $instructor = Auth::user()->instructor;
 
     if(!$instructor)
         return redirect('/dashboard');
 
-    $course = $instructor->courses()->where('slug', $slug)->firstOrFail();
+    $course = $instructor->courses()->where('slug', $courseSlug)->firstOrFail();
     return view("courseManagement", ['course'=>$course]);}
     )->name('manage.course.content');
+    Route::get('/manage/instructor/courses/{courseSlug}/advanced', function ($courseSlug){
+        $instructor = Auth::user()->instructor;
+
+        if(!$instructor)
+            return redirect('/dashboard');
+
+        $course = $instructor->courses()->where('slug', $courseSlug)->firstOrFail();
+
+        return view("courseManagementAdvanced", ['course'=>$course]);}
+    )->name('manage.course.content.advanced');
 });
+
+
 
 Route::post('/manage/instructor/courses/{slug}/thumbnail', 'CourseController@editThumbnail');
 

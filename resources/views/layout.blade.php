@@ -191,7 +191,7 @@
                     <a class="nav-link" href="{{asset("academic")}}">Academic</a>
                 </li>
 
-               
+
                 @endif
 
             @if(!Auth::check())
@@ -211,7 +211,7 @@
                 <li class="nav-item d-flex align-items-center justify-content-around">
                     <div class="row">
                         <div class="col-6">
-                                <img id="singleElement" class="nav-photo" src="{{asset('uploads/profilePictures/') . '/'.Auth::user()->img}}" alt="profile picture">
+                                <img id="singleElement" class="nav-photo" src="{{Auth::user()->img}}" alt="profile picture">
                         </div>
                     </div>
                 </li>

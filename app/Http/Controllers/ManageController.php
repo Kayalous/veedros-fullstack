@@ -38,12 +38,12 @@ class ManageController extends Controller
         $user = Auth::user();
 
         if($request['filepond'] != null){
-            $this->deleteOldAvatar($user);
+//            $this->deleteOldAvatar($user);
             $path = $this->getPathFromServerId($request['filepond']);
             $file = new \Illuminate\Http\File($path);
-            $newName = time() . '.' . $file->extension();
-            $file->move(public_path('uploads/profilePictures'), $newName);
-            $request['img'] = $newName;
+            $fileUrl = Storage::disk('s3')->put('users/profile-images', $file);
+            $fileUrl = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $fileUrl;
+            $request['img'] = $fileUrl;
         }
         if($request['password'] != null)
             $request['password'] = bcrypt($request['password']);

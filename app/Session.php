@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Session extends Model
 {
-    protected $fillable = ['name', 'chapter_id', 'link', 'slug', 'about'];
+    protected $fillable = ['name', 'chapter_id', 'link', 'slug', 'about', 'duration'];
 
     public function chapter(){
         return $this->belongsTo(Chapter::class);

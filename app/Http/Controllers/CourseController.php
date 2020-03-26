@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Chapter;
 use App\Course;
 use App\Http\Controllers\Controller;
 use App\Objective;
 use App\Recommendation;
 use App\Saved;
+use App\Session;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\File as fileFacede;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Sopamo\LaravelFilepond\Exceptions\InvalidPathException;
 
@@ -47,8 +50,9 @@ class CourseController extends Controller
         //transferring course image from temp storage to perm storage
         $path = $this->getPathFromServerId($request['filepond']);
         $file = new File($path);
-        $newName = time() . '.' . $file->extension();
-        $file->move(public_path('uploads/courses/') . Auth::user()->instructor->id . '/' . $slug . '/images/', $newName);
+        $fileUrl = Storage::disk('s3')->put('courses/' . Auth::user()->instructor->id . '/' . $slug . '/images', $file);
+        $fileUrl = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $fileUrl;
+        $request['img'] = $fileUrl;
         //create the course
         $course = Course::create(
             ['instructor_id' => $instructor->id,
@@ -56,7 +60,7 @@ class CourseController extends Controller
                 'price' => $request['price'],
                 'about' => $request['about'],
                 'slug' => $slug,
-                'img' => $newName
+                'img' => $request['img']
             ]
         );
         //create the first recommendation
@@ -68,6 +72,22 @@ class CourseController extends Controller
         Objective::create([
             'course_id' => $course->id,
             'objective' => ''
+        ]);
+        //create the first chapter
+        $chapter = Chapter::create([
+            'course_id' => $course->id,
+            'name' => $course->name . "'s first chapter",
+            'slug' => Str::slug($course->name . "'s first chapter", '-'),
+            'about' => $course->name . "'s first chapter description",
+        ]);
+        //create the first session
+        Session::create([
+            'chapter_id' => $chapter->id,
+            'name' => $course->name . "'s first session",
+            'slug' => Str::slug($course->name . "'s first session", '-'),
+            'link' => ' ',
+            'duration' => '00:00',
+            'about' => $course->name . "'s session description",
         ]);
         //return the new course page
         return redirect('/manage/instructor/courses/'.$slug);
@@ -109,17 +129,18 @@ class CourseController extends Controller
         ]);
         $course = Auth::user()->instructor->courses->where('slug', $request['slug'])->first();
         //deleting old picture
-        if(\File::exists(public_path('uploads/courses/') . Auth::user()->instructor->id . '/' . $slug . '/images/'. $course->img))
-        {
-            \File::delete(public_path('uploads/courses/') . Auth::user()->instructor->id . '/' . $slug . '/images/'. $course->img);
-        }
+//        if(\File::exists(public_path('uploads/courses/') . Auth::user()->instructor->id . '/' . $slug . '/images/'. $course->img))
+//        {
+//            \File::delete(public_path('uploads/courses/') . Auth::user()->instructor->id . '/' . $slug . '/images/'. $course->img);
+//        }
         //transferring course image from temp storage to perm storage
         $path = $this->getPathFromServerId($request['filepond']);
         $file = new File($path);
-        $newName = time() . '.' . $file->extension();
-        $file->move(public_path('uploads/courses/') . Auth::user()->instructor->id . '/' . $slug . '/images/', $newName);
+        $fileUrl = Storage::disk('s3')->put('courses/' . Auth::user()->instructor->id . '/' . $slug . '/images', $file);
+        $fileUrl = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $fileUrl;
+        $request['img'] = $fileUrl;
         //update course
-        $course->update(['img' => $newName]);
+        $course->update(['img' => $request['img']]);
         \Session::flash('success',"Your course's thumbnail was updated successfully.");
 
         return back();
