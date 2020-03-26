@@ -92,7 +92,7 @@
                         <li>
                             <div class="form-group">
                                 <label for="">Name</label>
-                                <input type="text" name="" id="" maxlength="100" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Abdulrhman Elkayal"
+                                <input type="text" name="" id="" maxlength="100" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Your Name"
                                        aria-describedby="helpId">
                             </div>
                         </li>
@@ -107,7 +107,7 @@
                             <div class="form-group">
                                 <label class="d-block" for="">Phone Number</label>
                                 <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm" maxlength="11"
-                                       placeholder="01206882962" aria-describedby="helpId">
+                                       placeholder="01xxxxxxxxx" aria-describedby="helpId">
                             </div>
                         </li>
                         <li>
@@ -142,6 +142,7 @@
                 <a  class="btn btn-veedros-new  btn-veedros-md border-0 mx-auto ">
                         <span class="mx-3 text-white">Confirm</span>
                     </a>
+                    <small class="text-muted">we're so grateful to reach here, wait for our call as soon as possible</small>
         </div>
     </section>
 @endsection
