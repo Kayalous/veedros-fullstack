@@ -2544,6 +2544,10 @@ h2 {
         margin-left: 0 !important;
     }
 
+    .header-text h1 {
+        font-size: 60px;
+    }
+
     .testimonials .ratings {
         margin-left: auto;
         margin-right: auto;
@@ -2560,7 +2564,7 @@ h2 {
 
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
 
     .academies h1 {
         font-size: 35px;
