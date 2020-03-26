@@ -127,14 +127,8 @@
                     <li class="form-hide">
                         <div class="form-group">
                             <label class="d-block" for="">Phone Number</label>
-<<<<<<< HEAD
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm " placeholder=""
-=======
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-sm" maxlength="5" placeholder="0020"
-                                   aria-describedby="helpId">
-                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm input-md" maxlength="20" placeholder="10xxxxxxxx"
->>>>>>> e1d200c1ecc671c4842a4fdcab1e312972023bf3
-                                   aria-describedby="helpId">
+
+                            <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm " placeholder="">
                         </div>
                     </li>
                 </ul>
