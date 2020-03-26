@@ -43,7 +43,7 @@ ul li label {
 }
 
 .input-md {
-    width: 86% !important ;
+    width: 85% !important ;
     display: inline-block !important;
 }
 
@@ -58,4 +58,19 @@ ul li label {
     padding: 4vw;
     max-width: 90%;
     height: auto;
+}
+
+.form-show
+{
+    display: none;
+}
+@media (max-width: 992px) {
+    .form-hide
+    {
+        display: none;
+    }
+    .form-show
+    {
+        display: initial;
+    }
 }
