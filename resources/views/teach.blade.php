@@ -86,6 +86,7 @@
     <section class="my-5 teach-form">
         <div class="row">
             <div class="col-12 form-bg col-lg-6">
+                <div class="form-overlay"></div>
                 <div class="form-content w-100 m-5">
                     <ul>
                         <li>
@@ -138,8 +139,9 @@
             </div>
         </div>
         <div class=" text-center my-5">
-            <button class="btn btn-veedros-new d-inline-block btn-veedros-md border-0">
-                Confirm</button>
+                <a  class="btn btn-veedros-new  btn-veedros-md border-0 mx-auto ">
+                        <span class="mx-3 text-white">Confirm</span>
+                    </a>
         </div>
     </section>
 @endsection

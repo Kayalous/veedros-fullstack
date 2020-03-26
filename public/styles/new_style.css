@@ -1,7 +1,7 @@
 /* Veedros button  */
 .btn-veedros-new {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
     /* letter-spacing: 1px; */
     padding: 0.3rem 2rem;
     color: #fff;
@@ -48,10 +48,10 @@
 }
 
 .btn-veedros-small {
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-weight: 400;
     width: 100px;
-    height: 50px;
+    height: 40px;
     border-radius: 50px;
 }
 

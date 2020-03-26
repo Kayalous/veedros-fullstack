@@ -275,8 +275,6 @@ hr {
 /* Hero  */
 
 .hero {
-    /* height: 100vh; */
-    min-height: 800px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -324,9 +322,9 @@ hr {
 }
 
 @media (min-width: 1200px) {
-    .hero {
+    /* .hero {
         height: 100vh;
-    }
+    } */
 }
 
 
@@ -409,7 +407,7 @@ hr {
 
 .hero-header-text h1 {
     font-weight: 700;
-    font-size: 75px;
+    font-size: 70px;
     color: #313c8b;
     margin-bottom: 4rem;
 }
@@ -486,7 +484,7 @@ hr {
 /* Veedros button  */
 .btn-veedros {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
     padding: 0.3rem 2rem;
     color: #fff;
     cursor: pointer;
@@ -2424,7 +2422,7 @@ ul {
 }
 
 .happy-users h1 {
-    font-size: 80px;
+    font-size: 100px;
     font-weight: 900;
     line-height: 1;
 }
@@ -2436,7 +2434,7 @@ ul {
 }
 
 .teach-with-us-content h1 {
-    font-size: 65px;
+    font-size: 70px;
     font-weight: 700;
 }
 
@@ -2465,7 +2463,7 @@ h2 {
 }
 
 .testimonials h1 {
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 700;
 
 }
@@ -2524,6 +2522,7 @@ h2 {
     background: url(../images/Acadmic-1920x800.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
 }
 
 .academies h1 {
@@ -2545,6 +2544,14 @@ h2 {
         margin-left: 0 !important;
     }
 
+    .header-text h1 {
+        font-size: 50px;
+    }
+
+    .header-text h4 {
+        font-size: 20px;
+    }
+
     .testimonials .ratings {
         margin-left: auto;
         margin-right: auto;
@@ -2561,10 +2568,10 @@ h2 {
 
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
 
     .academies h1 {
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .testimonials h1 {
@@ -2658,7 +2665,7 @@ img {
 
 /* new size */
 .happy-users h2 {
-    font-size: 14px;
+    font-size: 30px;
 }
 
 .trusted-Route {

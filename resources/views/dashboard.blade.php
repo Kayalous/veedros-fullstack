@@ -31,7 +31,7 @@
                             </li>
                             @endif
                             <li>
-                                <a href="{{asset("profile")}}" class="btn btn-veedros-new btn-veedros-regular  btn- border-0 my-1 "
+                                <a href="{{asset("profile")}}" class="btn btn-veedros-new btn-veedros-md border-0 my-1 "
                                         type="button">
                                         <span>view profile</span>
 
@@ -60,8 +60,6 @@
                     <p class="p1 container-notification">
                         <i class="far iconsize-mine fa-play-circle" aria-hidden="true"></i>
 
-                        <!-- <span id="courses-notification" class="notification">2</span> -->
-
                     </p>
 
                     <p class="target">My Courses</p>
@@ -77,16 +75,6 @@
                     <p class="target">Saved</p>
                 </a>
             </li>
-            <!-- <li id="recommended-tab" class="nav-item nav-item-edit disabled shadow-sm m-1">
-                <a href="#Recommended" class="nav-link d-none-tab" data-toggle="tab">
-                    <p class="p1 container-notification"><i class="far fa-thumbs-up" aria-hidden="true"></i>
-
-                        <span id="recommended-notification" class="notification">+5</span>
-
-                    </p>
-                    <p class="target">Recommended</p>
-                </a>
-            </li> -->
         </ul>
         <div class="tab-content ">
             <!-- My Courses -->
@@ -125,14 +113,14 @@
                                     <div id="prog-bar1" class="progress-bar" style="--width:50;"></div>
                                 </div>
                                 <hr class="my-4">
-                                <div class="d-flex justify-content-end mb-3 ">
-                                    <button class="btn btn-veedros-new btn-veedros-sm btn- border-0 mx-2" type="button">
-                                        Share <img class="ml-2" src="{{asset('images/Icons')}}/share.svg" alt="">
-                                    </button>
-                                    <!-- <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/"
-                                    data-layout="button" data-size="large"><a target="_blank"
-                                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-                                    class="fb-xfbml-parse-ignore">Share</a></div> -->
+                                <div class="d-flex justify-content-between mb-3 ">
+                                <div class="sharethis-inline-share-buttons" 
+                                    data-url="{{\App\Course::getFirstSession($course)}}"
+                                    data-title=""
+                                    data-image=""
+                                    data-description=""
+                                    data-message=""
+                                    ></div>
 
                                     <a href="{{\App\Course::getFirstSession($course)}}" class="btn btn-veedros btn-veedros-sm border-0 " type="button">
                                         Keep Going
@@ -180,114 +168,14 @@
                     </div>
                 </div>
             </div>
-            <!-- Recommended -->
-            <!-- Recommended -->
-            <!-- Recommended -->
-            <!-- <div id="Recommended" class="tab-pane fade">
-                <div class="dashboard-land">
-                    <div class="container">
-                        <div class="row ">
-                            <div class="card-columns m-auto ">
-                                <div class=" card-kmine">
-                                    <div class="card course-card development-card noJquery"
-                                         style="background-image: url('images/img_02.png')" data-toggle="modal"
-                                         data-target="#exampleModal">
-                                        <div class="course-card-overlay overlay-2"></div>
-                                        <div class="card-body m-0">
-                                            <div class="card-body-inner noscroll card-bg-img">
-                                                <div class="play-circle play-circle-4"> <img
-                                                        style="height:40px; width:40px " src="images/Play_button.svg"
-                                                        alt=""> </div>
-                                                <h4 class="card-title title-mine">
-                                                    Full Stack Web Development
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class=" card-kmine">
-                                    <div class="card course-card development-card noJquery"
-                                         style="background-image: url('images/img_04.png')" data-toggle="modal"
-                                         data-target="#exampleModal">
-                                        <div class="course-card-overlay overlay-3"></div>
-                                        <div class="card-body m-0">
-                                            <div class="card-body-inner noscroll card-bg-img">
-                                                <div class="play-circle play-circle-2"> <img
-                                                        style="height:40px; width:40px " src="images/Play_button.svg"
-                                                        alt=""> </div>
-                                                <h4 class="card-title title-mine">
-                                                    Full Stack Web Development
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class=" card-kmine">
-                                    <div class="card course-card development-card noJquery"
-                                         style="background-image: url('images/img_03.png')" data-toggle="modal"
-                                         data-target="#exampleModal">
-                                        <div class="course-card-overlay overlay-4"></div>
-                                        <div class="card-body m-0">
-                                            <div class="card-body-inner noscroll card-bg-img">
-                                                <div class="play-circle play-circle-5"> <img
-                                                        style="height:40px; width:40px " src="images/Play_button.svg"
-                                                        alt=""> </div>
-                                                <h4 class="card-title title-mine">
-                                                    Full Stack Web Development
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card-kmine">
-                                    <div class="card course-card development-card noJquery"
-                                         style="background-image: url('images/img_01.png')" data-toggle="modal"
-                                         data-target="#exampleModal">
-                                        <div class="course-card-overlay overlay-1"></div>
-                                        <div class="card-body m-0">
-                                            <div class="card-body-inner noscroll card-bg-img">
-                                                <div class="play-circle play-circle-1"> <img
-                                                        style="height:40px; width:40px " src="images/Play_button.svg"
-                                                        alt=""> </div>
-                                                <h4 class="card-title title-mine">
-                                                    Full Stack Web Development
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card-kmine">
-                                    <div class="card course-card development-card noJquery"
-                                         style="background-image: url('images/img_04.png')" data-toggle="modal"
-                                         data-target="#exampleModal">
-                                        <div class="course-card-overlay overlay-1"></div>
-                                        <div class="card-body m-0">
-                                            <div class="card-body-inner noscroll card-bg-img">
-                                                <div class="play-circle play-circle-1"> <img
-                                                        style="height:40px; width:40px " src="images/Play_button.svg"
-                                                        alt=""> </div>
-                                                <h4 class="card-title title-mine">
-                                                    Full Stack Web Development
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+            
 
         </div>
     </div>
 @endsection
 
 @section('customJS')
+<script type='text/javascript' 
+src='https://platform-api.sharethis.com/js/sharethis.js#property=5e792c766caf2b00125bec34&product=inline-share-buttons' async='async'></script>
     <script src="scripts/dashboard.js"></script>
 @endsection

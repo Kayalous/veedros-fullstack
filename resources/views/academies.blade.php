@@ -117,8 +117,9 @@
             </div>
         </div>
         <div class=" text-center my-5">
-            <button class="btn btn-veedros-new btn-veedros-md mx-auto border-0">
-                Let's Cooperate</button>
+        <a  class="btn btn-veedros-new btn-veedros-md border-0 mx-auto ">
+                        <span class="mx-3 text-white">Let's Cooperate</span>
+                    </a>
             <small id="helpId" class="text-muted my-2 d-block">We're grateful for you reaching out to us. We'll contact you as soon as possible.</small>
         </div>
     </section>

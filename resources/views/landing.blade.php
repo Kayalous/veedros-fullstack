@@ -53,7 +53,7 @@
 
     </section>
 
-    <section class="partners-logo">
+    <section class="partners-logo mb-3">
 
     <div class="row justify-content-center py-3">
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
@@ -81,19 +81,20 @@
         </div>
 
     </section>
-    <section class="happy-users my-3">
+    <section class="happy-users">
         <div>
             <h1 class="text-center mb-0">6K<span>+</span></h1>
             <h2 class="text-center mt-0">Happy students</h2>
         </div>
     </section>
     <!-- Featured courses  -->
-    <section class="featured-courses my-5 py-5" id="featured-courses">
+    <section class="featured-courses mb-5 pb-5" id="featured-courses">
         <div class="container container-mine pt-3">
             <div class="row">
                 <div class="header-text d-block mb-2 ">
+                    <h4> A powerful</h4>
                     <h1>
-                        A powerful set of courses
+                        set of courses
                     </h1>
                     <h4>that will change your career.</h4>
                 </div>
@@ -134,7 +135,7 @@
             <div class="col-lg-6 m-0 py-5 teach-with-us-container d-flex flex-column justify-content-center align-items-center">
                 <div class="teach-with-us-content">
                     <div class="container">
-                        <h1>Have content?</h1>
+                        <h1>Have <br> content !</h1>
                         <br>
                         <h2>If you...</h2>
                         <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to organize your content.</h4>
@@ -142,9 +143,9 @@
                         <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to promote your vision.</h4>
                         <br>
                         <h4>We can give you a hand with that!</h4>
-                        <div class="row">
-                            <a href="{{asset("teach")}}" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
-                                <span class="mx-3">Let's talk!</span>
+                        <div class="row mt-5">
+                            <a href="{{asset("teach")}}" class="btn btn-veedros-new btn-veedros-md border-0  ">
+                                <span class="mx-3">Okay, Let's talk!</span>
                             </a>
                         </div>
                     </div>
@@ -164,14 +165,15 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-4 mx-auto pl-5">
                 <div class="container">
-                <h1>Hey, you help us too.</h1>
+                <h1>Hey, you <br> help us<br>too.</h1>
                 <br>
                 <h4>We really appreciate your feedback. Don't hesitate to let us know what you think, it really helps.</h4>
                 <br>
-                <div class="row">
-                    <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
-                        <span class="mx-3">Give us a review</span>
-                    </button>
+                <div class="row bt-5">
+                <a  class="btn btn-veedros-new btn-veedros-md border-0 "
+                       >
+                       <span class="text-white">Give us a review</span>
+                    </a>
                 </div>
                 </div>
             </div>
@@ -227,14 +229,14 @@
 
     <section class="academies">
         <div class="container h-100">
-            <div class="d-flex justify-content-center align-items-center flex-column h-100 w-100">
+            <div class="d-flex justify-content-center align-items-center flex-column h-50 w-100">
                 <h1 class="text-center">We help Academies to expand online</h1>
                 <br>
                 <h4 class="text-center">We can help you reach a broader audience and increase your passive income.</h4>
                 <br>
                 <div class="row">
-                    <a href="{{asset('academic')}}" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto " type="button">
-                        <span class="mx-3">Let's talk</span>
+                    <a href="{{asset('academic')}}" class="btn btn-veedros btn-veedros-md border-0 mx-auto ">
+                        <span class="mx-3">Let's help you</span>
                     </a>
                 </div>
             </div>

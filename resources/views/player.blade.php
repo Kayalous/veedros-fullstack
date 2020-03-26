@@ -153,7 +153,13 @@
                     <div class="d-lg-block d-md-flex flex-reverse-mine w-100 ">
                         <div>
                             <h6>share course :</h6>
-                        <div class="sharethis-inline-share-buttons"></div>
+                        <div class="sharethis-inline-share-buttons" 
+                        data-url=""
+                        data-title=""
+                        data-image=""
+                        data-description=""
+                        data-message=""
+                        ></div>
                         </div>
 
                         <div class="flex-around flex-column-mine mb-lg-5 mr-lg-5-mine pt-5">
@@ -311,7 +317,8 @@
     <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
 @endsection
 @section('customJS')
-<script type="text/javascript"
-        src="//platform-api.sharethis.com/js/sharethis.js#property=#property=5e792c766caf2b00125bec34&product=inline-share-buttons"></script>
+<script type='text/javascript' 
+src='https://platform-api.sharethis.com/js/sharethis.js#property=5e792c766caf2b00125bec34&product=inline-share-buttons' async='async'></script>
+
     <script src="{{asset('scripts')}}/player.js"></script>
 @endsection
