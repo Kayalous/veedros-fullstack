@@ -37,7 +37,6 @@
     border-radius: 5px;
 }
 
-
 .sidebar .list-group-item span {
     max-width: 250px;
     white-space: nowrap;
@@ -61,7 +60,6 @@
     color: rgba(0, 0, 0, 0.9);
 }
 
-
 .sidebar .list-group-item:hover {
     background-color: #f5f5f5;
     color: rgba(0, 0, 0, 0.9);
@@ -70,7 +68,7 @@
 .sidebar .list-group-item.active {
     background-color: #CBEFF9;
     color: rgba(193, 39, 44, 1);
-    stroke:rgba(193, 39, 44, 1);
+    stroke: rgba(193, 39, 44, 1);
 }
 
 .sidebar .list-group-item.complete {
@@ -89,6 +87,7 @@
 .sidebar .list-group a {
     opacity: 0.9;
 }
+
 .sidebar label {
     text-transform: uppercase;
     letter-spacing: 0.4px;
@@ -102,7 +101,9 @@
     color: #36458F;
 }
 
+
 /* Scrollbar Styling */
+
 .sidebar-wrapper::-webkit-scrollbar {
     position: absolute;
     right: 0;
@@ -124,9 +125,7 @@
     border: 2.3px solid rgba(0, 0, 0, 0);
     background-clip: padding-box;
     -webkit-border-radius: 7px;
-    background-image: -webkit-linear-gradient(90deg,
-            #7473EB,
-            #3EB5FE);
+    background-image: -webkit-linear-gradient(90deg, #7473EB, #3EB5FE);
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
@@ -150,10 +149,9 @@
     font-weight: 700;
     color: rgba(0, 0, 0, 0.6) !important;
 }
-.collapse-button.watching{
-    background-image: -webkit-linear-gradient(0deg,
-    #7473EB60,
-    #3EB5FE60) !important;
+
+.collapse-button.watching {
+    background-image: -webkit-linear-gradient(0deg, #7473EB60, #3EB5FE60) !important;
 }
 
 .collapse-button:focus {
@@ -185,6 +183,7 @@
 .collapse-button:hover .chevron {
     background-color: #EEE;
 }
+
 .collapse-button.watching:hover .chevron {
     background-color: #eeeeee80;
 }
@@ -205,12 +204,12 @@
     line-height: 1.6;
 }
 
-
 #course-info h2 {
     font-size: 35px;
     font-weight: 700;
     color: #313c8b;
 }
+
 #course-info h1 {
     font-size: 55px;
     font-weight: 700;
@@ -220,6 +219,7 @@
 #course-info .feather {
     color: #0D984F;
 }
+
 #course-info .btn-veedros-new .feather {
     color: white;
 }
@@ -270,13 +270,7 @@
 }
 
 .box-shadow-md {
-    box-shadow:
-        0 0px 2.2px rgba(0, 0, 0, 0.02),
-        0 0px 5.3px rgba(0, 0, 0, 0.028),
-        0 0px 10px rgba(0, 0, 0, 0.035),
-        0 0px 17.9px rgba(0, 0, 0, 0.042),
-        0 0px 33.4px rgba(0, 0, 0, 0.05),
-        0 0px 80px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 0px 2.2px rgba(0, 0, 0, 0.02), 0 0px 5.3px rgba(0, 0, 0, 0.028), 0 0px 10px rgba(0, 0, 0, 0.035), 0 0px 17.9px rgba(0, 0, 0, 0.042), 0 0px 33.4px rgba(0, 0, 0, 0.05), 0 0px 80px rgba(0, 0, 0, 0.07);
 }
 
 .border-radius-md {
@@ -292,98 +286,79 @@
     .seperator-right {
         border-right: none;
     }
-
     .player-container {
         flex-direction: column;
         height: auto;
     }
-
     .video-wrapper {
         width: 100%;
         height: auto;
     }
-
     .sidebar {
         width: 95%;
     }
-
     @media (max-width:992px) {
         .sidebar {
             min-height: 500px;
         }
     }
-
     .badge-item {
         font-size: 22px;
     }
-
     .w-md-100 {
         width: 100% !important;
         margin-right: 0;
         margin-left: 0;
     }
-
     .flex-column-reverse-mine {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column-reverse;
     }
-
     .flex-column-mine {
         display: flex;
         align-items: center;
         flex-direction: column;
     }
-
     .flex-column-mine>* {
         margin-top: 5px;
         margin-bottom: 5px;
     }
-
     .flex-reverse-mine {
         flex-direction: row-reverse;
         justify-content: space-between;
     }
-
     .ml-lg-5-mine {
         margin-left: 2rem;
     }
-
     .mr-lg-5-mine {
         margin-right: 2rem;
     }
-
     .btn-veedros-xl {
         width: 80%;
     }
 }
 
-
 @media (max-width: 768px) {
     .ml-lg-5-mine {
         margin-left: 0;
     }
-
     .mr-lg-5-mine {
         margin-right: 0;
     }
-
     .flex-column-mine {
         display: block;
         text-align: center;
         padding-bottom: 2rem;
     }
-
     .flex-column-mine>* {
         margin-left: 5px;
         margin-right: 5px;
     }
-
     .btn-veedros-xl {
         width: 100%;
     }
-
 }
 
 .more .feather {
@@ -395,18 +370,8 @@
 }
 
 .card-comment {
-    -webkit-box-shadow: 0 4px 0.8px -8.5px rgba(0, 0, 0, 0.056),
-        0 4px 1.9px -8.5px rgba(0, 0, 0, 0.081),
-        0 4px 3.6px -8.5px rgba(0, 0, 0, 0.1),
-        0 4px 6.5px -8.5px rgba(0, 0, 0, 0.119),
-        0 4px 12.1px -8.5px rgba(0, 0, 0, 0.144),
-        0 4px 29px -8.5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 0.8px -8.5px rgba(0, 0, 0, 0.056),
-        0 4px 1.9px -8.5px rgba(0, 0, 0, 0.081),
-        0 4px 3.6px -8.5px rgba(0, 0, 0, 0.1),
-        0 4px 6.5px -8.5px rgba(0, 0, 0, 0.119),
-        0 4px 12.1px -8.5px rgba(0, 0, 0, 0.144),
-        0 4px 29px -8.5px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 4px 0.8px -8.5px rgba(0, 0, 0, 0.056), 0 4px 1.9px -8.5px rgba(0, 0, 0, 0.081), 0 4px 3.6px -8.5px rgba(0, 0, 0, 0.1), 0 4px 6.5px -8.5px rgba(0, 0, 0, 0.119), 0 4px 12.1px -8.5px rgba(0, 0, 0, 0.144), 0 4px 29px -8.5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 0.8px -8.5px rgba(0, 0, 0, 0.056), 0 4px 1.9px -8.5px rgba(0, 0, 0, 0.081), 0 4px 3.6px -8.5px rgba(0, 0, 0, 0.1), 0 4px 6.5px -8.5px rgba(0, 0, 0, 0.119), 0 4px 12.1px -8.5px rgba(0, 0, 0, 0.144), 0 4px 29px -8.5px rgba(0, 0, 0, 0.2);
     width: 100%;
 }
 
@@ -422,12 +387,14 @@
     justify-content: center;
     align-items: center;
 }
+
 .card-comment a {
     color: rgba(0, 0, 0, 0.45);
     font-weight: 600;
     line-height: 1.6;
     transition: all 0.1s ease-in-out;
 }
+
 .card-comment a:hover {
     color: rgba(0, 0, 0, 0.65);
 }
@@ -436,23 +403,51 @@
     stroke: #D8D8D8;
     width: 20px;
 }
-.vjs-control-bar{
+
+.vjs-control-bar {
     display: none !important;
 }
-.vjs-big-play-button{
+
+.vjs-big-play-button {
     top: 50% !important;
     left: 50% !important;
     margin-top: calc(-50px/2);
     margin-left: calc(-90px/2);
 }
-.collapse-button span{
+
+.collapse-button span {
     width: 85px;
 }
 
-.collapse-button .chapter-name{
+.collapse-button .chapter-name {
     width: 150px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
+}
+
+.share-btn-mine ul {
+    overflow: hidden;
+}
+
+.share-btn-mine .menu {
+    clear: both;
+    max-height: 0px;
+    transition: al 1s ease-out;
+}
+
+
+/* .change-menu .menu-text {
+    cursor: pointer;
+    user-select: none;
+    float: left;
+} */
+
+.change-menu .menu-btn {
+    display: none;
+}
+
+.change-menu .menu-btn:checked~.menu {
+    max-height: 100px;
 }

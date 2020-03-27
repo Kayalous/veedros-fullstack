@@ -46,7 +46,7 @@
                                     <div class=" my-4 change-menu">
                                                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                                                 <label class="menu-text" for="menu-btn">
-                                                    <a class="btn btn-veedros btn-veedros-md border-0 text-white">change Email or Password</a>
+                                                    <a class="btn btn-veedros-new btn-veedros-md border-0 text-white">change Email or Password</a>
                                                 </label>
                                                 <ul class="menu">
                                                     <li>
