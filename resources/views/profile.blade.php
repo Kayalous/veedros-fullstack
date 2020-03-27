@@ -7,7 +7,7 @@
     <div class="new-bg"></div>
 
     <!-- Profile  -->
-    <section class="profile my-5 py-5" @if(!$user->instructor)style="height: 100vh"@endif>
+    <section class="profile my-5 py-5" @if(!$user->instructor)@endif>
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-12 mx-auto">
