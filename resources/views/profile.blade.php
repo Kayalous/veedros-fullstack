@@ -25,17 +25,17 @@
                 <img src="{{$user->img}}" alt="profile image" class="round-lg mx-auto img-fluid"/>
             </div>
             @if($user->name != null)
-            <h1 class="mt-3">{{$user->name}}</h1>
+            <h1 class="my-3">{{$user->name}}</h1>
             @endif()
             @if($user->position != null)
-                <h5>{{$user->position}}</h5>
+                <h5 class="my-3">{{$user->position}}</h5>
             @endif()
             @if($user->location != null)
-            <h6><img class="mr-2" src="{{asset('images/Icons')}}/Location.svg" alt="">{{$user->location}}</h6>
+            <h6 class="my-3"><img class="mr-2" src="{{asset('images/Icons')}}/Location.svg" alt="">{{$user->location}}</h6>
             @endif
             @if($user->about != null)
             <div class="container mx-2">
-                <h5>{{$user->about}}</h5>
+                <h5 class="my-4">{{$user->about}}</h5>
             </div>
             @endif
 
