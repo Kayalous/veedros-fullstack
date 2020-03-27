@@ -16,7 +16,7 @@
 @endsection
 
 @section('content')
-    <div class="academic-header">
+<div class="academic-header">
         <div class="content">
             <h1>We help Academies<br>to expand online</h1>
         </div>
@@ -58,83 +58,70 @@
 
 
     <section class="container my-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <div class="form-content ">
-                    <ul>
-                        <li>
+        <div class="container">
+         <div class="row">
+                <div class="col-12 col-lg-6">
                             <div class="form-group">
                                 <label for="">Academy's Name</label>
-                                <input type="text" name="" id="" maxlength="20" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder=""
-                                       aria-describedby="helpId">
+                                <input type="text" name="" id="" maxlength="20" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="" aria-describedby="helpId">
                             </div>
-                        </li>
-                        <li class="form-show">
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="email" name="" id="" maxlength="" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com"
-                                   aria-describedby="helpId">
-                        </div>
-                    </li>
-                    <li class="form-show">
-                        <div class="form-group">
-                            <label class="d-block" for="">Phone Number</label>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="email" name="" id="" maxlength="" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com" aria-describedby="helpId">
+                            </div>
+                            </div>
+                
+                </div>
+                <div class="row flex-row-reverse">
+                <div class="col-12 col-lg-6">
 
-                            <input type="text" name="" id="" maxlength="18" class="form-control profile-form-field email-field-props border-light border-radius-sm " placeholder="">
+                            <div class="form-group">
+                                <label class="d-block" for="">Phone Number</label>
+
+                                <input type="text" name="" id="" maxlength="18" class="form-control profile-form-field email-field-props border-light border-radius-sm " placeholder="">
+                            </div>
+                    
                         </div>
-                    </li>
-                        <li>
+                        <div class="col-12 col-lg-6">
+                      
                             <div class="form-group">
                                 <label for="">Location</label>
-                                <input type="text" name="" id="" maxlength="20" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder=""
-                                       aria-describedby="helpId">
+                                <input type="text" name="" id="" maxlength="20" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="" aria-describedby="helpId">
                             </div>
-                        </li>
-                        <li>
+                        
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-12 col-lg-6">
+
                             <div class="form-group">
                                 <label for="">Company Profile</label>
-                                <div class="filepond--root filepond filepond--hopper" data-style-panel-layout="compact" data-style-button-remove-item-position="left" data-style-button-process-item-position="right" data-style-load-indicator-position="right" data-style-progress-indicator-position="right" data-style-button-remove-item-align="false" style="height: 76px;"><input class="filepond--browser" type="file" id="filepond--browser-spzwsu972" name="filepond" aria-controls="filepond--assistant-spzwsu972" aria-labelledby="filepond--drop-label-spzwsu972" accept="application/pdf"><div class="filepond--drop-label" style="transform: translate3d(0px, 0px, 0px); opacity: 1;"><label for="filepond--browser-spzwsu972" id="filepond--drop-label-spzwsu972" aria-hidden="true">Drag &amp; Drop your CV or <span class="filepond--label-action" tabindex="0">Browse</span></label></div><div class="filepond--list-scroller" style="transform: translate3d(0px, 0px, 0px);"><ul class="filepond--list" role="list"></ul></div><div class="filepond--panel filepond--panel-root" data-scalable="true"><div class="filepond--panel-top filepond--panel-root"></div><div class="filepond--panel-center filepond--panel-root" style="transform: translate3d(0px, 8px, 0px) scale3d(1, 0.6, 1);"></div><div class="filepond--panel-bottom filepond--panel-root" style="transform: translate3d(0px, 68px, 0px);"></div></div><span class="filepond--assistant" id="filepond--assistant-spzwsu972" role="status" aria-live="polite" aria-relevant="additions"></span><fieldset class="filepond--data"></fieldset><div class="filepond--drip"></div></div>
+                                <div class="filepond--root filepond filepond--hopper" data-style-panel-layout="compact" data-style-button-remove-item-position="left" data-style-button-process-item-position="right" data-style-load-indicator-position="right" data-style-progress-indicator-position="right"
+                                    data-style-button-remove-item-align="false" style="height: 76px;"><input class="filepond--browser" type="file" id="filepond--browser-spzwsu972" name="filepond" aria-controls="filepond--assistant-spzwsu972" aria-labelledby="filepond--drop-label-spzwsu972" accept="application/pdf">
+                                    <div class="filepond--drop-label" style="transform: translate3d(0px, 0px, 0px); opacity: 1;"><label for="filepond--browser-spzwsu972" id="filepond--drop-label-spzwsu972" aria-hidden="true">Drag &amp; Drop your CV or <span class="filepond--label-action" tabindex="0">Browse</span></label></div>
+                                    <div class="filepond--list-scroller" style="transform: translate3d(0px, 0px, 0px);">
+                                        <ul class="filepond--list" role="list"></ul>
+                                    </div>
+                                    <div class="filepond--panel filepond--panel-root" data-scalable="true">
+                                        <div class="filepond--panel-top filepond--panel-root"></div>
+                                        <div class="filepond--panel-center filepond--panel-root" style="transform: translate3d(0px, 8px, 0px) scale3d(1, 0.6, 1);"></div>
+                                        <div class="filepond--panel-bottom filepond--panel-root" style="transform: translate3d(0px, 68px, 0px);"></div>
+                                    </div><span class="filepond--assistant" id="filepond--assistant-spzwsu972" role="status" aria-live="polite" aria-relevant="additions"></span>
+                                    <fieldset class="filepond--data"></fieldset>
+                                    <div class="filepond--drip"></div>
+                                </div>
                             </div>
-                        </li>
-                        <li>
+                        
                             <div class="form-group">
                                 <label for="">Tell us about your services</label>
-                                <textarea class="form-control profile-form-field email-field-props border-light border-radius-sm" maxlength="2000" id="exampleFormControlTextarea1"
-                                          rows="6" placeholder="Tell us about your services..."></textarea>
+                                <textarea class="form-control profile-form-field email-field-props border-light border-radius-sm" maxlength="2000" id="exampleFormControlTextarea1" rows="6" placeholder="Tell us about your services..."></textarea>
                                 <small id="helpId" class="text-muted">The more details the better!</small>
                             </div>
-                        </li>
-                    </ul>
+                       
                 </div>
-
-            </div>
-            <div class="col-12 col-lg-6">
-                <ul>
-                    <li class="form-hide">
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="email" name="" id="" maxlength="" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com"
-                                   aria-describedby="helpId">
-                        </div>
-                    </li>
-                    <li class="form-hide">
-                        <div class="form-group">
-                            <label class="d-block" for="">Phone Number</label>
-
-                            <input type="text" name="" id="" maxlength="18" class="form-control profile-form-field email-field-props border-light border-radius-sm " placeholder="">
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-        <div class=" text-center my-5">
-        <a  class="btn btn-veedros-new btn-veedros-md border-0 mx-auto ">
-                        <span class="mx-3 text-white">Let's Cooperate</span>
-                    </a>
-            <small id="helpId" class="text-muted my-2 d-block">We're grateful for you reaching out to us. We'll contact you as soon as possible.</small>
-        </div>
+                </div>
         </div>
     </section>
 @endsection
