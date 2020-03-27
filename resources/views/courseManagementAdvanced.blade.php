@@ -20,7 +20,7 @@
     <h1 class="mt-5"> Chapters & Sessions </h1>
     <br>
     <h2>Basic course chapter and session structure</h2>
-    <ul class="ml-5" id="rec-container">
+    <ul id="chapters-container">
         @foreach($course->chapters as $chapter)
             <li>
             <button class="list-group-item collapse-button mx-auto" aria-expanded="false" data-toggle="collapse"
@@ -39,12 +39,12 @@
                 <div class="row">
                     <div class="col-10">
                         <h5 class="align-items-center row">
-                            <textarea rows="1" class="chapter-name form-control course-form-field border-light border-radius-sm col-12" placeholder="Type chapter name here" oninput="auto_grow(this)" readonly id="{{$chapter->id}}">{{$chapter->name}}</textarea>
+                            <textarea rows="1" class="chapter-name-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type chapter name here" oninput="auto_grow(this)" readonly id="{{$chapter->id}}">{{$chapter->name}}</textarea>
                         </h5>
                     </div>
                     <div>
                         <button
-                            class="btn btn-secondary-veedros btn-secondary-veedros-normal border-medium edit-btn edit-rec" type="button"><i
+                            class="btn btn-secondary-veedros btn-secondary-veedros-normal border-0 edit-btn edit-chapter-name" type="button"><i
                                 data-feather="edit"></i>
                             Edit</button>
                     </div>
@@ -54,12 +54,12 @@
                 <div class="row">
                     <div class="col-10">
                         <h5 class="align-items-center row">
-                            <textarea rows="1" class="chapter-desc form-control course-form-field border-light border-radius-sm col-12" placeholder="Type chapter description here" oninput="auto_grow(this)" readonly id="{{$chapter->id}}">{{$chapter->about}}</textarea>
+                            <textarea rows="1" class="chapter-desc-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type chapter description here" oninput="auto_grow(this)" readonly id="{{$chapter->id}}">{{$chapter->about}}</textarea>
                         </h5>
                     </div>
                     <div>
                         <button
-                            class="btn btn-secondary-veedros btn-secondary-veedros-normal border-medium edit-btn edit-rec" type="button"><i
+                            class="btn btn-secondary-veedros btn-secondary-veedros-normal border-medium edit-btn edit-chapter-desc" type="button"><i
                                 data-feather="edit"></i>
                             Edit</button>
                     </div>
@@ -97,8 +97,8 @@
         <br>
         <hr>
         <br>
-    <div class="w-100 row">
-        <button id="add-rec"
+    <div class="w-100 row m-0">
+        <button id="add-chapter"
                 class="btn btn-secondary-veedros btn-secondary-veedros-xl border-medium edit-btn py-3" type="button">
             <h2 class="m-0">
                 <i data-feather="plus"></i>

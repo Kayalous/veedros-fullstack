@@ -31,6 +31,7 @@ class CourseController extends Controller
         }
         return $filePath;
     }
+
     public function newCourse(Request $request){
         $validatedData = $request->validate([
             'name' => 'required|max:100',
@@ -93,10 +94,12 @@ class CourseController extends Controller
         return redirect('/manage/instructor/courses/'.$slug);
 
     }
+
     public function courses(){
         $courses = Auth::user()->instructor->courses;
         return view('courses',['courses' => $courses]);
     }
+
     public function editAbout(Request $request){
         $validatedData = $request->validate([
             'about' => 'required|max:500',
@@ -120,9 +123,6 @@ class CourseController extends Controller
         return response('The course price has been updated successfully.', 200);
     }
 
-
-
-
     public function editThumbnail(Request $request, $slug){
         $validatedData = $request->validate([
             'filepond' => 'required'
@@ -145,7 +145,6 @@ class CourseController extends Controller
 
         return back();
     }
-
 
     public function editObjective(Request $request){
         $validatedData = $request->validate([
@@ -192,7 +191,6 @@ class CourseController extends Controller
 
     }
 
-
     public function addToSaved($course_id){
         $course = Course::where('id', $course_id)->firstOrFail();
         $user = Auth::user();
@@ -215,4 +213,6 @@ class CourseController extends Controller
         return back();
 
     }
+
+
 }
