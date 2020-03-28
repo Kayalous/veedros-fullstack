@@ -40,21 +40,37 @@
                                                 <h5>Phone number</h5>
                                                 <input type="text" name="phone" id="phone" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Your phone number here" />
                                             </div>
-
-                                        </div>
-                                    </div>
-                                    <div class=" my-4 change-menu">
-                                                <input class="menu-btn" type="checkbox" id="menu-btn" />
-                                                <label class="menu-text" for="menu-btn">
-                                                    <a class="btn btn-veedros btn-veedros-md border-0 text-white">change Email or Password</a>
+                                            <div class=" my-4 change-email">
+                                                <input class="menu-btn" type="checkbox" id="email-menu-btn" />
+                                                <label class="menu-text" for="email-menu-btn">
+                                                    <h5>{{Auth::user()->email}}<a>change Email</a></h5>
                                                 </label>
                                                 <ul class="menu">
                                                     <li>
                                                         <div class="input-group ">
-                                                            <h5>Change email</h5>
+                                                            <h5>Enter your new Email</h5>
                                                             <input type="text" name="email" id="email" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@gmail.com" />
                                                         </div>
                                                     </li>
+                                                    <li>
+                                                    <div class=" text-center my-3">
+                                                            <a  class="btn btn-veedros-new  btn-veedros-md border-0 mx-auto ">
+                                                                    <span class="mx-3 text-white">Submit</span>
+                                                                </a>
+                                                                
+                                                    </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" my-4 change-pass">
+                                                <input class="menu-btn" type="checkbox" id="pass-menu-btn" />
+                                                <label class="menu-text" for="pass-menu-btn">
+                                                    <a>change password</a>
+                                                </label>
+                                                <ul class="menu">
+
                                                     <li>
                                                                         <div class="row mt-4">
                                                                     <div class="col-md-6">
@@ -72,6 +88,14 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </li>
+                                                    <li>
+                                                    <div class=" text-center my-3">
+                                                            <a  class="btn btn-veedros-new  btn-veedros-md border-0 mx-auto ">
+                                                                    <span class="mx-3 text-white">Submit</span>
+                                                                </a>
+                                                                
+                                                    </div>
                                                     </li>
                                                 </ul>
                                             </div>

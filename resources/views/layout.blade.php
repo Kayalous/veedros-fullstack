@@ -153,7 +153,7 @@
             aria-label="Toggle navigation">
         <i data-feather="menu"></i>
     </button>
-    <div class="collapse navbar-collapse no-flex-grow pb-4" id="collapsibleNavId">
+    <div class="collapse navbar-collapse no-flex-grow" id="collapsibleNavId">
         <ul class="navbar-nav nav-items-container">
             @if(Auth::user())
                 @if(!Auth::user()->hasRole('admin'))

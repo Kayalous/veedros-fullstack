@@ -190,35 +190,81 @@
 
 /* droplist */
 
-.change-menu ul {
+.change-email ul {
     overflow: hidden;
 }
 
-.change-menu .menu {
+.change-email .menu {
     clear: both;
     max-height: 0;
     transition: max-height .2s ease-out;
 }
 
-.menu-text span {
+.change-email .menu-text span {
     font-size: 12px;
 }
 
-.menu-text span:hover {
+.change-email .menu-text span:hover {
     color: blue;
     transition: color .1s ease-in-out;
 }
 
-.change-menu .menu-text {
+.change-email .menu-text {
     cursor: pointer;
     user-select: none;
     float: left;
 }
 
-.change-menu .menu-btn {
+.change-email .menu-btn {
     display: none;
 }
 
-.change-menu .menu-btn:checked~.menu {
+.change-email .menu-btn:checked~.menu {
+    max-height: 320px;
+}
+
+.menu-text a {
+    font-size: 12px;
+    color: #007bff !important;
+    text-decoration: none;
+}
+
+.menu-text a:hover {
+    text-decoration: underline !important;
+}
+
+
+/* change password */
+
+.change-pass ul {
+    overflow: hidden;
+}
+
+.change-pass .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.change-pass .menu-text span {
+    font-size: 12px;
+}
+
+.change-pass .menu-text span:hover {
+    color: blue;
+    transition: color .1s ease-in-out;
+}
+
+.change-pass .menu-text {
+    cursor: pointer;
+    user-select: none;
+    float: left;
+}
+
+.change-pass .menu-btn {
+    display: none;
+}
+
+.change-pass .menu-btn:checked~.menu {
     max-height: 320px;
 }
