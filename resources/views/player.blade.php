@@ -150,62 +150,54 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-5">
-                    <div class="d-lg-block d-md-flex flex-reverse-mine w-100 ">
-                   
-                    
-
-
-                        <!-- <div class="modal fade" id="ShareModal" role="dialog">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content login-body">
-                                    <div class="modal-body px-5">
-                                    <div class="sharethis-inline-share-buttons" 
-                                        data-url=""
-                                        data-title=""
-                                        data-image=""
-                                        data-description=""
-                                        data-message=""
-                                        ></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
+                    <div class=" d-lg-block d-md-flex flex-reverse-mine w-100 ">
                         
-                        <div class=" mb-lg-5 mr-lg-5-mine pt-5">
-                        <!-- <a href="#" class="btn btn-veedros-new btn-veedros-small border-0" data-toggle="modal" data-target="#ShareModal">share </a> -->
-                            <div class=" change-menu">
-                                                <input class="menu-btn" type="checkbox" id="menu-btn" />
-                                                <label class="menu-text" for="menu-btn">
-                                                    <a class="btn btn-veedros-new btn-veedros-small border-0 text-white">share</a>
-                                                </label>
-                                                <ul class="menu">
-                                                    <li>
-                                                    <div class="sharethis-inline-share-buttons" 
-                                        data-url=""
-                                        data-title=""
-                                        data-image=""
-                                        data-description=""
-                                        data-message=""
-                                        ></div>
-                                                    </li>
-                                                    
-                                                </ul>
-                            </div>
-                            <a href="{{asset('save') . '/' . $controllerCourse->id}}" class="btn btn-veedros btn-veedros-small border-0 py-3">
-                                @if(!Auth::user())
-                                    Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon">
-                                @else
-                                    @if(!Auth::user()->hasSavedThisCourse($controllerCourse))
-                                        Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon">
-                                    @else
-                                        Saved <i class="ml-2" data-feather="check"></i>
-                                    @endif
-                                @endif
-                            </a>
+                        <div class=" mb-lg-4 mr-lg-5-mine pt-5">
+                            <div class="row">
+                                    <div class="col-6">
+                                    <label class="menu-text" for="menu-btn">
+                                                        <a class="btn btn-veedros-new btn-veedros-small border-0 text-white">share</a>
+                                                    </label>
+                                    </div>
+                                <div class="col-6">
+                                    <a href="{{asset('save') . '/' . $controllerCourse->id}}" class="btn btn-veedros btn-veedros-small border-0 py-3">
+                                        @if(!Auth::user())
+                                            Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon">
+                                        @else
+                                            @if(!Auth::user()->hasSavedThisCourse($controllerCourse))
+                                                Save <img class="ml-2" src="{{asset('images/Icons')}}/saved.svg" alt="Save icon">
+                                            @else
+                                                Saved <i class="ml-2" data-feather="check"></i>
+                                            @endif
+                                        @endif
+                                    </a>
+                                </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                            <div class=" share-menu w-80 mx-auto">
+                                        <input class="menu-btn " type="checkbox" id="menu-btn" />
+                                                            
+                                                <div class="menu mt-3 ">
+                                                                
+                                                                <div class="sharethis-inline-share-buttons  w-100" 
+                                                    data-url=""
+                                                    data-title=""
+                                                    data-image=""
+                                                    data-description=""
+                                                    data-message=""
+                                                    ></div>
+                                                            
+                                                                
+                                                </div>
+                                        </div>
+                                </div>
+                            
                             <hr class="d-md-none mt-5">
+                            
+                        
 
                         </div>
-
+                        
                         <div class="ml-lg-5-mine">
 
                             <h2 class="ml-5">Author</h2>

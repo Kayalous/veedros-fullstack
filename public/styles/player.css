@@ -427,7 +427,7 @@
     text-align: left;
 }
 
-.menu {
+.share-menu .menu {
     overflow: hidden;
     height: 0px;
     transition: all 0.3s ease-out;
@@ -437,10 +437,18 @@
     margin-bottom: 0.2rem;
 }
 
-.change-menu .menu-btn {
+.menu-text {
+    float: right;
+}
+
+.share-menu .menu-btn {
     display: none;
 }
 
-.change-menu .menu-btn:checked~.menu {
-    height: 70px;
+.w-80 {
+    width: 80% !important;
+}
+
+.share-menu .menu-btn:checked~.menu {
+    height: 34px;
 }
