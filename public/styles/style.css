@@ -2591,6 +2591,15 @@ img {
     border-radius: 15px;
 }
 
+.our_services .card-hover {
+    moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
 .our_services .card-hover:hover {
     box-shadow: 0 4px 25px 0 rgba(107, 107, 107, 0.75);
     -webkit-box-shadow: 0 4px 25px 0 rgba(107, 107, 107, 0.75);
@@ -2599,6 +2608,6 @@ img {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     color: #fff;
-    -webkit-transform: translateY(-1px);
-    transform: translateY(-1px);
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
 }
