@@ -195,7 +195,7 @@
                 @endif
 
             @if(!Auth::check())
-                <li class="nav-item d-flex align-items-center justify-content-center">
+                <li class="nav-item d-flex align-items-center justify-content-center mb-4">
                     <a href="#" class="btn btn-veedros-new btn-veedros-sm border-0" data-toggle="modal" data-target="#loginModal">Sign in </a> </li>
                 @else
                 @if (Auth::user()->hasRole('admin'))
@@ -208,13 +208,45 @@
                             </li>
                             @endif
                 @endif
-                <li class="nav-item d-flex align-items-center justify-content-around">
+                <li class="nav-item d-none d-lg-flex align-items-center justify-content-around">
                     <div class="row">
                         <div class="col-6">
                                 <img id="singleElement" class="nav-photo" src="{{Auth::user()->img}}" alt="profile picture">
                         </div>
                     </div>
                 </li>
+                    <li class="nav-item tip pb-4 mx-auto d-flex flex-column d-lg-none align-items-center justify-content-around">
+                        <div class="row">
+                            <div class="col-6">
+                                <img class="nav-photo" src="{{Auth::user()->img}}" alt="profile picture">
+                            </div>
+                        </div>
+                        <a class="w-100 mx-auto" href="/profile">
+                            <div class="row w-100">
+                                <div class="col-8">
+                                    <h6 class="text-left">My profile</h6>
+                                </div>
+                                <div class=" text-center col-4">
+                                    <i class="far iconsize-mine fa-user-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="w-100 mx-auto" href="/dashboard">
+                            <div class="row w-100">
+                                <div class="col-8">
+
+                                    <h6 class="text-left">My dashboard</h6>
+                                </div>
+                                <div class="text-center col-4">
+                                    <i class="far iconsize-mine fa-play-circle"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <br>
+                        <button class=" btn btn-veedros-new btn-veedros-sm border-0 m-auto" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Log out
+                        </button>                    </li>
+
 
             @endif
         </ul>

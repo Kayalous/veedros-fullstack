@@ -165,7 +165,11 @@ hr {
     left: 0;
     z-index: 10;
 }
-
+@media (max-width: 992px) {
+    .main-navbar{
+        background: #F6F6F6 !important;
+    }
+}
 .no-flex-grow {
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
@@ -344,6 +348,7 @@ hr {
         color: #313c8b;
         margin-bottom: 4rem;
     }
+
 }
 
 .slash-to-right {
