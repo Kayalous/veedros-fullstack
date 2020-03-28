@@ -164,9 +164,112 @@
 
 
     <!-- ============== END ================== Sign up instructor =============== END ================== -->
-    <div class="faq row justify-content-center align-items-center py-3">
-        <a class="text-center" href="#">FAQ?</a>
-    </div>
+
+
+        <section class="our_services">
+            <div class="container">
+                <div class="row d-block my-5">
+                    <h1>Get a team of experts</h1>
+                    <p>looking out for your content</p>
+                </div>
+                <div class="row ">
+                    <div class="col-12 col-md-4 my-3">
+                        <div class="content">
+                            <div class="card-hover d-inline-block">
+                                <div>
+                                    <img src="{{('images/our_services/icon_features_hosting.svg')}}" alt="">
+                                </div>
+                                <div class="content-header my-3">
+                                    <h4>Seamless hosting</h4>
+                                </div>
+                                <div class="description ">
+                                    <p>Veedros hosts your course content for you and backs up
+                                         student data so you don't have to worry about it.</p>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 my-3 ">
+                        <div class="content">
+                            <div class="card-hover d-inline-block">
+                            <ul>
+                                <li>
+                                    <img src="{{('images/our_services/icon_features_data.svg')}}" alt="">
+                                </li>
+                                <li class="content-header my-3">
+                                    <h4>Data ownership</h4>
+                                </li>
+                                <li class="description ">
+                                    <p>Own and control all of the content and
+                                         student data from your Veedros account.</p>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 my-3 ">
+                        <div class="content">
+                        <div class="card-hover d-inline-block">
+                            <ul>
+                                <li>
+                                    <img src="{{('images/our_services/icon_features_marketing.svg')}}" alt="">
+                                </li>
+                                <li class="content-header my-3">
+                                    <h4>24/7 monitoring</h4>
+                                </li>
+                                <li class="description ">
+                                    <p>We work around the clock to fix issues as they arise
+                                         and make sure your virtual school doors stay open.</p>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 my-3 ">
+                        <div class="content">
+                        <div class="card-hover d-inline-block">
+                            <ul>
+                                <li>
+                                    <img src="{{('images/our_services/icon_features_upgrades.svg')}}" alt="">
+                                </li>
+                                <li class="content-header my-3">
+                                    <h4>Instant upgrades</h4>
+                                </li>
+                                <li class="description ">
+                                    <p>Automatically receive the latest features immediately,
+                                         without having to manually update.</p>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 my-3 ">
+                        <div class="content">
+                        <div class="card-hover d-inline-block">
+                            <ul>
+                                <li>
+                                    <img src="{{('images/our_services/icon_features_payments.svg')}}" alt="">
+                                </li>
+                                <li class="content-header my-3">
+                                    <h4>Secured payment data</h4>
+                                </li>
+                                <li class="description ">
+                                    <p>We only work with trusted payment organizations, 
+                                        so your and your users' data is safe and secure.</p>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+    <!-- ================================================================================================== -->
+
+
 
     <section class="testimonials my-5 py-5">
         <div class="row justify-content-center align-items-center">
