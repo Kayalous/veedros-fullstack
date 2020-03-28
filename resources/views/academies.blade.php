@@ -121,7 +121,14 @@
                             </div>
                        
                 </div>
+
                 </div>
+        </div>
+        <div class=" text-center my-5">
+                <a  class="btn btn-veedros-new  btn-veedros-md border-0 mx-auto ">
+                        <span class="mx-3 text-white">Let's Cooperate</span>
+                    </a>
+                    <small class="text-muted">we're so grateful to reach here, wait for our call as soon as possible</small>
         </div>
     </section>
 @endsection
