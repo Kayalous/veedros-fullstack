@@ -1,9 +1,17 @@
+let tippyArr = [];
 function createTippyTemplates() {
-  for (let i = 0; i < cardArr.length; i++) {
+    let card = document.querySelectorAll('.card-body-inner');
+    for (let i = 0; i < courses.length; i++) {
+        let recString = '';
+        for(let j = 0; j < recommendations[i].length; j++){
+             recString += `<li>
+              ${recommendations[i][j].recommendation}
+            </li>`
+        }
     let tipContent = `<div class="tip">
       <div class="container">
         <h4 class="tip-header text-center">
-          Probability and Statistics - Math 9
+          ${courses[i].name}
         </h4>
         <hr />
         <div class="row">
@@ -13,19 +21,16 @@ function createTippyTemplates() {
               <div class="">
                 <h6>
                   By: <br />
-                  <b>Ahmed Saeed</b>
-                  <br />
-                  <span>TA at AAST</span>
-                  <br />
+                  <b>${instructors[i].name}</b>
                 </h6>
-                <a href="profile.html" class="btn btn-veedros btn-veedros-sm border-0 mt-1">
+                <a href="profile/${instructors[i].id}" class="btn btn-veedros-new btn-veedros-sm border-0 mt-1">
                   Visit profile
                 </a>
               </div>
             </div>
           </div>
           <div class="tip-instructor-avatar col-4">
-            <img src="images/05.jpg" alt="instructor" class="round" />
+            <img src="${instructors[i].img}" alt="instructor" class="round" />
           </div>
         </div>
         <hr />
@@ -33,7 +38,7 @@ function createTippyTemplates() {
           <div class="row">
             <div class="col-6">
               <div class="badge tip-badge">
-                <div class="tip-badge-item">  <i class="fas fa-hand-holding-usd"></i> <span>1200 EGP</span></div>
+                <div class="tip-badge-item">  <i class="fas fa-hand-holding-usd"></i> <span>${courses[i].price} EGP</span></div>
               </div>
             </div>
             <div class="col-6">
@@ -47,17 +52,12 @@ function createTippyTemplates() {
         <div class="tip-recommendation">
           <h6 class="tip-header">Recommended to</h6>
           <ul>
-            <li>
-              AAST Students - Computer Department <span>7th term</span>
-            </li>
-            <li>
-              FOE - Communications Department <span>8th term</span>
-            </li>
+                ${recString}
           </ul>
         </div>
-        <a href="player.html" class="row">
-          <button class="btn btn-veedros btn-veedros-md border-0 mx-auto" type="button">
-            Apply now
+        <a href="${card[i].href}" class="row">
+          <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" type="button">
+            Visit now
           </button>
         </a>
 
@@ -69,7 +69,7 @@ function createTippyTemplates() {
     populateTippies();
   }
 }
-// createTippyTemplates();
+createTippyTemplates();
 
 function populateTippies() {
   for (i = 0; i < tippyArr.length; i++) {

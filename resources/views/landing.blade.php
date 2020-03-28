@@ -98,10 +98,14 @@
                     </h1>
                     <h4>that will change your career.</h4>
                 </div>
+                <script>
+                    var instructors = [];
+                    var recommendations = [];
+                </script>
                 <div class="col-12">
                     <div class="course-cards-container card-columns my-5 py-3">
                         @foreach($courses as $course)
-                            <div class="card course-card development-card noJquery" style="background-image: url({{$course->img}})">
+                            <div class="card course-card development-card noJquery a{{$loop->index}}" style="background-image: url({{$course->img}})">
                                  <div class="card-body m-0">
                                        <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
                                              <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
@@ -111,6 +115,10 @@
                                            </a>
                                      </div>
                                  </div>
+                            <script>
+                                instructors.push({!! json_encode($course->instructor->user->toArray()) !!});
+                                recommendations.push({!! json_encode($course->recommendations->toArray()) !!})
+                            </script>
                         @endforeach
                     </div>
                 </div>
@@ -249,5 +257,8 @@
 @endsection
 
 @section('customJS')
+    <script>
+        var courses = {!! json_encode($courses->toArray()) !!};
+    </script>
     <script src="scripts/landing.js"></script>
 @endsection
