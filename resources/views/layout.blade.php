@@ -153,7 +153,7 @@
             aria-label="Toggle navigation">
         <i data-feather="menu"></i>
     </button>
-    <div class="collapse navbar-collapse no-flex-grow" id="collapsibleNavId">
+    <div class="collapse navbar-collapse no-flex-grow pb-4" id="collapsibleNavId">
         <ul class="navbar-nav nav-items-container">
             @if(Auth::user())
                 @if(!Auth::user()->hasRole('admin'))
@@ -195,7 +195,7 @@
                 @endif
 
             @if(!Auth::check())
-                <li class="nav-item d-flex align-items-center justify-content-center mb-4">
+                <li class="nav-item d-flex align-items-center justify-content-center">
                     <a href="#" class="btn btn-veedros-new btn-veedros-sm border-0" data-toggle="modal" data-target="#loginModal">Sign in </a> </li>
                 @else
                 @if (Auth::user()->hasRole('admin'))
