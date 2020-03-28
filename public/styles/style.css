@@ -518,10 +518,7 @@ hr {
 }
 
 
-.owl-stage-outer {
-    padding-right: 5px;
-    padding-left: 5px;
-}
+
 
 .nav-link {
     white-space: nowrap;
@@ -2487,6 +2484,7 @@ h2 {
 .carousel-column {
     height: 100%;
     width: 100%;
+    padding: 5px;
 }
 
 .review {
@@ -2498,6 +2496,7 @@ h2 {
         0 0px 6px rgba(0, 0, 0, 0.024),
         0 0px 11.3px rgba(0, 0, 0, 0.029),
         0 0px 27px rgba(0, 0, 0, 0.04);
+    background-color: white;
 }
 
 .review-carousel {
