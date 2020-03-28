@@ -78,3 +78,9 @@
 .nav-pills a:hover {
     color: #65D3BF;
 }
+
+::selection {
+    background-color: #65D3BF;
+    border-radius: 5px;
+    color: white;
+}
