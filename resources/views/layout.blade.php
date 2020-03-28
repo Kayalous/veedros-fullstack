@@ -151,7 +151,9 @@
     <button class="navbar-toggler border-0 d-lg-none" type="button" data-toggle="collapse"
             data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
             aria-label="Toggle navigation">
-        <i data-feather="menu"></i>
+        <div class="burger burger-rotate open">
+            <div class="burger-lines"></div>
+        </div>
     </button>
     <div class="collapse navbar-collapse no-flex-grow" id="collapsibleNavId">
         <ul class="navbar-nav nav-items-container">
