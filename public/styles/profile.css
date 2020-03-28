@@ -292,5 +292,5 @@
 }
 
 .change-pass .menu-btn:checked~.menu {
-    max-height: 250px;
+    max-height: 350px;
 }
