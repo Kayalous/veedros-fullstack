@@ -42,10 +42,11 @@
                                             </div>
                                             <div class=" my-4 change-email">
                                                 <input class="menu-btn" type="checkbox" id="email-menu-btn" />
+                                                <h5>{{Auth::user()->email}}</h5>
                                                 <label class="menu-text" for="email-menu-btn">
-                                                    <h5>{{Auth::user()->email}}<a>change Email</a></h5>
+                                                <a>change Email</a>
                                                 </label>
-                                                <ul class="menu">
+                                                <ul class="menu pt-3">
                                                     <li>
                                                         <div class="input-group ">
                                                             <h5>Enter your new Email</h5>

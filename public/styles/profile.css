@@ -194,20 +194,12 @@
     overflow: hidden;
 }
 
-.change-email .menu {
+
+/* .change-email .menu {
     clear: both;
     max-height: 0;
-    transition: max-height .2s ease-out;
-}
-
-.change-email .menu-text span {
-    font-size: 12px;
-}
-
-.change-email .menu-text span:hover {
-    color: blue;
-    transition: color .1s ease-in-out;
-}
+    transition: max-height .3s ease-out;
+} */
 
 .change-email .menu-text {
     cursor: pointer;
@@ -215,13 +207,38 @@
     float: left;
 }
 
+
+/* form menu style */
+
 .change-email .menu-btn {
     display: none;
 }
 
-.change-email .menu-btn:checked~.menu {
-    max-height: 320px;
+.change-email .menu-btn~.menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
 }
+
+.change-email .menu-btn:checked~.menu {
+    max-height: 180px;
+}
+
+
+/* auther email font style */
+
+.change-email .menu-btn~h5 {
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+    font-size: 1.25rem;
+}
+
+.change-email .menu-btn:checked~h5 {
+    transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+    font-size: 1.1rem;
+}
+
+
+/* change email link style */
 
 .menu-text a {
     font-size: 12px;
@@ -232,6 +249,9 @@
 .menu-text a:hover {
     text-decoration: underline !important;
 }
+
+
+/* =============================== */
 
 
 /* change password */
@@ -265,6 +285,12 @@
     display: none;
 }
 
+.change-pass .menu-btn~.menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+}
+
 .change-pass .menu-btn:checked~.menu {
-    max-height: 320px;
+    max-height: 180px;
 }
