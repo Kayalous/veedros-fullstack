@@ -9,6 +9,7 @@ use App\Objective;
 use App\Recommendation;
 use App\Saved;
 use App\Session;
+use Faker\Factory as Faker;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\File as fileFacede;
 
@@ -214,5 +215,67 @@ class CourseController extends Controller
 
     }
 
+    public function newChapter(Request $request){
+        $course = Auth::user()->instructor->courses->where('slug', $request['course_slug'])->first();
 
+        $faker = Faker::create();
+        //random chapter values
+        $randomName = $faker->name;
+        $about = $faker->colorName;
+        $slug = Str::slug($randomName, '-');
+        $chapter = Chapter::create(['course_id' => $course->id,
+            'name' => $randomName,
+            'slug' => $slug,
+            'about' => $about]);
+        //new random values for the session
+        $randomName = $faker->name;
+        $about = $faker->colorName;
+        $slug = Str::slug($randomName, '-');
+        $session = Session::create(['chapter_id' => $chapter->id,
+            'name' => $randomName,
+            'slug' => $slug,
+            'about' => $about,
+            'duration' => '00:00',
+            'link' => 'link']);
+        return response(['status'=>'New chapter has been successfully added.','chapterId'=> $chapter->id, 'sessionId' => $session->id], 200);
+
+    }
+    public function newSession(Request $request)
+    {
+        $course = Auth::user()->instructor->courses->where('slug', $request['course_slug'])->first();
+
+        $chapter = $course->chapters->where('id', $request['chapterId'])->first();
+
+        $faker = Faker::create();
+        //new random values for the session
+        $randomName = $faker->name;
+        $about = $faker->colorName;
+        $slug = Str::slug($randomName, '-');
+        $session = Session::create(['chapter_id' => $chapter->id,
+            'name' => $randomName,
+            'slug' => $slug,
+            'about' => $about,
+            'duration' => '00:00',
+            'link' => 'link']);
+        return response(['status' => 'New session has been successfully added.', 'chapterId' => $chapter->id, 'sessionId' => $session->id, 'session' => $session], 200);
+    }
+    public function editChapter(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'nullable|max:500',
+            'about' => 'nullable|max:500',
+            'chapterId' => 'required'
+        ]);
+        $chapter = Chapter::where('id', $request['chapterId'])->first();
+        if($request['name']){
+            $slug = Str::slug($request['name'], '-');
+            $chapter->update(['name' => $request['name'],
+                'slug' => $slug]);
+            return response(['status'=>'Chapter name has been updated successfully.'], 200);
+        }
+        if($request['about']){
+            $chapter->update(['about' => $request['about']]);
+            return response(['status'=>'Chapter description has been updated successfully.'], 200);
+        }
+        return response(['status'=>'Chapter description has been updated successfully.'], 500);
+    }
 }

@@ -249,7 +249,7 @@ showPasswordButton.onclick = function (e) {
 };
 
 let aboutField = document.querySelector("#about");
-aboutField.onkeyup = () => {
+aboutField.oninput = () => {
 document.querySelector('#about-counter').innerHTML = aboutField.value.length;
 }
 

@@ -22,14 +22,16 @@ class CoursesTableSeeder extends Seeder
         for($i = 1; $i<=12; $i++){
             $name = $faker->name;
             $slug = Str::slug($name, '-');
+
             \App\Course::create([
                 'name' => $name,
                 'instructor_id' => 1,
-                'img' => "1584209495.png",
+                'img' => "https://veedros.s3.eu-central-1.amazonaws.com/courses/2/hellloo/images/tdzHq4nTU7zkOOmjoTEXVq8ZFlpqoTBAxIljBlhl.jpeg",
                 'price' => rand(1,9999),
                 'about' => $faker->address,
                 'slug' => $slug
             ]);
+
                 for($j = 1; $j<6; $j++){
                     $name = $faker->name;
                     $slug = Str::slug($name, '-');

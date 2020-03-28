@@ -101,8 +101,7 @@
                 <div class="col-12">
                     <div class="course-cards-container card-columns my-5 py-3">
                         @foreach($courses as $course)
-                            <div class="card course-card development-card noJquery" style="background-image: url({{asset('/uploads/courses/1/pokemon-td8v2/images/1584209495.png')}})">
-{{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
+                            <div class="card course-card development-card noJquery" style="background-image: url({{$course->img}})">
                                  <div class="card-body m-0">
                                        <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
                                              <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
@@ -135,7 +134,7 @@
             <div class="col-lg-6 m-0 py-5 teach-with-us-container d-flex flex-column justify-content-center align-items-center">
                 <div class="teach-with-us-content">
                     <div class="container">
-                        <h1>Have <br> content !</h1>
+                        <h1>Have <br> content?</h1>
                         <br>
                         <h2>If you...</h2>
                         <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to organize your content.</h4>

@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateChaptersTable extends Migration
 {
     /**
@@ -13,12 +14,13 @@ class CreateChaptersTable extends Migration
      */
     public function up()
     {
+
         Schema::create('chapters', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('course_id')->unsigned()->references('id')->on('courses');
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->text('about');
+            $table->string('name')->nullable();
+            $table->string('slug')->nullable();
+            $table->text('about')->nullable();
             $table->timestamps();
         });
     }

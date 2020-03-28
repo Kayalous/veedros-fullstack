@@ -80,7 +80,7 @@
 <div class="col-12">
 <div class="course-cards-container card-columns mb-5 py-3">
     @foreach($courses as $course)
-        <div class="card course-card development-card noJquery" style="background-image: url({{asset('/uploads/courses/1/pokemon-td8v2/images/1584209495.png')}})">
+        <div class="card course-card development-card noJquery" style="background-image: url({{$course->img}})">
             {{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
             <div class="card-body m-0">
                 <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >

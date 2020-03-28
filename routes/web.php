@@ -70,6 +70,9 @@ Route::post('/manage/instructor/courses/new', 'CourseController@newCourse')->nam
 Route::post('/manage/instructor/course/about', 'CourseController@editAbout')->name('manage.courses.about');
 Route::post('/manage/instructor/course/price', 'CourseController@editPrice')->name('manage.courses.price');
 Route::post('/manage/instructor/course/objective', 'CourseController@editObjective')->name('manage.courses.objective');
+Route::post('/manage/instructor/course/newChapter', 'CourseController@newChapter')->name('manage.courses.newChapter');
+Route::post('/manage/instructor/course/newSession', 'CourseController@newSession')->name('manage.courses.newSession');
+Route::post('/manage/instructor/course/editChapter', 'CourseController@editChapter')->name('manage.courses.editChapter');
 Route::post('/manage/instructor/course/recommendation', 'CourseController@editRecommendation')->name('manage.courses.recommendation');
 Route::get('/manage/instructor/courses/{courseSlug}', function ($courseSlug){
     $instructor = Auth::user()->instructor;

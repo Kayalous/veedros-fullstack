@@ -22,7 +22,7 @@
     <h2>Basic course chapter and session structure</h2>
     <ul id="chapters-container">
         @foreach($course->chapters as $chapter)
-            <li>
+            <li class="mb-3">
             <button class="list-group-item collapse-button mx-auto" aria-expanded="false" data-toggle="collapse"
                     href="#collapse{{$loop->iteration}}" >
                 <span>Chapter {{$loop->iteration}} </span>
@@ -59,12 +59,14 @@
                     </div>
                     <div>
                         <button
-                            class="btn btn-secondary-veedros btn-secondary-veedros-normal border-medium edit-btn edit-chapter-desc" type="button"><i
+                            class="btn btn-secondary-veedros btn-secondary-veedros-normal border-0 edit-btn edit-chapter-desc" type="button"><i
                                 data-feather="edit"></i>
                             Edit</button>
                     </div>
                 </div>
                     </div>
+                    <br>
+                    <h2>Sessions</h2>
                     @foreach($chapter->sessions as $session)
                         <button class="list-group-item collapse-button mx-auto" aria-expanded="false" data-toggle="collapse"
                                 href="#collapse-sessions-{{$loop->iteration}}">
@@ -76,13 +78,42 @@
                             <div class="chevron"><i data-feather="chevron-down"></i></div>
                         </button>
                             <div class="list-group collapse py-4 px-5" id="collapse-sessions-{{$loop->iteration}}">
-                                <h2>Session {{$loop->iteration}}</h2>
+                                <h2 class="mb-2">Session's name</h2>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <h5 class="align-items-center row">
+                                            <textarea rows="1" class="session-name-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type session name here" oninput="auto_grow(this)" readonly id="{{$session->id}}">{{$session->name}}</textarea>
+                                        </h5>
+                                    </div>
+                                    <div>
+                                        <button
+                                            class="btn btn-secondary-veedros btn-secondary-veedros-normal border-0 edit-btn edit-session-name" type="button"><i
+                                                data-feather="edit"></i>
+                                            Edit</button>
+                                    </div>
+                                </div>
+                                <br>
+                                <h2 class="mb-2">Session's description</h2>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <h5 class="align-items-center row">
+                                            <textarea rows="1" class="session-desc-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type session name here" oninput="auto_grow(this)" readonly id="{{$session->id}}">{{$session->about}}</textarea>
+                                        </h5>
+                                    </div>
+                                    <div>
+                                        <button
+                                            class="btn btn-secondary-veedros btn-secondary-veedros-normal border-0 edit-btn edit-session-desc" type="button"><i
+                                                data-feather="edit"></i>
+                                            Edit</button>
+                                    </div>
+                                </div>
+                                <br>
                             </div>
 
                     @endforeach
                     <div class="w-100 mt-5 row mx-auto">
-                        <button id="add-session"
-                                class="btn btn-secondary-veedros btn-secondary-veedros-xl border-medium edit-btn py-3" type="button">
+                        <button id="{{$chapter->id}}"
+                                class="btn btn-secondary-veedros btn-secondary-veedros-xl border-medium edit-btn py-3 add-session" type="button">
                             <h2 class="m-0">
                                 <i data-feather="plus"></i>
                                 Add a new session.
@@ -92,6 +123,7 @@
                 </div>
             </li>
         @endforeach
+
     </ul>
 
         <br>

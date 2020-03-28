@@ -33,7 +33,7 @@
                             <div class="col-lg-4">
 
                                 <div class="card course-card development-card noJquery"
-                                     style="background-image: url('{{asset('uploads/courses'). '/' . Auth::user()->id .'/' . $course->slug . '/images/' . $course->img}}')">
+                                     style="background-image: url('{{$course->img}}')">
                                     <div class="card-body m-0">
                                         <a href="{{asset('/manage/instructor/courses/') ."/" . $course->slug}}" class="card-body-inner noscroll card-bg-img"  >
                                             <div class="play-circle play-circle-0"> <i data-feather="edit"></i> </div>

@@ -134,13 +134,23 @@ class RegisterController extends Controller
                 $contents = file_get_contents($url);
                 $name = time() . '.' . 'jpeg';
                 Storage::disk('profileImages')->put($name, $contents);
+                //retrieve image
+                $image = Storage::disk('profileImages')->get($name);
+                $file = new \Illuminate\Http\File(public_path('uploads/profilePictures'). '/' . $name);
+                //upload to amazon
+                $fileUrl = Storage::disk('s3')->put('users/profile-images', $file);
+                $fileUrl = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $fileUrl;
+                //delete image from local storage
+                Storage::disk('profileImages')->delete($name);
+                //set image url
+                $request['img'] = $fileUrl;
                 //Create a new user
                 $user = User::firstOrcreate(
                     ['email' => $socialUser->getEmail()],
                     ['name' => $socialUser->getName(),
                         'verificationToken' => null,
                         'email_verified_at' => Carbon::now()->toDateTimeString(),
-                        'img'=> $name,
+                        'img'=> $request['img'],
                     ]);
                 //Create a new socialProvider
                 $user->socialProviders()->create(
@@ -154,12 +164,7 @@ class RegisterController extends Controller
             //Log the user in
             Auth::login($user);
             return redirect('/');
-
         }
-
-
-
-
 
 
     public function getEmailProvider($email){
@@ -200,6 +205,7 @@ class RegisterController extends Controller
             $socialUser = Socialite::driver('google')->stateless()->user();
             //Check if it's the first time logging in
             $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
+
             if(!$socialProvider){
                 //Prepare image
                 $url =$socialUser->getAvatar();
@@ -207,13 +213,23 @@ class RegisterController extends Controller
                 $contents = file_get_contents($url);
                 $name = time() . '.' . 'jpeg';
                 Storage::disk('profileImages')->put($name, $contents);
+                //retrieve image
+                $image = Storage::disk('profileImages')->get($name);
+                $file = new \Illuminate\Http\File(public_path('uploads/profilePictures'). '/' . $name);
+                //upload to amazon
+                $fileUrl = Storage::disk('s3')->put('users/profile-images', $file);
+                $fileUrl = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $fileUrl;
+                //delete image from local storage
+                Storage::disk('profileImages')->delete($name);
+                //set image url
+                $request['img'] = $fileUrl;
                 //Create a new user
                 $user = User::firstOrcreate(
                     ['email' => $socialUser->getEmail()],
                     ['name' => $socialUser->getName(),
                         'verificationToken' => null,
                         'email_verified_at' => Carbon::now()->toDateTimeString(),
-                        'img'=> $name,
+                        'img'=> $request['img'],
                     ]);
                 //Create a new socialProvider
                 $user->socialProviders()->create(
