@@ -427,27 +427,20 @@
     text-align: left;
 }
 
-.share-btn-mine ul {
+.menu {
     overflow: hidden;
+    height: 0px;
+    transition: all 0.3s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.2rem;
 }
-
-.share-btn-mine .menu {
-    clear: both;
-    max-height: 0px;
-    transition: al 1s ease-out;
-}
-
-
-/* .change-menu .menu-text {
-    cursor: pointer;
-    user-select: none;
-    float: left;
-} */
 
 .change-menu .menu-btn {
     display: none;
 }
 
 .change-menu .menu-btn:checked~.menu {
-    max-height: 100px;
+    height: 70px;
 }
