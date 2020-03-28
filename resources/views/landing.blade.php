@@ -175,7 +175,7 @@
                 <div class="row ">
                     <div class="col-12 col-md-4 my-3">
                         <div class="content">
-                            <div class="card-hover d-inline-block">
+                            <div class="card d-inline-block">
                                 <div>
                                     <img src="{{('images/our_services/icon_features_hosting.svg')}}" alt="">
                                 </div>
@@ -191,7 +191,7 @@
                     </div>
                     <div class="col-12 col-md-4 my-3 ">
                         <div class="content">
-                            <div class="card-hover d-inline-block">
+                            <div class="card d-inline-block">
                             <ul>
                                 <li>
                                     <img src="{{('images/our_services/icon_features_data.svg')}}" alt="">
@@ -209,7 +209,7 @@
                     </div>
                     <div class="col-12 col-md-4 my-3 ">
                         <div class="content">
-                        <div class="card-hover d-inline-block">
+                        <div class="card d-inline-block">
                             <ul>
                                 <li>
                                     <img src="{{('images/our_services/icon_features_marketing.svg')}}" alt="">
@@ -227,7 +227,7 @@
                     </div>
                     <div class="col-12 col-md-4 my-3 ">
                         <div class="content">
-                        <div class="card-hover d-inline-block">
+                        <div class="card d-inline-block">
                             <ul>
                                 <li>
                                     <img src="{{('images/our_services/icon_features_upgrades.svg')}}" alt="">
@@ -245,7 +245,7 @@
                     </div>
                     <div class="col-12 col-md-4 my-3 ">
                         <div class="content">
-                        <div class="card-hover d-inline-block">
+                        <div class="card d-inline-block">
                             <ul>
                                 <li>
                                     <img src="{{('images/our_services/icon_features_payments.svg')}}" alt="">

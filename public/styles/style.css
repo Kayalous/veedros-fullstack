@@ -2586,12 +2586,14 @@ img {
     cursor: default;
 }
 
-.our_services .card-hover {
+.our_services .card {
     padding: 1rem;
     border-radius: 15px;
+    border-style: none;
 }
 
-.our_services .card-hover {
+.our_services .card {
+    height: 200px;
     moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
@@ -2600,7 +2602,7 @@ img {
     transform: translateY(0px);
 }
 
-.our_services .card-hover:hover {
+.our_services .card:hover {
     box-shadow: 0 4px 25px 0 rgba(107, 107, 107, 0.75);
     -webkit-box-shadow: 0 4px 25px 0 rgba(107, 107, 107, 0.75);
     -moz-box-shadow: 0 4px 25px 0 rgba(107, 107, 107, 0.75);
