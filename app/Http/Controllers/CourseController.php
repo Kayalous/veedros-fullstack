@@ -78,14 +78,14 @@ class CourseController extends Controller
         //create the first chapter
         $chapter = Chapter::create([
             'course_id' => $course->id,
-            'name' => $course->name . "'s first chapter",
+            'name' => "Introduction",
             'slug' => Str::slug($course->name . "'s first chapter", '-'),
             'about' => $course->name . "'s first chapter description",
         ]);
         //create the first session
         Session::create([
             'chapter_id' => $chapter->id,
-            'name' => $course->name . "'s first session",
+            'name' => "Introduction",
             'slug' => Str::slug($course->name . "'s first session", '-'),
             'link' => ' ',
             'duration' => '00:00',

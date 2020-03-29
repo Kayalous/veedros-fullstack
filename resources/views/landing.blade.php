@@ -22,7 +22,7 @@
                        <span>Explore now</span>
                     </a>
                     <div class="trusted-Route">
-                        <small>Tursted by</small>
+                        <small>Trusted by</small>
                         <img class="img-fluid" src="{{('images/Route_logo.png')}}" alt="">
                         <small class="click-route">If you're Route's student please <a href="{{asset('route')}}">click here</a></small>
                     </div>
@@ -254,7 +254,7 @@
                                     <h4>Secured payment data</h4>
                                 </li>
                                 <li class="description ">
-                                    <p>We only work with trusted payment organizations, 
+                                    <p>We only work with trusted payment organizations,
                                         so your and your users' data is safe and secure.</p>
                                 </li>
                             </ul>
@@ -262,7 +262,7 @@
                         </div>
                     </div>
 
-                    
+
                 </div>
             </div>
         </section>

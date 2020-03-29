@@ -1,6 +1,6 @@
 feather.replace();
-let loginRequirePassword = false,
-  signupRequirePassword = false;
+let loginRequirePassword = true,
+  signupRequirePassword = true;
 let signupToggle = document.querySelector(".signup-toggle");
 let signinToggle = document.querySelector(".signin-toggle");
 
@@ -28,7 +28,8 @@ function userFieldsValidation(
   passwordToggle,
   passwordCont,
   altCont,
-  magicLink
+  magicLink,
+  modalHeader
 ) {
   submitButton.onclick = function (e) {
     e.preventDefault();
@@ -65,6 +66,7 @@ function userFieldsValidation(
       }
     }
   }
+
   emailField.onfocusout = function () {
     validateEmail();
   };
@@ -72,16 +74,22 @@ function userFieldsValidation(
     validatePassword();
   };
   passwordToggle.onclick = function () {
-    passwordCont.classList.remove("d-none");
-    requirePassword = true;
-    altCont.classList.remove("d-none");
+    passwordCont.classList.add("d-none");
+    requirePassword = false;
+    altCont.classList.add("d-none");
     magicLink.classList.add("d-none");
+    if(form.classList.contains('login'))
+        modalHeader.innerHTML = "Just enter your email and we'll send you a magic link to your email to login with. <br/>"
+    else
+        modalHeader.innerHTML = "Just enter your email to sign up. It's easier and more secure! <br/> You'll receive an email each time you want to login with a magic link that will log you in."
+
   };
     $(".btn-veedros-inline-input").click(function () {
         let landingInput = $(this)
             .parent()
             .siblings(".email-input")
             .val();
+
         $("#signup-email-field").val(landingInput);
 
         if (/\S+@\S+\.\S+/.test(landingInput)){
@@ -105,7 +113,8 @@ userFieldsValidation(
   document.querySelector(".login-with-password"),
   document.querySelector("#login-password-cont"),
   document.querySelector("#login-alt-cont"),
-  document.querySelector("#login-magic-link")
+  document.querySelector("#login-magic-link"),
+  document.querySelector(".login-modal-header"),
 );
 
 //signup validation
@@ -118,7 +127,9 @@ userFieldsValidation(
   document.querySelector(".signup-with-password"),
   document.querySelector("#signup-password-cont"),
   document.querySelector("#signup-alt-cont"),
-  document.querySelector("#signup-magic-link")
+  document.querySelector("#signup-magic-link"),
+  document.querySelector(".signup-modal-header"),
+
 );
 
 

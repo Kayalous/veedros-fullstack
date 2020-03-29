@@ -483,6 +483,7 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: none !important;
 }
 
 .nav-link {
@@ -2361,7 +2362,6 @@ h2 {
 
 .academies {
     min-height: 800px;
-    height: 100vh;
     width: 100%;
     background: url(../images/Acadmic-1920x800.jpg);
     background-repeat: no-repeat;

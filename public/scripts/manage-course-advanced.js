@@ -22,8 +22,10 @@ addSessionButton.onclick = () => {
         });
         ax.then(data=>{
             showSuccessMessage(data.data.status);
-            console.log(data.data.session)
-
+            //reload after 100ms
+            setTimeout(() => {
+                location.reload();
+            }, 800)
         })
             .catch(err=>{
                 showFailureMessage(`Failed to create a new session. Please try again.`)})
@@ -66,7 +68,7 @@ addChapterButton.onclick = () => {
             //reload after 100ms
             setTimeout(() => {
                 location.reload();
-            }, 100)
+            }, 800)
         })
             .catch(err=>{
                 showFailureMessage(`Failed to create a new chapter. Please try again.`)})

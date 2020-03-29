@@ -151,13 +151,13 @@
 
                 <div class="col-xl-4 col-lg-5">
                     <div class=" d-lg-block d-md-flex flex-reverse-mine w-100 ">
-                        
+
                         <div class=" mb-lg-4 mr-lg-5-mine pt-5">
                             <div class="row">
                                     <div class="col-6">
                                     <label class="menu-text" for="menu-btn">
-                                                        <a class="btn btn-veedros-new btn-veedros-small border-0 text-white">share</a>
-                                                    </label>
+                                                        <p class="btn btn-veedros-new btn-veedros-small border-0 text-white mb-0">Share <img class="ml-2" src="{{asset('images/Icons')}}/share.svg" alt="Save icon"></p>
+                                    </label>
                                     </div>
                                 <div class="col-6">
                                     <a href="{{asset('save') . '/' . $controllerCourse->id}}" class="btn btn-veedros btn-veedros-small border-0 py-3">
@@ -176,28 +176,28 @@
                                 <div class="row justify-content-center">
                                             <div class=" share-menu w-80 mx-auto">
                                         <input class="menu-btn " type="checkbox" id="menu-btn" />
-                                                            
-                                                <div class="menu mt-3 ">
-                                                                
-                                                                <div class="sharethis-inline-share-buttons  w-100" 
+
+                                                <div class="menu my-3">
+
+                                                                <div class="sharethis-inline-share-buttons w-100"
                                                     data-url=""
                                                     data-title=""
                                                     data-image=""
                                                     data-description=""
                                                     data-message=""
                                                     ></div>
-                                                            
-                                                                
+
+
                                                 </div>
                                         </div>
                                 </div>
-                            
+
                             <hr class="d-md-none mt-5">
-                            
-                        
+
+
 
                         </div>
-                        
+
                         <div class="ml-lg-5-mine">
 
                             <h2 class="ml-5">Author</h2>
@@ -336,7 +336,7 @@
     <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
 @endsection
 @section('customJS')
-<script type='text/javascript' 
+<script type='text/javascript'
 src='https://platform-api.sharethis.com/js/sharethis.js#property=5e792c766caf2b00125bec34&product=inline-share-buttons' async='async'></script>
 
     <script src="{{asset('scripts')}}/player.js"></script>
