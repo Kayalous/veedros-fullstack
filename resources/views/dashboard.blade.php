@@ -148,7 +148,7 @@
                             @if(Auth::user()->saves()->count() > 0)
                             <div class="card-columns m-auto">
                                 @foreach(Auth::user()->saves as $saveCourse)
-                                    <div class="card course-card development-card noJquery" style="background-image: url({{$course->img}})">
+                                    <div class="card course-card development-card noJquery" style="background-image: url({{$saveCourse->img}})">
                                         {{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
                                         <div class="card-body m-0">
                                             <a href="{{\App\Course::getFirstSession($saveCourse)}}" class="card-body-inner noscroll card-bg-img"  >
