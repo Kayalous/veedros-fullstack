@@ -63,7 +63,7 @@
 
         </section>
 
-        <div class="row justify-content-end m-auto w-50">
+        <div class="row justify-content-end m-auto w-50-75">
 
 
             <div class="teach-with-us-content my-5">

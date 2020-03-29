@@ -21,7 +21,6 @@
     font-weight: 900;
 }
 
-
 .input-sm {
     width: 13%;
     display: inline-block;
@@ -36,28 +35,19 @@
     width: 100% !important;
     font-weight: 500;
     font-size: 18px;
-    -webkit-box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
-    0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
-    0 0px 15.5px -7px rgba(0, 0, 0, 0.200);
-    box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
-    0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
-    0 0px 15.5px -7px rgba(0, 0, 0, 0.200);
+    -webkit-box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056), 0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1), 0 0px 15.5px -7px rgba(0, 0, 0, 0.200);
+    box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056), 0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1), 0 0px 15.5px -7px rgba(0, 0, 0, 0.200);
 }
 
 .profile-form-field:focus {
-    -webkit-box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
-    0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
-    0 0px 15.5px -6px rgba(0, 0, 0, 0.280);
-    box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
-    0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
-    0 0px 15.5px -6px rgba(0, 0, 0, 0.280);
+    -webkit-box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084), 0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15), 0 0px 15.5px -6px rgba(0, 0, 0, 0.280);
+    box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084), 0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15), 0 0px 15.5px -6px rgba(0, 0, 0, 0.280);
 }
 
 .teach-with-us-content h4,
 h2 {
     font-size: 22px;
 }
-
 
 .form-bg {
     display: flex;
@@ -69,6 +59,10 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column; */
+}
+
+.w-50-75 {
+    width: 50%;
 }
 
 @media (max-width: 992px) {
@@ -84,8 +78,10 @@ h2 {
         position: absolute;
         z-index: -1;
     }
-
     .d-none-sm {
         display: none;
+    }
+    .w-50-75 {
+        width: 75%;
     }
 }
