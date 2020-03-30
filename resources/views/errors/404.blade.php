@@ -23,7 +23,7 @@
                 </a>
                 <a href="{{asset("/")}}" class="btn btn-veedros-new btn-veedros-md border-0 my-1 ml-3"
                    type="button">
-                    <span>Go Home</span>
+                    <span>Go Home </span>
 
                 </a>
             </div>
