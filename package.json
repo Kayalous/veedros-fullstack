@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "filepond": "^4.11.0",
+        "videojs-hls-quality-selector": "^1.1.1",
         "videojs-youtube": "^2.6.1"
     }
 }
