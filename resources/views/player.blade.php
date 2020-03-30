@@ -16,8 +16,10 @@
         <div class="video-wrapper my-auto">
             <video id="player" class="video-js vjs-default-skin vjs-16-9" controls preload="auto"
                    width="640" height="264"
-                   data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "{{$controllerSession->link}}"}], "youtube": { "ytControls": 2 } }'
-            >
+                   data-setup='{"example_option":true}'>
+                <source src="https://veedros.s3.eu-central-1.amazonaws.com/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%A7%D8%AA%D9%8A%D9%87+%D8%A7%D9%84%D9%81%D9%84%D8%A7%D8%AD%D9%8A.mp4" type="video/mp4" label="720P" selected="true">
+                <source src="https://veedros.s3.eu-central-1.amazonaws.com/y2mate.com+-+%D8%A3%D9%8A%D9%88%D9%87+%D8%A3%D9%86%D8%A7+%D8%AD%D8%B4%D8%A7%D8%B4_weUOHUbKBuk_360p.mp4" type="video/mp4" label="480P">
+                <source src="https://veedros.s3.eu-central-1.amazonaws.com/y2mate.com+-+%D8%A3%D9%8A%D9%88%D9%87+%D8%A3%D9%86%D8%A7+%D8%AD%D8%B4%D8%A7%D8%B4_weUOHUbKBuk_144p.mp4" type="video/mp4" label="360P">
                 <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading
                     to a web browser that
@@ -332,7 +334,6 @@
 @section('libraryJS')
     <!-- video js -->
     <script src="https://vjs.zencdn.net/7.6.6/video.min.js"></script>
-    <script src="{{asset('node_modules')}}/vjs-youtube/dist/Youtube.min.js"></script>
     <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
 @endsection
 @section('customJS')
@@ -340,4 +341,21 @@
 src='https://platform-api.sharethis.com/js/sharethis.js#property=5e792c766caf2b00125bec34&product=inline-share-buttons' async='async'></script>
 
     <script src="{{asset('scripts')}}/player.js"></script>
+    <script>
+        var options, player;
+
+        options = {
+            controlBar: {
+                children: [
+                    'playToggle',
+                    'progressControl',
+                    'volumePanel',
+                    'qualitySelector',
+                    'fullscreenToggle',
+                ],
+            },
+        };
+
+        player = videojs('player', options);
+    </script>
 @endsection

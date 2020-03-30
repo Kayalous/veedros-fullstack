@@ -59,8 +59,7 @@ class CoursesTableSeeder extends Seeder
                                 'slug' => $slug,
                                 'about' => $faker->address,
                                 'duration' =>$duration,
-                                'link' => 'https://www.youtube.com/watch?v=SEhSs5Uemsk'
-                            ]);
+                                'link' => 'https://veedros.s3.eu-central-1.amazonaws.com/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%A7%D8%AA%D9%8A%D9%87+%D8%A7%D9%84%D9%81%D9%84%D8%A7%D8%AD%D9%8A.mp4']);
                             for($h = 0; $h < 3; $h++)
                                 \App\Objective::create([
                                     'session_id' => $sessionCounter,

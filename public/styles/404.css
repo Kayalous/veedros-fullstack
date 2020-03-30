@@ -1,0 +1,21 @@
+
+.error-container{
+   width: 100vw;
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.error-container h1
+{
+    font-size: 200px;
+    font-weight: 700;
+    color: #65D3BF;
+}
+.error-container h2
+{
+    font-size: 50px;
+    font-weight: 500;
+    color: #172345;
+}
+

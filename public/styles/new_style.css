@@ -157,5 +157,16 @@
     transform: rotate(-135deg); }
 .burger .burger-lines,
 .burger .burger-lines:after,
-.burger .burger-lines:before {     background-color: #3EB5FE;
+.burger .burger-lines:before {     background-color: #65D3BF;
+}
+
+.btn-outline {
+    background-color: transparent !important;
+    border: #65D3BF 2px solid !important;
+    color: #65D3BF;
+    transition: all .2s ease-in-out;
+}
+.btn-outline:hover {
+    border: #65D3BF00 2px solid !important;
+
 }

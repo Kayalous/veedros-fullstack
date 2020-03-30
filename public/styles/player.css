@@ -406,9 +406,6 @@
     width: 20px;
 }
 
-.vjs-control-bar {
-    display: none !important;
-}
 
 .vjs-big-play-button {
     top: 50% !important;
