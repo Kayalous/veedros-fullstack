@@ -26,7 +26,7 @@ feather.replace();
 
         likeButtons[i].onclick = ()=>{
             axios({
-                method:'get',
+                method:'post',
                 url:baseUrl + '/like/' + likeButtons[i].id,
                 data:{}
             })

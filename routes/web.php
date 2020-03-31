@@ -104,7 +104,7 @@ Route::get('/watch/{instructorDisplayName}/{courseName}/{chapterName}/{sessionNa
 Route::post('/comment', 'VideoController@comment');
 Route::get('/enroll/{course_id}', 'EnrollController@enroll');
 Route::get('/save/{course_id}', 'CourseController@addToSaved');
-Route::get('/like/{comment_id}', 'CommentController@like');
+Route::post('/like/{comment_id}', 'CommentController@like');
 
 
 //Auth routes

@@ -449,7 +449,7 @@
 }
 
 .share-menu .menu-btn:checked~.menu {
-    height: 34px;
+    height: 50px;
 }
 .liked .feather{
     fill: #FF6961;
