@@ -781,15 +781,15 @@ hr {
 }
 
 .illustration-anim-1 {
-    animation: moveUp 5s ease-in-out 1, moveUpDown 5s ease-in-out alternate-reverse infinite;
+    animation: moveUpDown 5s ease-in-out alternate-reverse infinite;
 }
 
 .illustration-anim-2 {
-    animation: moveUp 4.2s ease-in-out 0.8s 1, moveUpDown 4.2s ease-in-out alternate-reverse infinite;
+    animation: moveUpDown 4.2s 0.4s ease-in-out alternate-reverse infinite;
 }
 
 .illustration-anim-3 {
-    animation: moveUp 4.5s ease-in-out 1, moveUpDown 4.5s ease-in-out alternate-reverse infinite;
+    animation: moveUpDown 4.5s 0.8s ease-in-out alternate-reverse infinite;
 }
 
 .illustration-lg {
