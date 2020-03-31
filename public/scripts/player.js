@@ -33,11 +33,11 @@ feather.replace();
                 .then(data=>{
                     if(data.data.status === 'Liked'){
                         likeButtons[i].classList.add('liked');
-                        likeButtons[i].nextElementSibling.innerHTML = Number(likeButtons[i].nextElementSibling.innerHTML) + 1;
+                        likeButtons[i].children[1].innerHTML = Number(likeButtons[i].children[1].innerHTML) + 1;
                     }
                     else{
                         likeButtons[i].classList.remove('liked');
-                        likeButtons[i].nextElementSibling.innerHTML = Number(likeButtons[i].nextElementSibling.innerHTML) - 1;
+                        likeButtons[i].children[1].innerHTML = Number(likeButtons[i].children[1].innerHTML) - 1;
                     }
                 })
                 .catch(err=>{

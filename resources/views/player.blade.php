@@ -320,8 +320,10 @@
                                 <div class="col-3 d-flex flex-column justify-content-end">
                                     <div class="likes d-flex justify-content-center align-items-center">
                                     <button class="btn btn-secondary-veedros like-btn more {{Auth::user() ?  $comment->isLikedBy(Auth::user()) ? 'liked' : '' : ''}} " id="{{$comment->id}}"><i
-                                            data-feather="heart"></i></button>
+                                            data-feather="heart"></i>
                                         <span class="ml-2 text-muted">{{$comment->likes()->count()}}</span>
+                                    </button>
+
                                     </div>
                                     <h6><i data-feather="globe" class="mr-1"></i>{{$comment->created_at->diffForHumans()}}</h6>
                                 </div>
