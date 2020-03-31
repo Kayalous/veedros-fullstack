@@ -774,6 +774,10 @@ hr {
     position: absolute;
     left: 50%;
     bottom: 50%;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    filter: blur(0);
+    -webkit-filter: blur(0);
 }
 
 .illustration-anim-1 {
@@ -856,19 +860,22 @@ hr {
 
 @-webkit-keyframes moveUp {
     0% {
-        bottom: 50%;
+        transform: translateY(0px);
     }
     25% {
-        bottom: 57%;
+        transform: translateY(0px);
     }
 }
 
 @-webkit-keyframes moveUpDown {
     0% {
-        bottom: 47%;
+        transform: translateY(0px);
     }
     50% {
-        bottom: 57%;
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
     }
 }
 
