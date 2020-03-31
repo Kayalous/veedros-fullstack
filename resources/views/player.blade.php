@@ -318,8 +318,11 @@
                                     <p class="mt-2">{!! nl2br(e($comment->body)) !!}</p>
                                 </div>
                                 <div class="col-3 d-flex flex-column justify-content-end">
-                                    <button class="btn btn-secondary-veedros mx-auto more"><i
+                                    <div class="likes d-flex justify-content-center align-items-center">
+                                    <button class="btn btn-secondary-veedros like-btn more {{Auth::user() ?  $comment->isLikedBy(Auth::user()) ? 'liked' : '' : ''}} " id="{{$comment->id}}"><i
                                             data-feather="heart"></i></button>
+                                        <span class="ml-2 text-muted">{{$comment->likes()->count()}}</span>
+                                    </div>
                                     <h6><i data-feather="globe" class="mr-1"></i>{{$comment->created_at->diffForHumans()}}</h6>
                                 </div>
                             </div>
@@ -336,10 +339,14 @@
     <!-- video js -->
     <script src="https://vjs.zencdn.net/7.6.6/video.min.js"></script>
     <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
+    <!-- Axios JS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @endsection
 @section('customJS')
 <script type='text/javascript'
 src='https://platform-api.sharethis.com/js/sharethis.js#property=5e792c766caf2b00125bec34&product=inline-share-buttons' async='async'></script>
-
+    <script>
+        let baseUrl = `{{asset("")}}`;
+    </script>
     <script src="{{asset('scripts')}}/player.js"></script>
 @endsection
