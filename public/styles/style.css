@@ -2350,9 +2350,13 @@ h2 {
 .review-carousel {
     width: 80% !important;
 }
+.user-info, .user-info>*{
+    z-index: 99;
+}
 
 .review-body {
     position: relative;
+    z-index: 2;
 }
 
 .review-body:before {
