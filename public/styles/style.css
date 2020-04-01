@@ -216,9 +216,6 @@ hr {
     -webkit-backdrop-filter: blur(20px);
 }
 
-.show {
-    overflow: hidden !important;
-}
 
 .login-body {
     background-color: white;
@@ -2622,4 +2619,7 @@ img {
     color: #fff;
     -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
+}
+.swal2-container{
+    width: 100%;
 }
