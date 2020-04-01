@@ -7,6 +7,10 @@
 @endsection
 
 @section('content')
+    <div class="anti-lo2">
+
+
+
     <!-- Hero  -->
     <section class="hero pt-5 overflow-hidden">
         <div class="container mt-5">
@@ -352,6 +356,7 @@
             </div>
         </div>
     </section>
+    </div>
 @endsection
 
 @section('libraryJS')
