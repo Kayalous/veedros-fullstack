@@ -147,7 +147,7 @@
 @endif
 <!-- Navbar  -->
 <nav class="navbar navbar-expand-lg absolute-top main-navbar navbar-light">
-    <a class="navbar-brand logo" href="{{route('landing')}}"><img class="img-fluid" style="width: 120px;" src="{{asset('images/Veedros Logo.svg')}}"
+    <a class="navbar-brand logo" href="{{route('landing')}}"><img class="img-fluid" style="width: 120px;" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
                                                alt="Logo"></a>
     <button class="navbar-toggler border-0 d-lg-none" type="button" data-toggle="collapse"
             data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"

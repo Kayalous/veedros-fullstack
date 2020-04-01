@@ -27,7 +27,7 @@
                     </a>
                     <div class="trusted-Route">
                         <small>Trusted by</small>
-                        <img class="img-fluid" src="{{('images/Route_logo.png')}}" alt="">
+                        <img class="img-fluid" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Route_logo.png" alt="">
                         <small class="click-route">If you're Route's student please <a href="{{asset('route')}}">click here</a></small>
                     </div>
                 </div>
@@ -35,19 +35,19 @@
                     <div class="illustration-container illustration-container-lg d-md-flex-center "
                          >
                         <canvas id="blob"> </canvas>
-                        <img src="{{asset('images')}}/hero-01-withoutbg.png" alt=""
+                        <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/hero-01-withoutbg.png" alt=""
                              class="img-fluid illustration illustration-lg illustration-anim-1" />
                     </div>
                     <div class="row w-100 d-md-flex-center">
                         <div class="illustration-container illustration-container-sm  " data-wow-delay="0.4s">
                             <canvas id="blob2" class="blob-position-md "> </canvas>
-                            <img src="{{asset('images')}}/hero-02-withoutbg.png" alt=""
+                            <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/hero-02-withoutbg.png" alt=""
                                  class="img-fluid illustration illustration-md illustration-position-md illustration-anim-2" />
                         </div>
                         <div class="illustration-container col-4 illustration-container-sm mt-illustration  "
                              data-wow-delay="0.6s">
                             <canvas id="blob3"> </canvas>
-                            <img src="{{asset('images')}}/hero-03.png" alt=""
+                            <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/hero-03.png" alt=""
                                  class="img-fluid illustration illustration-sm illustration-position-sm illustration-anim-3" />
                         </div>
                     </div>
@@ -61,25 +61,25 @@
 
     <div class="row justify-content-center py-3">
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
-                <img class="" src="{{asset('images/partners/ACCA.png')}}" alt="ACCA">
+                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/ACCA.png" alt="ACCA">
             </div>
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
-                <img class="" src="{{asset('images/partners/DME.png')}}" alt="DME">
+                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/DME.png" alt="DME">
             </div>
             <div class="col-lg-1  col-md-2 col-sm-3 col-5">
-                <img class="" src="{{asset('images/partners/edexcel.png')}}" alt="edexcel">
+                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/edexcel.png" alt="edexcel">
             </div>
             <div class="col-lg-1  col-md-2 col-sm-3 col-5">
-                <img class="" src="{{asset('images/partners/Northampton.png')}}" alt="Northampton">
+                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/Northampton.png" alt="Northampton">
             </div>
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
-                <img class="" src="{{asset('images/partners/OTRAC.png')}}" alt="OTRAC">
+                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/OTRAC.png" alt="OTRAC">
             </div>
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
-                <img class="" src="{{asset('images/partners/Pearson.png')}}" alt="Pearson">
+                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/Pearson.png" alt="Pearson">
             </div>
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
-                <img class="" src="{{asset('images/partners/Trade.png')}}" alt="Trade">
+                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/Trade.png" alt="Trade">
             </div>
 
         </div>
@@ -302,16 +302,16 @@
                                         <div class="review p-3 mx-2 my-4 ">
                                         <div class="user-info row py-3">
                                         <div class="tip-instructor-avatar col-lg-2 ml-4 ">
-                                            <img src="{{asset('images')}}/05.jpg" alt="" class="round">
+                                            <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/05.jpg" alt="" class="round">
                                         </div>
                                             <div class="rating-container ml-2 col-lg-8 d-flex flex-column justify-content-center">
                                                 <h6 class="m-0">Ahmed Zakii</h6>
                                                 <div class="d-flex ratings col-6 px-0 m-0">
-                                                    <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
-                                                    <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
-                                                    <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
-                                                    <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
-                                                    <img src="{{asset('images/Icons')}}/Star.svg" alt="star">
+                                                    <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Star.svg" alt="star">
+                                                    <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Star.svg" alt="star">
+                                                    <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Star.svg" alt="star">
+                                                    <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Star.svg" alt="star">
+                                                    <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Star.svg" alt="star">
                                                 </div>
                                             </div>
                                         </div>
