@@ -590,6 +590,7 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'App\\Chapter' => __DIR__ . '/../..' . '/app/Chapter.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Contact' => __DIR__ . '/../..' . '/app/Contact.php',
         'App\\Course' => __DIR__ . '/../..' . '/app/Course.php',
         'App\\Enroll' => __DIR__ . '/../..' . '/app/Enroll.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',

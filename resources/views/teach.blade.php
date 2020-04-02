@@ -83,7 +83,8 @@
 
         </div>
     </section>
-    <section class="my-5 teach-form">
+    <form method="POST" class="my-5 teach-form">
+        @csrf
         <div class="row">
             <div class="col-12 form-bg col-lg-6">
                 <div class="form-overlay"></div>
@@ -92,22 +93,22 @@
                         <li>
                             <div class="form-group">
                                 <label for="">Name</label>
-                                <input type="text" name="" id="" maxlength="100" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Your Name"
+                                <input type="text" name="name" id="" maxlength="100" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Your Name"
                                        aria-describedby="helpId">
                             </div>
                         </li>
                         <li>
                             <div class="form-group">
                                 <label for="">Email</label>
-                                <input type="email" name="" id="" maxlength="" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com"
+                                <input type="email" name="email" id="" maxlength="" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com"
                                        aria-describedby="helpId">
                             </div>
                         </li>
                         <li>
                             <div class="form-group">
                                 <label class="d-block" for="">Phone Number</label>
-                                <input type="text" name="" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm" maxlength="11"
-                                       placeholder="01xxxxxxxxx" aria-describedby="helpId">
+                                <input type="text" name="phone" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm" maxlength="11"
+                                       placeholder="01234567890" aria-describedby="helpId">
                             </div>
                         </li>
                         <li>
@@ -139,12 +140,12 @@
             </div>
         </div>
         <div class=" text-center my-5">
-                <a  class="btn btn-veedros-new  btn-veedros-md border-0 mx-auto ">
+                <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto ">
                         <span class="mx-3 text-white">Confirm</span>
-                    </a>
+                    </button>
                     <small class="text-muted">we're so grateful to reach here, wait for our call as soon as possible</small>
         </div>
-    </section>
+    </form>
 @endsection
 
 @section('libraryJS')

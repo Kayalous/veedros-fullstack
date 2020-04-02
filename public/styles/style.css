@@ -1768,6 +1768,7 @@ ul {
 }
 
 .round {
+    display: flex !important;
     -o-object-fit: cover;
     object-fit: cover;
     border-radius: 50%;

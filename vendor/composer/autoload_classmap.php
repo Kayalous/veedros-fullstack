@@ -9,6 +9,7 @@ return array(
     'App\\Chapter' => $baseDir . '/app/Chapter.php',
     'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Contact' => $baseDir . '/app/Contact.php',
     'App\\Course' => $baseDir . '/app/Course.php',
     'App\\Enroll' => $baseDir . '/app/Enroll.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',

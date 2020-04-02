@@ -18,8 +18,8 @@
     <!-- Font Awesome  -->
     <script src="https://kit.fontawesome.com/04f7d66693.js" crossorigin="anonymous"></script>
     <!-- Main CSS -->
-    <link rel="stylesheet" href="https://veedros.s3.eu-central-1.amazonaws.com/styles/style.css" />
-    <link rel="stylesheet" href="https://veedros.s3.eu-central-1.amazonaws.com/styles/new_style.css" />
+    <link rel="stylesheet" href="{{asset('styles')}}/style.css" />
+    <link rel="stylesheet" href="{{asset('styles')}}/new_style.css" />
     @yield('customCSS')
 </head>
 

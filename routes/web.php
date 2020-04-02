@@ -21,6 +21,9 @@ Route::get('/', function () {
 Route::get('/teach', function () {
     return view('teach');
 })->name('teach');
+
+Route::post('/teach', 'ContactController@teach')->name('contact.teach');
+
 Route::get('/loaderio-11b75385bde861fbdbbd36ee9a0257cc/', function () {
     return view('stress');
 })->name('stress');

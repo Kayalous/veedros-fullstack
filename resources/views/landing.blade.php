@@ -12,8 +12,8 @@
 
 
     <!-- Hero  -->
-    <section class="hero pt-5 overflow-hidden">
-        <div class="container mt-5">
+    <section class="hero py-5 overflow-hidden">
+        <div class="container my-5 mt-5">
             <div class="row ">
                 <div class="col-lg-6 hero-header-text ">
                     <h1 class="mb-3">
