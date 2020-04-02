@@ -3,7 +3,7 @@
 
 <head>
     <title>Veedros</title>
-    <link rel="icon" href="{{asset('images')}}/Veedros_Logo.png">
+    <link rel="icon" href="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros_Logo.png">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,8 +18,8 @@
     <!-- Font Awesome  -->
     <script src="https://kit.fontawesome.com/04f7d66693.js" crossorigin="anonymous"></script>
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{asset('styles/style.css')}}" />
-    <link rel="stylesheet" href="{{asset('styles/new_style.css')}}" />
+    <link rel="stylesheet" href="https://veedros.s3.eu-central-1.amazonaws.com/styles/style.css" />
+    <link rel="stylesheet" href="https://veedros.s3.eu-central-1.amazonaws.com/styles/new_style.css" />
     @yield('customCSS')
 </head>
 
@@ -286,9 +286,9 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 @yield('libraryJS')
 <!-- App javascript  -->
-<script src="{{asset('scripts/app.js')}}"></script>
+<script src="https://veedros.s3.eu-central-1.amazonaws.com/scripts/app.js"></script>
 @if(!Auth::check())
-<script src="{{asset('scripts/auth.js')}}"></script>
+<script src="https://veedros.s3.eu-central-1.amazonaws.com/scripts/auth.js"></script>
 @endif
 <script>
     feather.replace();
