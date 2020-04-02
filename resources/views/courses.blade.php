@@ -7,7 +7,21 @@
 
 
 @section('content')
+
 <section class="my-5 py-5">
+<div class="container">
+    <table class="w-75 m-auto">
+  <tr>
+    <th>Num of courses</th>
+    <th>Total veiws</th>
+    <th>Total profit</th>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>780</td>
+    <td>750 EGP</td>
+  </tr>
+</div>
     <div class="container">
         <h1>
             Hey, {{explode(' ',Auth::user()->name)[0]}}!
