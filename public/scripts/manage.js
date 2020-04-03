@@ -39,15 +39,7 @@ FilePond.setOptions({
         headers: {
             'X-CSRF-TOKEN': '{{ csrf_token() }}'
         }
-    },
-    files: [
-        {
-            // the server file reference
-            source: `${currentAvatar}`,
-
-        }
-    ]
-
+    }
 });
 
 
@@ -70,7 +62,6 @@ function validateEmail(emailField) {
             fieldIsInvalid(emailField)
             return false;
     }
-
 }
 
 function validateTextFields(field) {
@@ -104,7 +95,7 @@ function validateTextArea(field) {
     }
 }
 function validateNumberField(field) {
-    if(/^[0-9]{8,14}$/.test(field.value)){
+    if(/^(\+?)[0-9]{8,15}$/.test(field.value)){
         fieldIsValid(field);
         return true;
     }
@@ -161,9 +152,9 @@ function validateInputs() {
     namef = document.querySelector("#name");
     numberf = document.querySelector("#phone");
     email = document.querySelector("#email");
+    about = document.querySelector("#about");
     position = document.querySelector("#position");
     locationf = document.querySelector("#location");
-    about = document.querySelector("#about");
     if (
         validateTextFields(namef) &&
         validateNumberField(numberf) &&

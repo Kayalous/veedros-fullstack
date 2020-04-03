@@ -83,7 +83,7 @@
 
         </div>
     </section>
-    <form method="POST" class="my-5 teach-form">
+    <form method="POST" class="my-5 teach-form" id="form">
         @csrf
         <div class="row">
             <div class="col-12 form-bg col-lg-6">
@@ -93,22 +93,22 @@
                         <li>
                             <div class="form-group">
                                 <label for="">Name</label>
-                                <input type="text" name="name" id="" maxlength="100" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Your Name"
+                                <input type="text" name="name" id="name" maxlength="100" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Your Name"
                                        aria-describedby="helpId">
                             </div>
                         </li>
                         <li>
                             <div class="form-group">
                                 <label for="">Email</label>
-                                <input type="email" name="email" id="" maxlength="" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com"
+                                <input type="email" name="email" id="email" maxlength="100" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com"
                                        aria-describedby="helpId">
                             </div>
                         </li>
                         <li>
                             <div class="form-group">
                                 <label class="d-block" for="">Phone Number</label>
-                                <input type="text" name="phone" id="" class="form-control profile-form-field email-field-props border-light border-radius-sm" maxlength="11"
-                                       placeholder="01234567890" aria-describedby="helpId">
+                                <input type="text" name="phone" id="phone" class="form-control profile-form-field email-field-props border-light border-radius-sm" maxlength="14"
+                                       placeholder="01234567890">
                             </div>
                         </li>
                         <li>
@@ -117,14 +117,16 @@
                                 <input type="file"
                                        class="filepond"
                                        name="img"
-                                       accept="application/pdf"/>
+                                       accept="application/pdf"
+                                       data-allow-reorder="true"
+                                       data-max-file-size="5MB"/>
                             </div>
                         </li>
                         <li>
                             <div class="form-group">
                                 <label for="">Tell us about your project</label>
                                 <textarea class="form-control profile-form-field email-field-props border-light border-radius-sm" maxlength="2000"
-                                          rows="6" placeholder="Tell us more about your course"></textarea>
+                                          rows="6" placeholder="Tell us more about your course" name="body" id="body"></textarea>
                                 <small id="helpId" class="text-muted">The more details the better!</small>
                             </div>
                         </li>
@@ -140,7 +142,7 @@
             </div>
         </div>
         <div class=" text-center my-5">
-                <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto ">
+                <button type="button" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" id="btnsubmit">
                         <span class="mx-3 text-white">Confirm</span>
                     </button>
                     <small class="text-muted">we're so grateful to reach here, wait for our call as soon as possible</small>
@@ -152,60 +154,11 @@
     <!-- Owl js -->
     <script src="owlCarousel/js/owl.carousel.min.js"></script>
     <!-- FilePond JS -->
-    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
     <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
     <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 @endsection
 
 @section('customJS')
-    <script>
-        $(".owl-carousel").owlCarousel({
-            rewind: true,
-            margin: 10,
-            autoplay: true,
-            autoplayTimeout: 4000,
-            nav: true,
-            dotsEach: true,
-            dots: true,
-            responsive: {
-                1200: {
-                    items: 2
-                },
-                992: {
-                    items: 1
-                },
-                768: {
-                    items: 1
-                },
-                0: {
-                    items: 1
-                }
-            },
-            autoplayHoverPause: true
-        });
-
-
-
-        FilePond.parse(document.body);
-        // We register the plugins required to do
-        // image previews, cropping, resizing, etc.
-        FilePond.registerPlugin(
-            FilePondPluginFileValidateType,
-        );
-
-
-
-        // Select the file input and use
-        // create() to turn it into a pond
-        FilePond.create(
-            document.querySelector('.filepond'),
-            {
-                labelIdle: `Drag & Drop your CV or <span class="filepond--label-action">Browse</span>`,
-                styleLoadIndicatorPosition: 'bottom',
-                styleButtonRemoveItemPosition: 'bottom',
-                stylePanelLayout: 'compact',
-                acceptedFileTypes: ['application/pdf'],
-            }
-        );
-    </script>
+    <script src="{{asset('scripts')}}/teach.js"></script>
 @endsection

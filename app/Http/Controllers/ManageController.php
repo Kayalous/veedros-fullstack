@@ -32,6 +32,7 @@ class ManageController extends Controller
             'facebook' => 'nullable|max:500',
             'linkedin' => 'nullable|max:500'
         ]);
+        //Remove http/s if it exists from the link
         $request['twitter'] = preg_replace('#^https?://#', '', $request['twitter']);
         $request['facebook'] = preg_replace('#^https?://#', '', $request['facebook']);
         $request['linkedin'] = preg_replace('#^https?://#', '', $request['linkedin']);
