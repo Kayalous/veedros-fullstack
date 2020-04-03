@@ -8,22 +8,6 @@
     margin: 0;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-    background-color: rgba(0, 0, 0, 0) !important;
-    border: none;
-    outline: none;
-    -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
-    transition: background-color 5000s ease-in-out 0s;
-}
-
 a:hover {
     text-decoration: none;
 }
@@ -2628,3 +2612,4 @@ img {
 .swal2-container{
     width: 100%;
 }
+

@@ -5,9 +5,20 @@ function auto_grow(element) {
 
 
 //Manage sessions
-let addSessionButton = document.querySelector('.add-session');
-
+let addSessionButtons = document.querySelectorAll('.add-session');
+//Manage chapters
+let editSessionNameButtons = document.querySelectorAll('.edit-session-name');
+let editSessionNameFields = document.querySelectorAll('.session-name-field');
+let editSessionDescButtons = document.querySelectorAll('.edit-session-desc');
+let editSessionDescFields = document.querySelectorAll('.session-desc-field');
+let editSessionUrl = `${baseUrl}manage/instructor/course/editSession`;
+//Edit chapter name staging
+stageButtonsAndInputsToController(editSessionNameButtons, editSessionNameFields, editSessionUrl, 'session', 'name')
+//edit chapter desc staging
+stageButtonsAndInputsToController(editSessionDescButtons, editSessionDescFields, editSessionUrl, 'session', 'about')
 let lastSessionSubmitted = true;
+for(let i = 0; i<addSessionButtons.length; i++){
+    let addSessionButton = addSessionButtons[i];
 addSessionButton.onclick = () => {
     if(lastSessionSubmitted){
         lastSessionSubmitted = false;
@@ -37,6 +48,7 @@ addSessionButton.onclick = () => {
 
 }
 
+}
 
 
 //Manage chapters
@@ -94,7 +106,7 @@ function stageButtonsAndInputsToController(buttons, fields, url, tableToUpdate ,
                 field.value = val;
 
                 button.innerHTML = '<i data-feather="check"></i> Save';
-                button.children[0].style.stroke = "#985f78";
+                button.children[0].style.stroke = "#0D984F";
             }
             else {
                 button.innerHTML = '<span class="spinner-grow text-secondary spinner-grow-sm"></span> Loading...';
@@ -181,3 +193,16 @@ function showFailureMessage(message){
     })
 }
 
+async function deleteSession(id) {
+    let answer = await Swal.fire({
+        title: 'Confirm deleting session.',
+        text: `Are you sure you want to delete this session? This action is irreversible.`,
+        icon: 'error',
+        confirmButtonText: 'Yes.',
+        showCancelButton:true,
+        cancelButtonText: "No."
+    })
+    if(answer.value ===true){
+        window.location.href = `${baseUrl}manage/instructor/course/deleteSession/${id}`;
+    }
+}

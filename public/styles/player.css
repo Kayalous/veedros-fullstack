@@ -142,7 +142,7 @@
     background-color: #F6F6F6 !important;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px !important;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;

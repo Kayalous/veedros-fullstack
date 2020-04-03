@@ -276,6 +276,28 @@ class CourseController extends Controller
             $chapter->update(['about' => $request['about']]);
             return response(['status'=>'Chapter description has been updated successfully.'], 200);
         }
-        return response(['status'=>'Chapter description has been updated successfully.'], 500);
+    }
+    public function editSession(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'nullable|max:500',
+            'about' => 'nullable|max:500',
+            'sessionId' => 'required'
+        ]);
+        $session = Session::where('id', $request['sessionId'])->first();
+        if($request['name']){
+            $slug = Str::slug($request['name'], '-');
+            $session->update(['name' => $request['name'],
+                'slug' => $slug]);
+            return response(['status'=>'Session name has been updated successfully.'], 200);
+        }
+        if($request['about']){
+            $session->update(['about' => $request['about']]);
+            return response(['status'=>'Session description has been updated successfully.'], 200);
+        }
+    }
+    public function deleteSession($id){
+        $session = Session::where('id', $id)->first();
+        $session->delete();
+        return back()->with('success', 'Session deleted successfully.');
     }
 }

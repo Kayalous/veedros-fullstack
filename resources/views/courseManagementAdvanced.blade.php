@@ -23,7 +23,7 @@
     <ul id="chapters-container">
         @foreach($course->chapters as $chapter)
             <li class="mb-3">
-            <button class="list-group-item collapse-button mx-auto" aria-expanded="false" data-toggle="collapse"
+            <button class="list-group-item collapse-button mx-auto my-3" aria-expanded="false" data-toggle="collapse"
                     href="#collapse{{$loop->iteration}}" >
                 <span>Chapter {{$loop->iteration}} </span>
                 <div class="vertical-seperator"></div>
@@ -33,7 +33,7 @@
                 <div class="chevron"><i data-feather="chevron-down"></i></div>
             </button>
 
-                <div class="list-group collapse my-2 px-5" id="collapse{{$loop->iteration}}">
+                <div class="list-group collapse show my-2 px-5" id="collapse{{$loop->iteration}}">
                     <div>
                 <h2 class="mb-2">Chapter's name</h2>
                 <div class="row">
@@ -68,7 +68,8 @@
                     <br>
                     <h2>Sessions</h2>
                     @foreach($chapter->sessions as $session)
-                        <button class="list-group-item collapse-button mx-auto" aria-expanded="false" data-toggle="collapse"
+                        <div class="row justify-content-center align-items-center">
+                        <button class="list-group-item collapse-button mx-auto my-2" aria-expanded="false" data-toggle="collapse"
                                 href="#collapse-sessions-{{$loop->iteration}}">
                             <span>Session {{$loop->iteration}} </span>
                             <div class="vertical-seperator"></div>
@@ -77,6 +78,12 @@
                             </span>
                             <div class="chevron"><i data-feather="chevron-down"></i></div>
                         </button>
+                            <div class="m-auto">
+                                <button
+                                    class="btn btn-secondary-veedros btn-secondary-veedros-normal border-0 edit-btn delete-session" type="button" onclick="deleteSession({{$session->id}})"><i
+                                        data-feather="trash" style="stroke: #dc3545"></i></button>
+                            </div>
+                        </div>
                             <div class="list-group collapse py-4 px-5" id="collapse-sessions-{{$loop->iteration}}">
                                 <h2 class="mb-2">Session's name</h2>
                                 <div class="row">
@@ -120,14 +127,17 @@
                             </h2>
                         </button>
                     </div>
+                    <br>
+                    <hr>
+                    <br>
                 </div>
+
             </li>
         @endforeach
 
     </ul>
 
-        <br>
-        <hr>
+
         <br>
     <div class="w-100 row m-0">
         <button id="add-chapter"
@@ -142,27 +152,13 @@
 @endsection
 
 @section('libraryJS')
-    <!-- video js -->
-    <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
-    <!-- FilePond JS -->
-    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-transform/dist/filepond-plugin-image-transform.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-file-poster/dist/filepond-plugin-file-poster.js"></script>
-    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <!-- Axios JS -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @endsection
 @section('customJS')
-    <script src="{{asset('scripts')}}/player.js"></script>
     <script>
         let baseUrl = `{{asset("")}}`;
         let slug = `{{$course->slug}}`;
-        let courseImgUrl = `${baseUrl}/uploads/courses/{{$course->instructor_id}}/${slug}/images/{{$course->img}}`;
     </script>
     <script src="{{asset('scripts')}}/manage-course-advanced.js"></script>
 @endsection

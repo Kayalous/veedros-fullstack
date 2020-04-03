@@ -79,6 +79,8 @@ Route::post('/manage/instructor/course/objective', 'CourseController@editObjecti
 Route::post('/manage/instructor/course/newChapter', 'CourseController@newChapter')->name('manage.courses.newChapter');
 Route::post('/manage/instructor/course/newSession', 'CourseController@newSession')->name('manage.courses.newSession');
 Route::post('/manage/instructor/course/editChapter', 'CourseController@editChapter')->name('manage.courses.editChapter');
+Route::post('/manage/instructor/course/editSession', 'CourseController@editSession')->name('manage.courses.editSession');
+Route::get('/manage/instructor/course/deleteSession/{id}', 'CourseController@deleteSession')->name('manage.courses.deleteSession');
 Route::post('/manage/instructor/course/recommendation', 'CourseController@editRecommendation')->name('manage.courses.recommendation');
 Route::get('/manage/instructor/courses/{courseSlug}', function ($courseSlug){
     $instructor = Auth::user()->instructor;
@@ -89,7 +91,7 @@ Route::get('/manage/instructor/courses/{courseSlug}', function ($courseSlug){
     $course = $instructor->courses()->where('slug', $courseSlug)->firstOrFail();
     return view("courseManagement", ['course'=>$course]);}
     )->name('manage.course.content');
-    Route::get('/manage/instructor/courses/{courseSlug}/advanced', function ($courseSlug){
+Route::get('/manage/instructor/courses/{courseSlug}/advanced', function ($courseSlug){
         $instructor = Auth::user()->instructor;
 
         if(!$instructor)
