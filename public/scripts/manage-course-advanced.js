@@ -194,6 +194,7 @@ function showFailureMessage(message){
 }
 
 async function deleteSession(id) {
+    
     let answer = await Swal.fire({
         title: 'Confirm deleting session.',
         text: `Are you sure you want to delete this session? This action is irreversible.`,
@@ -202,7 +203,10 @@ async function deleteSession(id) {
         showCancelButton:true,
         cancelButtonText: "No."
     })
+
     if(answer.value ===true){
         window.location.href = `${baseUrl}manage/instructor/course/deleteSession/${id}`;
     }
+
 }
+
