@@ -23,6 +23,7 @@
     <ul id="chapters-container">
         @foreach($course->chapters as $chapter)
             <li class="mb-3">
+                <div class="row justify-content-center align-items-center">
             <button class="list-group-item collapse-button mx-auto my-3" aria-expanded="false" data-toggle="collapse"
                     href="#collapse{{$loop->iteration}}" >
                 <span>Chapter {{$loop->iteration}} </span>
@@ -32,14 +33,19 @@
                 </span>
                 <div class="chevron"><i data-feather="chevron-down"></i></div>
             </button>
-
+                <div class="m-auto">
+                    <button
+                        class="btn btn-secondary-veedros btn-secondary-veedros-normal border-0 edit-btn delete-session" type="button" onclick="deleteChapter({{$chapter->id}})"><i
+                            data-feather="trash" style="stroke: #dc3545"></i></button>
+                </div>
+                </div>
                 <div class="list-group collapse show my-2 px-5" id="collapse{{$loop->iteration}}">
                     <div>
                 <h2 class="mb-2">Chapter's name</h2>
                 <div class="row">
                     <div class="col-10">
                         <h5 class="align-items-center row">
-                            <textarea rows="1" class="chapter-name-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type chapter name here" oninput="auto_grow(this)" readonly id="{{$chapter->id}}">{{$chapter->name}}</textarea>
+                            <textarea class="chapter-name-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type chapter name here" oninput="auto_grow(this)" readonly id="{{$chapter->id}}">{{$chapter->name}}</textarea>
                         </h5>
                     </div>
                     <div>
@@ -54,7 +60,7 @@
                 <div class="row">
                     <div class="col-10">
                         <h5 class="align-items-center row">
-                            <textarea rows="1" class="chapter-desc-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type chapter description here" oninput="auto_grow(this)" readonly id="{{$chapter->id}}">{{$chapter->about}}</textarea>
+                            <textarea class="chapter-desc-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type chapter description here" oninput="auto_grow(this)" readonly id="{{$chapter->id}}">{{$chapter->about}}</textarea>
                         </h5>
                     </div>
                     <div>
@@ -89,7 +95,7 @@
                                 <div class="row">
                                     <div class="col-10">
                                         <h5 class="align-items-center row">
-                                            <textarea rows="1" class="session-name-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type session name here" oninput="auto_grow(this)" readonly id="{{$session->id}}">{{$session->name}}</textarea>
+                                            <textarea class="session-name-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type session name here" oninput="auto_grow(this)" readonly id="{{$session->id}}">{{$session->name}}</textarea>
                                         </h5>
                                     </div>
                                     <div>
@@ -104,7 +110,7 @@
                                 <div class="row">
                                     <div class="col-10">
                                         <h5 class="align-items-center row">
-                                            <textarea rows="1" class="session-desc-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type session name here" oninput="auto_grow(this)" readonly id="{{$session->id}}">{{$session->about}}</textarea>
+                                            <textarea class="session-desc-field form-control course-form-field border-light border-radius-sm col-12" placeholder="Type session description here" oninput="auto_grow(this)" readonly id="{{$session->id}}">{{$session->about}}</textarea>
                                         </h5>
                                     </div>
                                     <div>
@@ -113,6 +119,15 @@
                                                 data-feather="edit"></i>
                                             Edit</button>
                                     </div>
+                                </div>
+
+                                <div class="w-100 row m-0">
+                                    <button class="btn btn-secondary-veedros btn-secondary-veedros-xl border-medium edit-btn py-3 add-milestone" type="button">
+                                        <h2 class="m-0">
+                                            <i data-feather="plus"></i>
+                                            Add a new milestone.
+                                        </h2>
+                                    </button>
                                 </div>
                                 <br>
                             </div>
@@ -149,9 +164,23 @@
         </button>
     </div>
     </section>
+
+    <form class="mb-5" action="300/upload-video" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="file"
+               class=""
+               name="vid"/>
+        <div class="row text-center mt-5">
+            <button type="submit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">
+                <h4 class="my-0 mx-5">Upload video</h4>
+            </button>
+        </div>
+    </form>
 @endsection
 
 @section('libraryJS')
+    <!-- FilePond JS -->
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <!-- Axios JS -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @endsection

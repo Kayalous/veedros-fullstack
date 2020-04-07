@@ -19,6 +19,7 @@ class Session extends Model
     public function objectives(){
         return $this->hasMany(Objective::class);
     }
+
     public function isFirstSession(){
         $chapter = $this->chapter()->first();
         $course = $chapter->course()->first();

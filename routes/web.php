@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 Route::get('/', function () {
     $courses = \App\Course::all()->take(6);
@@ -81,6 +82,7 @@ Route::post('/manage/instructor/course/newSession', 'CourseController@newSession
 Route::post('/manage/instructor/course/editChapter', 'CourseController@editChapter')->name('manage.courses.editChapter');
 Route::post('/manage/instructor/course/editSession', 'CourseController@editSession')->name('manage.courses.editSession');
 Route::get('/manage/instructor/course/deleteSession/{id}', 'CourseController@deleteSession')->name('manage.courses.deleteSession');
+Route::get('/manage/instructor/course/deleteChapter/{id}', 'CourseController@deleteChapter')->name('manage.courses.deleteChapter');
 Route::post('/manage/instructor/course/recommendation', 'CourseController@editRecommendation')->name('manage.courses.recommendation');
 Route::get('/manage/instructor/courses/{courseSlug}', function ($courseSlug){
     $instructor = Auth::user()->instructor;
@@ -92,15 +94,22 @@ Route::get('/manage/instructor/courses/{courseSlug}', function ($courseSlug){
     return view("courseManagement", ['course'=>$course]);}
     )->name('manage.course.content');
 Route::get('/manage/instructor/courses/{courseSlug}/advanced', function ($courseSlug){
-        $instructor = Auth::user()->instructor;
+    $instructor = Auth::user()->instructor;
 
-        if(!$instructor)
-            return redirect('/dashboard');
+    if(!$instructor)
+        return redirect('/dashboard');
 
-        $course = $instructor->courses()->where('slug', $courseSlug)->firstOrFail();
+    $course = $instructor->courses()->where('slug', $courseSlug)->firstOrFail();
 
-        return view("courseManagementAdvanced", ['course'=>$course]);}
-    )->name('manage.course.content.advanced');
+    return view("courseManagementAdvanced", ['course'=>$course]);}
+)->name('manage.course.content.advanced');
+
+Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', function (\Illuminate\Http\Request $request){
+
+    $path = Storage::disk('public')->put('temp-video',$request['vid']);
+    \App\Jobs\ConvertVideoForUploading::dispatch($path);
+    return "okay I'm working";
+});
 });
 
 

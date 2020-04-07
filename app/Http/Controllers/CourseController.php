@@ -248,8 +248,8 @@ class CourseController extends Controller
 
         $faker = Faker::create();
         //new random values for the session
-        $randomName = $faker->name;
-        $about = $faker->colorName;
+        $randomName = $faker->sentence(3);
+        $about = $faker->paragraph(1);
         $slug = Str::slug($randomName, '-');
         $session = Session::create(['chapter_id' => $chapter->id,
             'name' => $randomName,
@@ -259,6 +259,19 @@ class CourseController extends Controller
             'link' => 'link']);
         return response(['status' => 'New session has been successfully added.', 'chapterId' => $chapter->id, 'sessionId' => $session->id, 'session' => $session], 200);
     }
+
+    public function newSessionObjective(Request $request)
+    {
+        $faker = Faker::create();
+        $session = Session::where('id', $request['session_id'])->first();
+        $objective = Objective::create([
+            'session_id' => $session->id,
+            'title' =>$faker->name,
+            'objective' => $faker->paragraph()
+        ]);
+        return response(['status'=>'New objective has been successfully added.'], 200);
+    }
+
     public function editChapter(Request $request){
         $validatedData = $request->validate([
             'name' => 'nullable|max:500',
@@ -276,11 +289,13 @@ class CourseController extends Controller
             $chapter->update(['about' => $request['about']]);
             return response(['status'=>'Chapter description has been updated successfully.'], 200);
         }
+        return response(['status'=>'No value entered'], 500);
     }
+
     public function editSession(Request $request){
         $validatedData = $request->validate([
-            'name' => 'nullable|max:500',
-            'about' => 'nullable|max:500',
+            'name' => 'nullable|max:500|min:1',
+            'about' => 'nullable|max:500|min:1',
             'sessionId' => 'required'
         ]);
         $session = Session::where('id', $request['sessionId'])->first();
@@ -294,10 +309,23 @@ class CourseController extends Controller
             $session->update(['about' => $request['about']]);
             return response(['status'=>'Session description has been updated successfully.'], 200);
         }
+        return response(['status'=>'No value entered'], 500);
+
     }
+
     public function deleteSession($id){
         $session = Session::where('id', $id)->first();
         $session->delete();
         return back()->with('success', 'Session deleted successfully.');
+    }
+
+    public function deleteChapter($id){
+        $chapter = Chapter::where('id', $id)->first();
+        $sessions = $chapter->sessions;
+        foreach ($sessions as $session){
+            $session->delete();
+        }
+        $chapter->delete();
+        return back()->with('success', "This chapter and all it's sessions were deleted successfully.");
     }
 }

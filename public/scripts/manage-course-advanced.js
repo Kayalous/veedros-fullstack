@@ -1,3 +1,32 @@
+FilePond.parse(document.body);
+// We register the plugins required to do
+// image previews, cropping, resizing, etc.
+FilePond.registerPlugin(
+);
+
+
+
+// Select the file input and use
+// create() to turn it into a pond
+FilePond.create(
+    document.querySelector('.filepond'),
+    {
+        labelIdle: `Drag & Drop your session or <span class="filepond--label-action">Browse</span>`,
+    }
+);
+
+
+FilePond.setOptions({
+    server: {
+        url: '/filepond/api',
+        process: '/process',
+        headers: {
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        }
+    }
+});
+
+
 function auto_grow(element) {
     element.style.height = "5px";
     element.style.height = (element.scrollHeight)+"px";
@@ -194,7 +223,7 @@ function showFailureMessage(message){
 }
 
 async function deleteSession(id) {
-    
+
     let answer = await Swal.fire({
         title: 'Confirm deleting session.',
         text: `Are you sure you want to delete this session? This action is irreversible.`,
@@ -210,3 +239,19 @@ async function deleteSession(id) {
 
 }
 
+async function deleteChapter(id) {
+
+    let answer = await Swal.fire({
+        title: 'Confirm deleting chapter.',
+        text: `Are you sure you want to delete this chapter? This will delete the chapter and all of it's sessions. This action is irreversible.`,
+        icon: 'error',
+        confirmButtonText: 'Yes.',
+        showCancelButton:true,
+        cancelButtonText: "No."
+    })
+
+    if(answer.value ===true){
+        window.location.href = `${baseUrl}manage/instructor/course/deleteChapter/${id}`;
+    }
+
+}

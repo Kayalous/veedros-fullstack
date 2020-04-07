@@ -163,7 +163,7 @@ class RegisterController extends Controller
             }
             //Log the user in
             Auth::login($user);
-            return back();
+            return redirect('/');
         }
 
 
@@ -242,6 +242,6 @@ class RegisterController extends Controller
             }
             //Log the user in
             Auth::login($user);
-        return back();
+            return redirect('/');
         }
 }
