@@ -1,6 +1,5 @@
 .academic-header {
     background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/images/Acadmic-1920x800.jpg);
-
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -11,24 +10,25 @@
     align-items: center;
 }
 
-
-
 .academic-header h1 {
     color: #172345;
-    font-size: 5rem;
+    font-size: 70px;
     font-weight: bolder;
     text-align: center;
+    transition: font-size 0.2s ease-out;
 }
 
 .partners-header {
-
+    height: 100px;
     background-color: #FDF8F5;
+    display: flex;
+    align-items: center;
 }
 
 .partners-header h2 {
     color: rgb(88, 102, 109);
-    padding: 3rem 10rem;
-    font-size: 2vw;
+    /* padding: 3rem 10rem; */
+    font-size: 22px;
 }
 
 ul li label {
@@ -36,14 +36,13 @@ ul li label {
     font-size: 1rem;
 }
 
-
 .input-sm {
     width: 13% !important;
     display: inline-block !important;
 }
 
 .input-md {
-    width: 85% !important ;
+    width: 85% !important;
     display: inline-block !important;
 }
 
@@ -60,17 +59,30 @@ ul li label {
     height: auto;
 }
 
-.form-show
-{
+.form-show {
     display: none;
 }
+
 @media (max-width: 992px) {
-    .form-hide
-    {
+    .form-hide {
         display: none;
     }
-    .form-show
-    {
+    .form-show {
         display: initial;
+    }
+    .academic-header h1 {
+        font-size: 55px;
+    }
+}
+
+@media (max-width: 768px) {
+    .academic-header h1 {
+        font-size: 40px;
+    }
+    .Courses-header .content h1 {
+        font-size: 40px;
+    }
+    .Courses-header .content p {
+        font-size: 16px;
     }
 }

@@ -16,10 +16,12 @@ body {
     max-width: 100vw !important;
     overflow-x: hidden !important;
 }
-.anti-lo2>*{
+
+.anti-lo2>* {
     max-width: 100vw !important;
     overflow-x: hidden !important;
 }
+
 
 /*social buttons*/
 
@@ -199,7 +201,6 @@ hr {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 }
-
 
 .login-body {
     background-color: white;
@@ -2276,8 +2277,10 @@ ul {
 }
 
 .teach-with-us-content h1 {
+    color: #172345;
     font-size: 70px;
     font-weight: 700;
+    transition: font-size 0.2s ease-out;
 }
 
 .teach-with-us-content h4,
@@ -2305,6 +2308,7 @@ h2 {
 }
 
 .testimonials h1 {
+    color: #172345;
     font-size: 70px;
     font-weight: 700;
 }
@@ -2335,7 +2339,9 @@ h2 {
 .review-carousel {
     width: 80% !important;
 }
-.user-info, .user-info>*{
+
+.user-info,
+.user-info>* {
     z-index: 99;
 }
 
@@ -2366,6 +2372,7 @@ h2 {
 }
 
 .academies h1 {
+    color: #172345;
     font-size: 80px;
     font-weight: 700;
 }
@@ -2377,17 +2384,22 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-@media (max-width: 996px) {
+.our_services p {
+    color: #848484;
+    font-size: 22px;
+}
+
+@media (max-width: 992px) {
     .testimonials .tip-instructor-avatar {
         margin-left: auto;
         margin-right: auto;
         margin-left: 0 !important;
     }
     .header-text h1 {
-        font-size: 50px;
+        font-size: 55px;
     }
     .our_services h1 {
-        font-size: 50px !important;
+        font-size: 55px !important;
     }
     .header-text h4 {
         font-size: 20px;
@@ -2407,13 +2419,56 @@ h2 {
 
 @media (max-width: 992px) {
     .academies h1 {
-        font-size: 35px;
+        font-size: 55px;
+    }
+    .testimonials h1 {
+        font-size: 55px;
+    }
+    .teach-with-us-content h1 {
+        font-size: 55px;
+    }
+    .academies h2,
+    .academies h4 {
+        font-size: 20px;
+    }
+    .testimonials h2,
+    .testimonials h4 {
+        font-size: 20px;
+    }
+    .teach-with-us-content h4 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-text h1 {
+        font-size: 40px;
+    }
+    .academies h1 {
+        font-size: 40px;
     }
     .testimonials h1 {
         font-size: 40px;
     }
     .teach-with-us-content h1 {
         font-size: 40px;
+    }
+    .academies h2,
+    .academies h4 {
+        font-size: 16px;
+    }
+    .testimonials h2,
+    .testimonials h4 {
+        font-size: 16px;
+    }
+    .teach-with-us-content h4 {
+        font-size: 16px;
+    }
+    .our_services h1 {
+        font-size: 40px !important;
+    }
+    .our_services p {
+        font-size: 16px;
     }
 }
 
@@ -2552,14 +2607,9 @@ img {
 /* ============================ our_services ============================ */
 
 .our_services h1 {
-    color: #313c8b;
+    color: #172345;
     font-size: 75px;
     font-weight: 600;
-}
-
-.our_services p {
-    color: #848484;
-    font-size: 22px;
 }
 
 .our_services .content img {
@@ -2609,7 +2659,16 @@ img {
     -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
 }
-.swal2-container{
+
+.swal2-container {
     width: 100%;
 }
 
+@media (min-width: 768px) and (max-width: 992px) {
+    .our_services .card {
+        height: 300px;
+    }
+    .our_services .card img {
+        max-width: 28%;
+    }
+}

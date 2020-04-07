@@ -23,7 +23,10 @@
     </div>
     <section class="partners ">
         <div class="partners-header">
+            <div class="w-75 m-auto">
             <h2 class=" mb-0">It's Better with Friends</h2>
+            </div>
+            
         </div>
         <div class="row mt-0">
             <div class="col-3 logo-center ">

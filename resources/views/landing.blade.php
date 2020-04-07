@@ -343,10 +343,10 @@
 
     <section class="academies">
         <div class="container h-100">
-            <div class="d-flex justify-content-center align-items-center flex-column h-50 w-100">
+            <div class="d-flex justify-content-center align-items-center flex-column h-50 w-100 my-5">
                 <h1 class="text-center">We help Academies to expand online</h1>
                 <br>
-                <h4 class="text-center">We can help you reach a broader audience and increase your passive income.</h4>
+                <h4 class="text-center ">We can help you reach a broader audience and increase your passive income.</h4>
                 <br>
                 <div class="row">
                     <a href="{{asset('academic')}}" class="btn btn-veedros btn-veedros-md border-0 mx-auto ">
