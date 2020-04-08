@@ -1,25 +1,29 @@
-$('.sidebar').height($('.video-wrapper').height());
-window.addEventListener('resize', () => {
+document.addEventListener('DOMContentLoaded', () => {
     $('.sidebar').height($('.video-wrapper').height());
-});
-feather.replace();
+    window.addEventListener('resize', () => {
+        $('.sidebar').height($('.video-wrapper').height());
+    });
+    feather.replace();
+})
+    // var options, player;
+    //
+    // options = {
+    //     controlBar: {
+    //         children: [
+    //             'playToggle',
+    //             'volumePanel',
+    //             'progressControl',
+    //             'remainingTimeDisplay',
+    //             'qualitySelector',
+    //             'fullscreenToggle',
+    //         ],
+    //     },
+    // };
+    //
+    // player = videojs('player', options);
 
-    var options, player;
 
-    options = {
-        controlBar: {
-            children: [
-                'playToggle',
-                'volumePanel',
-                'progressControl',
-                'remainingTimeDisplay',
-                'qualitySelector',
-                'fullscreenToggle',
-            ],
-        },
-    };
-
-    player = videojs('player', options);
+const player = new Plyr('#player');
 
     let likeButtons = document.querySelectorAll('.like-btn');
     for(let i = 0; i < likeButtons.length; i++){
