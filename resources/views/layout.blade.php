@@ -276,14 +276,14 @@
                                     <li class="footer-list-header ">
                                         <p>LINKS</p>
                                     </li>
-                                    <li class="w-33-mine">
-                                    <a class="nav-link" href="{{asset("courses")}}">Courses</a>
+                                    <li class="w-33-mine my-3">
+                                    <a class="" href="{{asset("courses")}}">Courses</a>
                                     </li >
-                                    <li class="w-33-mine">
-                                    <a class="nav-link" href="{{asset("teach")}}">Teach</a>
+                                    <li class="w-33-mine my-3">
+                                    <a class="" href="{{asset("teach")}}">Teach</a>
                                     </li >
-                                    <li class="w-33-mine">
-                                    <a class="nav-link" href="{{asset("academic")}}">Academic</a>
+                                    <li class="w-33-mine my-3">
+                                    <a class="" href="{{asset("academic")}}">Academic</a>
                                     </li>
                                 </ul>
                             </div>
@@ -293,31 +293,30 @@
                                     <li class="footer-list-header">
                                         <p>KNOWLEDGE</p>
                                     </li>
-                                    <li class="w-50-mine">
-                                    <a class="nav-link" href="{{asset("privacy_policy")}}">Privacy Policy</a>
+                                    <li class="w-50-mine my-3">
+                                    <a class="" href="{{asset("privacy_policy")}}">Privacy Policy</a>
                                     </li>
-                                    <li class="w-50-mine">
-                                    <a class="nav-link" href="{{asset("review_us")}}">Review Us</a>
+                                    <li class="w-50-mine my-3">
+                                    <a class="" href="{{asset("review_us")}}">Review Us</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-12 col-lg-5 ">
-                                <ul>
+                                <ul class="contact-email">
                                     <li class="footer-list-header">
-                                        <p>CONTACT</p>
+                                        <p>CONTACTS</p>
                                     </li>
-                                    <li>
-                                        <P>Want to learn more? We'll reach out over email to set up a call</P>
+                                    <li class="my-1">
+                                        <a href="mailto:support@veedros.com">support@veedros.com</a>
                                     </li>
-                                    <li>
-                                        <div class="input-group signup-field m-auto wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; opacity: 1;">
-                                            <input type="email" size="5" class="form-control email-input border-0" placeholder="Enter your email">
-                                            <div class="btn-container email-field-props">
-                                                <button class="btn btn-veedros btn-veedros-inline-input border-0" type="button" data-toggle="modal" data-target="#signupModal">
-                                                <i class="fa fa-chevron-right"></i>
-                                                </button>
-                                            </div>
-                                        </div>
+                                    <li class="my-1">
+                                        <a href="mailto:khaled@veedros.comm">khaled@veedros.com</a>
+                                    </li>
+                                    <li class="my-1">
+                                        <a href="mailto:alaa@veedros.com">alaa@veedros.com</a>
+                                    </li>
+                                    <li class="my-1">
+                                        <a href="mailto:abdulrhman@veedros.com">abdulrhman@veedros.com</a>
                                     </li>
                                 </ul>
                             </div>
@@ -328,9 +327,9 @@
                     <div class="d-flex justify-content-between">
                         <p>Veedros copyrights reserved 2020</p>
                         <div>
-                        <p>OR CONTACT US <span><a href="">support@veedros.com</a></span></p>
+                            <a href="https://www.facebook.com/veedrosedu/"><i  class="fab fa-facebook-square"></i></a>
+                            <a href=""><i class="fab fa-twitter"></i></a>
                         </div>
-                        <p>all write receved</p>
                     </div>
                 </div>
             </div>
