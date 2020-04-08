@@ -24,8 +24,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+         $schedule->call(function(){
+             $entries = DB::table('login_tokens')->where('created_at', '<=', \Carbon\Carbon::now()->subMinutes(60)->toDateTimeString())->get();
+             foreach ($entries as $entry){
+                 DB::table('login_tokens')->where('id', $entry->id)->delete();
+             }
+         })->everyThirtyMinutes();
     }
 
     /**
