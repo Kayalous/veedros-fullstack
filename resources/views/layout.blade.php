@@ -60,7 +60,7 @@
                 </form>
                 <div class="register-prompt forgot-password mb-3" id="login-alt-cont">
                     <h6>Forgot password?</h6>
-                    <a class="dot-hover dot-hover-red" href="#">Reset now</a>
+                    <a class="dot-hover dot-hover-red" href="{{asset('/password/reset')}}">Reset now</a>
                 </div>
                 <div class="register-prompt mb-3">
                     <h6>Don't have an account?</h6>
@@ -75,9 +75,9 @@
                 <hr>
                 <div class="d-flex justify-content-center flex-column align-items-center w-100">
                     <h6>Or you can login with:</h6>
-                    <div class="d-flex justify-content-around align-items-center w-100 mt-3 border-0">
-                        <a href="{{ route('login.facebook') }}" title="Facebook" class="btn btn-facebook btn-lg border-0"><i class="fab fa-facebook-f mr-2"></i>Facebook</a>
-                        <a href="{{ route('login.google') }}" title="Google" class="btn btn-google btn-lg border-0"><i class="fab fa-google mr-2"></i>Google</a>
+                    <div class="d-flex flex-wrap justify-content-around align-items-center w-100 mt-3 border-0">
+                        <a href="{{ route('login.facebook') }}" title="Facebook" class="btn btn-facebook btn-lg border-0 my-2"><i class="fab fa-facebook-f mr-2"></i>Facebook</a>
+                        <a href="{{ route('login.google') }}" title="Google" class="btn btn-google btn-lg border-0 my-2"><i class="fab fa-google mr-2"></i>Google</a>
                     </div>
                 </div>
             </div>
