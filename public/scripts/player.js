@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         $('.sidebar').height($('.video-wrapper').height());
     });
     let progressContainer = document.querySelector('.plyr__progress')
-    for(let i = 0; i<3; i++){
+    for(let i = 0; i<4; i++){
         let dot = document.createElement('div');
         dot.classList.add('player-dot');
         dot.classList.add(`p${i}`);
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let tip = tippy(dot, {
             allowTitleHTML: true,
-            content: `Go to comments`,
+            content: `Do something (Go to cheat sheet, pause video, go to quiz, etc...)`,
             delay: [100, 50],
             interactive: true,
             placement: "top",
