@@ -2,7 +2,8 @@
 
 @section('libraryCSS')
      <!-- video js CSS  -->
-    <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
+{{--    <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />--}}
+     <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
     <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
 
 @endsection
@@ -14,13 +15,13 @@
     <div class="new-bg"></div>
     <section class="player-container my-5 pt-5 px-3">
         <div class="video-wrapper my-auto">
-            <video id="player" class="video-js vjs-default-skin vjs-16-9" controls preload="auto"
+            <video id="player" class="" controls preload="auto"
                    width="640" height="264"
-                   data-setup='{}'>
+                   controls data-plyr-config="{ 'settings': '['captions', 'quality', 'speed', 'loop']' }">
 
-                <source src="https://veedros.s3.eu-central-1.amazonaws.com/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%A7%D8%AA%D9%8A%D9%87+%D8%A7%D9%84%D9%81%D9%84%D8%A7%D8%AD%D9%8A.mp4" type="video/mp4" label="720P" selected="true">
-                <source src="https://veedros.s3.eu-central-1.amazonaws.com/y2mate.com+-+%D8%A3%D9%8A%D9%88%D9%87+%D8%A3%D9%86%D8%A7+%D8%AD%D8%B4%D8%A7%D8%B4_weUOHUbKBuk_360p.mp4" type="video/mp4" label="480P">
-                <source src="https://veedros.s3.eu-central-1.amazonaws.com/y2mate.com+-+%D8%A3%D9%8A%D9%88%D9%87+%D8%A3%D9%86%D8%A7+%D8%AD%D8%B4%D8%A7%D8%B4_weUOHUbKBuk_144p.mp4" type="video/mp4" label="360P">
+                <source src="https://veedros.s3.eu-central-1.amazonaws.com/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%A7%D8%AA%D9%8A%D9%87+%D8%A7%D9%84%D9%81%D9%84%D8%A7%D8%AD%D9%8A.mp4" type="video/mp4" size="720" selected="true">
+                <source src="https://veedros.s3.eu-central-1.amazonaws.com/y2mate.com+-+%D8%A3%D9%8A%D9%88%D9%87+%D8%A3%D9%86%D8%A7+%D8%AD%D8%B4%D8%A7%D8%B4_weUOHUbKBuk_360p.mp4" type="video/mp4" size="480">
+                <source src="https://veedros.s3.eu-central-1.amazonaws.com/y2mate.com+-+%D8%A3%D9%8A%D9%88%D9%87+%D8%A3%D9%86%D8%A7+%D8%AD%D8%B4%D8%A7%D8%B4_weUOHUbKBuk_144p.mp4" type="video/mp4" size="360">
                 <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading
                     to a web browser that
@@ -339,8 +340,9 @@
 
 @section('libraryJS')
     <!-- video js -->
-    <script src="https://vjs.zencdn.net/7.6.6/video.min.js"></script>
-    <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
+{{--    <script src="https://vjs.zencdn.net/7.6.6/video.min.js"></script>--}}
+{{--    <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>--}}
+    <script src="https://cdn.plyr.io/3.5.10/plyr.polyfilled.js"></script>
     <!-- Axios JS -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @endsection
