@@ -257,17 +257,86 @@
 </nav>
 @yield('content')
 <!-- =====================================  FOOTER ========================================= -->
-<div class="container">
-    <div class="text-center Copyright">
-        <p class="">Veedros All rights reseved 2020</p>
-        <div>
-            <a href=""><img class="mx-3" src="{{asset('images/Icons')}}/twitter.svg" alt=""></a>
-            <a href=""><img src="{{asset('images/Icons')}}/LinkedIn.svg" alt=""></a>
+<section>
+<div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4 align-self-center">
+                    <div class="footer-img-media">
+                        <img class="img-fluid-mine" style="width: 120px;" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
+                                               alt="Logo">
+                     </div>
 
+                </div>
+                <div class="col-12 col-lg-8 align-self-center">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-12 col-lg-3 ">
+                                <ul>
+                                    <li class="footer-list-header ">
+                                        <p>LINKS</p>
+                                    </li>
+                                    <li class="w-33-mine">
+                                    <a class="nav-link" href="{{asset("courses")}}">Courses</a>
+                                    </li >
+                                    <li class="w-33-mine">
+                                    <a class="nav-link" href="{{asset("teach")}}">Teach</a>
+                                    </li >
+                                    <li class="w-33-mine">
+                                    <a class="nav-link" href="{{asset("academic")}}">Academic</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-12 col-lg-4">
+                                <ul>
+                                    <li class="footer-list-header">
+                                        <p>KNOWLEDGE</p>
+                                    </li>
+                                    <li class="w-50-mine">
+                                    <a class="nav-link" href="{{asset("privacy_policy")}}">Privacy Policy</a>
+                                    </li>
+                                    <li class="w-50-mine">
+                                    <a class="nav-link" href="{{asset("review_us")}}">Review Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-lg-5 ">
+                                <ul>
+                                    <li class="footer-list-header">
+                                        <p>CONTACT</p>
+                                    </li>
+                                    <li>
+                                        <P>Want to learn more? We'll reach out over email to set up a call</P>
+                                    </li>
+                                    <li>
+                                        <div class="input-group signup-field m-auto wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; opacity: 1;">
+                                            <input type="email" size="5" class="form-control email-input border-0" placeholder="Enter your email">
+                                            <div class="btn-container email-field-props">
+                                                <button class="btn btn-veedros btn-veedros-inline-input border-0" type="button" data-toggle="modal" data-target="#signupModal">
+                                                <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-3 mt-5 copyrights">
+                    <div class="d-flex justify-content-between">
+                        <p>Veedros copyrights reserved 2020</p>
+                        <div>
+                        <p>OR CONTACT US <span><a href="">support@veedros.com</a></span></p>
+                        </div>
+                        <p>all write receved</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-</div>
+  </section>
 
 <!-- ============== END ====================  FOOTER ============== END ================= -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
