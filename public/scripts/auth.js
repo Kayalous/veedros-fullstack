@@ -70,9 +70,24 @@ function userFieldsValidation(
   emailField.onfocusout = function () {
     validateEmail();
   };
+
   passwordField.onfocusout = function () {
     validatePassword();
   };
+
+
+    passwordField.oninput = function () {
+        if (/^[A-Za-z0-9!@#\$%\^&\*]{8,100}$/.test(passwordField.value)) {
+            passwordField.classList.remove("is-invalid");
+            passwordField.classList.add("is-valid");
+        }
+    }
+    emailField.oninput =  () => {
+        if (/\S+@\S+\.\S+/.test(emailField.value)) {
+            emailField.classList.remove("is-invalid");
+            emailField.classList.add("is-valid");
+        }
+    }
   passwordToggle.onclick = function () {
     passwordCont.classList.add("d-none");
     requirePassword = false;
@@ -84,24 +99,6 @@ function userFieldsValidation(
         modalHeader.innerHTML = "Just enter your email to sign up. It's easier and more secure! <br/> You'll receive an email each time you want to login with a magic link that will log you in."
 
   };
-    $(".btn-veedros-inline-input").click(function () {
-        let landingInput = $(this)
-            .parent()
-            .siblings(".email-input")
-            .val();
-
-        $("#signup-email-field").val(landingInput);
-
-        if (/\S+@\S+\.\S+/.test(landingInput)){
-            document.querySelector("#signup-button").click();
-            document.querySelector(".btn-veedros-inline-input").innerHTML = '<span class="spinner-grow text-light spinner-grow-sm mr-2"></span> Loading...';
-            document.querySelector(".btn-veedros-inline-input").disabled = true;
-        }
-        else{
-            validateEmail()
-            $('#signupModal').modal('show')
-        }
-    });
 }
 //login validation
 userFieldsValidation(

@@ -287,7 +287,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            
+
                             <div class="col-12 col-lg-4">
                                 <ul>
                                     <li class="footer-list-header">
@@ -354,9 +354,9 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 @yield('libraryJS')
 <!-- App javascript  -->
-<script src="https://veedros.s3.eu-central-1.amazonaws.com/scripts/app.js"></script>
+<script src="{{asset('scripts')}}/app.js"></script>
 @if(!Auth::check())
-<script src="https://veedros.s3.eu-central-1.amazonaws.com/scripts/auth.js"></script>
+<script src="{{asset('scripts')}}/auth.js"></script>
 @endif
 <script>
     feather.replace();
