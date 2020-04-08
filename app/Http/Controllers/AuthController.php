@@ -12,6 +12,6 @@ class AuthController extends Controller
     public function passwordlessAuthenticate(LoginToken $token){
         Auth::login($token->user);
         $token->delete();
-        return redirect('/dashboard');
+        return back();
     }
 }

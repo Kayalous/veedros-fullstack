@@ -90,6 +90,8 @@ function userFieldsValidation(
     }
   passwordToggle.onclick = function () {
     passwordCont.classList.add("d-none");
+    passwordField.value = '';
+    console.log(passwordField.value);
     requirePassword = false;
     altCont.classList.add("d-none");
     magicLink.classList.add("d-none");
