@@ -455,3 +455,45 @@
     fill: #FF6961;
     stroke: #FF696100 !important;
 }
+
+.plyr--full-ui input[type=range] {
+    color: #65D3BF;
+}
+
+.plyr__control--overlaid {
+    background: rgba(101,211,191, .8);
+}
+
+.plyr--video .plyr__control.plyr__tab-focus,
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded=true] {
+    background: #65D3BF;
+}
+
+.plyr__control.plyr__tab-focus {
+    box-shadow: 0 0 0 5px rgba(101,211,191, .5);
+}
+
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+    background: #65D3BF;
+}
+
+.player-dot{
+    background: #65D3BF;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -7.5px;
+    margin-top: -7.5px;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    z-index: 99999;
+}
+.player-dot:hover{
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+}

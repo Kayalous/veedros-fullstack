@@ -3,6 +3,31 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         $('.sidebar').height($('.video-wrapper').height());
     });
+    let progressContainer = document.querySelector('.plyr__progress')
+    for(let i = 0; i<3; i++){
+        let dot = document.createElement('div');
+        dot.classList.add('player-dot');
+        dot.classList.add(`p${i}`);
+
+        let randomOffset = Math.ceil(Math.random() * 100)
+        dot.style.left = `${randomOffset}%`;
+        dot.onclick = () => {
+            player.pause();
+            window.location = '#comments';
+        }
+
+        let tip = tippy(dot, {
+            allowTitleHTML: true,
+            content: `Go to comments`,
+            delay: [100, 50],
+            interactive: true,
+            placement: "top",
+            theme: "light",
+            touch: false
+        });
+        progressContainer.appendChild(dot);
+    }
+
     feather.replace();
 })
     // var options, player;

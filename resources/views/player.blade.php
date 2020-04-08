@@ -284,7 +284,7 @@
         @if($controllerSession->isFirstSession())
         <br>
         <h2 class="mt-5">Leave a comment</h2>
-        <form action="{{asset("/comment")}}" method="POST" class="row mt-4 px-4">
+        <form action="{{asset("/comment")}}" method="POST" class="row mt-4 px-4" id="comments">
             @csrf
             <div class="col-12 profile-form-field  border-light border-radius-sm py-3 px-4">
                 <div class="my-2 px-1 row">
