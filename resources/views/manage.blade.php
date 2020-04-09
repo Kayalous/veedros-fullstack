@@ -40,28 +40,9 @@
                                                 <h5>Phone number</h5>
                                                 <input type="text" name="phone" id="phone" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Your phone number here" />
                                             </div>
-                                            <div class=" my-4 change-email">
-                                                <input class="menu-btn" type="checkbox" id="email-menu-btn" />
-                                                <h5>{{Auth::user()->email}}</h5>
-                                                <label class="menu-text" for="email-menu-btn">
-                                                <a>change Email</a>
-                                                </label>
-                                                <ul class="menu pt-3">
-                                                    <li>
-                                                        <div class="input-group ">
-                                                            <h5>Enter your new Email</h5>
-                                                            <input type="text" name="email" id="email" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@gmail.com" />
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                    <div class=" text-center my-3">
-                                                            <a  class="btn btn-veedros-new  btn-veedros-md border-0 mx-auto ">
-                                                                    <span class="mx-3 text-white">Submit</span>
-                                                                </a>
-                                                                
-                                                    </div>
-                                                    </li>
-                                                </ul>
+                                            <div class="input-group mb-2">
+                                                <h5>Email</h5>
+                                                <input type="text" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="abdulrhmanelkayal88@gmail.com">
                                             </div>
                                         </div>
                                     </div>
@@ -73,21 +54,38 @@
                                                 <ul class="menu">
 
                                                     <li>
-                                                                        <div class="row mt-4">
-                                                                    <div class="col-md-6">
-                                                                        <div class="input-group mb-2">
-                                                                            <h5>New password</h5>
-                                                                            <div class="d-flex w-100">
-                                                                                <input type="password" name="password" id="password" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="● ● ● ● ● ● ● ●"> <button class="btn btn-secondary-veedros ml-2" id="show-password-btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg></button>
-                                                                            </div>
+                                                        <div class="row mt-4">
+                                                                <div class="col-12">
+                                                                    <div class="row">
+                                                                    
+                                                                        <div class="col-md-6">
+                                                                                <div class="input-group mb-2">
+                                                                                        <h5>Old password</h5>
+                                                                                        <div class="d-flex w-100">
+                                                                                            <input type="password" name="password" id="password" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="● ● ● ● ● ● ● ●"> <button class="btn btn-secondary-veedros ml-2" id="show-password-btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg></button>
+                                                                                        </div>
+                                                                                    </div>
                                                                         </div>
                                                                     </div>
-                                                            <div class="col-md-6">
-                                                                <div class="input-group mb-2">
-                                                                    <h5>Repeat password</h5>
-                                                                    <input type="password" id="password-repeat" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="● ● ● ● ● ● ● ●">
                                                                 </div>
-                                                            </div>
+                                                                <div class="col-12">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                                <div class="input-group mb-2">
+                                                                                    <h5>New password</h5>
+                                                                                    <div class="d-flex w-100">
+                                                                                        <input type="password" name="password" id="password" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="● ● ● ● ● ● ● ●"> <button class="btn btn-secondary-veedros ml-2" id="show-password-btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                                <div class="input-group mb-2">
+                                                                                    <h5>Repeat password</h5>
+                                                                                    <input type="password" id="password-repeat" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="● ● ● ● ● ● ● ●">
+                                                                                </div>
+                                                                        </div>
+                                                                     </div>   
+                                                                </div>
                                                         </div>
                                                     </li>
                                                     <li>
