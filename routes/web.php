@@ -13,6 +13,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Pbmedia\LaravelFFMpeg\FFMpegFacade as FFMpeg;
 
 Route::get('/', function () {
     $courses = \App\Course::all()->take(6);
@@ -104,10 +105,26 @@ Route::get('/manage/instructor/courses/{courseSlug}/advanced', function ($course
     return view("courseManagementAdvanced", ['course'=>$course]);}
 )->name('manage.course.content.advanced');
 
-Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', function (\Illuminate\Http\Request $request){
+Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', function (\Illuminate\Http\Request $request,$courseSlug, $sessionId){
 
-    $path = Storage::disk('public')->put('temp-video',$request['vid']);
-    \App\Jobs\ConvertVideoForUploading::dispatch($path);
+    $session = \App\Session::where('id', $sessionId)->first();
+    $chapter = $session->chapter;
+    $course = $chapter->course;
+    $instructor = $course->instructor;
+    $videoUrlSavePath = $instructor->display_name . '/' . $course->slug . '/' . $chapter->slug . '/' . $session->slug;
+
+
+
+
+
+    //Get file from temp dir
+    $filepond = app(Sopamo\LaravelFilepond\Filepond::class);
+    $tempVideoPath = $filepond->getPathFromServerId($request['filepond']);
+    $rawVideoFile = new \Illuminate\Http\File($tempVideoPath);
+    //Save file in public directory so that FFMPEG can access it
+    $rawVideoFilePath = Storage::disk('public')->put('temp-video',$rawVideoFile);
+    //Dispatch the encode job
+    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath);
     return "okay I'm working";
 });
 });

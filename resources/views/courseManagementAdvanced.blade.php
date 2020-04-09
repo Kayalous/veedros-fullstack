@@ -168,7 +168,7 @@
     <form class="mb-5" action="300/upload-video" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="file"
-               class=""
+               class="filepond"
                name="vid"/>
         <div class="row text-center mt-5">
             <button type="submit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">
