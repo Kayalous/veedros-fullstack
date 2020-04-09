@@ -327,8 +327,8 @@
                     <div class="d-flex justify-content-between">
                         <p>Veedros copyrights reserved 2020</p>
                         <div>
-                            <a href="https://www.facebook.com/veedrosedu/"><i  class="fab fa-facebook-square"></i></a>
-                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/veedrosedu/" target="_blank"><i  class="fab fa-facebook-square"></i></a>
+                            <a href=""><i class="fab fa-twitter" target="_blank"></i></a>
                         </div>
                     </div>
                 </div>
