@@ -124,8 +124,11 @@ Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', 
     //Save file in public directory so that FFMPEG can access it
     $rawVideoFilePath = Storage::disk('public')->put('temp-video',$rawVideoFile);
     //Dispatch the encode job
-    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath);
-    return "okay I'm working";
+    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath, '360');
+    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath, '480');
+    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath, '720');
+
+    return "okay I'm working. Saving to " . $videoUrlSavePath;
 });
 });
 

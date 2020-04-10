@@ -14,16 +14,17 @@ class ConvertVideoForUploading implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public $rawVideoFilePath, $videoUrlSavePath;
+    public $rawVideoFilePath, $videoUrlSavePath, $encodingRes;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($rawVideoFilePath, $videoUrlSavePath)
+    public function __construct($rawVideoFilePath, $videoUrlSavePath, $encodingRes)
     {
         $this->rawVideoFilePath = $rawVideoFilePath;
         $this->videoUrlSavePath = $videoUrlSavePath;
+        $this->encodingRes = $encodingRes;
     }
 
     /**
@@ -39,12 +40,12 @@ class ConvertVideoForUploading implements ShouldQueue
         $highBitrate = (new \FFMpeg\Format\Video\X264('libmp3lame', 'libx264'))->setKiloBitrate(2500);
         //Open the video file using FFMPEG
         $rawVideo = FFMpeg::fromDisk('public')->open($this->rawVideoFilePath);
+        if($this->encodingRes === '360')
         $fmpeg = $rawVideo->export()->toDisk('s3')->inFormat($lowBitrate)->save($this->videoUrlSavePath . '/360p.mp4');
-//    $rawVideoFilePath = Storage::disk('public')->delete('temp-video',$rawVideoFile);
-//        dd($fmpeg);
+        if($this->encodingRes === '480')
         $fmpeg = $rawVideo->export()->toDisk('s3')->inFormat($midBitrate)->save($this->videoUrlSavePath . '/480p.mp4');
+        if($this->encodingRes === '720')
         $fmpeg = $rawVideo->export()->toDisk('s3')->inFormat($highBitrate)->save($this->videoUrlSavePath . '/720p.mp4');
-//        $fmpeg = $rawVideo->export()->toDisk('s3')->save($this->videoUrlSavePath . '/1080p.mp4');
         return;
     }
 }
