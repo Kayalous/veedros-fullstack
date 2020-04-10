@@ -128,7 +128,7 @@ Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', 
     \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath, '480');
     \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath, '720');
 
-    return "okay I'm working. Saving to " . $videoUrlSavePath;
+    return "okay I'm working. Saving to " . $videoUrlSavePath . 'kbye.';
 });
 });
 
