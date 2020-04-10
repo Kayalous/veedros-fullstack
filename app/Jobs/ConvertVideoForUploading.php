@@ -43,17 +43,14 @@ class ConvertVideoForUploading implements ShouldQueue
 
         if($this->encodingRes === '360'){
             $fmpeg = $rawVideo->export()->toDisk('s3')->inFormat($lowBitrate)->save($this->videoUrlSavePath . '/360p.mp4');
-            return;
         }
 
         if($this->encodingRes === '480'){
             $fmpeg = $rawVideo->export()->toDisk('s3')->inFormat($midBitrate)->save($this->videoUrlSavePath . '/480p.mp4');
-            return;
         }
 
         if($this->encodingRes === '720'){
             $fmpeg = $rawVideo->export()->toDisk('s3')->save($this->videoUrlSavePath . '/720p.mp4');
-            return;
         }
 
     }
