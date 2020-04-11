@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Facade\Ignition\Exceptions\ViewException;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Database\Eloquent\Model;
@@ -54,5 +55,55 @@ class Course extends Model
             $sessionCount += $chapter->sessions->count();
         }
         return $sessionCount;
+    }
+
+    public static function secs_to_str ($duration)
+    {
+        $periods = array(
+            'Hour' => 3600,
+            'Minute' => 60
+        );
+
+        $parts = array();
+
+        foreach ($periods as $name => $dur) {
+            $div = floor($duration / $dur);
+
+            if ($div == 0)
+                continue;
+            else
+                if ($div == 1)
+                    $parts[] = $div . " " . $name;
+                else
+                    $parts[] = $div . " " . $name . "s";
+            $duration %= $dur;
+        }
+
+        $last = array_pop($parts);
+
+        if (empty($parts))
+            return $last;
+        else
+            return join(', ', $parts) . " and " . $last;
+    }
+
+    public static function calculateAndSaveTotalRuntime(Course $course){
+        $totalRuntime = 0;
+        foreach ($course->chapters as $chapter){
+            foreach ($chapter->sessions as $session){
+                $video = $session->video;
+                $totalRuntime += $video->duration_seconds;
+            }
+        }
+        $totalRuntimeReadable = Course::secs_to_str($totalRuntime);
+        $course->update([
+            'duration_seconds' => $totalRuntime,
+            'duration' => $totalRuntimeReadable]);
+    }
+
+    public function hoursOnly(){
+        $exploded = explode(' ', $this->duration);
+        $hours = $exploded[0] . ' ' . $exploded[1];
+        return $hours;
     }
 }

@@ -80,10 +80,13 @@ Route::post('/manage/instructor/course/price', 'CourseController@editPrice')->na
 Route::post('/manage/instructor/course/objective', 'CourseController@editObjective')->name('manage.courses.objective');
 Route::post('/manage/instructor/course/newChapter', 'CourseController@newChapter')->name('manage.courses.newChapter');
 Route::post('/manage/instructor/course/newSession', 'CourseController@newSession')->name('manage.courses.newSession');
+Route::post('/manage/instructor/course/newMilestone', 'CourseController@newMilestone')->name('manage.courses.newMilestone');
 Route::post('/manage/instructor/course/editChapter', 'CourseController@editChapter')->name('manage.courses.editChapter');
 Route::post('/manage/instructor/course/editSession', 'CourseController@editSession')->name('manage.courses.editSession');
+Route::post('/manage/instructor/course/editMilestone', 'CourseController@editMilestone')->name('manage.courses.editMilestone');
 Route::get('/manage/instructor/course/deleteSession/{id}', 'CourseController@deleteSession')->name('manage.courses.deleteSession');
 Route::get('/manage/instructor/course/deleteChapter/{id}', 'CourseController@deleteChapter')->name('manage.courses.deleteChapter');
+Route::post('/manage/instructor/course/updateVideoData/{id}', 'CourseController@updateVideoData')->name('manage.courses.updateVideoData');
 Route::post('/manage/instructor/course/recommendation', 'CourseController@editRecommendation')->name('manage.courses.recommendation');
 Route::get('/manage/instructor/courses/{courseSlug}', function ($courseSlug){
     $instructor = Auth::user()->instructor;
@@ -124,11 +127,9 @@ Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', 
     //Save file in public directory so that FFMPEG can access it
     $rawVideoFilePath = Storage::disk('public')->put('temp-video',$rawVideoFile);
     //Dispatch the encode job
-    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath, '360');
-    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath, '480');
-    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath, '720');
+    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath);
 
-    return "okay I'm working. Saving to " . $videoUrlSavePath . 'kbye...';
+    return "okay I'm working. Saving to " . $videoUrlSavePath . ' Started at ' . \Carbon\ Carbon::now()->toTimeString();
 });
 });
 
@@ -172,5 +173,4 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 

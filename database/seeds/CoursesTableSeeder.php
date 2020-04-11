@@ -23,7 +23,7 @@ class CoursesTableSeeder extends Seeder
             $name = $faker->name;
             $slug = Str::slug($name, '-');
 
-            \App\Course::create([
+            $course = \App\Course::create([
                 'name' => $name,
                 'instructor_id' => 1,
                 'img' => "https://veedros.s3.eu-central-1.amazonaws.com/courses/2/hellloo/images/tdzHq4nTU7zkOOmjoTEXVq8ZFlpqoTBAxIljBlhl.jpeg",
@@ -53,13 +53,21 @@ class CoursesTableSeeder extends Seeder
                             else
                                 $chapterId = $j + 5 * ($i - 1);
 
-                            \App\Session::create([
+
+                            $session = \App\Session::create([
                                 'chapter_id' => $chapterId,
                                 'name' => $name,
                                 'slug' => $slug,
-                                'about' => $faker->address,
-                                'duration' =>$duration,
-                                'link' => 'https://veedros.s3.eu-central-1.amazonaws.com/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%A7%D8%AA%D9%8A%D9%87+%D8%A7%D9%84%D9%81%D9%84%D8%A7%D8%AD%D9%8A.mp4']);
+                                'about' => $faker->paragraph(5)]);
+
+                            $video = \App\Video::create([
+                                'session_id' => $session->id,
+                                'link_360' => 'https://veedros.s3.eu-central-1.amazonaws.com/Test-videos/360p.mp4',
+                                'link_480' => 'https://veedros.s3.eu-central-1.amazonaws.com/Test-videos/480p.mp4',
+                                'link_720' => 'https://veedros.s3.eu-central-1.amazonaws.com/Test-videos/720p.mp4',
+                                'duration' => '3:30',
+                                'duration_seconds' => '210'
+                            ]);
                             for($h = 0; $h < 3; $h++)
                                 \App\Objective::create([
                                     'session_id' => $sessionCounter,
@@ -70,6 +78,7 @@ class CoursesTableSeeder extends Seeder
 
                         }
                 }
+            \App\Course::calculateAndSaveTotalRuntime($course);
         }
         for($i = 1; $i <= 10; $i++){
 
@@ -80,6 +89,8 @@ class CoursesTableSeeder extends Seeder
                      \App\Recommendation::create(['course_id' => $i,
                         'recommendation' => $faker->colorName]);
         }
+
+
 
 
     }

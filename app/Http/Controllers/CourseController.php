@@ -9,7 +9,9 @@ use App\Objective;
 use App\Recommendation;
 use App\Saved;
 use App\Session;
+use App\Video;
 use Faker\Factory as Faker;
+use FFMpeg\FFProbe;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\File as fileFacede;
 
@@ -83,13 +85,23 @@ class CourseController extends Controller
             'about' => $course->name . "'s first chapter description",
         ]);
         //create the first session
-        Session::create([
+        $session = Session::create([
             'chapter_id' => $chapter->id,
             'name' => "Introduction",
             'slug' => Str::slug($course->name . "'s first session", '-'),
-            'link' => ' ',
-            'duration' => '00:00',
             'about' => $course->name . "'s session description",
+        ]);
+
+        $video = Video::create([
+            'session_id' => $session->id
+        ]);
+        $faker = Faker::create();
+        $title = $faker->sentence(4);
+        $body = $faker->paragraph(4);
+        $objective = Objective::create([
+            'session_id' => $session->id,
+            'title' => $title,
+            'objective' => $body
         ]);
         //return the new course page
         return redirect('/manage/instructor/courses/'.$slug);
@@ -234,12 +246,22 @@ class CourseController extends Controller
         $session = Session::create(['chapter_id' => $chapter->id,
             'name' => $randomName,
             'slug' => $slug,
-            'about' => $about,
-            'duration' => '00:00',
             'link' => 'link']);
+        $video = Video::create([
+            'session_id' => $session->id
+        ]);
+
+        $title = $faker->sentence(4);
+        $body = $faker->paragraph(4);
+        $objective = Objective::create([
+            'session_id' => $session->id,
+            'title' => $title,
+            'objective' => $body
+        ]);
         return response(['status'=>'New chapter has been successfully added.','chapterId'=> $chapter->id, 'sessionId' => $session->id], 200);
 
     }
+
     public function newSession(Request $request)
     {
         $course = Auth::user()->instructor->courses->where('slug', $request['course_slug'])->first();
@@ -251,25 +273,37 @@ class CourseController extends Controller
         $randomName = $faker->sentence(3);
         $about = $faker->paragraph(1);
         $slug = Str::slug($randomName, '-');
+
         $session = Session::create(['chapter_id' => $chapter->id,
             'name' => $randomName,
             'slug' => $slug,
-            'about' => $about,
-            'duration' => '00:00',
-            'link' => 'link']);
+            'about' => $about]);
+
+        $video = Video::create([
+            'session_id' => $session->id
+        ]);
+
+        $title = $faker->sentence(4);
+        $body = $faker->paragraph(4);
+        $objective = Objective::create([
+            'session_id' => $session->id,
+            'title' => $title,
+            'objective' => $body
+        ]);
         return response(['status' => 'New session has been successfully added.', 'chapterId' => $chapter->id, 'sessionId' => $session->id, 'session' => $session], 200);
     }
 
-    public function newSessionObjective(Request $request)
+    public function newMilestone(Request $request)
     {
-        $faker = Faker::create();
+        $course = Auth::user()->instructor->courses->where('slug', $request['course_slug'])->first();
         $session = Session::where('id', $request['session_id'])->first();
+        $faker = Faker::create();
         $objective = Objective::create([
             'session_id' => $session->id,
             'title' =>$faker->name,
             'objective' => $faker->paragraph()
         ]);
-        return response(['status'=>'New objective has been successfully added.'], 200);
+        return response(['status'=>'New milestone has been successfully added.'], 200);
     }
 
     public function editChapter(Request $request){
@@ -313,6 +347,24 @@ class CourseController extends Controller
 
     }
 
+    public function editMilestone(Request $request){
+        $validatedData = $request->validate([
+            'title' => 'nullable|max:500',
+            'objective' => 'nullable|max:500',
+            'objectiveId' => 'required'
+        ]);
+        $objective = Objective::where('id', $request['objectiveId'])->first();
+        if($request['title']){
+            $objective->update(['title' => $request['title']]);
+            return response(['status'=>'Milestone title has been updated successfully.'], 200);
+        }
+        if($request['objective']){
+            $objective->update(['objective' => $request['objective']]);
+            return response(['status'=>'Milestone body has been updated successfully.'], 200);
+        }
+        return response(['status'=>'No value entered'], 500);
+    }
+
     public function deleteSession($id){
         $session = Session::where('id', $id)->first();
         $session->delete();
@@ -328,4 +380,35 @@ class CourseController extends Controller
         $chapter->delete();
         return back()->with('success', "This chapter and all it's sessions were deleted successfully.");
     }
+
+    public function updateVideoData(Request $request, $videoId){
+        $validatedData = $request->validate([
+            'link_360' => 'nullable|max:1000',
+            'link_480' => 'nullable|max:1000',
+            'link_720' => 'nullable|max:1000',
+        ]);
+        $ffprobe = FFProbe::create([
+            'ffmpeg.binaries'  => env('FFMPEG_BINARIES', 'ffmpeg'),
+            'ffprobe.binaries' => env('FFPROBE_BINARIES', 'ffprobe'),
+            ]);
+        if($request['link_360'])
+            $request['duration_seconds'] = $ffprobe
+                ->format($request['link_360'])
+                ->get('duration');
+        elseif ($request['link_480'])
+            $request['duration_seconds'] = $ffprobe
+                ->format($request['link_480'])
+                ->get('duration');
+        elseif ($request['link_720'])
+            $request['duration_seconds'] = $ffprobe
+                ->format($request['link_720'])
+                ->get('duration');
+
+        $request['duration'] = gmdate("i:s", $request['duration_seconds']);
+        $video = Video::where('id', $videoId)->first();
+        $video->update(array_filter($request->all()));
+        return back()->with('success', 'Video information updated successfully.');
+    }
+
+
 }

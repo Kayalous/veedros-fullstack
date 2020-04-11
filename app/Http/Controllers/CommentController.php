@@ -20,6 +20,5 @@ class CommentController extends Controller
         if($like !== null){
             return response(['status'=>'Liked'], 200);
         }
-
     }
 }

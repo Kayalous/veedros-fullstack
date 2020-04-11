@@ -33,6 +33,53 @@ function auto_grow(element) {
 }
 
 
+//Manage milestones
+let addMilestoneButtons = document.querySelectorAll('.add-milestone');
+//Manage milestones
+let editMilestoneTitleButtons = document.querySelectorAll('.edit-objective-title');
+let editMilestoneTitleFields = document.querySelectorAll('.session-objective-title-field');
+let editMilestoneBodyButtons = document.querySelectorAll('.edit-objective-body');
+let editMilestoneBodyFields = document.querySelectorAll('.session-objective-body-field');
+let editMilestoneUrl = `${baseUrl}manage/instructor/course/editMilestone`;
+//Edit chapter name staging
+stageButtonsAndInputsToController(editMilestoneTitleButtons, editMilestoneTitleFields, editMilestoneUrl, 'objective', 'title')
+//edit chapter desc staging
+stageButtonsAndInputsToController(editMilestoneBodyButtons, editMilestoneBodyFields, editMilestoneUrl, 'objective', 'objective')
+let lastMilestoneSubmitted = true;
+for(let i = 0; i<addMilestoneButtons.length; i++){
+    let addMilestoneButton = addMilestoneButtons[i];
+    addMilestoneButton.onclick = () => {
+        if(lastMilestoneSubmitted){
+            lastMilestoneSubmitted = false;
+            //create new chapter
+            let ax = new axios({
+                method:'post',
+                url:baseUrl + 'manage/instructor/course/newMilestone',
+                data:{
+                    'course_slug': slug,
+                    'session_id': addMilestoneButton.id,
+                }
+            });
+            ax.then(data=>{
+                showSuccessMessage(data.data.status);
+                //reload after 800ms
+                setTimeout(() => {
+                    location.reload();
+                }, 800)
+            })
+                .catch(err=>{
+                    showFailureMessage(`Failed to create a new milestone. Please try again.`)})
+        }
+        else
+        {
+            showAlertMessage('You need to submit the last milestone before adding a new one.')
+        }
+
+    }
+
+}
+
+
 //Manage sessions
 let addSessionButtons = document.querySelectorAll('.add-session');
 //Manage chapters
@@ -62,7 +109,7 @@ addSessionButton.onclick = () => {
         });
         ax.then(data=>{
             showSuccessMessage(data.data.status);
-            //reload after 100ms
+            //reload after 800ms
             setTimeout(() => {
                 location.reload();
             }, 800)
@@ -106,7 +153,7 @@ addChapterButton.onclick = () => {
         });
         ax.then(data=>{
             showSuccessMessage(data.data.status);
-            //reload after 100ms
+            //reload after 800ms
             setTimeout(() => {
                 location.reload();
             }, 800)
@@ -147,6 +194,8 @@ function stageButtonsAndInputsToController(buttons, fields, url, tableToUpdate ,
                 let idName;
                 if(tableToUpdate === "chapter")
                     idName = "chapterId"
+                else if(tableToUpdate === "objective")
+                    idName = 'objectiveId'
                 else
                     idName = "sessionId"
 
@@ -165,12 +214,6 @@ function stageButtonsAndInputsToController(buttons, fields, url, tableToUpdate ,
                     button.innerHTML = '<i data-feather="edit"></i> Edit';
                     button.children[0].style.stroke = "rgba(0,0,0,.7)";
                     field.innerHTML = field.value;
-                    if(valueToUpdate === "objective"){
-                        lastObjSubmitted = true;
-                    }
-                    else{
-                        lastRecSubmitted = true;
-                    }
                 })
                     .catch(err=>{
                         showFailureMessage(`Failed to update ${valueToUpdate}. Please try again.`)

@@ -18,21 +18,14 @@
             <video id="player" class="" controls preload="auto"
                    width="640" height="264"
                    controls data-plyr-config="{ 'settings': '['captions', 'quality', 'speed', 'loop']' }">
-
-                <source src="https://veedros.s3.eu-central-1.amazonaws.com/%D8%A7%D9%84%D9%83%D8%A7%D8%B1%D8%A7%D8%AA%D9%8A%D9%87+%D8%A7%D9%84%D9%81%D9%84%D8%A7%D8%AD%D9%8A.mp4" type="video/mp4" size="720" selected="true">
-                <source src="https://veedros.s3.eu-central-1.amazonaws.com/y2mate.com+-+%D8%A3%D9%8A%D9%88%D9%87+%D8%A3%D9%86%D8%A7+%D8%AD%D8%B4%D8%A7%D8%B4_weUOHUbKBuk_360p.mp4" type="video/mp4" size="480">
-                <source src="https://veedros.s3.eu-central-1.amazonaws.com/y2mate.com+-+%D8%A3%D9%8A%D9%88%D9%87+%D8%A3%D9%86%D8%A7+%D8%AD%D8%B4%D8%A7%D8%B4_weUOHUbKBuk_144p.mp4" type="video/mp4" size="360">
-                <p class="vjs-no-js">
-                    To view this video please enable JavaScript, and consider upgrading
-                    to a web browser that
-                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports
-                        HTML5 video</a>
-                </p>
+                <source src="{{$controllerSession->video->link_720}}" type="video/mp4" size="720" default>
+                <source src="{{$controllerSession->video->link_480}}" type="video/mp4" size="480">
+                <source src="{{$controllerSession->video->link_360}}" type="video/mp4" size="360">
             </video>
         </div>
         <section class="sidebar ml-3 py-3 px-2">
             <div class="sidebar-wrapper">
-                <h5 class="ml-5">{{\App\Course::getTotalSessionCount($controllerCourse)}} Lessons (1h 19m)</h5>
+                <h5 class="ml-5">{{\App\Course::getTotalSessionCount($controllerCourse)}} Sessions ({{$controllerCourse->duration}})</h5>
                 <div class="list-group">
                     @for($i = 0; $i < count($controllerCourse->chapters); $i++)
                     <button class="list-group-item collapse-button mx-auto {{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? 'watching ' : ''}}" aria-expanded="{{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? "true" : "false"}}" data-toggle="collapse"
@@ -67,7 +60,7 @@
                                 @endif
                                     {{$session->name}}
                             </span>
-                            <span class="duration">{{$session->duration}}</span>
+                            <span class="duration">{{$session->video->duration}}</span>
                         </a>
                         @endforeach
                     </div>
@@ -118,7 +111,7 @@
                             <div class="badge tip-badge py-1">
                                 <h4 class="badge-item">
                                     <i class="far fa-clock"></i>
-                                    <span>16 Hours</span>
+                                    <span>{{$controllerCourse->hoursOnly()}}</span>
                                 </h4>
                             </div>
                         </div>
@@ -320,7 +313,7 @@
                                 </div>
                                 <div class="col-3 d-flex flex-column justify-content-end">
                                     <div class="likes d-flex justify-content-center align-items-center">
-                                    <button class="btn btn-secondary-veedros like-btn more {{Auth::user() ?  $comment->isLikedBy(Auth::user()) ? 'liked' : '' : ''}} " id="{{$comment->id}}"><i
+                                    <button class="btn btn-secondary-veedros like-btn more {{Auth::user() ?  $comment->isLikedBy(Auth::user()) ? 'liked' : '' : ''}}" id="{{$comment->id}}"><i
                                             data-feather="heart"></i>
                                         <span class="ml-2 text-muted">{{$comment->likes()->count()}}</span>
                                     </button>

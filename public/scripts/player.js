@@ -76,6 +76,7 @@ for (let i = 0; i < likeButtons.length; i++) {
                 showAlertMessage('You need to be logged in to like this comment.')
             })
     }
+
 }
 
 function showAlertMessage(message) {
