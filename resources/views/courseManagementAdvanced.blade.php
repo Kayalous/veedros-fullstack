@@ -120,7 +120,7 @@
                                             Edit</button>
                                     </div>
                                 </div>
-                                <form action="/manage/instructor/course/updateVideoData/{{$session->video->id}}" method="post">
+                                <form action="/manage/instructor/course/updateVideoData/{{$session->video->id . '/' . $course->id}}" method="post">
                                 @csrf
                                     <h2 class="mb-3">Video links for this session</h2>
                                     <h5>360p link</h5>

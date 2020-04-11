@@ -381,7 +381,7 @@ class CourseController extends Controller
         return back()->with('success', "This chapter and all it's sessions were deleted successfully.");
     }
 
-    public function updateVideoData(Request $request, $videoId){
+    public function updateVideoData(Request $request, $videoId, $courseId){
         $validatedData = $request->validate([
             'link_360' => 'nullable|max:1000',
             'link_480' => 'nullable|max:1000',
@@ -407,6 +407,8 @@ class CourseController extends Controller
         $request['duration'] = gmdate("i:s", $request['duration_seconds']);
         $video = Video::where('id', $videoId)->first();
         $video->update(array_filter($request->all()));
+        $course = Course::where('id', $courseId)->first();
+        Course::calculateAndSaveTotalRuntime($course);
         return back()->with('success', 'Video information updated successfully.');
     }
 

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\URL;
 
 class Course extends Model
 {
-    protected $fillable = ['price', 'instructor_id', 'about', 'name', 'slug', 'img'];
+    protected $fillable = ['price', 'instructor_id', 'about', 'name', 'slug', 'img', 'duration_seconds', 'duration'];
     public function instructor(){
         return $this->belongsTo(Instructor::class);
     }
