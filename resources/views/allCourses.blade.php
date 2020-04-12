@@ -14,6 +14,14 @@
             <h1>Your career</h1>
             <br>
             <p>A set of courses that will change your life and career.</p>
+            <div class="veedros-search-form-sm w-75 m-auto ">
+                <form class="">
+                    <input class=" form-control profile-form-field email-field-props border-light border-radius-sm is-valid" placeholder="type here..." type="text">
+                    <button class="search-button-sm border-0">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
     <!-- courses -->

@@ -4,12 +4,18 @@
     <link rel="stylesheet" href="{{asset('styles/profile.css')}}">
 @endsection
 @section('content')
-
+            
     <div class="container my-5 py-5">
+        <div class="veedros-search-form-sm w-75 m-auto ">
+        
+        
         <form action="" method="get">
-            <input type="text" name="q">
-            <button type="submit">Submit</button>
+            <input class=" form-control profile-form-field email-field-props border-light border-radius-sm is-valid" placeholder="type here..." type="text" name="q">
+            <button class="search-button-sm border-0" type="submit">
+            <i class="fas fa-arrow-right"></i>
+            </button>
         </form>
+        </div>
         @if($courses)
             @foreach($courses as $course)
             {{$course->name}}

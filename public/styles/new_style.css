@@ -1,4 +1,5 @@
 /* Veedros button  */
+
 .btn-veedros-new {
     font-size: 20px;
     font-weight: 500;
@@ -13,14 +14,11 @@
     -webkit-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
     background-color: #65D3BF !important;
-
     white-space: nowrap;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-
 
 .btn-veedros-new:hover {
     background-color: rgb(87, 179, 162) !important;
@@ -70,7 +68,6 @@
     border-radius: 50px;
 }
 
-
 .nav-pills .nav-link.active {
     background-color: #65D3BF;
 }
@@ -84,6 +81,7 @@
     border-radius: 5px;
     color: white;
 }
+
 .burger {
     height: 3em;
     width: 3em;
@@ -93,13 +91,19 @@
     -webkit-transition: .2s all;
     -o-transition: .2s all;
     transition: .2s all;
-    -webkit-tap-highlight-color: transparent; }
+    -webkit-tap-highlight-color: transparent;
+}
+
 .burger .burger-lines:after {
     left: 0;
-    top: -1em; }
+    top: -1em;
+}
+
 .burger .burger-lines:before {
     left: 1em;
-    top: 1em; }
+    top: 1em;
+}
+
 .burger:after {
     content: '';
     display: block;
@@ -107,11 +111,17 @@
     height: 150%;
     width: 150%;
     top: -25%;
-    left: -25%; }
+    left: -25%;
+}
+
 .burger .burger-lines {
     top: 50%;
-    margin-top: -0.125em; }
-.burger .burger-lines, .burger .burger-lines:after, .burger .burger-lines:before {
+    margin-top: -0.125em;
+}
+
+.burger .burger-lines,
+.burger .burger-lines:after,
+.burger .burger-lines:before {
     pointer-events: none;
     display: block;
     content: '';
@@ -122,42 +132,64 @@
     position: absolute;
     -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
-    transform: rotate(0); }
+    transform: rotate(0);
+}
+
 .burger .burger-lines:after {
     left: 0;
-    top: -1em; }
+    top: -1em;
+}
+
 .burger .burger-lines:before {
     left: 1em;
-    top: 1em; }
-.burger.burger-rotate .burger-lines:after, .burger.burger-rotate .burger-lines:before {
-    width: 2em; }
+    top: 1em;
+}
 
-.burger.burger-rotate .burger-lines, .burger.burger-rotate .burger-lines:after, .burger.burger-rotate .burger-lines:before {
+.burger.burger-rotate .burger-lines:after,
+.burger.burger-rotate .burger-lines:before {
+    width: 2em;
+}
+
+.burger.burger-rotate .burger-lines,
+.burger.burger-rotate .burger-lines:after,
+.burger.burger-rotate .burger-lines:before {
     -webkit-transition: all .2s;
     -o-transition: all .2s;
-    transition: all .2s; }
-
+    transition: all .2s;
+}
 
 .navbar-toggler[aria-expanded="true"] .burger.burger-rotate {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
-    transform: rotate(180deg); }
+    transform: rotate(180deg);
+}
+
 .navbar-toggler[aria-expanded="true"] .burger.burger-rotate .burger-lines {
-    background-color: transparent; }
-.navbar-toggler[aria-expanded="true"] .burger.burger-rotate .burger-lines:before, .navbar-toggler[aria-expanded="true"] .burger.burger-rotate .burger-lines:after {
+    background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .burger.burger-rotate .burger-lines:before,
+.navbar-toggler[aria-expanded="true"] .burger.burger-rotate .burger-lines:after {
     left: 0.5em;
-    top: 0px; }
+    top: 0px;
+}
+
 .navbar-toggler[aria-expanded="true"] .burger.burger-rotate .burger-lines:before {
     -webkit-transform: rotate(135deg);
     -ms-transform: rotate(135deg);
-    transform: rotate(135deg); }
+    transform: rotate(135deg);
+}
+
 .navbar-toggler[aria-expanded="true"] .burger.burger-rotate .burger-lines:after {
     -webkit-transform: rotate(-135deg);
     -ms-transform: rotate(-135deg);
-    transform: rotate(-135deg); }
+    transform: rotate(-135deg);
+}
+
 .burger .burger-lines,
 .burger .burger-lines:after,
-.burger .burger-lines:before {     background-color: #65D3BF;
+.burger .burger-lines:before {
+    background-color: #65D3BF;
 }
 
 .btn-outline {
@@ -166,7 +198,56 @@
     color: #65D3BF;
     transition: all .2s ease-in-out;
 }
+
 .btn-outline:hover {
     border: #65D3BF00 2px solid !important;
+}
 
+
+/* veedros search */
+
+.veedros-search-form-lg,
+.veedros-search-form-sm {
+    position: relative;
+}
+
+.veedros-search-form-lg input {
+    border-radius: 36px;
+    width: 100%;
+    height: 64px;
+    padding-left: 25px;
+    border-radius: 36px ;
+}
+
+.veedros-search-form-sm input {
+    border-radius: 36px;
+    width: 100%;
+    height: 40px;
+    padding-left: 20px;
+    border-radius: 36px !important;
+}
+
+.search-button-lg {
+    background: rgba(255, 255, 255, 1);
+    position: absolute;
+    right: 33px;
+    bottom: 13px;
+    border-radius: 50% ;
+    width: 40px;
+    height: 40px;
+}
+
+.search-button-sm {
+    background: rgb(0, 0, 0);
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50% ;
+    width: 30px;
+    height: 30px;
+}
+
+.veedros-search-form-lg,
+.veedros-search-form-sm i {
+    color: white;
 }

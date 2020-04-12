@@ -18,6 +18,7 @@
     <div class="teach-header teach-with-us-content">
         <h1 class="text-center">We know <br> how it works</h1>
         <h4 class="text-center">We'll give you a hand with <br> your content</h4>
+        
     </div>
     <section class="my-5 header">
         <section class="carousel">
