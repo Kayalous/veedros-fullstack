@@ -175,8 +175,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        //Vimeo
-        Vimeo\Laravel\VimeoServiceProvider::class,
         //video encoding
         Pbmedia\LaravelFFMpeg\FFMpegServiceProvider::class,
         //TNTsearch
@@ -237,7 +235,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Vimeo' => Vimeo\Laravel\Facades\Vimeo::class,
         'FFMpeg' => Pbmedia\LaravelFFMpeg\FFMpegFacade::class,
 
     ],
