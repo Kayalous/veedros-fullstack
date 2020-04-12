@@ -16,6 +16,8 @@
             {{$course->about}}
             {{$course->price}}
                 <br>
+                <br>
+                <br>
             @endforeach
         @endif
         @if($sessions)
@@ -23,12 +25,16 @@
                 {{$session->name}}
                 {{$session->about}}
                 <br>
+                <br>
+                <br>
             @endforeach
         @endif
         @if($chapters)
             @foreach($chapters as $chapter)
                 {{$chapter->name}}
                 {{$chapter->about}}
+                <br>
+                <br>
                 <br>
             @endforeach
         @endif
