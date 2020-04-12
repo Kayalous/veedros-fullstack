@@ -7,9 +7,12 @@ use Facade\Ignition\Exceptions\ViewException;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\URL;
+use Laravel\Scout\Searchable;
 
 class Course extends Model
 {
+    use Searchable;
+
     protected $fillable = ['price', 'instructor_id', 'about', 'name', 'slug', 'img', 'duration_seconds', 'duration'];
     public function instructor(){
         return $this->belongsTo(Instructor::class);
@@ -105,5 +108,10 @@ class Course extends Model
         $exploded = explode(' ', $this->duration);
         $hours = $exploded[0] . ' ' . $exploded[1];
         return $hours;
+    }
+
+    public function searchableAs()
+    {
+        return 'Courses';
     }
 }

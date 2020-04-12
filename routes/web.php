@@ -34,6 +34,8 @@ Route::get('/academic', function () {
     return view('academies');
 })->name('academic');
 
+Route::get('/search/{query?}', 'SearchController@search')->name('search');
+
 Route::get('/testing', function () {
     return view('testing');
 })->name('testing');

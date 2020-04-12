@@ -179,6 +179,10 @@ return [
         Vimeo\Laravel\VimeoServiceProvider::class,
         //video encoding
         Pbmedia\LaravelFFMpeg\FFMpegServiceProvider::class,
+        //TNTsearch
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+        //Laravel scout
+        Laravel\Scout\ScoutServiceProvider::class,
 
 
 

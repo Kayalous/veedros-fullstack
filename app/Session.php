@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Session extends Model
 {
+    use Searchable;
+
     protected $fillable = ['name', 'chapter_id', 'link', 'slug', 'about', 'duration'];
 
     public function chapter(){
@@ -32,5 +35,9 @@ class Session extends Model
             return false;
         else
             return true;
+    }
+    public function searchableAs()
+    {
+        return 'Sessions';
     }
 }

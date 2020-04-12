@@ -160,6 +160,9 @@
         <ul class="navbar-nav nav-items-container">
             @if(Auth::user())
                 @if(!Auth::user()->hasRole('admin'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{asset("search")}}">Search</a>
+                    </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{asset("courses")}}">Courses</a>
             </li>
@@ -182,6 +185,9 @@
                 </li>
             @endif
             @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset("search")}}">Search</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{asset("courses")}}">Courses</a>
                 </li>
