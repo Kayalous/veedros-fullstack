@@ -40,4 +40,12 @@ class Session extends Model
     {
         return 'Sessions';
     }
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->name,
+            'description' => $this->about,
+        ];
+    }
 }

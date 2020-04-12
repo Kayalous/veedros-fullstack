@@ -20,4 +20,12 @@ class Chapter extends Model
     {
         return 'Chapters';
     }
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->name,
+            'description' => $this->about,
+        ];
+    }
 }

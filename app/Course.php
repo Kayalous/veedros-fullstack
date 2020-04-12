@@ -114,4 +114,12 @@ class Course extends Model
     {
         return 'Courses';
     }
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->name,
+            'description' => $this->about,
+        ];
+    }
 }
