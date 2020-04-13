@@ -434,6 +434,21 @@ hr {
     opacity: 0.6;
 }
 
+.btn-redeem::-webkit-input-placeholder {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.btn-redeem::-ms-input-placeholder {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.btn-redeem::placeholder {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
 .email-field-props {
     height: 3.5rem;
     border-radius: 10rem !important;

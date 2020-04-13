@@ -46,9 +46,16 @@ let tip_content = `<div class="tip">
         </div>
     </a>
         <br>
+        <div class="btn-redeem-veedros m-auto ">
+            <form >
+                <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm is-valid" placeholder="Redeem code" type="text">
+                <button class="btn-redeem-icon border-0">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
 
-
-
+        <br>
         <button class=" btn btn-veedros-new btn-veedros-sm border-0 m-auto" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             Log out
         </button>
@@ -58,14 +65,13 @@ let tip_content = `<div class="tip">
 
 let nav_tip = document.createElement("div");
 nav_tip.innerHTML = tip_content;
-if(document.querySelector('#singleElement'))
-tippy('#singleElement', {
-    allowTitleHTML: true,
-    content: tip_content,
-    interactive: true,
-    placement: "bottom",
-    theme: "veedros",
-    trigger: "click focus",
-    boundary: 'window'
-});
-
+if (document.querySelector('#singleElement'))
+    tippy('#singleElement', {
+        allowTitleHTML: true,
+        content: tip_content,
+        interactive: true,
+        placement: "bottom",
+        theme: "veedros",
+        trigger: "click focus",
+        boundary: 'window'
+    });
