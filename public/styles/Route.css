@@ -1,6 +1,5 @@
 .route-header {
     background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/images/route-1920x800.jpg);
-
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,7 +10,6 @@
 }
 
 .content {
-
     text-align: center;
 }
 
@@ -23,7 +21,6 @@
 .content img {
     width: 20%;
     height: auto;
-
 }
 
 .avalible-sessions h2 {
@@ -45,21 +42,13 @@
     width: 100% !important;
     font-weight: 500;
     font-size: 16px;
-    -webkit-box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
-        0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
-        0 0px 15.5px -7px rgba(0, 0, 0, 0.145);
-    box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056),
-        0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1),
-        0 0px 15.5px -7px rgba(0, 0, 0, 0.145);
+    -webkit-box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056), 0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1), 0 0px 15.5px -7px rgba(0, 0, 0, 0.145);
+    box-shadow: 0 0px 0.8px -7px rgba(0, 0, 0, 0.056), 0 0px 1.9px -7px rgba(0, 0, 0, 0.081), 0 0px 3.6px -7px rgba(0, 0, 0, 0.1), 0 0px 15.5px -7px rgba(0, 0, 0, 0.145);
 }
 
 .avalible-sessions .profile-form-field:focus {
-    -webkit-box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
-        0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
-        0 0px 15.5px -6px rgba(0, 0, 0, 0.210);
-    box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084),
-        0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15),
-        0 0px 15.5px -6px rgba(0, 0, 0, 0.210);
+    -webkit-box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084), 0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15), 0 0px 15.5px -6px rgba(0, 0, 0, 0.210);
+    box-shadow: 0 0px 0.8px -6px rgba(0, 0, 0, 0.084), 0 0px 1.9px -6px rgba(0, 0, 0, 0.121), 0 0px 3.6px -6px rgba(0, 0, 0, 0.15), 0 0px 15.5px -6px rgba(0, 0, 0, 0.210);
 }
 
 .avalible-sessions .border-light {
@@ -68,4 +57,174 @@
 
 .avalible-sessions .border-radius-sm {
     border-radius: 10px !important;
+}
+
+
+/* ======================================================== */
+
+.card-body-outter {
+    position: relative;
+    height: 18.375rem;
+    overflow: hidden;
+    width: 18.75rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    border: .0625rem solid #dadce0;
+    cursor: pointer;
+}
+
+.card-body-outter:hover {
+    -webkit-box-shadow: 0 4px 7px -3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 4px 7px -3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 7px -3px rgba(0, 0, 0, 0.3);
+}
+
+.card-body-outter .header {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    /* padding: 1rem 1rem .75rem; */
+    padding: 1rem 1rem 0.75rem;
+    background-image: url(../images/joanna-kosinska-LAaSoL0LrYs-unsplash.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.card-body-outter .header .header-content a {
+    font-family: 'Roboto', sans-serif;
+    text-align: right;
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+
+.card-body-outter a:hover {
+    text-decoration: underline;
+}
+
+.card-body-outter .header p {
+    color: #fff;
+    font-family: 'Google Sans', Roboto, Arial, sans-serif;
+    position: absolute;
+    font-size: .8125rem;
+    font-weight: 400;
+    right: 15px;
+    bottom: 10px;
+}
+
+.header .menu-icon {
+    color: white;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+.icon-overlayer {
+    border-radius: 50%;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 5.5px;
+    top: -6.6px;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.menu-icon:hover .icon-overlayer {
+    background-color: rgba(73, 72, 72, 0.2);
+}
+
+.quick-task {
+    text-align: right;
+    position: relative;
+    height: 137px;
+}
+
+.instructor-pic {
+    left: 17px;
+    top: -40px;
+    position: absolute;
+    background-image: url(../images/05.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    height: 4.6875rem;
+    width: 4.6875rem;
+}
+
+.quick-task p {
+    color: rgba(0, 0, 0, 0.549);
+    font-size: 12px;
+}
+
+.quick-task a {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.body-footer {
+    border-top: .0625rem solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.body-footer i {
+    color: #5f6368;
+    font-size: 22px;
+}
+
+.icon-overlayer {
+    border-radius: 50%;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 4.6px;
+    top: -6.6px;
+    transition: all 0.1s ease-in-out;
+}
+
+.menu-icon:hover .icon-overlayer {
+    background-color: rgba(73, 72, 72, 0.07);
+}
+
+.body-footer .folder-icon,
+.body-footer .id-icon {
+    position: relative;
+}
+
+.body-footer .folder-icon .icon-overlay {
+    border-radius: 50%;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: -9px;
+    top: -7.6px;
+    transition: all 0.1s ease-in-out;
+}
+
+.body-footer .id-icon .icon-overlay {
+    border-radius: 50%;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: -11px;
+    top: -9px;
+    transition: all 0.1s ease-in-out;
+}
+
+.folder-icon:hover .icon-overlay {
+    background-color: rgba(73, 72, 72, 0.05);
+}
+
+.id-icon:hover .icon-overlay {
+    background-color: rgba(73, 72, 72, 0.05);
 }

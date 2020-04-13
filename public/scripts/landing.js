@@ -1,14 +1,15 @@
 let tippyArr = [];
+
 function createTippyTemplates() {
     let card = document.querySelectorAll('.card-body-inner');
     for (let i = 0; i < courses.length; i++) {
         let recString = '';
-        for(let j = 0; j < recommendations[i].length; j++){
-             recString += `<li>
+        for (let j = 0; j < recommendations[i].length; j++) {
+            recString += `<li>
               ${recommendations[i][j].recommendation}
             </li>`
         }
-    let tipContent = `<div class="tip">
+        let tipContent = `<div class="tip">
       <div class="container">
         <h4 class="tip-header text-center">
           ${courses[i].name}
@@ -63,50 +64,48 @@ function createTippyTemplates() {
 
       </div>
       </div>`;
-    let tippyTemp = document.createElement("div");
-    tippyTemp.innerHTML = tipContent;
-    tippyArr.push(tippyTemp);
-    populateTippies();
-  }
+        let tippyTemp = document.createElement("div");
+        tippyTemp.innerHTML = tipContent;
+        tippyArr.push(tippyTemp);
+        populateTippies();
+    }
 }
 createTippyTemplates();
 
 function populateTippies() {
-  for (i = 0; i < tippyArr.length; i++) {
-    let tip = tippy(`${".a" + i}`, {
-      allowTitleHTML: true,
-      content: tippyArr[i],
-      delay: [400, 200],
-      interactive: true,
-      placement: "right",
-      theme: "veedros",
-      touch: false
-    });
-  }
+    for (i = 0; i < tippyArr.length; i++) {
+        let tip = tippy(`${".a" + i}`, {
+            allowTitleHTML: true,
+            content: tippyArr[i],
+            delay: [100, 100],
+            interactive: true,
+            placement: "right",
+            theme: "veedros",
+            touch: false
+        });
+    }
 }
 $(".owl-carousel").owlCarousel({
-  rewind: true,
-  margin: 10,
-  autoplay: true,
-  autoplayTimeout: 4000,
-  nav: true,
-  dotsEach: true,
-  dots: true,
-  responsive: {
-    1200: {
-      items: 2
+    rewind: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    nav: true,
+    dotsEach: true,
+    dots: true,
+    responsive: {
+        1200: {
+            items: 2
+        },
+        992: {
+            items: 1
+        },
+        768: {
+            items: 1
+        },
+        0: {
+            items: 1
+        }
     },
-    992: {
-      items: 1
-    },
-    768: {
-      items: 1
-    },
-    0: {
-      items: 1
-    }
-  },
-  autoplayHoverPause: true
+    autoplayHoverPause: true
 });
-
-
