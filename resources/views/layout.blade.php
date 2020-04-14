@@ -186,6 +186,16 @@
             @endif
             @else
                 <li class="nav-item">
+                    <div class="search-form ">
+                        <form>
+                            <input class="search-input" type="text">
+                            <button class="btn-nav-search">
+                                <div class="search__rectangle"></div>
+                            </button>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{asset("search")}}">Search</a>
                 </li>
                 <li class="nav-item">

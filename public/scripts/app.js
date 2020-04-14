@@ -75,3 +75,28 @@ if (document.querySelector('#singleElement'))
         trigger: "click focus",
         boundary: 'window'
     });
+
+
+
+
+
+
+
+var input = document.querySelector('.search-form');
+var search = document.querySelector('.search-input')
+var button = document.querySelector('.btn-nav-search');
+button.addEventListener('click', function(e) {
+    e.preventDefault();
+    input.classList.toggle('active');
+    search.classList.toggle('shadow-lg');
+
+})
+search.addEventListener('focus', function() {
+    input.classList.add('focus');
+
+})
+
+search.addEventListener('blur', function() {
+    search.value.length != 0 ? input.classList.add('focus') : input.classList.remove('focus');
+
+})
