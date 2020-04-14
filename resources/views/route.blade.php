@@ -63,7 +63,7 @@
 
             <div class="container my-5">
         <div class="row">
-            <div class="col-12 col-4 my-2">
+            <div class="col-12 col-md-4 my-2">
                 <div class="card-body-outter">
                     <div class="header">
                         <div class="row">
@@ -95,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <div class=" col-12 col-4 my-2">
+            <div class=" col-12 col-md-4 my-2">
                 <div class="card-body-outter">
                     <div class="header">
                         <div class="row">
