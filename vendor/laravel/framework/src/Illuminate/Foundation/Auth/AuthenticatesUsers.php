@@ -39,7 +39,7 @@ trait AuthenticatesUsers
                 \Session::flash('inbox-link', $this->getEmailProvider($request['email']));
             \Session::flash('success','An email was sent to you at ' . $request['email'] . ' with a link to login.');
 
-            return redirect('/dashboard');
+            return redirect('/');
         }
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and

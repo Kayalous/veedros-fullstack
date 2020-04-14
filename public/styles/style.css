@@ -2504,6 +2504,9 @@ img {
     .teach-img {
         height: 300px;
     }
+    .swal2-container {
+        width: 100%;
+    }
 }
 
 
@@ -2626,9 +2629,7 @@ img {
     transform: translateY(-2px);
 }
 
-.swal2-container {
-    width: 100%;
-}
+
 
 @media (min-width: 768px) and (max-width: 992px) {
     .our_services .card {

@@ -96,11 +96,11 @@
         <div class="container container-mine pt-3">
             <div class="row">
                 <div class="header-text d-block mb-2 ">
-                    <h4> A powerful</h4>
+                    <h4 style="color: #4C616B;"> A powerful</h4>
                     <h1>
                         set of courses
                     </h1>
-                    <h4>that will change your career.</h4>
+                    <h4 style="color: #4C616B;">that will change your career.</h4>
                 </div>
                 <script>
                     var instructors = [];

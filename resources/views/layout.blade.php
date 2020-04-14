@@ -412,9 +412,12 @@
             title: '{{ Session::get('success') }}',
             @if(Session::has('inbox-link'))
             html: '<br />',
+            allowOutsideClick:true,
+            showCloseButton:true,
+
             showConfirmButton: true,
             confirmButtonText: '<a target="_blank" rel="noopener" href="//{{Session::get('inbox-link')}}">Go to your inbox now!</a>',
-            timer: 30000,
+            timer: 10000,
 
             @else
             showConfirmButton: false,
@@ -432,7 +435,9 @@
             icon: 'error',
             title: '{{ Session::get('failure') }}',
             showConfirmButton: false,
-            timer: 10000
+            timer: 10000,
+            allowOutsideClick:true,
+            showCloseButton:true
         })
     </script>
 @endif
@@ -445,7 +450,9 @@
             icon: 'warning',
             title: '{{ Session::get('message') }}',
             showConfirmButton: false,
-            timer: 10000
+            timer: 10000,
+            allowOutsideClick:true,
+            showCloseButton:true,
         })
     </script>
 @endif
