@@ -19,7 +19,7 @@ class LoginToken extends Model
     public static function generateFor(User $user)
     {
         $token = Str::random(50);
-        static::create([
+        LoginToken::updateOrCreate([
             'user_id' =>$user->id,
              'token' => $token
         ]);

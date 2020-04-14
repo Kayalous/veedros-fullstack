@@ -141,6 +141,7 @@ return array(
     'App\\SocialProvider' => $baseDir . '/app/SocialProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\Video' => $baseDir . '/app/Video.php',
+    'App\\View' => $baseDir . '/app/View.php',
     'Arrilot\\Widgets\\AbstractWidget' => $vendorDir . '/arrilot/laravel-widgets/src/AbstractWidget.php',
     'Arrilot\\Widgets\\AsyncFacade' => $vendorDir . '/arrilot/laravel-widgets/src/AsyncFacade.php',
     'Arrilot\\Widgets\\Console\\WidgetMakeCommand' => $vendorDir . '/arrilot/laravel-widgets/src/Console/WidgetMakeCommand.php',

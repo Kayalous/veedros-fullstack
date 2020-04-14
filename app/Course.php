@@ -25,6 +25,7 @@ class Course extends Model
     public function objectives(){
         return $this->hasMany(Objective::class);
     }
+
     public function recommendations(){
         return $this->hasMany(Recommendation::class);
     }
@@ -35,6 +36,10 @@ class Course extends Model
 
     public function saves(){
         return $this->belongsToMany('App\User', 'saveds', 'course_id', 'user_id');
+    }
+
+    public function views(){
+        return $this->hasMany(View::class);
     }
 
     public static function getFirstSession(Course $course){
@@ -52,6 +57,7 @@ class Course extends Model
             $url = $url . '/'. $firstSession->slug;
             return $url;
     }
+
     public static function getTotalSessionCount(Course $course){
         $sessionCount = 0;
         foreach ($course->chapters as $chapter){
@@ -114,6 +120,7 @@ class Course extends Model
     {
         return 'Courses';
     }
+
     public function toSearchableArray()
     {
         return [

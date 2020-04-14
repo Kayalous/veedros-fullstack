@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <div class="new-bg"></div>
     <section class="info-bar">
         <div class="container ">
@@ -84,6 +85,7 @@
                 <div class="dashboard-land ">
                     @if(Auth::user()->courses()->count() > 0)
                     @foreach(Auth::user()->courses as $course)
+
                         <div class="row shadow-lg  rounded-lg-mine">
                             <div class="col-lg-4 col-12">
                             <div class="card course-card development-card noJquery" style="background-image: url({{$course->img}})">
@@ -110,7 +112,7 @@
                                 <div class="row">
                                     <p class="p-prog">My Progress</p>
                                     <br>
-                                    <div id="prog-bar1" class="progress-bar" style="--width:50;"></div>
+                                    <div id="prog-bar1" class="progress-bar" style="--width:{{Auth::user()->getProgressPercentage($course)}};"></div>
                                 </div>
                                 <hr class="my-4">
                                 <div class="d-flex justify-content-between mb-3 ">
@@ -122,7 +124,7 @@
                                     data-message=""
                                     ></div>
 
-                                    <a href="{{\App\Course::getFirstSession($course)}}" class="btn btn-veedros btn-veedros-sm border-0 " type="button">
+                                    <a href="{{Auth::user()->getLastWatchedSession($course)}}" class="btn btn-veedros btn-veedros-sm border-0 " type="button">
                                         Keep Going
                                     </a>
                                 </div>

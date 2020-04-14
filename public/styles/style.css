@@ -2507,6 +2507,9 @@ img {
     .swal2-container {
         width: 100%;
     }
+    .swal2-container br {
+        display: none;
+    }
 }
 
 

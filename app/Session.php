@@ -25,6 +25,9 @@ class Session extends Model
     public function video(){
         return $this->hasOne(Video::class);
     }
+    public function views(){
+        return $this->hasMany(View::class);
+    }
 
     public function isFirstSession(){
         $chapter = $this->chapter()->first();

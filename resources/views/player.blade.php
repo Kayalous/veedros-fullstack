@@ -40,12 +40,16 @@
                     <div class="list-group collapse my-2 {{($controllerCourse->chapters[$i]->slug === $controllerChapter->slug)? 'show' : ''}}" id="collapse{{$i}}">
                         @foreach($controllerCourse->chapters[$i]->sessions as $session)
                         <a href="{{asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug}}" class="list-group-item list-group-item-action
-                        {{ ( Request::url() === asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug) ? 'active' : '' }}
+                        {{ ( Request::url() === asset('watch/') . '/' . $instructor->display_name . '/' . $session->chapter->course->slug . "/" . $session->chapter->slug . '/' . $session->slug) ? 'active' :  (Auth::user() !== null ?  (Auth::user()->hasSeenThisSession($session) ? 'complete' : '') : '')}}
                             ">
                             <span>
                                 @if(Auth::user())
                                     @if($loop->iteration <= 3 && $i === 0 || Auth::user()->isEnrolledInCourse($controllerCourse))
-                                        <img class="mr-2" src="{{asset('images/Icons')}}/VideoPlay.svg" alt="Play icon">
+                                        @if(Auth::user()->hasSeenThisSession($session))
+                                            <i class="mr-2" data-feather="check"></i>
+                                        @else
+                                            <img class="mr-2" src="{{asset('images/Icons')}}/VideoPlay.svg" alt="Play icon">
+                                        @endif
                                     @else
                                         <img class="mr-2" src="{{asset('images/Icons')}}/VideoLock.svg" alt="Lock icon">
                                     @endif
