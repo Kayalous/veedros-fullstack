@@ -242,9 +242,9 @@
                             </div>
                         </section>
                         <div class="text-center">
-                        <a href="courses/" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto">
-<span>All courses</span>
-</a>
+                        <a href="https://www.veedros.com/courses" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto">
+                            <span>All courses</span>
+                            </a>
                         </div>
                     </div>
                 </div>
