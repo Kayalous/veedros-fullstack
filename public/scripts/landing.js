@@ -44,7 +44,7 @@ function createTippyTemplates() {
             </div>
             <div class="col-6">
               <div class="badge tip-badge">
-                <h5 class="tip-badge-item">  <i class="far fa-clock"></i>  <span>16 Hours</span></h5>
+                <h5 class="tip-badge-item">  <i class="far fa-clock"></i>  <span>${courses[i].duration}</span></h5>
               </div>
             </div>
           </div>
