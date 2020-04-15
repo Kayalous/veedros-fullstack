@@ -68,10 +68,17 @@ class Course extends Model
 
     public static function secs_to_str ($duration)
     {
+        if($duration < 60)
         $periods = array(
             'Hour' => 3600,
-            'Minute' => 60
+            'Minute' => 60,
+            'Second' => 1
         );
+        else
+            $periods = array(
+                'Hour' => 3600,
+                'Minute' => 60
+            );
 
         $parts = array();
 
@@ -105,7 +112,6 @@ class Course extends Model
             }
         }
         $totalRuntimeReadable = Course::secs_to_str($totalRuntime);
-        dd($totalRuntime);
         $course->update([
             'duration_seconds' => $totalRuntime,
             'duration' => $totalRuntimeReadable]);
