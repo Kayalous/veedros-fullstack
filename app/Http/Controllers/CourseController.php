@@ -404,7 +404,7 @@ class CourseController extends Controller
                 ->format($request['link_720'])
                 ->get('duration');
         $request['duration'] = gmdate("i:s", $request['duration_seconds']);
-        dd($request->all());
+        dd(array_filter($request->all()));
         $video = Video::where('id', $videoId)->first();
         $video->update(array_filter($request->all()));
         $course = Course::where('id', $courseId)->first();
