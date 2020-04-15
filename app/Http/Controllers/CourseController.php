@@ -403,8 +403,8 @@ class CourseController extends Controller
             $request['duration_seconds'] = $ffprobe
                 ->format($request['link_720'])
                 ->get('duration');
-
         $request['duration'] = gmdate("i:s", $request['duration_seconds']);
+        dd($request['duration']);
         $video = Video::where('id', $videoId)->first();
         $video->update(array_filter($request->all()));
         $course = Course::where('id', $courseId)->first();

@@ -22,22 +22,25 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
         'name', 'email', 'password', 'verificationToken', 'phone', 'about', 'position',
         'avatar', 'img','location', 'twitter', 'facebook', 'linkedin', 'email_verified_at'
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
+
     protected $hidden = [
         'password', 'remember_token',
     ];
+
     public function verified()
     {
         return $this->email_verified_at;
     }
+
     public function socialProviders(){
         return $this->hasMany(SocialProvider::class);
     }
+
     public function instructor(){
         return $this->hasOne(Instructor::class);
     }
@@ -65,9 +68,11 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
     public function saves(){
         return $this->belongsToMany('App\Course', 'saveds', 'user_id', 'course_id');
     }
+
     public function views(){
         return $this->hasMany(View::class);
     }
+
     public function hasSavedThisCourse(Course $course){
         $saved = Saved::where(['course_id' => $course->id, 'user_id' => $this->id])->get();
         if(count($saved) > 0)
@@ -89,6 +94,7 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
         $sessionsWatched = View::where(['user_id' => Auth::user()->id, 'course_id' => $course->id])->count();
         return ($sessionsWatched/$totalSessionCount) * 100;
     }
+
     public function getLastWatchedSession(Course $course){
         $lastView = View::where(['user_id' => Auth::user()->id, 'course_id' => $course->id])->latest()->first();
         $lastSessionWatched = Session::where('id', $lastView->session_id)->first();
