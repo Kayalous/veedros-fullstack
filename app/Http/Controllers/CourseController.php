@@ -406,7 +406,6 @@ class CourseController extends Controller
         $request['duration'] = gmdate("i:s", $request['duration_seconds']);
         $video = Video::where('id', $videoId)->first();
         $video->update(array_filter($request->all()));
-        dd($video);
         $course = Course::where('id', $courseId)->first();
         Course::calculateAndSaveTotalRuntime($course);
         return back()->with('success', 'Video information updated successfully.');
