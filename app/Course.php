@@ -105,7 +105,7 @@ class Course extends Model
             }
         }
         $totalRuntimeReadable = Course::secs_to_str($totalRuntime);
-        dd($totalRuntimeReadable);
+        dd($totalRuntime);
         $course->update([
             'duration_seconds' => $totalRuntime,
             'duration' => $totalRuntimeReadable]);
