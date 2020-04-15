@@ -242,8 +242,9 @@
                             </div>
                         </section>
                         <div class="text-center">
-                            <button class="btn btn-veedros-new btn-veedros-md border-0 py-2 mx-auto">
-                                Explore more</button>
+                        <a href="courses/" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto">
+<span>All courses</span>
+</a>
                         </div>
                     </div>
                 </div>

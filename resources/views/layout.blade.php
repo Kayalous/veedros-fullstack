@@ -185,7 +185,7 @@
                 </li>
             @endif
             @else
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <div class="search-form ">
                         <form>
                             <input class="search-input" type="text">
@@ -194,7 +194,7 @@
                             </button>
                         </form>
                     </div>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{asset("search")}}">Search</a>
                 </li>
