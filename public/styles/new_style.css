@@ -319,6 +319,7 @@
     width: 100%;
     padding-left: 25px;
     border-radius: 36px;
+    background-color: white;
 }
 .btn-nav-search {
     background: transparent;
@@ -330,7 +331,7 @@
     width: 35px;
     height: 35px;
     transition: all 0.5s cubic-bezier(.87, -.41, .19, 1.44);
-    outline: none;
+    outline: none !important;
     border: none;
 }
 .btn-nav-search:after {
@@ -360,9 +361,8 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    left: 0;
-    right: 5px;
-    top: 7px;
+    right: 5.5px;
+    top: 7.5px;
     transform: scale(0.7);
     /* transform-origin: left top; */
     
