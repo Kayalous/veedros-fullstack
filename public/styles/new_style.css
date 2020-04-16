@@ -307,6 +307,7 @@
     background-color: transparent;
     border-radius: 36px;
     position: absolute;
+    right: 0px;
     width: 34px;
     height: 35px;
     transition: all 0.5s cubic-bezier(.87, -.41, .19, 1.44);
@@ -322,6 +323,7 @@
 .btn-nav-search {
     background: transparent;
     position: absolute;
+    right: 0px;
     /* height: 100%; */
     
     border-radius: 50%;
@@ -370,10 +372,11 @@
     z-index: 1;
     transition: all 0.8s ease;
 }
-.active .btn-nav-search {
+
+/* .active .btn-nav-search {
     transform: translateX(162px);
     border-radius: 25%;
-}
+} */
 .active .btn-nav-search:before {
     transform: scale(0.9);
 }
