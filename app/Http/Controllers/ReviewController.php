@@ -39,7 +39,6 @@ class ReviewController extends Controller
                 'rating' => (int)$request->rating,
                 'user_id'=> Auth::user()->id,
                 'course_id'=>$request->course_id]);
-        dd($review);
         return back()->with('success', 'Thank you for your feedback!');
     }
 }

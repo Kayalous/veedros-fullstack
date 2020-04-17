@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
 use Laravel\Scout\Searchable;
 
 class Session extends Model
@@ -29,6 +31,21 @@ class Session extends Model
         return $this->hasMany(View::class);
     }
 
+    public function getLink(){
+        $chapter = $this->chapter;
+        $course = $chapter->course;
+        //Base url
+        $url = URL::to('watch/');
+        //With instructor display name
+        $url = $url . '/' . $course->instructor->display_name;
+        //With course slug
+        $url = $url . '/'. $course->slug;
+        //With first chapter slug
+        $url = $url . '/'. $chapter->slug;
+        //With first session slug
+        $url = $url . '/'. $this->slug;
+        return $url;
+    }
     public function isFirstSession(){
         $chapter = $this->chapter()->first();
         $course = $chapter->course()->first();
@@ -51,4 +68,5 @@ class Session extends Model
             'description' => $this->about,
         ];
     }
+
 }

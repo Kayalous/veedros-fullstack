@@ -16,9 +16,12 @@ class SearchController extends Controller
         $chapters = null;
         $sessions = null;
         if($query){
-            $courses = Course::search($query)->take(10)->get();
-            $chapters = Chapter::search($query)->take(10)->get();
             $sessions = Session::search($query)->take(10)->get();
+            if(!$sessions){
+                $chapters = Chapter::search($query)->take(10)->get();
+                if(!$chapters)
+                    $courses = Course::search($query)->take(10)->get();
+            }
         }
         return view('search')->with(['courses' => $courses, 'chapters' => $chapters, 'sessions' => $sessions]);
     }
