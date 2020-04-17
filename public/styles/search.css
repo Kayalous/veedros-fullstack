@@ -1,0 +1,118 @@
+ .p-title {
+     font-size: 30px;
+     font-weight: 600;
+     color: #0373BD;
+     text-transform: capitalize;
+     margin-bottom: 0rem;
+     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+     margin-top: 50px;
+ }
+ 
+ .p-description {
+     font-size: 20px;
+     margin-top: 20px;
+     word-break: inherit;
+ }
+ 
+ .p-prog {
+     color: rgb(9, 130, 211);
+     font-weight: 400 !important;
+     font-size: 27px;
+     margin-bottom: 1rem !important;
+     font-weight: lighter;
+     text-transform: capitalize;
+     margin-bottom: 0rem;
+     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+ }
+ 
+ .title-mine {
+     display: none;
+ }
+ 
+ #course-info .badge-item {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -ms-flex-pack: distribute;
+     justify-content: space-around;
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     align-items: center;
+     padding: 1rem 0.8rem;
+     margin: 0%;
+     width: 100%;
+     font-size: 18px;
+ }
+ 
+ .tip-badge {
+     width: auto;
+ }
+ 
+ .badge-item .fas,
+ .badge-item .far {
+     color: #4368da;
+ }
+ 
+ .badge-item span {
+     font-weight: 600;
+     opacity: 0.8;
+ }
+ 
+ .card-bg-img {
+     height: 190px;
+ }
+ 
+ .play-circle {
+     top: 55%;
+     left: 55%;
+     height: 80px;
+     width: 80px;
+ }
+ 
+ .play-circle::after,
+ .play-circle::before {
+     height: 60px;
+     width: 60px;
+ }
+ 
+ .card-body-inner:hover .play-circle::after {
+     -webkit-animation: play-circle-anim 1s infinite ease-in-out;
+     animation: play-circle-anim 1s infinite ease-in-out;
+ }
+ 
+ .card-body-inner:hover .play-circle::before {
+     height: 95px;
+     width: 95px;
+ }
+ 
+ @-webkit-keyframes play-circle-anim {
+     50% {
+         width: 80px;
+         height: 80px;
+     }
+     80% {
+         width: 105px;
+         height: 105px;
+     }
+     100% {
+         width: 115px;
+         height: 115px;
+         opacity: 0;
+     }
+ }
+ 
+ @keyframes play-circle-anim {
+     50% {
+         width: 80px;
+         height: 80px;
+     }
+     80% {
+         width: 105px;
+         height: 105px;
+     }
+     100% {
+         width: 115px;
+         height: 115px;
+         opacity: 0;
+     }
+ }
