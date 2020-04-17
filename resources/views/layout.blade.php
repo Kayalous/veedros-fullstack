@@ -319,7 +319,7 @@
                                         <p>KNOWLEDGE</p>
                                     </li>
                                     <li class="w-50-mine my-3">
-                                    <a class="" href="{{asset("privacy_policy")}}">Privacy Policy</a>
+                                    <a class="" href="{{asset("privacy")}}">Privacy Policy</a>
                                     </li>
                                     <li class="w-50-mine my-3">
                                     <a class="" href="{{asset("review_us")}}">Review Us</a>
