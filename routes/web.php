@@ -49,6 +49,10 @@ Route::get('/route', function () {
     return view('route');
 })->name('route')->middleware('auth');
 
+Route::get('/privacy', function () {
+    return view('privacy');
+})->name('privacy');
+
 Route::get('/courses', function () {
     $courses = \App\Course::paginate(6);
     return view('allCourses', ['courses' => $courses]);
