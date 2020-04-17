@@ -13,6 +13,63 @@
 @endsection
 @section('content')
     <div class="new-bg"></div>
+    <div class="modal fade" id="rateCourseModal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content login-body">
+                <div class="modal-body px-5">
+                    @if(Auth::check())
+                        <form class="signup" action="{{asset('review/course')}}" method="POST" novalidate>
+                            @csrf
+                            <div class="container">
+                                <input type="hidden" name="course_id" value="{{$controllerCourse->id}}">
+                                <h3 class="text-center text-muted">Rate {{$controllerCourse->name}}!</h3>
+                                <br>
+                                <div class="row mb-3">
+                                    <div class="tip-instructor-avatar col-lg-2 ml-4 ">
+                                        <img src="{{Auth::user()->img}}" alt="User avatar" class="round">
+                                    </div>
+                                    <h4 class="text-muted my-auto">{{Auth::user()->name}}</h4>
+                                </div>
+                                <br>
+                                <h5 class="text-muted">What do you think about this course?</h5>
+                                <div class="row my-2">
+                                    <div class="col-12">
+                                        <div class="input-group mb-2">
+                                            <textarea id="course-review-body" rows="5" cols="50" maxlength="500" name="body" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Let us know what you think about this course! (Optional)" style="resize: none"></textarea>
+                                            <h6 class="ml-auto mt-1 text-muted">500 characters</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="text-muted text-center">How would you rate this course?</h5>
+
+                                <div class="course-rating">
+                                    <input name="rating" value="5" id="ec5" type="radio"></a><label for="ec5">★</label>
+                                    <input name="rating" value="4" id="ec4" type="radio"></a><label for="ec4">★</label>
+                                    <input name="rating" value="3" id="ec3" type="radio"></a><label for="ec3">★</label>
+                                    <input name="rating" value="2" id="ec2" type="radio"></a><label for="ec2">★</label>
+                                    <input name="rating" value="1" id="ec1" type="radio"></a><label for="ec1">★</label>
+                                </div>
+                                <div class="row bt-5">
+                                    <button type="submit" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" data-toggle="modal" data-target="#rateCourseModal"
+                                    >
+                                        <span class="text-white">Send</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    @else
+                        <div class="container">
+                            <h3 class="text-center text-muted">You need to sign in to review us.</h3>
+                            <br>
+                            <li class="nav-item d-flex align-items-center justify-content-center">
+                                <a href="{{asset('login')}}" class="btn btn-veedros-new btn-veedros-md border-0">Sign in now</a> </li>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="player-container my-5 pt-5 px-3">
         <div class="video-wrapper my-auto">
             <video id="player" class="" controls preload="auto"
@@ -174,6 +231,7 @@
                                     </a>
                                 </div>
                                 </div>
+
                                 <div class="row justify-content-center">
                                             <div class=" share-menu w-80 mx-auto">
                                         <input class="menu-btn " type="checkbox" id="menu-btn" />
@@ -192,7 +250,13 @@
                                                 </div>
                                         </div>
                                 </div>
+                                <div class="row">
+                                    <a class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" data-toggle="modal" data-target="#rateCourseModal"
+                                    >
+                                        <span class="text-white">Rate this course ★★★★★</span>
+                                    </a>
 
+                                </div>
                             <hr class="d-md-none mt-5">
 
 

@@ -54,6 +54,7 @@ Route::get('/privacy', function () {
 })->name('privacy');
 
 Route::post('/review','ReviewController@review')->middleware('auth');
+Route::post('/review/course','ReviewController@courseReview')->middleware('auth');
 
 Route::get('/courses', function () {
     $courses = \App\Course::paginate(6);
