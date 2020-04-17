@@ -154,6 +154,61 @@
         @csrf
     </form>
 @endif
+<div class="modal fade" id="rateModal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content login-body">
+            <div class="modal-body px-5">
+                @if(Auth::check())
+                <form class="signup" action="{{asset('review')}}" method="POST" novalidate>
+                    @csrf
+                    <div class="container">
+                    <h3 class="text-center text-muted">We really appreciate your feedback!</h3>
+                    <br>
+                        <div class="row mb-3">
+                        <div class="tip-instructor-avatar col-lg-2 ml-4 ">
+                            <img src="{{Auth::user()->img}}" alt="User avatar" class="round">
+                        </div>
+                            <h4 class="text-muted my-auto">{{Auth::user()->name}}</h4>
+                        </div>
+                        <br>
+                    <h5 class="text-muted">What do you think about our service?</h5>
+                    <div class="row my-2">
+                        <div class="col-12">
+                            <div class="input-group mb-2">
+                                <textarea id="review-body" rows="5" cols="50" maxlength="500" name="body" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Let us know what you think about Veedros! (Optional)" style="resize: none"></textarea>
+                                <h6 class="ml-auto mt-1 text-muted">500 characters</h6>
+                            </div>
+                        </div>
+                    </div>
+                        <h5 class="text-muted text-center">How would you rate our service?</h5>
+
+                        <div class="rating">
+                        <input name="rating" value="5" id="e5" type="radio"></a><label for="e5">★</label>
+                        <input name="rating" value="4" id="e4" type="radio"></a><label for="e4">★</label>
+                        <input name="rating" value="3" id="e3" type="radio"></a><label for="e3">★</label>
+                        <input name="rating" value="2" id="e2" type="radio"></a><label for="e2">★</label>
+                        <input name="rating" value="1" id="e1" type="radio"></a><label for="e1">★</label>
+                    </div>
+                    <div class="row bt-5">
+                        <button type="submit" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" data-toggle="modal" data-target="#rateModal"
+                        >
+                            <span class="text-white">Send</span>
+                        </button>
+                    </div>
+                    </div>
+                </form>
+                @else
+                    <div class="container">
+                        <h3 class="text-center text-muted">You need to sign in to review us.</h3>
+                        <br>
+                        <li class="nav-item d-flex align-items-center justify-content-center">
+                            <a href="{{asset('login')}}" class="btn btn-veedros-new btn-veedros-md border-0">Sign in now</a> </li>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Navbar  -->
 <nav class="navbar navbar-expand-lg absolute-top main-navbar navbar-light">
     <a class="navbar-brand logo" href="{{route('landing')}}"><img class="img-fluid" style="width: 120px;" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
@@ -322,7 +377,7 @@
                                     <a class="" href="{{asset("privacy")}}">Privacy Policy</a>
                                     </li>
                                     <li class="w-50-mine my-3">
-                                    <a class="" href="{{asset("review_us")}}">Review Us</a>
+                                    <a class="" href="#" data-toggle="modal" data-target="#rateModal">Review Us</a>
                                     </li>
                                 </ul>
                             </div>

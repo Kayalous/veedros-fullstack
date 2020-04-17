@@ -284,7 +284,7 @@
                 <h4>We really appreciate your feedback. Don't hesitate to let us know what you think, it really helps.</h4>
                 <br>
                 <div class="row bt-5">
-                <a  class="btn btn-veedros-new btn-veedros-md border-0 "
+                <a class="btn btn-veedros-new btn-veedros-md border-0" data-toggle="modal" data-target="#rateModal"
                        >
                        <span class="text-white">Give us a review</span>
                     </a>

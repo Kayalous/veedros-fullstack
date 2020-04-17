@@ -190,13 +190,7 @@ hr {
     font-weight: 500;
 }
 
-#loginModal {
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-}
-
-#signupModal {
+.modal {
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -2641,4 +2635,42 @@ img {
     .our_services .card img {
         max-width: 28%;
     }
+}
+
+.rating {
+    width: 100%;
+    margin: 0 auto 0em;
+    font-size: 70px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.rating input {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+}
+.rating a,
+.rating label {
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: color 0.4s;
+    -moz-transition: color 0.4s;
+    -o-transition: color 0.4s;
+    transition: color 0.4s;
+}
+.rating label:hover ~ label,
+.rating input:focus ~ label,
+.rating label:hover,
+.rating a:hover,
+.rating a:hover ~ a,
+.rating a:focus,
+.rating a:focus ~ a {
+    color: orange;
+    cursor: pointer;
+}
+#st-1{
+    z-index: 20 !important;
 }
