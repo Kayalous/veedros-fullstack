@@ -9,6 +9,16 @@ function createTippyTemplates() {
               ${recommendations[i][j].recommendation}
             </li>`
         }
+        //Get a short version of the duration
+        courses[i].duration = courses[i].duration.split(' ');
+        console.log(parseInt(courses[i].duration[3])> 30);
+        if(parseInt(courses[i].duration[3]) > 30){
+            if(courses[i].duration[0] <=1){
+                courses[i].duration[1]+='s';
+            }
+            courses[i].duration[0]++;
+        }
+        courses[i].duration = `${courses[i].duration[0]} ${courses[i].duration[1]}`;
         let tipContent = `<div class="tip">
       <div class="container">
         <h4 class="tip-header text-center">

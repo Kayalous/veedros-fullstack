@@ -8,10 +8,6 @@
 
 @section('content')
     <div class="anti-lo2">
-
-
-
-    <!-- Hero  -->
     <section class="hero py-5 overflow-hidden">
         <div class="container my-5 mt-5">
             <div class="row ">
@@ -56,7 +52,6 @@
         </div>
 
     </section>
-
     <section class="partners-logo mb-3">
 
     <div class="row justify-content-center py-3">
@@ -83,7 +78,6 @@
             </div>
 
         </div>
-
     </section>
     <section class="happy-users">
         <div>
@@ -91,7 +85,6 @@
             <h2 class="text-center mt-0">Happy students</h2>
         </div>
     </section>
-    <!-- Featured courses  -->
     <section class="featured-courses mb-5 pb-5" id="featured-courses">
         <div class="container container-mine pt-3">
             <div class="row">
@@ -134,10 +127,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ===================================== Sign up instructor ===================================== -->
-
-
     <section class="mt-5">
         <div class="row">
             <div class="col-lg-6 m-0 px-0 overflow-hidden teach-img">
@@ -164,13 +153,7 @@
             </div>
         </div>
     </section>
-
-
-
-    <!-- ============== END ================== Sign up instructor =============== END ================== -->
-
-
-        <section class="our_services">
+    <section class="our_services">
             <div class="container">
                 <div class="row d-block my-5">
                     <h1>Get a team of experts</h1>
@@ -270,11 +253,6 @@
                 </div>
             </div>
         </section>
-
-    <!-- ================================================================================================== -->
-
-
-
     <section class="testimonials my-5 py-5">
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-4 mx-auto pl-5">
@@ -337,10 +315,6 @@
             </div>
         </div>
     </section>
-    <!-- =====================================  instructor carousel ===================================== -->
-
-    <!-- =============== END ===============  instructor carousel ======== END ========---========== -->
-
     <section class="academies">
         <div class="container h-100">
             <div class="d-flex justify-content-center align-items-center flex-column h-50 w-100 my-5">
@@ -367,6 +341,7 @@
 @section('customJS')
     <script>
         var courses = {!! json_encode($courses->toArray()) !!};
+        console.log(courses);
     </script>
     <script src="scripts/landing.js"></script>
 @endsection
