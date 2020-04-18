@@ -224,8 +224,15 @@
         <ul class="navbar-nav nav-items-container">
             @if(Auth::user())
                 @if(!Auth::user()->hasRole('admin'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{asset("search")}}">Search</a>
+                    <li class="nav-item d-flex justify-content-center align-items-center">
+                        <div class="search-form ">
+                            <form>
+                                <input class="search-input" type="text">
+                                <button class="btn-nav-search">
+                                    <i data-feather="search" style="stroke-width: 3"></i>
+                                </button>
+                            </form>
+                        </div>
                     </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{asset("courses")}}">Courses</a>
@@ -250,17 +257,14 @@
             @endif
             @else
                 <li class="nav-item">
-                    <div class="search-form ">
-                        <form>
-                            <input class="search-input" type="text">
+                    <div class="search-form my-auto">
+                        <form class=" h-100 w-100">
+                            <input class="search-input my-auto" type="text">
                             <button class="btn-nav-search">
-                                <div class="search__rectangle"></div>
+                                <i data-feather="search" style="stroke-width: 3"></i>
                             </button>
                         </form>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset("search")}}">Search</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{asset("courses")}}">Courses</a>

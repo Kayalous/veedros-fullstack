@@ -281,28 +281,16 @@
 
 .search-form {
     position: relative;
-    width: 200px;
+    width: 300px;
 }
 
 
-}
-.search-form:before {
-    content: ' ';
-    position: absolute;
-    left: 25px;
-    top: 14px;
-    width: 2px;
-    height: 36px;
-    transform: scale(0);
-    z-index: 1;
-    background: rgb(71, 136, 135);
-    transition: all 0.5s cubic-bezier(.87, -.41, .19, 1.44);
-}
 .active:before {
     transform: scale(1);
     transition-delay: 0.3s;
     animation: 0.6s cubic-bezier(.87, -.41, .19, 1.44) 0.5s infinite forwards focus;
 }
+
 .search-input {
     background-color: transparent;
     border-radius: 36px;
@@ -313,7 +301,7 @@
     transition: all 0.5s cubic-bezier(.87, -.41, .19, 1.44);
     outline: none;
     border: none;
-    padding: 0;
+    padding-right: 35px;
 }
 .active .search-input {
     width: 100%;
@@ -325,8 +313,6 @@
     background: transparent;
     position: absolute;
     right: 0px;
-    /* height: 100%; */
-    
     border-radius: 50%;
     width: 35px;
     height: 35px;
@@ -334,51 +320,14 @@
     outline: none !important;
     border: none;
 }
-.btn-nav-search:after {
-    content: ' ';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    left: 0;
-    right: 6px;
-    transform: translateY(-50%);
-    margin: 0 auto;
-    background: #65D3BF;
-    border-radius: 50%;
+.btn-nav-search>.feather{
+    transition: all 0.2s ease;
+    color: #6c757d;
 }
-.search__rectangle {
-    position: absolute;
-    right: 4px;
-    bottom: 6px;
-    width: 13px;
-    transform: rotate(45deg);
-    border: 3px solid #65D3BF;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
-}
-.btn-nav-search:before {
-    content: ' ';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    right: 10.5px;
-    top: 7.5px;
-    transform: scale(0.7);
-    /* transform-origin: left top; */
-    
-    margin: 0 auto;
-    background: white;
-    border-radius: 50%;
-    z-index: 1;
-    transition: all 0.8s ease;
-}
-
-/* .active .btn-nav-search {
-    transform: translateX(162px);
-    border-radius: 25%;
-} */
-.active .btn-nav-search:before {
-    transform: scale(0.9);
+.active .btn-nav-search>.feather {
+    transform: scale(1.1);
+    margin-right: 5px;
+    color: #65D3BF;
 }
 .focus:before {
     transform: scale(0);
@@ -388,11 +337,11 @@
     0 {
         opacity: 0;
     }
-    
+
     50% {
         opacity: 1;
     }
-    
+
     100% {
         opacity: 0;
     }
