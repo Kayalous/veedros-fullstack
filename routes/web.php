@@ -24,6 +24,10 @@ Route::get('/teach', function () {
     return view('teach');
 })->name('teach');
 
+Route::get('/cart', function () {
+    return view('cart');
+});
+
 Route::post('/teach', 'ContactController@teach')->name('contact.teach');
 
 Route::get('/loaderio-11b75385bde861fbdbbd36ee9a0257cc/', function () {
