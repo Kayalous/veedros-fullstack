@@ -1,7 +1,6 @@
 @extends('layout')
 
 @section('customCSS')
-    <link rel="stylesheet" href="{{asset('styles/profile.css')}}">
     <link rel="stylesheet" href="{{asset('styles/cart.css')}}">
 @endsection
 
@@ -200,6 +199,36 @@
             </div>
         </div>
                 <!-- @@@@@@@@@@@@@@@@@@ -->
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="">
+                    <ul>
+                        <li>
+                            <div class="">
+                                <p>Total:</p>
+                                <p>1200+1400</p>
+                                <hr>
+                            </div>
+                        </li>
+                        <li>
+                            <h2>LE 3600</h2>
+                        </li>
+                        <li>
+                        <a href="#" class="btn btn-veedros-new btn-veedros-red m-auto btn-veedros-md border-0" >check out </a>
+                            
+                        </li>
+                        <li>
+                        <div class="btn-redeem-veedros m-auto pt-4">
+            <form>
+                <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm is-valid" placeholder="Add Coupon" type="text">
+                <button class="btn-redeem-icon border-0">
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
