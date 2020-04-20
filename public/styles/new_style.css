@@ -287,6 +287,11 @@
     width: 25px;
     height: 25px;
 }
+.btn-redeem-icon-lg {
+    width: 30px;
+    height: 30px;
+}
+
 
 
 /* ============================================================== */
@@ -313,6 +318,9 @@
     outline: none;
     border: none;
     padding-right: 35px;
+}
+.search-input::placeholder {
+    color: #A7ACB1;
 }
 
 .active .search-input {
@@ -349,15 +357,19 @@
     transform: scale(0);
     animation: none;
 }
+.pagination {
+    justify-content: center;
+    align-items: center;
+}
 
-@keyframes focus {
-    0 {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+.page-link {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: #65D3BF !important;
+}
+
+.page-item.active .page-link {
+    background-color: #65D3BF !important;
+    color: white !important;
 }

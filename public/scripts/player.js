@@ -52,9 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // player = videojs('player', options);
 
 
-const player = new Plyr('#player', {
-    previewThumbnails:{enabled: true, src: 'https://veedros.s3.eu-central-1.amazonaws.com/juana-schaden/roger-moore/dr-morgan-murphy-v/lydia-leannon/720p.mp4.vtt'}
-});
+const player = new Plyr('#player');
 
 
 let likeButtons = document.querySelectorAll('.like-btn');

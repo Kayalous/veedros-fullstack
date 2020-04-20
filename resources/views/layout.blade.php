@@ -224,10 +224,10 @@
         <ul class="navbar-nav nav-items-container">
             @if(Auth::user())
                 @if(!Auth::user()->hasRole('admin'))
-                    <li class="nav-item d-flex justify-content-center align-items-center">
+                    <li class="nav-item">
                         <div class="search-form ">
-                            <form>
-                                <input class="search-input" type="text">
+                            <form method="GET" action="{{route('search')}}">
+                                <input class="search-input" type="text" name="q" placeholder="Search">
                                 <button class="btn-nav-search">
                                     <i data-feather="search" style="stroke-width: 3"></i>
                                 </button>
@@ -258,8 +258,8 @@
             @else
                 <li class="nav-item">
                     <div class="search-form my-auto">
-                        <form class=" h-100 w-100">
-                            <input class="search-input my-auto" type="text">
+                        <form method="GET" action="{{route('search')}}">
+                            <input class="search-input" type="text" name="q" placeholder="Search">
                             <button class="btn-nav-search">
                                 <i data-feather="search" style="stroke-width: 3"></i>
                             </button>

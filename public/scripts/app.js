@@ -48,7 +48,7 @@ let tip_content = `<div class="tip">
         <br>
         <div class="btn-redeem-veedros m-auto ">
             <form >
-                <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm is-valid" placeholder="Redeem code" type="text">
+                <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Redeem code" type="text">
                 <button class="btn-redeem-icon border-0">
                     <i class="fas fa-arrow-right"></i>
                 </button>
@@ -87,8 +87,14 @@ var search = document.querySelector('.search-input')
 var button = document.querySelector('.btn-nav-search');
 button.addEventListener('click', function(e) {
     e.preventDefault();
+    if(search.value.length > 0){
+        search.form.submit();
+    }
+    else{
+    search.focus();
     input.classList.toggle('active');
     search.classList.toggle('shadow-lg');
+    }
 
 })
 search.addEventListener('focus', function() {
@@ -98,5 +104,4 @@ search.addEventListener('focus', function() {
 
 search.addEventListener('blur', function() {
     search.value.length != 0 ? input.classList.add('focus') : input.classList.remove('focus');
-
 })

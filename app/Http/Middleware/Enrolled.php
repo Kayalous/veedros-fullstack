@@ -58,7 +58,7 @@ class Enrolled
         return $next($request);
         //if not then prompt them to enroll and redirect them to the first video
         else{
-            \Session::flash('message','You need to be enrolled in this course to watch that.');
+            \Session::flash('message','You need to be enrolled in this course to watch that session.');
             return redirect('watch/' . $instructorDisplayName . '/' . $courseSlug . '/' . $firstChapter->slug . '/' .$firstSessions[0]->slug);
         }
     }

@@ -9,8 +9,8 @@
     <div class="container my-5 py-5">
         <div class="btn-search-veedros-sm w-75 m-auto ">
         <form action="" method="get">
-            <input class=" form-control profile-form-field email-field-props border-light border-radius-sm is-valid" placeholder="type here..." type="text" name="q">
-            <button class="btn-search-sm border-0" type="submit">
+            <input class=" form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Search" type="text" name="q">
+            <button class="btn-redeem-icon btn-redeem-icon-lg border-0" type="submit">
             <i class="fas fa-arrow-right"></i>
             </button>
         </form>
@@ -44,6 +44,7 @@
                     </div>
                 </div>
             @endforeach
+                {{$sessions->links()}}
         @endif
 
         @if($courses)
@@ -79,6 +80,6 @@
     </div>
 
 
-                
+
 
 @endsection

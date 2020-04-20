@@ -152,23 +152,6 @@ h2 {
     min-height: 5rem !important;
 }
 
-.pagination {
-    justify-content: center;
-    align-items: center;
-}
-
-.page-link {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    color: #65D3BF !important;
-}
-
-.page-item.active .page-link {
-    background-color: #65D3BF !important;
-    color: white !important;
-}
-
 @media (max-width: 992px) {
     .Courses-header .content h1 {
         font-size: 55px;
