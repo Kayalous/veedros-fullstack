@@ -1,10 +1,9 @@
 .sntra {
-    margin-top: 12em;
+    margin-top: 14em;
 }
 
 .cart-card {
     border-radius: 1.2rem !important;
-    margin: 3rem 3rem;
     background-color: white;
 }
 
@@ -34,6 +33,7 @@
     display: flex;
     height: 100px;
     align-items: center;
+    justify-content: space-around;
 }
 
 .cart-card .cart-options ul {
@@ -102,7 +102,7 @@
 }
 
 .test-best {
-    height: 300px;
+    height: 405px;
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -110,8 +110,12 @@
 .test-best::-webkit-scrollbar {
     position: absolute;
     right: 0;
-    width: 12px;
+    width: 0px;
     height: 18px;
+}
+
+.test-best:hover::-webkit-scrollbar {
+    width: 8px;
 }
 
 .test-best::-webkit-scrollbar-track {
@@ -133,5 +137,36 @@
     transition: all 0.2s ease-in-out;
 }
 
+.cart-sammery {
+    background-color: white;
+}
 
-/* linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0)) */
+.cart-sammery .total {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.cart-sammery .sum {
+    color: red;
+}
+
+.cart-sammery h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.cart-options span {
+    font-weight: 600;
+}
+
+.cart-options .Price {
+    color: red;
+    font-size: 18px;
+}
+
+@media (max-width:768px) {
+    .cart-options ul {
+        border-left: 0px;
+    }
+}
