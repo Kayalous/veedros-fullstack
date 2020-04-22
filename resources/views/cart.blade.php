@@ -113,4 +113,43 @@
         </div>
     </div>
 </section>
+
+<!-- ========================================= -->
+<div class="tip">
+    <div class="container">
+        <div class="cart-container">
+        <div class="row  cart-card  my-3 ">
+                    <div class="col-6 align-self-center ">
+                        <div class="card course-card  development-card noJquery" style="background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/courses/2/hellloo/images/tdzHq4nTU7zkOOmjoTEXVq8ZFlpqoTBAxIljBlhl.jpeg)">
+                        </div>
+                    </div>
+                    <div class="col-6 align-self-center ">
+                        <div class="container ">
+                            <div class="tip-cart-content">
+
+                                    <p class="P-title">Everett Mohr</p>
+                        
+                                        <p class="P-description">999 Erin Field New Damaris,<br> TN 03450 999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450 999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN
+                                            03450999 Erin Field New Damaris, TN 03450 9
+                                        </p>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- @@@@@@@@@@@@@@@@@@ -->
+        </div>
+
+        <br>
+        <button class=" btn btn-veedros-new btn-veedros-sm border-0 m-auto" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Log out
+            </button>
+
+    </div>
+</div>
+<!-- ============================================= -->
 @endsection

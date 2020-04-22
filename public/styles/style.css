@@ -2626,8 +2626,6 @@ img {
     transform: translateY(-2px);
 }
 
-
-
 @media (min-width: 768px) and (max-width: 992px) {
     .our_services .card {
         height: 300px;
@@ -2647,11 +2645,13 @@ img {
     align-items: center;
     flex-direction: row-reverse;
 }
+
 .rating input {
     left: 0;
     opacity: 0;
     position: absolute;
 }
+
 .rating a,
 .rating label {
     color: #aaa;
@@ -2661,13 +2661,14 @@ img {
     -o-transition: color 0.4s;
     transition: color 0.4s;
 }
-.rating label:hover ~ label,
-.rating input:focus ~ label,
+
+.rating label:hover~label,
+.rating input:focus~label,
 .rating label:hover,
 .rating a:hover,
-.rating a:hover ~ a,
+.rating a:hover~a,
 .rating a:focus,
-.rating a:focus ~ a {
+.rating a:focus~a {
     color: orange;
     cursor: pointer;
 }
@@ -2682,11 +2683,13 @@ img {
     align-items: center;
     flex-direction: row-reverse;
 }
+
 .course-rating input {
     left: 0;
     opacity: 0;
     position: absolute;
 }
+
 .course-rating a,
 .course-rating label {
     color: #aaa;
@@ -2696,16 +2699,51 @@ img {
     -o-transition: color 0.4s;
     transition: color 0.4s;
 }
-.course-rating label:hover ~ label,
-.course-rating input:focus ~ label,
+
+.course-rating label:hover~label,
+.course-rating input:focus~label,
 .course-rating label:hover,
 .course-rating a:hover,
-.course-rating a:hover ~ a,
+.course-rating a:hover~a,
 .course-rating a:focus,
-.course-rating a:focus ~ a {
+.course-rating a:focus~a {
     color: orange;
     cursor: pointer;
 }
-#st-1{
+
+#st-1 {
     z-index: 20 !important;
+}
+
+
+/* =========================== cart ============================== */
+
+.cart-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.tip-cart-content .P-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0373BD;
+    text-transform: capitalize;
+    margin-bottom: 0rem;
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    margin-top: 20px;
+}
+
+.tip-cart-content .P-description {
+    font-size: 10px;
+    margin-top: 5px;
+    word-break: inherit;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.cart-container .cart-card .course-card {
+    --height: 100px;
+    height: calc(var(--height, 0));
+    width: 80px;
 }

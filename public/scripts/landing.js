@@ -11,10 +11,10 @@ function createTippyTemplates() {
         }
         //Get a short version of the duration
         courses[i].duration = courses[i].duration.split(' ');
-        console.log(parseInt(courses[i].duration[3])> 30);
-        if(parseInt(courses[i].duration[3]) > 30){
-            if(courses[i].duration[0] <=1){
-                courses[i].duration[1]+='s';
+        console.log(parseInt(courses[i].duration[3]) > 30);
+        if (parseInt(courses[i].duration[3]) > 30) {
+            if (courses[i].duration[0] <= 1) {
+                courses[i].duration[1] += 's';
             }
             courses[i].duration[0]++;
         }
@@ -67,8 +67,8 @@ function createTippyTemplates() {
           </ul>
         </div>
         <a href="${card[i].href}" class="row">
-          <button class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" type="button">
-            Visit now
+          <button class="btn btn-veedros-red btn-veedros-md border-0 mx-auto" type="button">
+             Add to cart <i class=" mx-2 fas fa-cart-plus"></i>
           </button>
         </a>
 

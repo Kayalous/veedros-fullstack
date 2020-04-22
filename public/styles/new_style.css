@@ -28,7 +28,7 @@
     moz-transition: all 0.1s ease-in-out;
     -webkit-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
-    color: #fff;
+    color: #fff !important;
     -webkit-transform: translateY(-1px);
     transform: translateY(-1px);
 }
@@ -287,11 +287,11 @@
     width: 25px;
     height: 25px;
 }
+
 .btn-redeem-icon-lg {
     width: 30px;
     height: 30px;
 }
-
 
 
 /* ============================================================== */
@@ -319,6 +319,7 @@
     border: none;
     padding-right: 35px;
 }
+
 .search-input::placeholder {
     color: #A7ACB1;
 }
@@ -357,6 +358,7 @@
     transform: scale(0);
     animation: none;
 }
+
 .pagination {
     justify-content: center;
     align-items: center;
