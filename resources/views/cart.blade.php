@@ -112,11 +112,13 @@
             <a href="courses/" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto">
                 <span>Explore more courses</span>
             </a>
+            
         </div>
+        
     </div>
 </section>
 <a id="cart-tip" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto">
-    <i class="fas text-white fa-shopping-cart"></i>
+<i data-feather="shopping-cart" class="text-white p-0 ml-3"></i>
 </a>
 
 @endsection
