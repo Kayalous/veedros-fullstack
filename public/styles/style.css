@@ -2718,9 +2718,17 @@ img {
 
 /* =========================== cart ============================== */
 
+.cart-tip {
+    width: 350px;
+}
+
 .cart-container {
+    height: 200px;
+    background-color: #F5F6F8;
     overflow-y: scroll;
     overflow-x: hidden;
+    border-top-right-radius: 1.2rem !important;
+    border-top-left-radius: 1.2rem !important;
 }
 
 .tip-cart-content .P-title {
@@ -2737,13 +2745,23 @@ img {
     font-size: 10px;
     margin-top: 5px;
     word-break: inherit;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
 }
 
 .cart-container .cart-card .course-card {
-    --height: 100px;
-    height: calc(var(--height, 0));
+    height: 100px;
     width: 80px;
+}
+
+.cart-tip .cart-container .cart-card {
+    background-color: transparent;
+}
+
+.cart-tip .rounded-lg-mine {
+    border-radius: 1.2rem !important;
+}
+
+.tip-cart-btn-bg {
+    background-color: white;
+    border-bottom-right-radius: 1rem !important;
+    border-bottom-left-radius: 1rem !important;
 }
