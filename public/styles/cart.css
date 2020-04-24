@@ -6,6 +6,7 @@
     background-color: white;
     border-radius: 1.2rem !important;
 }
+
 .tip .cart-card {
     border-radius: 1.2rem !important;
     background-color: transparent;
@@ -46,6 +47,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 0px;
 }
 
 .cart-card .cart-options a {
