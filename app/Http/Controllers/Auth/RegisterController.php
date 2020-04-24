@@ -13,6 +13,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -112,6 +113,7 @@ class RegisterController extends Controller
      */
     public function redirectToProviderFacebook()
     {
+        Session::put('url.intended', url()->previous());
         return Socialite::driver('facebook')->redirect();
     }
 
@@ -163,6 +165,8 @@ class RegisterController extends Controller
             }
             //Log the user in
             Auth::login($user);
+        if(Session::get('url.intended'))
+            return redirect(Session::get('url.intended'));
         return redirect('/dashboard');
         }
 
@@ -192,6 +196,7 @@ class RegisterController extends Controller
      */
     public function redirectToProviderGoogle()
     {
+        Session::put('url.intended', url()->previous());
         return Socialite::driver('google')->redirect();
     }
 
@@ -242,6 +247,8 @@ class RegisterController extends Controller
             }
             //Log the user in
             Auth::login($user);
+        if(Session::get('url.intended'))
+            return redirect(Session::get('url.intended'));
         return redirect('/dashboard');
         }
 }
