@@ -5,8 +5,10 @@
 @endsection
 
 @section('content')
+
 <div class="new-bg"></div>
 <section class="sntra">
+    
     <div class="container ">
         <div class="row flex-row-reverse ">
             <div class="col-12 col-lg-4">
@@ -111,9 +113,18 @@
             <a href="courses/" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto">
                 <span>Explore more courses</span>
             </a>
+            
         </div>
+        
     </div>
 </section>
+<a id="cart-tip" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto">
+<i data-feather="shopping-cart" class="text-white p-0 ml-3"></i>
+</a>
 
+<<<<<<< HEAD
 
 @endsection
+=======
+@endsection
+>>>>>>> b32b952f16e53bdac4c9fb3ca837a7d4963fc8f1

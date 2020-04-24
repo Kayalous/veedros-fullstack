@@ -333,6 +333,7 @@
                         <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
                             Enroll now<i class="fas fa-shopping-cart ml-3"></i></a>
                     </div>
+                    
                 @endif
             @else
                 <br>
@@ -340,6 +341,20 @@
                     <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
                         Enroll now<i class="fas fa-shopping-cart ml-3"></i></a>
                 </div>
+                <div class="row my-5">
+        
+            <a href="" class="btn d-inline btn-veedros-new btn-veedros-cart-red   border-0 mx-auto">
+                <span>Add to cart <i data-feather="shopping-cart" class="ml-3"></i></span>
+            </a>
+           
+            
+            <a href="" class="btn d-inline btn-veedros-new btn-veedros-cart border-0 mx-auto">
+                <span>Buy now</span>
+            </a>
+         
+            
+          
+        </div>
             @endif
 
         </div>

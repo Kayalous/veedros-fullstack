@@ -80,13 +80,12 @@ var search = document.querySelector('.search-input')
 var button = document.querySelector('.btn-nav-search');
 button.addEventListener('click', function(e) {
     e.preventDefault();
-    if(search.value.length > 0){
+    if (search.value.length > 0) {
         search.form.submit();
-    }
-    else{
-    search.focus();
-    input.classList.toggle('active');
-    search.classList.toggle('shadow-lg');
+    } else {
+        search.focus();
+        input.classList.toggle('active');
+        search.classList.toggle('shadow-lg');
     }
 
 })
@@ -97,3 +96,108 @@ search.addEventListener('focus', function() {
 search.addEventListener('blur', function() {
     search.value.length != 0 ? input.classList.add('focus') : input.classList.remove('focus');
 })
+
+
+
+
+
+
+let cart_tip_content = `<div class="cart-tip">
+
+    
+        <div class="cart-container sidebar">
+            <div class="container">
+            <!-- @@@@@@@@@@@@@@@@@@@@@ -->
+            <div class="row cart-card">
+
+                <div class="col-4 align-self-center ">
+                    <div class="card course-card  development-card noJquery" style="background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/courses/2/hellloo/images/tdzHq4nTU7zkOOmjoTEXVq8ZFlpqoTBAxIljBlhl.jpeg)">
+                    </div>
+                </div>
+                <div class="col-8 align-self-center ">
+                    <div class="container ">
+                        <div class="tip-cart-content">
+
+                            <p class="P-title">Everett Mohr</p>
+
+                            <p id="" class="P-description">999 Erin Field New Damaris,TN 03450 999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450 999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450999 Erin
+                                Field New Damaris, TN 03450 9
+                            </p>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- @@@@@@@@@@@@@@@@@@@@@ -->
+            <!-- @@@@@@@@@@@@@@@@@@@@@ -->
+            <div class="row cart-card">
+
+                <div class="col-4 align-self-center ">
+                    <div class="card course-card  development-card noJquery" style="background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/courses/2/hellloo/images/tdzHq4nTU7zkOOmjoTEXVq8ZFlpqoTBAxIljBlhl.jpeg)">
+                    </div>
+                </div>
+                <div class="col-8 align-self-center ">
+                    <div class="container ">
+                        <div class="tip-cart-content">
+
+                            <p class="P-title">Everett Mohr</p>
+
+                            <p class="P-description">999 Erin Field New Damaris,TN 03450 999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450 999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450999 Erin
+                                Field New Damaris, TN 03450 9
+                            </p>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- @@@@@@@@@@@@@@@@@@@@@ -->
+        </div>
+        </div>
+        <div class="rounded tip-cart-btn-bg" >
+        <div class="py-3 m-auto w-75">
+                            <p class="total">Total: LE 3600</p>
+                            <a href="courses/" class="btn btn-veedros-new btn-veedros-sm border-0 mx-auto">
+            <span>Go to cart</span>
+        </a>
+                        </div>
+                        </div>
+        
+        </div>
+        
+    </div>`;
+
+
+var module = document.getElementsByClassName("P-description");
+let cart_tip = document.createElement("div");
+cart_tip.innerHTML = cart_tip_content;
+if (document.querySelector('#cart-tip'))
+    tippy('#cart-tip', {
+        allowTitleHTML: true,
+        content: cart_tip_content,
+        interactive: true,
+        placement: "bottom",
+        theme: "veedros",
+        trigger: "click focus",
+        boundary: 'window',
+        arrow: false,
+    });
+$("#cart-tip").on('click', () => {
+
+    for (let i = 0; i < module.length; i++) {
+        $clamp(module[i], { clamp: 3 });
+    }
+});
+
+// setInterval(() => {
+//     for (let i = 0; i < module.length; i++) {
+//         $clamp(module[i], { clamp: 3 });
+//     }
+// }, 1000);
