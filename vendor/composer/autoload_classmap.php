@@ -82,6 +82,7 @@ return array(
     'Algolia\\AlgoliaSearch\\SearchIndex' => $vendorDir . '/algolia/algoliasearch-client-php/src/SearchIndex.php',
     'Algolia\\AlgoliaSearch\\Support\\Helpers' => $vendorDir . '/algolia/algoliasearch-client-php/src/Support/Helpers.php',
     'Algolia\\AlgoliaSearch\\Support\\UserAgent' => $vendorDir . '/algolia/algoliasearch-client-php/src/Support/UserAgent.php',
+    'App\\Cart' => $baseDir . '/app/Cart.php',
     'App\\Chapter' => $baseDir . '/app/Chapter.php',
     'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',

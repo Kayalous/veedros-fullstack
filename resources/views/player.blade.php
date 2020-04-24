@@ -331,14 +331,14 @@
                     <br>
                     <div class="w-100 text-center my-5">
                         <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
-                            Enroll now<i data-feather="shopping-cart" class="ml-3"></i></a>
+                            Enroll now<i class="fas fa-shopping-cart ml-3"></i></a>
                     </div>
                 @endif
             @else
                 <br>
                 <div class="w-100 text-center my-5">
                     <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
-                        Enroll now<i data-feather="shopping-cart" class="ml-3"></i></a>
+                        Enroll now<i class="fas fa-shopping-cart ml-3"></i></a>
                 </div>
             @endif
 

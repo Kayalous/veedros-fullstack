@@ -6,6 +6,10 @@
     border-radius: 1.2rem !important;
     background-color: white;
 }
+.tip .cart-card {
+    border-radius: 1.2rem !important;
+    background-color: transparent;
+}
 
 .cart-card .course-card {
     --height: 135px;
@@ -110,12 +114,8 @@
 .test-best::-webkit-scrollbar {
     position: absolute;
     right: 0;
-    width: 0px;
-    height: 18px;
-}
-
-.test-best:hover::-webkit-scrollbar {
     width: 8px;
+    height: 18px;
 }
 
 .test-best::-webkit-scrollbar-track {

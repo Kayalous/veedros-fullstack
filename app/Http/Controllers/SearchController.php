@@ -14,17 +14,14 @@ class SearchController extends Controller
         $query = request()->query('q');
         if(request()->query('query'))
             $query = request()->query('query');
-        $courses = null;
-        $chapters = null;
+        $results = [];
         $sessions = null;
+        $courses = null;
         if($query){
-            $sessions = Session::search($query)->paginate(10);
-            if(!$sessions){
-                $chapters = Chapter::search($query)->paginate(10);
-                if(!$chapters)
-                    $courses = Course::search($query)->paginate(10);
-            }
+            $sessions = Session::search($query)->get();
+            $courses = Course::search($query)->get();
+            $results = $courses->merge($sessions)->paginate(10);
         }
-        return view('search')->with(['courses' => $courses, 'chapters' => $chapters, 'sessions' => $sessions]);
+        return view('search')->with(['results' => $results]);
     }
 }

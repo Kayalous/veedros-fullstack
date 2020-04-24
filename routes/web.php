@@ -25,8 +25,13 @@ Route::get('/teach', function () {
 })->name('teach');
 
 Route::get('/cart', function () {
+
     return view('cart');
 });
+
+Route::get('/cart/add/{course_id}', 'CartController@add')->middleware('auth');
+Route::get('/cart/remove/{course_id}', 'CartController@remove')->middleware('auth');
+
 
 Route::post('/teach', 'ContactController@teach')->name('contact.teach');
 

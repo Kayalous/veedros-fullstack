@@ -73,15 +73,8 @@ if (document.querySelector('#singleElement'))
         placement: "bottom",
         theme: "veedros",
         trigger: "click focus",
-        boundary: 'window'
+        boundary: 'viewport'
     });
-
-
-
-
-
-
-
 var input = document.querySelector('.search-form');
 var search = document.querySelector('.search-input')
 var button = document.querySelector('.btn-nav-search');
@@ -99,7 +92,6 @@ button.addEventListener('click', function(e) {
 })
 search.addEventListener('focus', function() {
     input.classList.add('focus');
-
 })
 
 search.addEventListener('blur', function() {

@@ -11,7 +11,6 @@ function createTippyTemplates() {
         }
         //Get a short version of the duration
         courses[i].duration = courses[i].duration.split(' ');
-        console.log(parseInt(courses[i].duration[3]) > 30);
         if (parseInt(courses[i].duration[3]) > 30) {
             if (courses[i].duration[0] <= 1) {
                 courses[i].duration[1] += 's';
@@ -67,9 +66,9 @@ function createTippyTemplates() {
           </ul>
         </div>
         <a href="${card[i].href}" class="row">
-          <button class="btn btn-veedros-red btn-veedros-md border-0 mx-auto" type="button">
+          <a href="/cart/add/${courses[i].id}" class="btn btn-veedros-red btn-veedros-md border-0 mx-auto" type="button">
              Add to cart <i class=" mx-2 fas fa-cart-plus"></i>
-          </button>
+          </a>
         </a>
 
       </div>
@@ -91,7 +90,8 @@ function populateTippies() {
             interactive: true,
             placement: "right",
             theme: "veedros",
-            touch: false
+            touch: false,
+            boundary: document.querySelector("#featured-courses"),
         });
     }
 }

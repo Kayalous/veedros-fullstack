@@ -85,7 +85,7 @@
             <h2 class="text-center mt-0">Happy students</h2>
         </div>
     </section>
-    <section class="featured-courses mb-5 pb-5" id="featured-courses">
+    <section class="featured-courses mb-5 pb-5" style="overflow-y: visible" id="featured-courses">
         <div class="container container-mine pt-3">
             <div class="row">
                 <div class="header-text d-block mb-2 ">
@@ -298,13 +298,6 @@
                                     @endfor
                                 </div>
                                 @endfor
-
-
-
-
-
-
-
                             </div>
                         </div>
 
@@ -340,8 +333,7 @@
 
 @section('customJS')
     <script>
-        var courses = {!! json_encode($courses->toArray()) !!};
-        console.log(courses);
+        let courses = {!! json_encode($courses->toArray()) !!};
     </script>
     <script src="scripts/landing.js"></script>
 @endsection

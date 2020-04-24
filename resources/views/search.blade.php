@@ -3,6 +3,7 @@
 @section('customCSS')
     <link rel="stylesheet" href="{{asset('styles/profile.css')}}">
     <link rel="stylesheet" href="{{asset('styles/search.css')}}">
+    <link rel="stylesheet" href="{{asset('styles')}}/404.css" />
 @endsection
 @section('content')
 
@@ -15,67 +16,88 @@
             </button>
         </form>
         </div>
-        @if($sessions)
-            @foreach($sessions as $session)
-                <div class="row shadow-lg my-5  rounded-lg-mine">
+        @if($results)
+            @if($results->count() > 0)
+                @foreach($results as $result)
+                @if($result instanceof \App\Session)
+                        <div class="row shadow-lg my-5  rounded-lg-mine">
+                                    <div class="col-lg-4 col-12">
+                                    <div class="card course-card development-card noJquery" style="background-image: url({{$result->chapter->course->img}})">
+
+                                        <div class="card-body m-0">
+                                            <a href="{{$result->getLink()}}" class="card-body-inner noscroll card-bg-img">
+                                                <div class="play-circle play-circle-{{$loop->iteration}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""> </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                <div class="col-lg-8 col-12">
+                                    <div class="container">
+                                        <div class="w-100 mt-5">
+                                            <a href="{{$result->getLink()}}" class="p-title">{{$result->name}}</a>
+                                            <p class="p-description d-none-mine">{{$result->about}}</p>
+                                        </div>
+                                        <hr class="my-4">
+                                        <div class="d-flex justify-content-between align-items-baseline mb-2">
+                                            <a href="{{\App\Course::getFirstSession($result->chapter->course)}}" class="btn btn-veedros btn-veedros-md border-0 ml-auto ">
+                                                Watch from the start
+                                            </a>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                @endif
+
+                @if($result instanceof \App\Course)
+                        <div class="row shadow-lg my-5  rounded-lg-mine">
                             <div class="col-lg-4 col-12">
-                            <div class="card course-card development-card noJquery" style="background-image: url({{$session->chapter->course->img}})">
+                                <div class="card course-card development-card noJquery" style="background-image: url({{$result->img}})">
 
-                                <div class="card-body m-0">
-                                    <a href="{{$session->getLink()}}" class="card-body-inner noscroll card-bg-img">
-                                        <div class="play-circle play-circle-1"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""> </div>
-                                    </a>
+                                    <div class="card-body m-0">
+                                        <a href="{{\App\Course::getFirstSession($result)}}" class="card-body-inner noscroll card-bg-img">
+                                            <div class="play-circle play-circle-{{$loop->iteration}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""> </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            </div>
-                        <div class="col-lg-8 col-12">
-                            <div class="container">
-                                <div class="w-100 mt-5">
-                                    <a href="{{$session->getLink()}}" class="p-title">{{$session->name}}</a>
-                                    <p class="p-description d-none-mine">{{$session->about}}</p>
+                            <div class="col-lg-8 col-12">
+                                <div class="container">
+                                    <div class="w-100 mt-5">
+                                        <a href="{{\App\Course::getFirstSession($result)}}" class="p-title">{{$result->name}}</a>
+                                        <p class="p-description d-none-mine">{{$result->about}}</p>
+                                    </div>
+                                    <hr class="my-4">
+                                    <div class="d-flex justify-content-between align-items-baseline mb-2">
+                                        <a href="{{\App\Course::getFirstSession($result)}}" class="btn btn-veedros btn-veedros-md border-0 ml-auto ">
+                                            Watch from the start
+                                        </a>
+                                    </div>
                                 </div>
-                                <hr class="my-4">
-                                <div class="d-flex justify-content-between align-items-baseline mb-2">
-                                    <a href="{{\App\Course::getFirstSession($session->chapter->course)}}" class="btn btn-veedros btn-veedros-md border-0 ml-auto ">
-                                        Watch from the start
-                                    </a>
-                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            @endforeach
-                {{$sessions->links()}}
-        @endif
+                @endif
+                @endforeach
+                {{$results->links()}}
+            @else
+                <section class="my-5 py-5">
+                        <div class="row">
+                            <div class="col-lg-6 position-relative error-text text-center d-flex justify-content-center align-items-center flex-column">
+                                <h1 class="text-muted" style="font-size: 72px; font-weight: 700">No results were found.</h1>
+                            </div>
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <img class="img-fluid" src="{{asset('images')}}/error.png" alt="Error image">
+                            </div>
+                        </div>
+                        <div class="row mt-5 justify-content-center align-items-center">
+                            <a href="{{asset("/courses")}}" class="btn btn-veedros-new btn-veedros-md border-0 my-1"
+                               type="button">
+                                <span>Show all courses</span>
 
-        @if($courses)
-            @foreach($courses as $course)
-                <div class="row shadow-lg my-5  rounded-lg-mine">
-                    <div class="col-lg-4 col-12">
-                        <div class="card course-card development-card noJquery" style="background-image: url({{$course->img}})">
-
-                            <div class="card-body m-0">
-                                <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img">
-                                    <div class="play-circle play-circle-1"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""> </div>
-                                </a>
-                            </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-lg-8 col-12">
-                        <div class="container">
-                            <div class="w-100 mt-5">
-                                <a href="{{\App\Course::getFirstSession($course)}}" class="p-title">{{$courses->name}}</a>
-                                <p class="p-description d-none-mine">{{$course->about}}</p>
-                            </div>
-                            <hr class="my-4">
-                            <div class="d-flex justify-content-between align-items-baseline mb-2">
-                                <a href="{{\App\Course::getFirstSession($course)}}" class="btn btn-veedros btn-veedros-md border-0 ml-auto ">
-                                    Watch from the start
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+                </section>
+            @endif
         @endif
     </div>
 

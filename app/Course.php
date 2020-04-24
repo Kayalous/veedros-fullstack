@@ -42,6 +42,10 @@ class Course extends Model
         return $this->belongsToMany('App\User', 'saveds', 'course_id', 'user_id');
     }
 
+    public function carted(){
+        return $this->belongsToMany('App\User', 'carts', 'course_id', 'user_id');
+    }
+
     public function views(){
         return $this->hasMany(View::class);
     }

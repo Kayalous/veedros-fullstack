@@ -69,6 +69,10 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
         return $this->belongsToMany('App\Course', 'saveds', 'user_id', 'course_id');
     }
 
+    public function carted(){
+        return $this->belongsToMany('App\Course', 'carts', 'user_id', 'course_id');
+    }
+
     public function views(){
         return $this->hasMany(View::class);
     }

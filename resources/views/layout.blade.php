@@ -295,6 +295,7 @@
                             </li>
                             @endif
                 @endif
+
                 <li class="nav-item d-none d-lg-flex align-items-center justify-content-around">
                     <div class="row">
                         <div class="col-6">
@@ -302,6 +303,7 @@
                         </div>
                     </div>
                 </li>
+
                     <li class="nav-item tip pb-4 mx-auto d-flex flex-column d-lg-none align-items-center justify-content-around">
                         <div class="row">
                             <div class="col-6">
@@ -333,14 +335,19 @@
                         <button class=" btn btn-veedros-new btn-veedros-sm border-0 m-auto" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Log out
                         </button>                    </li>
-
+                    <li class="nav-item d-none d-lg-flex align-items-center justify-content-around">
+                        <div class="row">
+                            <div class="col-6">
+                                <div id="cartTip" class="nav-photo text-white d-flex justify-content-center align-items-center" style="background-color: #65D3BF" alt="Cart icon"><i class="fas fa-shopping-cart"></i></div>
+                            </div>
+                        </div>
+                    </li>
 
             @endif
         </ul>
     </div>
 </nav>
 @yield('content')
-<!-- =====================================  FOOTER ========================================= -->
 <section>
 <div class="footer">
         <div class="container">
@@ -421,7 +428,6 @@
     </div>
   </section>
 
-<!-- ============== END ====================  FOOTER ============== END ================= -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -433,14 +439,13 @@
 
 <!-- tippy js  -->
 <script src="https://unpkg.com/tippy.js@5"></script>
-<script src="https://unpkg.com/tooltip.js"></script>
 <!-- Sweetalert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 @yield('libraryJS')
 <!-- App javascript  -->
 <script src="{{asset('scripts')}}/app.js"></script>
 @if(!Auth::check())
-<script src="{{asset('scripts')}}/auth.js"></script>
+    <script src="{{asset('scripts')}}/auth.js"></script>
 @endif
 <script>
     feather.replace();
@@ -469,6 +474,79 @@
     }(document, 'script', 'facebook-jssdk'));
 
 </script>
+
+@if(Auth::check())
+    <script>
+
+        let subtotal = 0;
+        let cartItemContainer = '';
+        @if(count(Auth::user()->carted) > 0)
+            let cartItems = {!! json_encode(Auth::user()->carted->toArray()) !!};
+            for(let i = 0; i < cartItems.length; i++){
+                subtotal += cartItems[i].price;
+                cartItemContainer += `<div class="row cart-card my-3 ">
+                        <div class="col-4 m-0 p-0 align-self-start ">
+                            <div class="card course-card  development-card noJquery" style="background-image: url(${cartItems[i].img})">
+                            </div>
+                        </div>
+                        <div class="col-8 m-0 p-0 align-self-center ">
+
+                                <div class="tip-cart-content">
+
+                                        <p class="P-title text-left pr-4">${cartItems[i].name}</p>
+
+                                            <p class="P-description text-left">${cartItems[i].about}
+                                            </p>
+
+                                </div>
+                                <div class="tip-meta p-0">
+              <div class="row justify-content-start">
+                <div class="col-6 p-0">
+                  <div class="badge tip-badge shadow-sm">
+                    <div class="tip-badge-item">  <i class="fas fa-hand-holding-usd"></i> <span>${cartItems[i].price} EGP</span></div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                    </div>
+            </div>`
+            }
+        @else
+            cartItemContainer = `<div class="d-flex w-100 h-100 justify-content-center align-items-center px-3">
+<h2 class="text-muted text-center my-auto">You don't have any courses in your cart yet.</h2>
+</div>
+`;
+        @endif
+        let cart_tip_content = `<div class="tip">
+        <div class="cart-container">
+        ${cartItemContainer}
+        </div>
+    <div class="cart-footer">
+        <div class="container">
+            <p class="text-left font-weight-bold text-muted">Sub total: <span>${subtotal}</span> EGP</p>
+        </div>
+        <div class="d-flex w-100 px-2">
+            <a href="/cart" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" style="max-width: 100%">
+                                Go to cart</a>
+        </div>
+    </div>
+</div>`;
+        let cart_tip = document.createElement('div');
+        cart_tip.innerHTML = cart_tip_content;
+        if(document.querySelector('#cartTip'))
+            tippy('#cartTip', {
+                allowTitleHTML: true,
+                content: cart_tip_content,
+                interactive: true,
+                placement: "bottom",
+                theme: "veedros-cart",
+                trigger: "click focus",
+                boundary: 'viewport'
+            });
+
+    </script>
+@endif
+
 @yield('customJS')
 
 @if(Session::has('success'))
@@ -537,6 +615,9 @@
         </script>
 @endif
 
+<script>
+    feather.replace();
+</script>
 </body>
 
 </html>

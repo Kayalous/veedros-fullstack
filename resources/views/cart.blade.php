@@ -14,13 +14,10 @@
                     <ul>
                         <li>
                             <div class="">
-                                <p class="total">Total:</p>
-                                <p class="sum">1200+1400</p>
-                                <hr>
-                            </div>
+                                <p class="total">Sub total:</p>
                         </li>
                         <li>
-                            <h2>LE 3600</h2>
+                            <h2>{{Auth::user()->carted->sum('price')}} EGP</h2>
                         </li>
                         <li>
                             <a href="#" class="btn btn-veedros-new btn-veedros-red m-auto btn-veedros-md border-0">Check out </a>
@@ -39,72 +36,76 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-auto  col-12 test-best px-4">
-                <!-- @@@@@@@@@@@@@@@@@@ -->
-                <div class="row  cart-card shadow-sm my-3   rounded-lg-mine">
-                    <div class="col-3 align-self-center ">
-                        <div class="card course-card  development-card noJquery" style="background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/courses/2/hellloo/images/tdzHq4nTU7zkOOmjoTEXVq8ZFlpqoTBAxIljBlhl.jpeg)">
+            <div class="col-lg-8 col-md-auto col-12 test-best px-4">
+                @if(count(Auth::user()->carted) > 0)
+                    @foreach(Auth::user()->carted as $course)
+                    <div class="row  cart-card shadow-sm my-3   rounded-lg-mine">
+                        <div class="col-3 align-self-center ">
+                            <div class="card course-card  development-card noJquery" style="background-image: url({{$course->img}})">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-5 align-self-center ">
-                        <div class="container ">
-                            <div class="">
+                        <div class="col-5 align-self-center ">
+                            <div class="container ">
+                                <div class="">
 
-                                <div class=" expend-description">
+                                    <div class=" expend-description">
 
-                                    <input class="menu-btn" type="checkbox" id="pass-menu-btn" />
-                                    <label class="menu-text" for="pass-menu-btn">
-                            </label>
-                                    <p class="p-title">Everett Mohr</p>
-                                    <ul class="menu">
-                                        <p class="p-description d-none-mine">999 Erin Field New Damaris, TN 03450 999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450 999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN
-                                            03450999 Erin Field New Damaris, TN 03450 9
-                                        </p>
+                                        <input class="menu-btn" type="checkbox" id="pass-menu-btn" />
+                                        <label class="menu-text" for="pass-menu-btn">
+                                </label>
+                                        <p class="p-title">{{$course->name}}</p>
+                                        <ul class="menu">
+                                            <p class="p-description d-none-mine">{{$course->about}}
+                                            </p>
 
-                                    </ul>
+                                        </ul>
+                                    </div>
+
                                 </div>
+
+
 
                             </div>
+                        </div>
+                        <div class="col-4 vertical-border align-self-center ">
+                            <div class="cart-options">
+                                <ul class="px-2">
+                                    <div class="">
+                                        <li>
+                                            <a href="/cart/remove/{{$course->id}}">Remove</a>
+                                        </li>
+                                        <li>
+                                            <a href="/save/{{$course->id}}">Add to saved</a>
+                                        </li>
 
+                                    </div>
 
+                                </ul>
+
+                                <ul class="px-2">
+                                    <div class="">
+                                        <li>
+                                            <span>Price</span>
+                                        </li>
+                                        <li>
+                                            <span class="Price">{{$course->price}} EGP</span>
+                                        </li>
+                                    </div>
+
+                                </ul>
+                            </div>
 
                         </div>
                     </div>
-                    <div class="col-4 vertical-border align-self-center ">
-                        <div class="cart-options">
-                            <ul class="px-2">
-                                <div class="">
-                                    <li>
-                                        <a href="">Remove</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Add to saved</a>
-                                    </li>
-
-                                </div>
-
-                            </ul>
-
-                            <ul class="px-2">
-                                <div class="">
-                                    <li>
-                                        <span>Price</span>
-                                    </li>
-                                    <li>
-                                        <span class="Price">$1200</span>
-                                    </li>
-                                </div>
-
-                            </ul>
-                        </div>
-
+                    @endforeach
+                @else
+                    <div class="d-flex w-100 h-100 justify-content-center align-items-center">
+                        <h1 class="text-muted text-center my-auto">You don't have any courses in your cart yet.</h1>
                     </div>
-                </div>
-                <!-- @@@@@@@@@@@@@@@@@@ -->
-
+                @endif
 
             </div>
-            
+
         </div>
         <div class="row my-5">
             <a href="courses/" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto">
@@ -114,42 +115,5 @@
     </div>
 </section>
 
-<!-- ========================================= -->
-<div class="tip">
-    <div class="container">
-        <div class="cart-container">
-        <div class="row  cart-card  my-3 ">
-                    <div class="col-6 align-self-center ">
-                        <div class="card course-card  development-card noJquery" style="background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/courses/2/hellloo/images/tdzHq4nTU7zkOOmjoTEXVq8ZFlpqoTBAxIljBlhl.jpeg)">
-                        </div>
-                    </div>
-                    <div class="col-6 align-self-center ">
-                        <div class="container ">
-                            <div class="tip-cart-content">
 
-                                    <p class="P-title">Everett Mohr</p>
-                        
-                                        <p class="P-description">999 Erin Field New Damaris,<br> TN 03450 999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN 03450 999 Erin Field New Damaris, TN 03450999 Erin Field New Damaris, TN
-                                            03450999 Erin Field New Damaris, TN 03450 9
-                                        </p>
-
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    
-                </div>
-                <!-- @@@@@@@@@@@@@@@@@@ -->
-        </div>
-
-        <br>
-        <button class=" btn btn-veedros-new btn-veedros-sm border-0 m-auto" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Log out
-            </button>
-
-    </div>
-</div>
-<!-- ============================================= -->
 @endsection

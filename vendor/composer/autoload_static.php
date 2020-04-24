@@ -719,6 +719,7 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'Algolia\\AlgoliaSearch\\SearchIndex' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/SearchIndex.php',
         'Algolia\\AlgoliaSearch\\Support\\Helpers' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/Support/Helpers.php',
         'Algolia\\AlgoliaSearch\\Support\\UserAgent' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/Support/UserAgent.php',
+        'App\\Cart' => __DIR__ . '/../..' . '/app/Cart.php',
         'App\\Chapter' => __DIR__ . '/../..' . '/app/Chapter.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
