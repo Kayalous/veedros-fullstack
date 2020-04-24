@@ -39,7 +39,7 @@ trait AuthenticatesUsers
                 \Session::flash('inbox-link', $this->getEmailProvider($request['email']));
             \Session::flash('success','An email was sent to you at ' . $request['email'] . ' with a link to login.');
 
-            return url()->previous();
+            return redirect(url()->previous());
         }
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
@@ -61,8 +61,7 @@ trait AuthenticatesUsers
         $this->incrementLoginAttempts($request);
 
         \Session::flash('failure','The email or password you entered were incorrect. Please try again.');
-        return url()->previous();
-    }
+        return redirect(url()->previous());    }
 
     /**
      * Validate the user login request.
@@ -77,7 +76,7 @@ trait AuthenticatesUsers
         $user = User::where('email', $request['email'])->first();
         if($user === null){
             \Session::flash('failure','The email or password you entered were incorrect. Please try again.');
-            return url()->previous();
+            return redirect(url()->previous());
         }
         if(strlen($request['password']) === 0){
             $request->validate([
@@ -163,7 +162,7 @@ trait AuthenticatesUsers
      */
     protected function authenticated(Request $request, $user)
     {
-        //
+        return back();
     }
 
     /**
