@@ -20,7 +20,7 @@ class SearchController extends Controller
         if($query){
             $sessions = Session::search($query)->get();
             $courses = Course::search($query)->get();
-            $results = $courses->merge($sessions)->paginate(10);
+            $results = $courses->merge($sessions)->paginate(10)->appends(request()->query());
         }
         return view('search')->with(['results' => $results]);
     }
