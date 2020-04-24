@@ -354,7 +354,7 @@
             <div class="row">
                 <div class="col-12 col-lg-4 align-self-center">
                     <div class="footer-img-media">
-                        <img class="img-fluid-mine" style="width: 120px;" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
+                        <img class="img-fluid-mine" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
                                                alt="Logo">
                      </div>
 
@@ -400,15 +400,6 @@
                                     <li class="my-1">
                                         <a href="mailto:support@veedros.com">support@veedros.com</a>
                                     </li>
-                                    <li class="my-1">
-                                        <a href="mailto:khaled@veedros.comm">khaled@veedros.com</a>
-                                    </li>
-                                    <li class="my-1">
-                                        <a href="mailto:alaa@veedros.com">alaa@veedros.com</a>
-                                    </li>
-                                    <li class="my-1">
-                                        <a href="mailto:abdulrhman@veedros.com">abdulrhman@veedros.com</a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -418,7 +409,7 @@
                     <div class="d-flex justify-content-between">
                         <p>Veedros copyrights reserved 2020</p>
                         <div>
-                            <a href="https://www.facebook.com/veedrosedu/" target="_blank"><i  class="fab fa-facebook-square"></i></a>
+                            <a class="mr-3" href="https://www.facebook.com/veedrosedu/" target="_blank"><i  class="fab fa-facebook-square"></i></a>
                             <a href=""><i class="fab fa-twitter" target="_blank"></i></a>
                         </div>
                     </div>
