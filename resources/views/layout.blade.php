@@ -486,7 +486,7 @@
 
                                         <p class="P-title text-left pr-4">${cartItems[i].name}</p>
 
-                                            <p class="P-description text-left">${cartItems[i].about}
+                                            <p class="P-description text-left pr-4">${cartItems[i].about}
                                             </p>
 
                                 </div>

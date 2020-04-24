@@ -26,7 +26,7 @@
 
                                         <div class="card-body m-0">
                                             <a href="{{$result->getLink()}}" class="card-body-inner noscroll card-bg-img">
-                                                <div class="play-circle play-circle-{{$loop->iteration}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""> </div>
+                                                <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""> </div>
                                             </a>
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@
 
                                     <div class="card-body m-0">
                                         <a href="{{\App\Course::getFirstSession($result)}}" class="card-body-inner noscroll card-bg-img">
-                                            <div class="play-circle play-circle-{{$loop->iteration}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""> </div>
+                                            <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""> </div>
                                         </a>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                         </div>
                 @endif
                 @endforeach
-                {{$results->links()}}
+                {{ $results->links() }}
             @else
                 <section class="my-5 py-5">
                         <div class="row">
