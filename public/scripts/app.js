@@ -47,9 +47,10 @@ let tip_content = `<div class="tip">
     </a>
         <br>
         <div class="btn-redeem-veedros m-auto ">
-            <form >
-                <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Redeem code" type="text">
-                <button class="btn-redeem-icon border-0">
+            <form method="POST" action="/promo/redeem">
+                ${csrfToken}
+                <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Redeem code" type="text" name="code">
+                <button type="submit" class="btn-redeem-icon border-0">
                     <i class="fas fa-arrow-right"></i>
                 </button>
             </form>

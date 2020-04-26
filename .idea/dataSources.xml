@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\Abdu\Documents\Web\laravel-development\veedros\storage\search\courses.index</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="search_pool" uuid="4bd9a36a-0afc-41a7-9320-9aea8a980843">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Abdu\Documents\Web\laravel-development\veedros\storage\search_pool.index</jdbc-url>
+    </data-source>
   </component>
 </project>

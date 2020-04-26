@@ -22,7 +22,7 @@ class EnrollController extends Controller
         }
         $enrollmentStatus = self::enrollUser($user, $course);
         if($enrollmentStatus === true)
-            \Session::flash('success',"Awesome! you're now enrolled in " . $course->name .  ".");
+            \Session::flash('success',"Awesome! You're now enrolled in " . $course->name .  ".");
         return back();
 
     }

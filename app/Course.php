@@ -50,6 +50,10 @@ class Course extends Model
         return $this->hasMany(View::class);
     }
 
+    public function promoCodes(){
+        return $this->belongsToMany('App\PromoCode', 'course_promo_code', 'course_id', 'promo_code_id');
+    }
+
     public static function getFirstSession(Course $course){
             //Base url
             $url = URL::to('watch/');

@@ -433,6 +433,9 @@
 <!-- Sweetalert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 @yield('libraryJS')
+<script>
+    let csrfToken = '@csrf';
+</script>
 <!-- App javascript  -->
 <script src="{{asset('scripts')}}/app.js"></script>
 @if(!Auth::check())
@@ -468,7 +471,6 @@
 
 @if(Auth::check())
     <script>
-
         let subtotal = 0;
         let cartItemContainer = '';
         @if(count(Auth::user()->carted) > 0)
@@ -505,8 +507,7 @@
         @else
             cartItemContainer = `<div class="d-flex w-100 h-100 justify-content-center align-items-center px-3">
 <h2 class="text-muted text-center my-auto">You don't have any courses in your cart yet.</h2>
-</div>
-`;
+</div>`;
         @endif
         let cart_tip_content = `<div class="tip">
         <div class="cart-container">

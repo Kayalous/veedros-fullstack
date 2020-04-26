@@ -34,6 +34,7 @@ Route::get('/cart/remove/{course_id}', 'CartController@remove')->middleware('aut
 
 
 Route::post('/teach', 'ContactController@teach')->name('contact.teach');
+Route::post('/promo/redeem', 'PromoCodeController@redeem')->middleware('auth');
 
 Route::get('/loaderio-11b75385bde861fbdbbd36ee9a0257cc/', function () {
     return view('stress');
