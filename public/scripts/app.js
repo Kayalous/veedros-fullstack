@@ -97,3 +97,8 @@ search.addEventListener('focus', function() {
 search.addEventListener('blur', function() {
     search.value.length != 0 ? input.classList.add('focus') : input.classList.remove('focus');
 })
+
+
+$(document).scroll(() => {
+    $("fixed-cart").addClass("position-fixed");
+});
