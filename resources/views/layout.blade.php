@@ -210,7 +210,7 @@
     </div>
 </div>
 <!-- Navbar  -->
-<nav class="navbar navbar-expand-lg absolute-top main-navbar navbar-light">
+<nav class="navbar navbar-expand-lg absolute-top main-navbar navbar-light my-1">
     <a class="navbar-brand logo" href="{{route('landing')}}"><img class="img-fluid" style="width: 120px;" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
                                                alt="Logo"></a>
     <button class="navbar-toggler border-0 d-lg-none" type="button" data-toggle="collapse"
@@ -304,7 +304,7 @@
                     </div>
                 </li>
 
-                    <li class="nav-item tip pb-4 mx-auto d-flex flex-column d-lg-none align-items-center justify-content-around">
+                    <li id="fixed-cart" class="nav-item tip pb-4 mx-auto d-flex flex-column d-lg-none align-items-center justify-content-around">
                         <div class="row">
                             <div class="col-6">
                                 <img class="nav-photo" src="{{Auth::user()->img}}" alt="profile picture">
