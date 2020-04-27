@@ -101,18 +101,23 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
 
     public function getLastWatchedSession(Course $course){
         $lastView = View::where(['user_id' => Auth::user()->id, 'course_id' => $course->id])->latest()->first();
-        $lastSessionWatched = Session::where('id', $lastView->session_id)->first();
-        //Base url
-        $url = URL::to('watch/');
-        //With instructor display name
-        $url = $url . '/' . $course->instructor->display_name;
-        //With course slug
-        $url = $url . '/'. $course->slug;
-        //With first chapter slug
-        $chapter = $lastSessionWatched->chapter;
-        $url = $url . '/'. $chapter->slug;
-        //With first session slug
-        $url = $url . '/'. $lastSessionWatched->slug;
+        if($lastView){
+            $lastSessionWatched = Session::where('id', $lastView->session_id)->first();
+            //Base url
+            $url = URL::to('watch/');
+            //With instructor display name
+            $url = $url . '/' . $course->instructor->display_name;
+            //With course slug
+            $url = $url . '/'. $course->slug;
+            //With first chapter slug
+            $chapter = $lastSessionWatched->chapter;
+            $url = $url . '/'. $chapter->slug;
+            //With first session slug
+            $url = $url . '/'. $lastSessionWatched->slug;
+        }
+        else{
+            $url = Course::getFirstSession($course);
+        }
         return $url;
     }
 }

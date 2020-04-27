@@ -24,7 +24,8 @@ class PromoCodesTableSeeder extends Seeder
         $promoCode = \App\PromoCode::create([
             'code' => 'MULTIPLE-COURSES-100',
             'discount_percentage' => 100,
-            'number_of_uses' => (3)]);
+            'number_of_uses' => (3),
+            'unlimited' => true]);
         $promoCode->courses()->attach(1);
         $promoCode->courses()->attach(2);
         $promoCode->courses()->attach(3);
