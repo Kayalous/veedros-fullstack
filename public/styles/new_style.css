@@ -40,7 +40,7 @@
     box-shadow: none !important;
 }
 
-.btn-veedros-red,
+.btn-veedros-red:active,
 .btn-veedros-new:active {
     moz-transition: all 0.1s ease-in-out;
     -webkit-transition: all 0.1s ease-in-out;

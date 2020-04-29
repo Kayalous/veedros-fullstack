@@ -1262,7 +1262,6 @@ ul {
     border-radius: 15px;
     overflow: hidden;
     scrollbar-width: none;
-    -ms-overflow-style: hidden;
     /* box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15); */
     background-repeat: no-repeat;
     background-size: cover;
@@ -1282,21 +1281,6 @@ ul {
 
 .course-card::-webkit-scrollbar {
     width: 0px;
-}
-
-.instructor-img {
-    top: -270px;
-    left: 50%;
-    margin-left: -135px;
-    position: absolute;
-    height: 270px;
-    width: 270px;
-    border: white solid 7px;
-    border-radius: 50%;
-    background-image: url("../shutterstock_648907024.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
 }
 
 .course-title-alt {
@@ -1458,7 +1442,6 @@ ul {
     box-sizing: content-box;
     padding: 0.1rem 0.3rem;
     border-radius: 8px;
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     /* max-width: rem; */
@@ -1541,7 +1524,6 @@ ul {
 }
 
 .course-duration {
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     margin-right: 2.5rem;
@@ -1550,7 +1532,6 @@ ul {
 }
 
 .course-price {
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     -ms-flex-wrap: nowrap;
@@ -1573,7 +1554,6 @@ ul {
 }
 
 .course-poster {
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     -webkit-box-align: baseline;
@@ -1597,7 +1577,6 @@ ul {
     margin-top: 5px;
     color: #8a8a8c;
     font-size: 10px;
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     -ms-flex-wrap: nowrap;
@@ -1926,13 +1905,6 @@ ul {
     background: linear-gradient(to left, #63c9e2 0%, white 55%);
 }
 
-@media (max-width: 768px) {
-    -webkit-transform: skewY(-15deg);
-    transform: skewY(-15deg);
-    margin-left: -20vw;
-    background: -webkit-gradient(linear, right top, left top, from(#63c9e2), color-stop(65%, white));
-    background: linear-gradient(to left, #63c9e2 0%, white 55%);
-}
 
 .Instructor-text h1 {
     font-weight: 700;
@@ -2234,10 +2206,6 @@ ul {
         display: inline-block !important;
     }
 }
-
-
-}
-
 /* ================== edit ================== */
 
 /* ================================================================================================ */
@@ -2482,6 +2450,9 @@ h2 {
     background-position: center;
     box-shadow: 0 0 1rem rgba(0, 0, 0, .15);
     cursor: pointer;
+}
+.btn-redeem-veedros .form-control{
+    padding-right: 35px;
 }
 .navbar .tip h6 {
     color: rgba(0, 0, 0, 0.6);

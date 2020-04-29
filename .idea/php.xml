@@ -97,11 +97,6 @@
       <path value="$PROJECT_DIR$/vendor/sopamo/laravel-filepond" />
       <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
       <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
-      <path value="$PROJECT_DIR$/vendor/vimeo/vimeo-api" />
-      <path value="$PROJECT_DIR$/vendor/ankitpokhrel/tus-php" />
-      <path value="$PROJECT_DIR$/vendor/predis/predis" />
-      <path value="$PROJECT_DIR$/vendor/graham-campbell/manager" />
-      <path value="$PROJECT_DIR$/vendor/vimeo/laravel" />
       <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
       <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />

@@ -79,6 +79,8 @@ if (document.querySelector('#singleElement'))
 var input = document.querySelector('.search-form');
 var search = document.querySelector('.search-input')
 var button = document.querySelector('.btn-nav-search');
+if(button){
+
 button.addEventListener('click', function(e) {
     e.preventDefault();
     if (search.value.length > 0) {
@@ -97,6 +99,7 @@ search.addEventListener('focus', function() {
 search.addEventListener('blur', function() {
     search.value.length != 0 ? input.classList.add('focus') : input.classList.remove('focus');
 })
+}
 
 
 $(document).scroll(() => {
