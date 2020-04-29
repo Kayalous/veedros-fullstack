@@ -142,16 +142,23 @@ hr {
     display: flex;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    position: absolute;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 99999;
+    transition: all 0.2s ease !important;
+    min-height: 68px;
+}
+
+.main-navbar.scrolled {
+    background: #FFF;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.035);
+    min-height: 75px;
 }
 
 @media (max-width: 992px) {
     .main-navbar {
-        background: #F6F6F6 !important;
+        background: #FFF !important;
     }
 }
 
@@ -2382,28 +2389,28 @@ h2 {
         margin-right: auto;
         margin-left: 0 !important;
     }
-    
+
     .header-text h1 {
         font-size: 55px;
     }
-    
+
     .our_services h1 {
         font-size: 55px !important;
     }
-    
+
     .header-text h4 {
         font-size: 20px;
     }
-    
+
     .testimonials .ratings {
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .testimonials user-info h6 {
         text-align: center;
     }
-    
+
     .rating-container {
         align-items: center;
         margin-top: 0.7rem;
@@ -2413,25 +2420,25 @@ h2 {
     .academies h1 {
         font-size: 55px;
     }
-    
+
     .testimonials h1 {
         font-size: 55px;
     }
-    
+
     .teach-with-us-content h1 {
         font-size: 55px;
     }
-    
+
     .academies h2,
     .academies h4 {
         font-size: 20px;
     }
-    
+
     .testimonials h2,
     .testimonials h4 {
         font-size: 20px;
     }
-    
+
     .teach-with-us-content h4 {
         font-size: 20px;
     }
@@ -2440,37 +2447,37 @@ h2 {
     .header-text h1 {
         font-size: 40px;
     }
-    
+
     .academies h1 {
         font-size: 40px;
     }
-    
+
     .testimonials h1 {
         font-size: 40px;
     }
-    
+
     .teach-with-us-content h1 {
         font-size: 40px;
     }
-    
+
     .academies h2,
     .academies h4 {
         font-size: 16px;
     }
-    
+
     .testimonials h2,
     .testimonials h4 {
         font-size: 16px;
     }
-    
+
     .teach-with-us-content h4 {
         font-size: 16px;
     }
-    
+
     .our_services h1 {
         font-size: 40px !important;
     }
-    
+
     .our_services p {
         font-size: 16px;
     }
@@ -2528,15 +2535,18 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.swal2-container {
+    z-index: 9999999 !important;
+}
 @media (max-width: 992px) {
     .teach-img {
         height: 300px;
     }
-    
+
     .swal2-container {
         width: 100%;
     }
-    
+
     .swal2-container br {
         display: none;
     }
@@ -2641,7 +2651,7 @@ img {
     .our_services .card {
         height: 300px;
     }
-    
+
     .our_services .card img {
         max-width: 28%;
     }

@@ -16,7 +16,8 @@
                     <ul>
                         <li>
                             <div class="">
-                                <p class="total">Sub total:</p>
+                                <p class="total text-muted">Sub total:</p>
+                            </div>
                         </li>
                         <li>
                             <h2>{{Auth::user()->carted->sum('price')}} EGP</h2>
@@ -27,11 +28,11 @@
                         </li>
                         <li>
                             <div class="btn-redeem-veedros m-auto pt-3">
-                                <form>
-                                    <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm is-valid" placeholder="Add Coupon" type="text">
+                                <form method="POST" action="/cart/promo-code">
+                                    <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Add Coupon" type="text" name="code">
                                     <button class="btn-redeem-icon border-0">
-                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </button>
+                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                    </button>
                                 </form>
                             </div>
                         </li>

@@ -102,3 +102,9 @@ search.addEventListener('blur', function() {
 $(document).scroll(() => {
     $("fixed-cart").addClass("position-fixed");
 });
+$(function () {
+    $(document).scroll(function () {
+        var $nav = $(".fixed-top");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+});

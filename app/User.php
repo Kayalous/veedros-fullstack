@@ -81,9 +81,7 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
         $saved = Saved::where(['course_id' => $course->id, 'user_id' => $this->id])->get();
         if(count($saved) > 0)
             return true;
-
         return false;
-
     }
 
     public function hasSeenThisSession(Session $session){

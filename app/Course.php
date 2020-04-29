@@ -75,6 +75,8 @@ class Course extends Model
         foreach ($course->chapters as $chapter){
             $sessionCount += $chapter->sessions->count();
         }
+        if($sessionCount === 0)
+            $sessionCount = 1;
         return $sessionCount;
     }
 

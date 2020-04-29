@@ -210,7 +210,7 @@
     </div>
 </div>
 <!-- Navbar  -->
-<nav class="navbar navbar-expand-lg absolute-top main-navbar navbar-light my-1">
+<nav class="navbar navbar-expand-lg fixed-top main-navbar navbar-light">
     <a class="navbar-brand logo" href="{{route('landing')}}"><img class="img-fluid" style="width: 120px;" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
                                                alt="Logo"></a>
     <button class="navbar-toggler border-0 d-lg-none" type="button" data-toggle="collapse"

@@ -15,8 +15,8 @@
             <br>
             <p>A set of courses that will change your life and career.</p>
             <div class="btn-search-veedros-sm w-75 m-auto ">
-                <form class="">
-                    <input class=" form-control profile-form-field email-field-props border-light border-radius-sm is-valid" placeholder="type here..." type="text">
+                <form method="GET" action="{{route('search')}}">
+                    <input class=" form-control profile-form-field email-field-props border-light border-radius-sm" name="q" placeholder="Search" type="text">
                     <button class="btn-search-sm border-0">
                         <i class="fas fa-arrow-right"></i>
                     </button>
