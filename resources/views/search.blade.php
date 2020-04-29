@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{asset('styles')}}/404.css" />
 @endsection
 @section('content')
-
+    <div class="new-bg" style="z-index: -1"></div>
     <div class="container my-5 py-5">
         <div class="btn-search-veedros-sm w-75 m-auto ">
         <form action="" method="get">
@@ -20,7 +20,7 @@
             @if($results->count() > 0)
                 @foreach($results as $result)
                 @if($result instanceof \App\Session)
-                        <div class="row shadow-lg my-5  rounded-lg-mine">
+                        <div class="row shadow-lg my-5 rounded-lg bg-white py-2">
                                     <div class="col-lg-4 col-12">
                                     <div class="card course-card development-card noJquery" style="background-image: url({{$result->chapter->course->img}})">
 
@@ -50,7 +50,7 @@
                 @endif
 
                 @if($result instanceof \App\Course)
-                        <div class="row shadow-lg my-5  rounded-lg-mine">
+                        <div class="row shadow-lg my-5 rounded-lg bg-white py-2">
                             <div class="col-lg-4 col-12">
                                 <div class="card course-card development-card noJquery" style="background-image: url({{$result->img}})">
 

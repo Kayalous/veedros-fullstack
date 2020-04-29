@@ -517,7 +517,7 @@
         <div class="container">
             <p class="text-left font-weight-bold text-muted">Sub total: <span>${subtotal}</span> EGP</p>
         </div>
-        <div class="d-flex w-100 px-2">
+        <div class="d-flex w-100 px-3">
             <a href="/cart" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" style="max-width: 100%">
                                 Go to cart</a>
         </div>
