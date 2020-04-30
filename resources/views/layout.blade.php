@@ -348,7 +348,7 @@
     </div>
 </nav>
 @yield('content')
-<section>
+<section class="footer-bg" >
 <div class="footer">
         <div class="container">
             <div class="row">

@@ -2,13 +2,14 @@
 
 
 /* custom size for share btn */
+
+
 /* ============================================================================================== */
 
 .info-bar {
     margin-top: 7em;
     margin-bottom: 5em;
 }
-
 
 .nav-item .nav-photo .notification {
     display: block;
@@ -55,7 +56,6 @@
     background-position: center;
     background-size: cover;
     border-radius: 50%;
-
 }
 
 .ml-auto {
@@ -66,11 +66,7 @@
 
 .dashboard-land .w-90 {
     width: 90%;
-
 }
-
-
-
 
 .btn-Edit p {
     margin: 0;
@@ -84,9 +80,8 @@
 }
 
 
-
-
 /* ======================== edit ======================== */
+
 
 /* ================== edit ================== */
 
@@ -95,8 +90,8 @@
     margin: 3rem 3rem;
 }
 
-/* ================================================================================================ */
 
+/* ================================================================================================ */
 
 .card-kmine .card-bg-img {
     height: 300px !important;
@@ -106,26 +101,27 @@
     min-height: 5rem !important;
 }
 
+
 /* ======================================= حشوة ======================================== */
+
 .test-mine {
     height: 100%;
-
     flex-wrap: wrap;
     display: flex;
     align-items: center;
 }
 
+
 /* #0071BC */
 
 
-
 /* progress bar */
+
 .progress-bar {
     position: relative;
     width: 100%;
     height: 2em;
     background-color: #F2F2F2;
-
 }
 
 .progress-bar::before {
@@ -144,13 +140,12 @@
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
-
     .dashboard-land .card-columns {
         column-count: 2;
         transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
     }
-
 }
+
 
 /* .info-bar .fas,
 .far {
@@ -158,23 +153,18 @@
 } */
 
 @media (max-width: 767px) {
-
     .user-photo {
         margin: auto;
     }
-
     .content-info-bar {
         display: block;
     }
-
     .dashboard-land .d-none-mine {
         display: none;
     }
-
     .dashboard-land .card-columns {
         column-count: 1;
     }
-
     .rounded-lg-mine {
         margin: 3rem 0.5rem;
     }
@@ -182,6 +172,7 @@
 
 
 /* ------------------- dashboard modals title and My progress dicoration ------------- */
+
 .dashboard-land .p-title {
     font-size: 30px;
     font-weight: 600;
@@ -209,6 +200,7 @@
     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
+
 /* --------------------------------------------------------------------------------- */
 
 .info-bar .content-info-bar .user-name .p1 {
@@ -225,23 +217,17 @@
     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
-
 .nav-item-edit p {
     font-size: 20px;
 }
 
+
 /* ============================================= */
-
-
-
-
 
 ul .nav-item-edit a {
     text-decoration: none;
     color: black;
 }
-
-
 
 .nav-item .nav-link p {
     display: inline-block;
@@ -250,34 +236,28 @@ ul .nav-item-edit a {
 }
 
 @media (max-width:768px) {
-
     .nav-item-edit {
         flex-grow: 0 !important;
         transition: all 0.5s ease-in-out;
     }
-
     .nav-link-mine {
         transition: all 0.2s ease-in-out;
     }
-
     .nav-item .nav-link .target {
         display: inline-block;
         margin-bottom: 0;
         margin-left: 0.2rem;
     }
-
     .d-none-tab .target {
         display: none !important;
     }
-
     .active.d-none-tab .target {
         display: initial !important;
-
     }
 }
 
 #Saved h1,
-#My_Courses h1{
+#My_Courses h1 {
     font-weight: 700;
     font-size: 50px;
     text-align: center;

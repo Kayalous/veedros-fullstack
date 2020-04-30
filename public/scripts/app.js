@@ -79,34 +79,39 @@ if (document.querySelector('#singleElement'))
 var input = document.querySelector('.search-form');
 var search = document.querySelector('.search-input')
 var button = document.querySelector('.btn-nav-search');
-if(button){
+if (button) {
 
-button.addEventListener('click', function(e) {
-    e.preventDefault();
-    if (search.value.length > 0) {
-        search.form.submit();
-    } else {
-        search.focus();
-        input.classList.toggle('active');
-        search.classList.toggle('shadow-lg');
-    }
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (search.value.length > 0) {
+            search.form.submit();
+        } else {
+            search.focus();
+            input.classList.toggle('active');
+            search.classList.toggle('shadow-lg');
+        }
 
-})
-search.addEventListener('focus', function() {
-    input.classList.add('focus');
-})
+    })
+    search.addEventListener('focus', function() {
+        input.classList.add('focus');
+    })
 
-search.addEventListener('blur', function() {
-    search.value.length != 0 ? input.classList.add('focus') : input.classList.remove('focus');
-})
+    search.addEventListener('blur', function() {
+        search.value.length != 0 ? input.classList.add('focus') : input.classList.remove('focus');
+    })
 }
 
 
 $(document).scroll(() => {
     $("fixed-cart").addClass("position-fixed");
 });
-$(function () {
-    $(document).scroll(function () {
+
+$(function() {
+    if (!($(this).scrollTop()) == 0) {
+
+        $(".fixed-top").addClass("scrolled");
+    }
+    $(document).scroll(function() {
         var $nav = $(".fixed-top");
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
     });

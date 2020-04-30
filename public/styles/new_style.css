@@ -336,6 +336,8 @@
 .search-form {
     position: relative;
     width: 300px;
+    height: 35px;
+    margin: auto;
 }
 
 .active:before {
@@ -351,7 +353,8 @@
     right: 0px;
     width: 34px;
     height: 35px;
-    transition: all 0.5s cubic-bezier(.87, -.41, .19, 1.44);
+    transition: all 0.2s ease-out;
+    /* transition: all 0.5s cubic-bezier(.87, -.41, .19, 1.44); */
     outline: none;
     border: none;
     padding-right: 35px;
@@ -386,8 +389,9 @@
 }
 
 .active .btn-nav-search>.feather {
-    transform: scale(1.1);
+    transform: scale(1);
     margin-right: 5px;
+    margin-bottom: 3PX;
     color: #65D3BF;
 }
 

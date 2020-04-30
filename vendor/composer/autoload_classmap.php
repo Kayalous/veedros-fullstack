@@ -527,6 +527,8 @@ return array(
     'Aws\\IoTJobsDataPlane\\IoTJobsDataPlaneClient' => $vendorDir . '/aws/aws-sdk-php/src/IoTJobsDataPlane/IoTJobsDataPlaneClient.php',
     'Aws\\IoTSecureTunneling\\Exception\\IoTSecureTunnelingException' => $vendorDir . '/aws/aws-sdk-php/src/IoTSecureTunneling/Exception/IoTSecureTunnelingException.php',
     'Aws\\IoTSecureTunneling\\IoTSecureTunnelingClient' => $vendorDir . '/aws/aws-sdk-php/src/IoTSecureTunneling/IoTSecureTunnelingClient.php',
+    'Aws\\IoTSiteWise\\Exception\\IoTSiteWiseException' => $vendorDir . '/aws/aws-sdk-php/src/IoTSiteWise/Exception/IoTSiteWiseException.php',
+    'Aws\\IoTSiteWise\\IoTSiteWiseClient' => $vendorDir . '/aws/aws-sdk-php/src/IoTSiteWise/IoTSiteWiseClient.php',
     'Aws\\IoTThingsGraph\\Exception\\IoTThingsGraphException' => $vendorDir . '/aws/aws-sdk-php/src/IoTThingsGraph/Exception/IoTThingsGraphException.php',
     'Aws\\IoTThingsGraph\\IoTThingsGraphClient' => $vendorDir . '/aws/aws-sdk-php/src/IoTThingsGraph/IoTThingsGraphClient.php',
     'Aws\\IotDataPlane\\Exception\\IotDataPlaneException' => $vendorDir . '/aws/aws-sdk-php/src/IotDataPlane/Exception/IotDataPlaneException.php',

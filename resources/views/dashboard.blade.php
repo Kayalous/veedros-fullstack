@@ -154,8 +154,12 @@
                                         {{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
                                         <div class="card-body m-0">
                                             <a href="{{\App\Course::getFirstSession($saveCourse)}}" class="card-body-inner noscroll card-bg-img"  >
-                                                <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
-                                                <h4 class="card-title title-mine w-100">
+                                            <div class=" remove-saved" data-toggle="tooltip" data-placement="right" title="unsave">
+                                            <i class="fas fa-trash" ></i> 
+                                            </div>
+                                            
+                                            <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
+                                                <h4 class="card-title title-mine">
                                                     {{$saveCourse->name}}
                                                 </h4>
                                             </a>

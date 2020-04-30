@@ -1136,6 +1136,8 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'Aws\\IoTJobsDataPlane\\IoTJobsDataPlaneClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTJobsDataPlane/IoTJobsDataPlaneClient.php',
         'Aws\\IoTSecureTunneling\\Exception\\IoTSecureTunnelingException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTSecureTunneling/Exception/IoTSecureTunnelingException.php',
         'Aws\\IoTSecureTunneling\\IoTSecureTunnelingClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTSecureTunneling/IoTSecureTunnelingClient.php',
+        'Aws\\IoTSiteWise\\Exception\\IoTSiteWiseException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTSiteWise/Exception/IoTSiteWiseException.php',
+        'Aws\\IoTSiteWise\\IoTSiteWiseClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTSiteWise/IoTSiteWiseClient.php',
         'Aws\\IoTThingsGraph\\Exception\\IoTThingsGraphException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTThingsGraph/Exception/IoTThingsGraphException.php',
         'Aws\\IoTThingsGraph\\IoTThingsGraphClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTThingsGraph/IoTThingsGraphClient.php',
         'Aws\\IotDataPlane\\Exception\\IotDataPlaneException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IotDataPlane/Exception/IotDataPlaneException.php',
