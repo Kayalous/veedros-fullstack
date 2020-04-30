@@ -42,7 +42,7 @@
                 <form class="login" action="{{ route('login') }}" method="POST" novalidate>
                     @csrf
                     <h1 class="text-center mb-0 mt-3 text-muted">Sign in</h1>
-                    <p class="text-center login-modal-header mt-4">
+                    <p class="text-center login-modal-header mt-5">
                         Enter your email and password to sign in. <br />
                     </p>
                     <div class="input-group">
