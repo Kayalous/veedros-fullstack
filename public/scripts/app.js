@@ -102,9 +102,6 @@ if (button) {
 }
 
 
-$(document).scroll(() => {
-    $("fixed-cart").addClass("position-fixed");
-});
 
 $(function() {
     if (!($(this).scrollTop()) == 0) {

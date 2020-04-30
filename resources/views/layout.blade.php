@@ -42,7 +42,7 @@
                 <form class="login" action="{{ route('login') }}" method="POST" novalidate>
                     @csrf
                     <h1 class="text-center mb-0 mt-3 text-muted">Sign in</h1>
-                    <p class="text-center login-modal-header mt-5">
+                    <p class="text-center login-modal-header mt-4">
                         Enter your email and password to sign in. <br />
                     </p>
                     <div class="input-group">
@@ -61,27 +61,21 @@
                             Your password must be more than 8 characters long.
                         </div>
                     </div>
-                    <div class="d-flex jusift-content-center mt-3 mb-4">
+                    <div class="register-prompt align-items-end forgot-password mt-2" id="login-alt-cont">
+                    <a class="dot-hover dot-hover-red" href="{{asset('/password/reset')}}">Forgot password?</a>
+                    </div>
+                    <div class="d-flex jusift-content-center mt-2 mb-4">
                         <button type="submit" id="login-button" class="btn btn-veedros-new btn-veedros-md mx-auto btn-submit">
                             Sign in
                         </button>
                     </div>
                 </form>
-                <div class="register-prompt forgot-password mb-3" id="login-alt-cont">
-                    <h6>Forgot password?</h6>
-                    <a class="dot-hover dot-hover-red" href="{{asset('/password/reset')}}">Reset now</a>
-                </div>
-                <div class="register-prompt mb-3">
-                    <h6>Don't have an account?</h6>
-                    <a class="signup-toggle dot-hover dot-hover-red" href="#">Sign up
-                        instead</a>
-                </div>
+                
+                
                 <div class="register-prompt magic-link mb-3" id="login-magic-link">
                     <h6>Want to sign in using just your email?</h6>
                     <a class="login-with-password dot-hover dot-hover-red" href="#">Sign in with magic link</a>
                 </div>
-
-                <hr>
                 <div class="d-flex justify-content-center flex-column align-items-center w-100">
                     <h6>Or you can login with:</h6>
                     <div class="d-flex flex-wrap justify-content-around align-items-center w-100 mt-3 border-0">
@@ -89,6 +83,13 @@
                         <a href="{{ route('login.google') }}" title="Google" class="btn btn-google btn-lg border-0 my-2"><i class="fab fa-google mr-2"></i>Google</a>
                     </div>
                 </div>
+                <hr>
+                <div class="register-prompt mb-3">
+                    <h6>Don't have an account?</h6>
+                    <a class="signup-toggle dot-hover dot-hover-red" href="#">Sign up
+                        instead</a>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -130,7 +131,7 @@
 
                 <div class="register-prompt mb-4">
                     <h6>Already have an account?</h6>
-                    <a class="signin-toggle dot-hover dot-hover-red" href="#">Sign in instead</a>
+                    <a class="signin-toggle dot-hover dot-hover-red" href="#">Sign in</a>
                 </div>
                 <div id="signup-alt-cont"></div>
                 <div class="register-prompt magic-link mb-3" id="signup-magic-link">
