@@ -1032,23 +1032,6 @@ ul {
     z-index: 2;
 }
 
-.remove-saved {
-    background-color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.remove-saved i {
-    position: absolute;
-    top: 26%;
-    right: 26%;
-    color: red;
-}
-
 .play-circle {
     position: absolute;
     top: 50%;
