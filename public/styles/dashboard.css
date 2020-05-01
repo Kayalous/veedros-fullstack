@@ -163,12 +163,22 @@
         display: none;
     }
     .dashboard-land .card-columns {
-        column-count: 1;
+        -webkit-column-count: inherit;
+        column-count: inherit;
     }
     .rounded-lg-mine {
         margin: 3rem 0.5rem;
     }
 }
+
+
+/* 
+@media (max-width: 574px) {
+    .card-columns {
+        -webkit-column-count: 0 !important;
+        column-count: 0 !important;
+    }
+} */
 
 
 /* ------------------- dashboard modals title and My progress dicoration ------------- */
@@ -264,3 +274,70 @@ ul .nav-item-edit a {
     margin-left: auto;
     margin-right: auto;
 }
+
+.remove-saved {
+    background-color: #D36565;
+    display: inline-block;
+    width: 20px;
+    height: 25px;
+    border-radius: 25%;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    transition: all 0.5s ease-out;
+    overflow: hidden;
+}
+
+.remove-saved:hover {
+    width: 80px;
+    border-radius: 5%;
+    transition: all 0.5s ease-out;
+}
+
+.unsave-text {
+    overflow-x: hidden;
+    color: white;
+    position: absolute;
+    font-size: 16px;
+    top: 2px;
+    transform: translateX(20px);
+    transition: all 0.5s ease-out;
+}
+
+.remove-saved:hover.remove-saved span {
+    transform: translateX(25px);
+    color: white;
+    transition: all 0.5s ease-out;
+}
+
+.remove-saved i {
+    position: absolute;
+    top: 4px;
+    right: 15%;
+    color: white;
+    transition: right 0.7s ease-out;
+}
+
+.remove-saved:hover.remove-saved i {
+    right: 80%;
+    transition: right 0.3s ease-out;
+}
+
+
+/* @keyframes trash {
+    50% {
+        width: 40px;
+    }
+    100% {
+        width: 60px;
+    }
+}
+
+@keyframes trash-icon {
+    from {
+        right: 15%;
+    }
+    to {
+        right: 70%;
+    }
+} */

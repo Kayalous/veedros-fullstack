@@ -152,10 +152,14 @@
                                 @foreach(Auth::user()->saves as $saveCourse)
                                     <div class="card course-card development-card noJquery" style="background-image: url({{$saveCourse->img}})">
                                         {{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
+                                        
                                         <div class="card-body m-0">
-                                            <a href="{{\App\Course::getFirstSession($saveCourse)}}" class="card-body-inner noscroll card-bg-img"  >
-                                            <div class=" remove-saved" data-toggle="tooltip" data-placement="right" title="unsave">
-                                            <i class="fas fa-trash" ></i> 
+                                            
+                                            <a href="#" class="card-body-inner noscroll card-bg-img"  >
+                                            <div id="remove-text" class=" remove-saved" data-toggle="tooltip" data-placement="right" title="unsave">
+                                                <i class="fas fa-trash" ></i>
+                                                <span class="unsave-text">Unsave</span>
+
                                             </div>
                                             
                                             <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
@@ -164,6 +168,7 @@
                                                 </h4>
                                             </a>
                                         </div>
+                                        
                                     </div>
                                 @endforeach
                             </div>
