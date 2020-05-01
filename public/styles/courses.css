@@ -167,3 +167,19 @@ h2 {
         font-size: 16px;
     }
 }
+.btn-secondary-veedros-green{
+    background-color: #65D3BF !important;
+    transition: background-color 0.2s ease-in-out;
+}
+.btn-secondary-veedros-green:hover .chevron{
+    background-color: #57B3A2;
+}
+.btn-secondary-veedros-xl.btn-secondary-veedros-green:hover {
+    background-color: #57B3A2 !important;
+}
+.btn-secondary-veedros-green *,
+.btn-secondary-veedros-green .feather{
+    color: white !important;
+    font-weight: 400;
+    stroke: white;
+}

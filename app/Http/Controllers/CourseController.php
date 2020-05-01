@@ -239,6 +239,7 @@ class CourseController extends Controller
             'name' => $randomName,
             'slug' => $slug,
             'about' => $about]);
+
         //new random values for the session
         $randomName = $faker->name;
         $about = $faker->colorName;
@@ -246,7 +247,7 @@ class CourseController extends Controller
         $session = Session::create(['chapter_id' => $chapter->id,
             'name' => $randomName,
             'slug' => $slug,
-            'link' => 'link']);
+            'about' => $about]);
         $video = Video::create([
             'session_id' => $session->id
         ]);

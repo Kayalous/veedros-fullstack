@@ -8,8 +8,10 @@ FilePond.registerPlugin(
 
 // Select the file input and use
 // create() to turn it into a pond
+let filePonds = document.querySelectorAll('.filepond');
+for(let i = 0; i < filePonds.length; i++)
 FilePond.create(
-    document.querySelector('.filepond'),
+    filePonds[i],
     {
         labelIdle: `Drag & Drop your session or <span class="filepond--label-action">Browse</span>`,
     }

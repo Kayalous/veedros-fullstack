@@ -148,6 +148,16 @@
     align-items: center;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 15px !important;
+}
+.del-btn-container{
+    display: block;
+}
+.collapse-button[aria-expanded="true"]+.del-btn-container{
+    display: none;
+}
+#chapters-container .collapse-button[aria-expanded="true"]{
+    width: 100% !important;
 }
 
 .collapse-button.watching {
