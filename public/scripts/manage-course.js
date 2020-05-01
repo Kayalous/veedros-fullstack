@@ -63,11 +63,11 @@ editAboutButton.onclick = () => {
         aboutField.value = ' ';
         aboutField.value = val;
 
-        editAboutButton.innerHTML = '<i data-feather="check"></i> Save';
+        editAboutButton.innerHTML = '<i data-feather="check"></i>';
         editAboutButton.children[0].style.stroke = "#0D984F";
     }
     else {
-        editAboutButton.innerHTML = '<span class="spinner-grow text-secondary spinner-grow-sm"></span> Loading...';
+        editAboutButton.innerHTML = '<span class="spinner-grow text-secondary spinner-grow-sm"></span>';
         aboutField.setAttribute('readonly', true);
         editAboutButton.disabled = true;
 
@@ -81,13 +81,13 @@ editAboutButton.onclick = () => {
         })
         .then(data=>{
             showSuccessMessage(data.data);
-            editAboutButton.innerHTML = '<i data-feather="edit"></i> Edit';
+            editAboutButton.innerHTML = '<i data-feather="edit"></i>';
             editAboutButton.children[0].style.stroke = "rgba(0,0,0,.7)";
         })
         .catch(err=>{
             showFailureMessage('Error updating about. Try again.');
 
-            editAboutButton.innerHTML = '<i data-feather="x"></i> Error';
+            editAboutButton.innerHTML = '<i data-feather="x"></i>';
             editAboutButton.children[0].style.stroke = "#FF9494";
         })
         .finally(()=>{
@@ -169,6 +169,11 @@ let addObjButton = document.querySelector('#add-obj');
 let objContainer = document.querySelector('#obj-container');
 let editObjButtons = document.querySelectorAll('.edit-obj');
 let editObjFields = document.querySelectorAll('.objective');
+
+let delObjButtons = document.querySelectorAll('.del-obj');
+let singleObjectives = document.querySelectorAll('.single-obj');
+stageDel(delObjButtons, singleObjectives, '');
+
 let objectiveUrl = `${baseUrl}manage/instructor/course/objective`;
 stageButtonsAndInputsToController(editObjButtons, editObjFields, objectiveUrl, "objective")
 let lastObjSubmitted = true;
@@ -177,25 +182,30 @@ addObjButton.onclick = () => {
         //Update container
         objContainer = document.querySelector('#obj-container');
         //Insert new row into obj container
-        objContainer.innerHTML+=`<li class="row mt-2">
-                            <div class="col-10">
-                                <h5 class="align-items-center row"><i data-feather="check" class="my-auto col-1 m-0 p-0"></i>
-                                    <textarea rows="1" class="objective form-control course-form-field border-light border-radius-sm col-10" placeholder="Type your objective here" oninput="auto_grow(this)" id="new"></textarea>
+        objContainer.innerHTML+=`<li class="row mb-2 single-obj">
+                            <div class="col-12 mx-2">
+                                <h5 class="align-items-center row flex-nowrap mb-0">
+                                    <textarea rows="1" class="objective form-control course-form-field border-light border-radius-sm" placeholder="Type your objective here" oninput="auto_grow(this)" id="new"></textarea>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <button
+                                            class="btn btn-secondary-veedros btn-secondary-veedros-normal edit-btn ml-3 mr-1 del-obj" type="button" ><i
+                                                data-feather="trash" style="stroke: #D36565"></i></button>
+                                        <button
+                                            class="btn btn-secondary-veedros btn-secondary-veedros-normal edit-btn edit-obj mr-3 ml-1" type="button"><i
+                                                data-feather="check" style="stroke: #0D984F"></i></button>
+                                    </div>
                                 </h5>
-                            </div>
-                            <div>
-                                <button
-                                        class="btn btn-secondary-veedros btn-secondary-veedros-normal border-medium edit-btn edit-obj" type="button"><i
-                                        data-feather="check" style="stroke: #0D984F"></i>
-                                    Save</button>
                             </div>
                         </li>`;
         //Update collections
         editObjButtons = document.querySelectorAll('.edit-obj');
         editObjFields = document.querySelectorAll('.objective');
+        delObjButtons = document.querySelectorAll('.del-obj');
+        singleObjectives = document.querySelectorAll('.single-obj');
         //focus on last element;
         editObjFields[editObjFields.length-1].focus();
-        stageButtonsAndInputsToController(editObjButtons, editObjFields, objectiveUrl, "objective")
+        stageButtonsAndInputsToController(editObjButtons, editObjFields, objectiveUrl, "objective");
+        stageDel(delObjButtons, singleObjectives, objectiveUrl);
         addObjButton.disabled = true;
         lastObjSubmitted = false;
         feather.replace();
@@ -231,7 +241,7 @@ addRecButton.onclick = () => {
                                     <button
                                         class="btn btn-secondary-veedros btn-secondary-veedros-normal border-medium edit-btn edit-rec" type="button"><i
                                         data-feather="check" style="stroke: #0D984F"></i>
-                                    Save</button>
+                                    </button>
                                 </div>
                             </li>`;
         //Update collections
@@ -265,11 +275,11 @@ function stageButtonsAndInputsToController(buttons, fields, url, valueToUpdate){
                 field.value = ' ';
                 field.value = val;
 
-                button.innerHTML = '<i data-feather="check"></i> Save';
+                button.innerHTML = '<i data-feather="check"></i>';
                 button.children[0].style.stroke = "#0D984F";
             }
             else {
-                button.innerHTML = '<span class="spinner-grow text-secondary spinner-grow-sm"></span> Loading...';
+                button.innerHTML = '<span class="spinner-grow text-secondary spinner-grow-sm"></span> ';
                 button.disabled = true;
                 field.setAttribute('readonly', true);
 
@@ -307,8 +317,8 @@ function stageButtonsAndInputsToController(buttons, fields, url, valueToUpdate){
                     ax.then(data=>{
                         showSuccessMessage(data.data.status)
                         field.id = data.data.id;
-                        button.innerHTML = '<i data-feather="edit"></i> Edit';
-                        button.children[0].style.stroke = "rgba(0,0,0,.7)";
+                        button.innerHTML = '<i data-feather="edit"></i>';
+                        button.children[0].style.stroke = "#1565C0";
                         field.innerHTML = field.value;
                         if(valueToUpdate === "objective"){
                         addObjButton.disabled = false;
@@ -321,7 +331,7 @@ function stageButtonsAndInputsToController(buttons, fields, url, valueToUpdate){
                     })
                     .catch(err=>{
                         showFailureMessage(`Failed to update ${valueToUpdate}. Please try again.`)
-                        button.innerHTML = '<i data-feather="x"></i> Error';
+                        button.innerHTML = '<i data-feather="x"></i>';
                         button.children[0].style.stroke = "#FF9494";
                     })
                     .finally(()=>{
@@ -334,7 +344,27 @@ function stageButtonsAndInputsToController(buttons, fields, url, valueToUpdate){
     }
 }
 
+async function stageDel(buttons, wrappers, url){
+    for(let i = 0; i < buttons.length; i++) {
+        let button = buttons[i];
+        let wrapper = wrappers[i];
+        button.onclick = async () =>{
+                let answer = await Swal.fire({
+                    title: 'Confirm deleting objective?',
+                    text: `Are you sure you want to delete this objective? This action is irreversible.`,
+                    icon: 'error',
+                    confirmButtonText: 'Yes.',
+                    showCancelButton:true,
+                    cancelButtonText: "No."
+                })
+                if(answer.value ===true){
 
+                    wrapper.parentElement.removeChild(wrapper);
+                }
+            }
+
+    }
+}
 
 
 

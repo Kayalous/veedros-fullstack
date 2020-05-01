@@ -15,6 +15,8 @@
 @endsection
 
 @section('content')
+    <div class="new-bg" style="z-index: -1"></div>
+
     <section class="container my-5 py-5" id="course-info">
 
     <h1 class="mt-5"> Chapters & Sessions </h1>

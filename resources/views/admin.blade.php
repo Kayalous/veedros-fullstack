@@ -123,7 +123,6 @@
             if(answer.value ===true){
                 window.location.href = `{{route('veedros.admin.delete')}}?id=${id}`;
             }
-
         }
     </script>
 @endsection
