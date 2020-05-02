@@ -180,7 +180,15 @@ class CourseController extends Controller
         }
 
     }
-
+    public function deleteObjective(Request $request){
+        $validatedData = $request->validate([
+            'id' => 'required'
+        ]);
+        $course = Auth::user()->instructor->courses->where('slug', $request['slug'])->first();
+        $objective = $course->objectives->where('id', $request['id'])->first();
+        $objective->delete();
+        return response(['status'=>'Objective has been deleted successfully.'], 200);
+    }
     public function editRecommendation(Request $request){
         $validatedData = $request->validate([
             'recommendation' => 'required|max:500',
@@ -204,6 +212,15 @@ class CourseController extends Controller
 
     }
 
+    public function deleteRecommendation(Request $request){
+        $validatedData = $request->validate([
+            'id' => 'required'
+        ]);
+        $course = Auth::user()->instructor->courses->where('slug', $request['slug'])->first();
+        $recommendation = $course->recommendations->where('id', $request['id'])->first();
+        $recommendation->delete();
+        return response(['status'=>'Recommendation has been deleted successfully.'], 200);
+    }
     public function addToSaved($course_id){
         $course = Course::where('id', $course_id)->firstOrFail();
         $user = Auth::user();

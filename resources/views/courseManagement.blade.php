@@ -101,7 +101,7 @@
                                     <textarea rows="1" class="objective form-control course-form-field border-light border-radius-sm" placeholder="Type your objective here" oninput="auto_grow(this)" readonly id="{{$objective->id}}">{{$objective->objective}}</textarea>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <button
-                                            class="btn btn-secondary-veedros btn-secondary-veedros-normal edit-btn ml-3 mr-1 del-obj" type="button" ><i
+                                            class="btn btn-secondary-veedros btn-secondary-veedros-normal edit-btn ml-3 mr-1 del-obj" type="button" id="{{$objective->id}}"><i
                                                 data-feather="trash" style="stroke: #D36565"></i></button>
                                         <button
                                             class="btn btn-secondary-veedros btn-secondary-veedros-normal edit-btn edit-obj mr-3 ml-1"  type="button"><i
@@ -128,17 +128,19 @@
                     <h2>Who would you recommend this course to?</h2>
                     <ul class="ml-5" id="rec-container">
                         @foreach($course->recommendations as $recommendation)
-                            <li class="row mb-2">
-                                <div class="col-10">
-                                    <h5 class="align-items-center row"><i data-feather="arrow-right" class="my-auto col-1 m-0 p-0"></i>
+                            <li class="row mb-2 single-rec">
+                                <div class="col-12">
+                                    <h5 class="align-items-center row flex-nowrap">
                                         <textarea rows="1" class="rec form-control course-form-field border-light border-radius-sm col-10" placeholder="Type your recommendation here" oninput="auto_grow(this)" readonly id="{{$recommendation->id}}">{{$recommendation->recommendation}}</textarea>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <button
+                                                class="btn btn-secondary-veedros btn-secondary-veedros-normal edit-btn ml-3 mr-1 del-rec" type="button" id="{{$recommendation->id}}"><i
+                                                    data-feather="trash" style="stroke: #D36565"></i></button>
+                                            <button
+                                                class="btn btn-secondary-veedros btn-secondary-veedros-normal edit-btn edit-rec" type="button"><i
+                                                    data-feather="edit" style="stroke: #1565C0"></i></button>
+                                        </div>
                                     </h5>
-                                </div>
-                                <div>
-                                    <button
-                                        class="btn btn-secondary-veedros btn-secondary-veedros-normal border-medium edit-btn edit-rec" type="button"><i
-                                            data-feather="edit"></i>
-                                        Edit</button>
                                 </div>
                             </li>
                         @endforeach

@@ -172,12 +172,12 @@ let editObjFields = document.querySelectorAll('.objective');
 
 let delObjButtons = document.querySelectorAll('.del-obj');
 let singleObjectives = document.querySelectorAll('.single-obj');
-stageDel(delObjButtons, singleObjectives, '');
 
 let objectiveUrl = `${baseUrl}manage/instructor/course/objective`;
 stageButtonsAndInputsToController(editObjButtons, editObjFields, objectiveUrl, "objective")
+stageDel(delObjButtons, singleObjectives, `${objectiveUrl}/delete`, 'objective' );
 let lastObjSubmitted = true;
-addObjButton.onclick = () => {
+addObjButton.onclick = async () => {
     if(lastObjSubmitted){
         //Update container
         objContainer = document.querySelector('#obj-container');
@@ -205,7 +205,7 @@ addObjButton.onclick = () => {
         //focus on last element;
         editObjFields[editObjFields.length-1].focus();
         stageButtonsAndInputsToController(editObjButtons, editObjFields, objectiveUrl, "objective");
-        stageDel(delObjButtons, singleObjectives, objectiveUrl);
+        stageDel(delObjButtons, singleObjectives, `${objectiveUrl}/delete`, 'objective' );
         addObjButton.disabled = true;
         lastObjSubmitted = false;
         feather.replace();
@@ -223,25 +223,30 @@ let addRecButton = document.querySelector('#add-rec');
 let recContainer = document.querySelector('#obj-container');
 let editRecButtons = document.querySelectorAll('.edit-rec');
 let editRecFields = document.querySelectorAll('.rec');
+let delRecButtons = document.querySelectorAll('.del-rec');
+let singleRecommendation = document.querySelectorAll('.single-rec');
 let recommendationUrl = `${baseUrl}manage/instructor/course/recommendation`;
+stageDel(delRecButtons, singleRecommendation, `${recommendationUrl}/delete`, 'recommendation' );
 stageButtonsAndInputsToController(editRecButtons, editRecFields, recommendationUrl, "recommendation")
 let lastRecSubmitted = true;
-addRecButton.onclick = () => {
+addRecButton.onclick = async () => {
     if(lastRecSubmitted){
         //Update container
         recContainer = document.querySelector('#rec-container');
         //Insert new row into rec container
-        recContainer.innerHTML+=`<li class="row">
-                                <div class="col-10">
-                                    <h5 class="align-items-center row"><i data-feather="arrow-right" class="my-auto col-1 m-0 p-0"></i>
+        recContainer.innerHTML+=`<li class="row mb-2 single-rec">
+                                <div class="col-12">
+                                    <h5 class="align-items-center row flex-nowrap">
                                         <textarea rows="1" class="rec form-control course-form-field border-light border-radius-sm col-10" placeholder="Type your recommendation here" oninput="auto_grow(this)" id="new"></textarea>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <button
+                                                class="btn btn-secondary-veedros btn-secondary-veedros-normal edit-btn ml-3 mr-1 del-rec" type="button"><i
+                                                    data-feather="trash" style="stroke: #D36565"></i></button>
+                                            <button
+                                                class="btn btn-secondary-veedros btn-secondary-veedros-normal edit-btn edit-rec" type="button"><i
+                                                    data-feather="check" style="stroke: #0D984F"></i></button>
+                                        </div>
                                     </h5>
-                                </div>
-                                <div>
-                                    <button
-                                        class="btn btn-secondary-veedros btn-secondary-veedros-normal border-medium edit-btn edit-rec" type="button"><i
-                                        data-feather="check" style="stroke: #0D984F"></i>
-                                    </button>
                                 </div>
                             </li>`;
         //Update collections
@@ -252,6 +257,9 @@ addRecButton.onclick = () => {
         stageButtonsAndInputsToController(editRecButtons, editRecFields, recommendationUrl, "recommendation")
         addRecButton.disabled = true;
         lastRecSubmitted = false;
+        delRecButtons = document.querySelectorAll('.del-rec');
+        singleRecommendation = document.querySelectorAll('.single-rec');
+        stageDel(delRecButtons, singleRecommendation, `${recommendationUrl}/delete`, 'recommendation' );
         feather.replace();
     }
     else
@@ -322,11 +330,13 @@ function stageButtonsAndInputsToController(buttons, fields, url, valueToUpdate){
                         field.innerHTML = field.value;
                         if(valueToUpdate === "objective"){
                         addObjButton.disabled = false;
-                            lastObjSubmitted = true;
+                        lastObjSubmitted = true;
+                        delObjButtons[i].id = data.data.id;
                         }
                         else{
                             addRecButton.disabled = false;
                             lastRecSubmitted = true;
+                            delRecButtons[i].id = data.data.id;
                         }
                     })
                     .catch(err=>{
@@ -344,22 +354,50 @@ function stageButtonsAndInputsToController(buttons, fields, url, valueToUpdate){
     }
 }
 
-async function stageDel(buttons, wrappers, url){
+async function stageDel(buttons, wrappers, url, valToDelete){
+
     for(let i = 0; i < buttons.length; i++) {
         let button = buttons[i];
         let wrapper = wrappers[i];
         button.onclick = async () =>{
                 let answer = await Swal.fire({
-                    title: 'Confirm deleting objective?',
-                    text: `Are you sure you want to delete this objective? This action is irreversible.`,
+                    title: `Confirm deleting ${valToDelete}?`,
+                    text: `Are you sure you want to delete this ${valToDelete}? This action is irreversible.`,
                     icon: 'error',
                     confirmButtonText: 'Yes.',
                     showCancelButton:true,
                     cancelButtonText: "No."
                 })
                 if(answer.value ===true){
-
-                    wrapper.parentElement.removeChild(wrapper);
+                    if(button.id.length > 0){
+                        ax = new axios({
+                            method:'post',
+                            url:url,
+                            data:{
+                                'id': button.id,
+                                'slug': slug
+                            }
+                        })
+                        ax.then(data=>{
+                        wrapper.parentElement.removeChild(wrapper);
+                        })
+                            .catch(()=>{
+                                showFailureMessage('Oops! Something went wrong. Please try again.');
+                            })
+                    }
+                    else{
+                        wrapper.parentElement.removeChild(wrapper);
+                        if(valToDelete == 'objective')
+                            {
+                                addObjButton.disabled = false;
+                                lastObjSubmitted = true;
+                            }
+                        else if(valToDelete == 'recommendation')
+                            {
+                                addRecButton.disabled = false;
+                                lastRecSubmitted = true;
+                            }
+                    }
                 }
             }
 

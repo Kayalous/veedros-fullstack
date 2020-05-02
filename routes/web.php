@@ -97,6 +97,7 @@ Route::post('/manage/instructor/courses/new', 'CourseController@newCourse')->nam
 Route::post('/manage/instructor/course/about', 'CourseController@editAbout')->name('manage.courses.about');
 Route::post('/manage/instructor/course/price', 'CourseController@editPrice')->name('manage.courses.price');
 Route::post('/manage/instructor/course/objective', 'CourseController@editObjective')->name('manage.courses.objective');
+Route::post('/manage/instructor/course/objective/delete', 'CourseController@deleteObjective')->name('manage.courses.objective.delete');
 Route::post('/manage/instructor/course/newChapter', 'CourseController@newChapter')->name('manage.courses.newChapter');
 Route::post('/manage/instructor/course/newSession', 'CourseController@newSession')->name('manage.courses.newSession');
 Route::post('/manage/instructor/course/newMilestone', 'CourseController@newMilestone')->name('manage.courses.newMilestone');
@@ -107,6 +108,7 @@ Route::get('/manage/instructor/course/deleteSession/{id}', 'CourseController@del
 Route::get('/manage/instructor/course/deleteChapter/{id}', 'CourseController@deleteChapter')->name('manage.courses.deleteChapter');
 Route::post('/manage/instructor/course/updateVideoData/{id}/{cid}', 'CourseController@updateVideoData')->name('manage.courses.updateVideoData');
 Route::post('/manage/instructor/course/recommendation', 'CourseController@editRecommendation')->name('manage.courses.recommendation');
+Route::post('/manage/instructor/course/recommendation/delete', 'CourseController@deleteRecommendation')->name('manage.courses.recommendation.delete');
 Route::get('/manage/instructor/courses/{courseSlug}', function ($courseSlug){
     $instructor = Auth::user()->instructor;
 
