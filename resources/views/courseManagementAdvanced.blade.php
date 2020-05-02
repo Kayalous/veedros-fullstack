@@ -122,7 +122,9 @@
                                                         Edit</button>
                                                 </div>
                                             </div>
-                                            <form class="mb-5" action="300/upload-video" method="POST" enctype="multipart/form-data">
+                                            <br>
+                                            <form class="mb-5" action="{{$session->id}}/upload-video" method="POST" enctype="multipart/form-data">
+                                                <h2 class="mb-3">Session's video</h2>
                                                 @csrf
                                                 <input type="file"
                                                        class="filepond"
@@ -133,33 +135,33 @@
                                                     </button>
                                                 </div>
                                             </form>
-                                            <form action="/manage/instructor/course/updateVideoData/{{$session->video->id . '/' . $course->id}}" method="post">
-                                            @csrf
-                                                <h2 class="mb-3">Video links for this session</h2>
-                                                <h5>360p link</h5>
-                                                <div class="col-12 mb-2">
-                                                    <h5 class="align-items-center row">
-                                                        <textarea name="link_360" class="text-muted form-control course-form-field border-light border-radius-sm col-12" placeholder="Video link here - (If you don't know what this is just leave it as it was)" rows="1" id="{{$session->video->id}}">{{$session->video->link_360}}</textarea>
-                                                    </h5>
-                                                </div>
-                                                <h5>480p link</h5>
-                                                <div class="col-12 mb-2">
-                                                    <h5 class="align-items-center row">
-                                                        <textarea name="link_480" class="text-muted form-control course-form-field border-light border-radius-sm col-12" placeholder="Video link here - (If you don't know what this is just leave it as it was)" rows="1" id="{{$session->video->id}}">{{$session->video->link_480}}</textarea>
-                                                    </h5>
-                                                </div>
-                                                <h5>720p link</h5>
-                                                <div class="col-12 mb-2">
-                                                    <h5 class="align-items-center row">
-                                                        <textarea name="link_720" class="text-muted form-control course-form-field border-light border-radius-sm col-12" placeholder="Video link here - (If you don't know what this is just leave it as it was)" rows="1" id="{{$session->video->id}}">{{$session->video->link_720}}</textarea>
-                                                    </h5>
-                                                </div>
-                                                <div class="row text-center mt-5">
-                                                    <button type="submit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">
-                                                        <h4 class="my-0 mx-5">Submit links</h4>
-                                                    </button>
-                                                </div>
-                                            </form>
+{{--                                            <form action="/manage/instructor/course/updateVideoData/{{$session->video->id . '/' . $course->id}}" method="post">--}}
+{{--                                            @csrf--}}
+{{--                                                <h2 class="mb-3">Video links for this session</h2>--}}
+{{--                                                <h5>360p link</h5>--}}
+{{--                                                <div class="col-12 mb-2">--}}
+{{--                                                    <h5 class="align-items-center row">--}}
+{{--                                                        <textarea name="link_360" class="text-muted form-control course-form-field border-light border-radius-sm col-12" placeholder="Video link here - (If you don't know what this is just leave it as it was)" rows="1" id="{{$session->video->id}}">{{$session->video->link_360}}</textarea>--}}
+{{--                                                    </h5>--}}
+{{--                                                </div>--}}
+{{--                                                <h5>480p link</h5>--}}
+{{--                                                <div class="col-12 mb-2">--}}
+{{--                                                    <h5 class="align-items-center row">--}}
+{{--                                                        <textarea name="link_480" class="text-muted form-control course-form-field border-light border-radius-sm col-12" placeholder="Video link here - (If you don't know what this is just leave it as it was)" rows="1" id="{{$session->video->id}}">{{$session->video->link_480}}</textarea>--}}
+{{--                                                    </h5>--}}
+{{--                                                </div>--}}
+{{--                                                <h5>720p link</h5>--}}
+{{--                                                <div class="col-12 mb-2">--}}
+{{--                                                    <h5 class="align-items-center row">--}}
+{{--                                                        <textarea name="link_720" class="text-muted form-control course-form-field border-light border-radius-sm col-12" placeholder="Video link here - (If you don't know what this is just leave it as it was)" rows="1" id="{{$session->video->id}}">{{$session->video->link_720}}</textarea>--}}
+{{--                                                    </h5>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="row text-center mt-5">--}}
+{{--                                                    <button type="submit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">--}}
+{{--                                                        <h4 class="my-0 mx-5">Submit links</h4>--}}
+{{--                                                    </button>--}}
+{{--                                                </div>--}}
+{{--                                            </form>--}}
 
                                             <br>
 

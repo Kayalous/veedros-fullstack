@@ -130,28 +130,33 @@ Route::get('/manage/instructor/courses/{courseSlug}/advanced', function ($course
 )->name('manage.course.content.advanced');
 
 Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', function (\Illuminate\Http\Request $request,$courseSlug, $sessionId){
+//    $session = \App\Session::where('id', $sessionId)->first();
+//    $chapter = $session->chapter;
+//    $course = $chapter->course;
+//    $instructor = $course->instructor;
+//    $videoUrlSavePath = $instructor->display_name . '/' . $course->slug . '/' . $chapter->slug . '/' . $session->slug;
+//    //Get file from temp dir
+//    $filepond = app(Sopamo\LaravelFilepond\Filepond::class);
+//    $tempVideoPath = $filepond->getPathFromServerId($request['filepond']);
+//    $rawVideoFile = new \Illuminate\Http\File($tempVideoPath);
+//    //Save file in public directory so that FFMPEG can access it
+//    $rawVideoFilePath = Storage::disk('public')->put('temp-video',$rawVideoFile);
+//    //Dispatch the encode job
+//    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath);
+//
+//    return "okay I'm working. Saving to " . $videoUrlSavePath . ' Started at ' . \Carbon\ Carbon::now()->toTimeString();
 
     $session = \App\Session::where('id', $sessionId)->first();
     $chapter = $session->chapter;
     $course = $chapter->course;
     $instructor = $course->instructor;
-    $videoUrlSavePath = $instructor->display_name . '/' . $course->slug . '/' . $chapter->slug . '/' . $session->slug;
+    $videoUrlSavePath = 'courses/video-uploads/' .  $instructor->display_name . '/' . $course->slug . '/' . $chapter->slug . '/' . $session->slug;
 
-
-
-
-
-    //Get file from temp dir
     $filepond = app(Sopamo\LaravelFilepond\Filepond::class);
     $tempVideoPath = $filepond->getPathFromServerId($request['filepond']);
-    $rawVideoFile = new \Illuminate\Http\File($tempVideoPath);
-    //Save file in public directory so that FFMPEG can access it
-    $rawVideoFilePath = Storage::disk('public')->put('temp-video',$rawVideoFile);
-    //Dispatch the encode job
-    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath);
-
-    return "okay I'm working. Saving to " . $videoUrlSavePath . ' Started at ' . \Carbon\ Carbon::now()->toTimeString();
-});
+    \App\Jobs\UploadRawVideo::dispatch($tempVideoPath, $videoUrlSavePath, $session);
+    return back()->with('success', 'The video is being processed and will be available shortly!');
+})->name('manage.upload.raw');
 });
 
 
