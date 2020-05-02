@@ -43,7 +43,6 @@ class UploadRawVideo implements ShouldQueue
         \Illuminate\Support\Facades\Storage::disk('s3')->copy($rawVideoFilePath, $this->videoUrlSavePath . '/480.mp4');
         \Illuminate\Support\Facades\Storage::disk('s3')->copy($rawVideoFilePath, $this->videoUrlSavePath . '/720.mp4');
         \Illuminate\Support\Facades\Storage::deleteDirectory('temp');
-
         $rawVideoFilePath = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $rawVideoFilePath;
         $this->session->video->link_raw = $rawVideoFilePath;
         $this->session->video->link_360 = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $this->videoUrlSavePath . '/360.mp4';

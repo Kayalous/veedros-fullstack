@@ -2,6 +2,7 @@ FilePond.parse(document.body);
 // We register the plugins required to do
 // image previews, cropping, resizing, etc.
 FilePond.registerPlugin(
+    FilePondPluginFileValidateType,
 );
 
 
@@ -14,6 +15,7 @@ FilePond.create(
     filePonds[i],
     {
         labelIdle: `Drag & Drop your session or <span class="filepond--label-action">Browse</span>`,
+        acceptedFileTypes: ['video/mp4'],
     }
 );
 
