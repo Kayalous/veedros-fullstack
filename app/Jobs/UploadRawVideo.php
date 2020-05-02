@@ -35,6 +35,7 @@ class UploadRawVideo implements ShouldQueue
      */
     public function handle()
     {
+        dd($this->tempVideoPath);
         $rawVideoFile = new \Illuminate\Http\File($this->tempVideoPath);
         $rawVideoFilePath = \Illuminate\Support\Facades\Storage::disk('s3')->putFileAs($this->videoUrlSavePath, $rawVideoFile, 'raw.mp4');
 
