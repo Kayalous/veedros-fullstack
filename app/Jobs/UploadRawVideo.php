@@ -36,14 +36,13 @@ class UploadRawVideo implements ShouldQueue
     public function handle()
     {
         $rawVideoFile = new \Illuminate\Http\File($this->tempVideoPath);
-        dd($rawVideoFile);
         $rawVideoFilePath = \Illuminate\Support\Facades\Storage::disk('s3')->putFileAs($this->videoUrlSavePath, $rawVideoFile, 'raw.mp4');
-
         //This is to give the illusion that all the resolutions are uploaded while the processing happens later.
         \Illuminate\Support\Facades\Storage::disk('s3')->delete([$this->videoUrlSavePath . '/360.mp4', $this->videoUrlSavePath . '/480.mp4', $this->videoUrlSavePath . '/720.mp4', $this->videoUrlSavePath . '/1080.mp4']);
         \Illuminate\Support\Facades\Storage::disk('s3')->copy($rawVideoFilePath, $this->videoUrlSavePath . '/360.mp4');
         \Illuminate\Support\Facades\Storage::disk('s3')->copy($rawVideoFilePath, $this->videoUrlSavePath . '/480.mp4');
         \Illuminate\Support\Facades\Storage::disk('s3')->copy($rawVideoFilePath, $this->videoUrlSavePath . '/720.mp4');
+        \Illuminate\Support\Facades\Storage::deleteDirectory('temp');
 
         $rawVideoFilePath = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $rawVideoFilePath;
         $this->session->video->link_raw = $rawVideoFilePath;

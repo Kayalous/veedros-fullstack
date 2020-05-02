@@ -154,7 +154,9 @@ Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', 
 
     $filepond = app(Sopamo\LaravelFilepond\Filepond::class);
     $tempVideoPath = $filepond->getPathFromServerId($request['filepond']);
-    \App\Jobs\UploadRawVideo::dispatch($tempVideoPath, $videoUrlSavePath, $session);
+    $rawVideoFile = new \Illuminate\Http\File($tempVideoPath);
+    $rawVideoFilePath = \Illuminate\Support\Facades\Storage::disk('temp')->putFileAs($videoUrlSavePath, $rawVideoFile, 'raw.mp4');
+    \App\Jobs\UploadRawVideo::dispatch(storage_path('app/temp'). '/' .$rawVideoFilePath, $videoUrlSavePath, $session);
     return back()->with('success', 'The video is being processed and will be available shortly!');
 })->name('manage.upload.raw');
 });
