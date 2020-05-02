@@ -35,8 +35,8 @@ class UploadRawVideo implements ShouldQueue
      */
     public function handle()
     {
-        dd($this->tempVideoPath);
         $rawVideoFile = new \Illuminate\Http\File($this->tempVideoPath);
+        dd($rawVideoFile);
         $rawVideoFilePath = \Illuminate\Support\Facades\Storage::disk('s3')->putFileAs($this->videoUrlSavePath, $rawVideoFile, 'raw.mp4');
 
         //This is to give the illusion that all the resolutions are uploaded while the processing happens later.
