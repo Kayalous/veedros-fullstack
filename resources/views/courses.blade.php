@@ -21,15 +21,15 @@
             <div class="row">
                 <div class="col-sm-4">
                     <canvas id="subscriptions" width="30px" height="30px"></canvas>
-                    <h3 class="text-muted mt-3">Subscriptions</h3>
+                    <h3 class="text-muted mt-3 text-center">Subscriptions</h3>
                 </div>
                 <div class="col-sm-4">
                     <canvas id="views" width="30px" height="30px"></canvas>
-                    <h3 class="text-muted mt-3">Views</h3>
+                    <h3 class="text-muted mt-3 text-center">Total views</h3>
                 </div>
                 <div class="col-sm-4">
                     <canvas id="revenue" width="30px" height="30px"></canvas>
-                    <h3 class="text-muted mt-3">Revenue in EGP</h3>
+                    <h3 class="text-muted mt-3 text-center">Revenue in EGP</h3>
                 </div>
             </div>
         </div>
@@ -153,7 +153,7 @@
 
         var ctx3 = document.getElementById('revenue').getContext('2d');
         var myChart3 = new Chart(ctx3, {
-            type: 'line',
+            type: 'bar',
             responsive:true,
             maintainAspectRatio: false,
             data: {
@@ -163,8 +163,18 @@
                     data: [450, 820, 250, 1540, 1200, 670],
                     backgroundColor: [
                         '#FD982722',
+                        '#FD982722',
+                        '#FD982722',
+                        '#FD982722',
+                        '#FD982722',
+                        '#FD982722',
                     ],
                     borderColor: [
+                        '#FD9827',
+                        '#FD9827',
+                        '#FD9827',
+                        '#FD9827',
+                        '#FD9827',
                         '#FD9827',
                     ],
                     borderWidth: 2
