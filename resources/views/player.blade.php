@@ -130,7 +130,7 @@
             </div>
         </section>
     </section>
-    <section class="container" id="course-info">
+    <section class="container pb-5" id="course-info">
         <hr class="mb-5 d-md-block d-none" />
         <div>
             <div class="row flex-column-reverse-mine">
@@ -141,24 +141,28 @@
                         {{$controllerCourse->about}}
                     </h5>
                     <br>
-                    <h2>You will learn</h2>
-                    <ul class="ml-5">
-                        @foreach($controllerCourse->objectives as $objective)
-                        <li>
-                            <h5><i data-feather="check" class="mr-3"></i>{{$objective->objective}}</h5>
-                        </li>
-                        @endforeach
-                    </ul>
-                    <br>
-                    <h2>Recommended to</h2>
-                    <ul class="ml-5">
-                        @foreach($controllerCourse->recommendations as $rec)
-                        <li>
-                            <h5><i data-feather="circle" style="color: #65D3BF; fill: currentColor; width: 22px; height: 22px" class="mr-3"></i>{{$rec->recommendation}}</h5>
-                        </li>
-                        @endforeach
-                    </ul>
-                    <br>
+                    @if(count($controllerCourse->objectives) > 0)
+                        <h2>You will learn</h2>
+                        <ul class="ml-5">
+                            @foreach($controllerCourse->objectives as $objective)
+                            <li>
+                                <h5><i data-feather="check" class="mr-3"></i>{{$objective->objective}}</h5>
+                            </li>
+                            @endforeach
+                        </ul>
+                        <br>
+                    @endif
+                    @if(count($controllerCourse->recommendations) > 0)
+                        <h2>Recommended to</h2>
+                        <ul class="ml-5">
+                            @foreach($controllerCourse->recommendations as $rec)
+                            <li>
+                                <h5><i data-feather="circle" style="color: #65D3BF; fill: currentColor; width: 22px; height: 22px" class="mr-3"></i>{{$rec->recommendation}}</h5>
+                            </li>
+                            @endforeach
+                        </ul>
+                        <br>
+                    @endif
                     <div class="row w-md-100 w-75 mx-auto">
                         <div class="col-6">
                             <div class="badge tip-badge py-1">
@@ -333,7 +337,7 @@
                         <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
                             Enroll now<i class="fas fa-shopping-cart ml-3"></i></a>
                     </div>
-                    
+
                 @endif
             @else
                 <br>
@@ -342,18 +346,18 @@
                         Enroll now<i class="fas fa-shopping-cart ml-3"></i></a>
                 </div>
                 <div class="row my-5">
-        
+
             <a href="" class="btn d-inline btn-veedros-new btn-veedros-cart-red   border-0 mx-auto">
                 <span>Add to cart <i data-feather="shopping-cart" class="ml-3"></i></span>
             </a>
-           
-            
+
+
             <a href="" class="btn d-inline btn-veedros-new btn-veedros-cart border-0 mx-auto">
                 <span>Buy now</span>
             </a>
-         
-            
-          
+
+
+
         </div>
             @endif
 

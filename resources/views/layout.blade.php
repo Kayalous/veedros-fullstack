@@ -70,8 +70,8 @@
                         </button>
                     </div>
                 </form>
-                
-                
+
+
                 <div class="register-prompt magic-link mb-3" id="login-magic-link">
                     <h6>Want to sign in using just your email?</h6>
                     <a class="login-with-password dot-hover dot-hover-red" href="#">Sign in with magic link</a>
@@ -89,7 +89,7 @@
                     <a class="signup-toggle dot-hover dot-hover-red" href="#">Sign up
                         instead</a>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -212,7 +212,7 @@
 </div>
 <!-- Navbar  -->
 <nav class="navbar navbar-expand-lg fixed-top main-navbar navbar-light">
-    <a class="navbar-brand logo" href="{{route('landing')}}"><img class="img-fluid" style="width: 120px;" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
+    <a class="navbar-brand logo" href="{{route('landing')}}"><img class="img-fluid" style="width: 120px; stroke: #0D984F" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
                                                alt="Logo"></a>
     <button class="navbar-toggler border-0 d-lg-none" type="button" data-toggle="collapse"
             data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
@@ -257,10 +257,20 @@
                 </li>
             @endif
             @else
-                <li class="nav-item">
+                <li class="nav-item d-none d-lg-block">
                     <div class="search-form my-auto">
                         <form method="GET" action="{{route('search')}}">
                             <input class="search-input" type="text" name="q" placeholder="Search">
+                            <button class="btn-nav-search">
+                                <i data-feather="search" style="stroke-width: 3"></i>
+                            </button>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item d-block d-lg-none my-3">
+                    <div class="search-form my-auto active">
+                        <form method="GET" action="{{route('search')}}">
+                            <input class="search-input shadow-lg" type="text" name="q" placeholder="Search">
                             <button class="btn-nav-search">
                                 <i data-feather="search" style="stroke-width: 3"></i>
                             </button>
