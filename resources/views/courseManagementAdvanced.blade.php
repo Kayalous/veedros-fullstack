@@ -15,10 +15,16 @@
 @endsection
 
 @section('content')
-    <div class="new-bg" style="z-index: -1"></div>
+    <div class="new-bg" style="z-index: -1; opacity: 0.25"></div>
 
     <section class="container my-5 py-5" id="course-info">
-
+        <nav class="mt-5 pt-5" aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: transparent">
+                <li class="breadcrumb-item"><a href="{{asset('/manage/instructor/courses')}}">My courses</a></li>
+                <li class="breadcrumb-item"><a href="{{asset('/manage/instructor/courses') . '/' . $course->slug}}">{{$course->name}}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">advanced</li>
+            </ol>
+        </nav>
     <h1 class="mt-5"> Chapters & Sessions </h1>
     <br>
     <h2>Basic course chapter and session structure</h2>
