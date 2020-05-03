@@ -63,7 +63,7 @@ class Enrolled
 
         //if the session requested one of the first three sessions or, the user is enrolled in the course let the user watch
         //The conditions are there to not throw errors when the first sessions are less than 3 sessions
-        if(count($firstSessions) >= 3)
+        if(count($firstSessions) >= 3){
             if     ($firstSessions[0]->id === $requestSession->id ||
                     $firstSessions[1]->id === $requestSession->id ||
                     $firstSessions[2]->id === $requestSession->id ||
@@ -74,6 +74,7 @@ class Enrolled
                 \Session::flash('message','You need to be enrolled in this course to watch that session.');
                 return redirect('watch/' . $instructorDisplayName . '/' . $courseSlug . '/' . $course->chapters[0]->slug . '/' .$firstSessions[0]->slug);
             }
+        }
         else
             return $next($request);
     }
