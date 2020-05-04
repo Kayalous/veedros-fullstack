@@ -16,6 +16,9 @@ class Session extends Model
     public function chapter(){
         return $this->belongsTo(Chapter::class);
     }
+    public function trans(){
+        return $this->belongsTo(VideosToTranscode::class);
+    }
 
     public function comments(){
         return $this->hasMany(Comment::class);

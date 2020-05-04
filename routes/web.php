@@ -130,28 +130,13 @@ Route::get('/manage/instructor/courses/{courseSlug}/advanced', function ($course
 )->name('manage.course.content.advanced');
 
 Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', function (\Illuminate\Http\Request $request,$courseSlug, $sessionId){
-//    $session = \App\Session::where('id', $sessionId)->first();
-//    $chapter = $session->chapter;
-//    $course = $chapter->course;
-//    $instructor = $course->instructor;
-//    $videoUrlSavePath = $instructor->display_name . '/' . $course->slug . '/' . $chapter->slug . '/' . $session->slug;
-//    //Get file from temp dir
-//    $filepond = app(Sopamo\LaravelFilepond\Filepond::class);
-//    $tempVideoPath = $filepond->getPathFromServerId($request['filepond']);
-//    $rawVideoFile = new \Illuminate\Http\File($tempVideoPath);
-//    //Save file in public directory so that FFMPEG can access it
-//    $rawVideoFilePath = Storage::disk('public')->put('temp-video',$rawVideoFile);
-//    //Dispatch the encode job
-//    \App\Jobs\ConvertVideoForUploading::dispatch($rawVideoFilePath, $videoUrlSavePath);
-//
-//    return "okay I'm working. Saving to " . $videoUrlSavePath . ' Started at ' . \Carbon\ Carbon::now()->toTimeString();
+
 
     $session = \App\Session::where('id', $sessionId)->first();
     $chapter = $session->chapter;
     $course = $chapter->course;
     $instructor = $course->instructor;
-    $videoUrlSavePath = 'courses/video-uploads/' .  $instructor->display_name . '/' . $course->slug . '/' . $chapter->slug . '/' . $session->slug;
-
+    $videoUrlSavePath = 'courses/uploads/' .  $instructor->display_name . '/' . $course->slug . '/' . $chapter->slug . '/' . $session->slug;
     $filepond = app(Sopamo\LaravelFilepond\Filepond::class);
     $tempVideoPath = $filepond->getPathFromServerId($request['filepond']);
     $rawVideoFile = new \Illuminate\Http\File($tempVideoPath);
@@ -188,10 +173,9 @@ Route::get('auth/facebook/callback', 'Auth\RegisterController@handleProviderCall
 Route::get('auth/google', 'Auth\RegisterController@redirectToProviderGoogle')->name('login.google');
 Route::get('auth/google/callback', 'Auth\RegisterController@handleProviderCallbackGoogle');
 
-
-
 //Admin routes
 Route::get('/admin/manage/', 'AdminController@show')->name('veedros.admin')->middleware('admin');
+Route::get('/admin/transcode-backlog/', 'AdminController@transcodeAll')->name('veedros.admin.transcode')->middleware('admin');
 Route::get('/admin/manage/add', 'AdminController@add')->name('veedros.admin.add')->middleware('admin');
 Route::get('/admin/manage/remove', 'AdminController@remove')->name('veedros.admin.remove')->middleware('admin');
 Route::get('/admin/manage/delete', 'AdminController@delete')->name('veedros.admin.delete')->middleware('admin');

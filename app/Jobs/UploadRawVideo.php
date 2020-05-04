@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\VideosToTranscode;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -50,5 +51,6 @@ class UploadRawVideo implements ShouldQueue
         $this->session->video->link_720 = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $this->videoUrlSavePath . '/720.mp4';
         $this->session->video->save();
         $this->session->video->updateVideoDuration();
+        VideosToTranscode::add($this->session->video->id);
     }
 }

@@ -39,7 +39,6 @@ class CourseController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:100',
             'price' => 'required|min:1|max:6',
-            'genre' => 'required|max:100',
             'about' => 'required|max:500',
             'filepond' => 'required'
         ]);
@@ -48,13 +47,10 @@ class CourseController extends Controller
         $instructor = Auth::user()->instructor;
         //making the slug
         $slug = Str::slug($request['name'], '-');
-        //creating course path
-        $path = base_path() . '/public';
-        fileFacede::makeDirectory($path . '/uploads/courses/'. Auth::user()->instructor->id . '/' . $slug .'/images/', 0755, true, true);
         //transferring course image from temp storage to perm storage
         $path = $this->getPathFromServerId($request['filepond']);
         $file = new File($path);
-        $fileUrl = Storage::disk('s3')->put('courses/' . Auth::user()->instructor->id . '/' . $slug . '/images', $file);
+        $fileUrl = Storage::disk('s3')->put('courses/uploads/' .  $instructor->display_name . '/' . $slug . '/course-files', $file);
         $fileUrl = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $fileUrl;
         $request['img'] = $fileUrl;
         //create the course
@@ -149,7 +145,7 @@ class CourseController extends Controller
         //transferring course image from temp storage to perm storage
         $path = $this->getPathFromServerId($request['filepond']);
         $file = new File($path);
-        $fileUrl = Storage::disk('s3')->put('courses/' . Auth::user()->instructor->id . '/' . $slug . '/images', $file);
+        $fileUrl = Storage::disk('s3')->put('courses/uploads/' .  Auth::user()->instructor->display_name . '/' . $slug . '/course-files', $file);
         $fileUrl = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $fileUrl;
         $request['img'] = $fileUrl;
         //update course
@@ -180,6 +176,7 @@ class CourseController extends Controller
         }
 
     }
+
     public function deleteObjective(Request $request){
         $validatedData = $request->validate([
             'id' => 'required'
@@ -189,6 +186,7 @@ class CourseController extends Controller
         $objective->delete();
         return response(['status'=>'Objective has been deleted successfully.'], 200);
     }
+
     public function editRecommendation(Request $request){
         $validatedData = $request->validate([
             'recommendation' => 'required|max:500',
@@ -221,6 +219,7 @@ class CourseController extends Controller
         $recommendation->delete();
         return response(['status'=>'Recommendation has been deleted successfully.'], 200);
     }
+
     public function addToSaved($course_id){
         $course = Course::where('id', $course_id)->firstOrFail();
         $user = Auth::user();

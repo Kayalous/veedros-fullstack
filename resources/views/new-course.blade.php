@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <div class="slash slash-to-right"></div>
+    <div class="new-bg" style="z-index: -1;"></div>
 
     <!-- Profile edit  -->
     <section class="profile my-5 py-5">
@@ -62,14 +62,6 @@
                                                 </h5>
                                                 </div>
                                             </div>
-                                            <div class="input-group mb-2">
-                                                <h5>Genre</h5>
-                                                <input type="text"
-                                                       name="genre"
-                                                       id="genre"
-                                                       class="form-control profile-form-field email-field-props border-light border-radius-sm"
-                                                       placeholder="Design, Programming, Music, etc.." />
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="row mt-4">
@@ -85,7 +77,7 @@
                                 </div>
 
                                 <div class="w-100 text-center mt-5">
-                                    <button type="submit" id="btnsubmit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">
+                                    <button type="submit" id="btnsubmit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto" disabled>
                                         <h4 class="my-0 mx-5">Continue</h4>
                                     </button>
                                 </div>

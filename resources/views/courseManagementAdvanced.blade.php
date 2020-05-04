@@ -1,12 +1,13 @@
 @extends('layout')
 
 @section('libraryCSS')
-    <!-- video js CSS  -->
-    <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
     <!-- Filepond CSS -->
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
     <link href="https://unpkg.com/filepond-plugin-file-poster/dist/filepond-plugin-file-poster.css" rel="stylesheet">
+    <!-- Plyr CSS  -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
+    <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
 
 @endsection
 @section('customCSS')
@@ -129,6 +130,7 @@
                                                 </div>
                                             </div>
                                             <br>
+                                            @if($session->video->link_raw === null)
                                             <form class="mb-5" action="{{$session->id}}/upload-video" method="POST" enctype="multipart/form-data">
                                                 <h2 class="mb-3">Session's video</h2>
                                                 @csrf
@@ -141,34 +143,20 @@
                                                     </button>
                                                 </div>
                                             </form>
-{{--                                            <form action="/manage/instructor/course/updateVideoData/{{$session->video->id . '/' . $course->id}}" method="post">--}}
-{{--                                            @csrf--}}
-{{--                                                <h2 class="mb-3">Video links for this session</h2>--}}
-{{--                                                <h5>360p link</h5>--}}
-{{--                                                <div class="col-12 mb-2">--}}
-{{--                                                    <h5 class="align-items-center row">--}}
-{{--                                                        <textarea name="link_360" class="text-muted form-control course-form-field border-light border-radius-sm col-12" placeholder="Video link here - (If you don't know what this is just leave it as it was)" rows="1" id="{{$session->video->id}}">{{$session->video->link_360}}</textarea>--}}
-{{--                                                    </h5>--}}
-{{--                                                </div>--}}
-{{--                                                <h5>480p link</h5>--}}
-{{--                                                <div class="col-12 mb-2">--}}
-{{--                                                    <h5 class="align-items-center row">--}}
-{{--                                                        <textarea name="link_480" class="text-muted form-control course-form-field border-light border-radius-sm col-12" placeholder="Video link here - (If you don't know what this is just leave it as it was)" rows="1" id="{{$session->video->id}}">{{$session->video->link_480}}</textarea>--}}
-{{--                                                    </h5>--}}
-{{--                                                </div>--}}
-{{--                                                <h5>720p link</h5>--}}
-{{--                                                <div class="col-12 mb-2">--}}
-{{--                                                    <h5 class="align-items-center row">--}}
-{{--                                                        <textarea name="link_720" class="text-muted form-control course-form-field border-light border-radius-sm col-12" placeholder="Video link here - (If you don't know what this is just leave it as it was)" rows="1" id="{{$session->video->id}}">{{$session->video->link_720}}</textarea>--}}
-{{--                                                    </h5>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="row text-center mt-5">--}}
-{{--                                                    <button type="submit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">--}}
-{{--                                                        <h4 class="my-0 mx-5">Submit links</h4>--}}
-{{--                                                    </button>--}}
-{{--                                                </div>--}}
-{{--                                            </form>--}}
-
+                                            @else
+                                                <div class="my-4">
+                                                    <h2 class="mb-3">Video preview</h2>
+                                                    <div class="video-wrapper m-auto" style="width: 100%">
+                                                        <video id="player" class="" controls preload="auto"
+                                                               width="640" height="264"
+                                                               controls data-plyr-config="{ 'settings': '['captions', 'quality', 'speed', 'loop']' }">
+                                                            <source src="{{$session->video->link_720}}" type="video/mp4" size="720" default>
+                                                            <source src="{{$session->video->link_480}}" type="video/mp4" size="480">
+                                                            <source src="{{$session->video->link_360}}" type="video/mp4" size="360">
+                                                        </video>
+                                                    </div>
+                                                </div>
+                                            @endif
                                             <br>
 
                                             <h2 class="mb-2">Milestones for this session</h2>
@@ -258,6 +246,8 @@
     <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <!-- Axios JS -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Plyr js -->
+    <script src="https://cdn.plyr.io/3.5.10/plyr.polyfilled.js"></script>
 @endsection
 @section('customJS')
     <script>
@@ -265,4 +255,5 @@
         let slug = `{{$course->slug}}`;
     </script>
     <script src="{{asset('scripts')}}/manage-course-advanced.js"></script>
+    <script src="{{asset('scripts')}}/player.js"></script>
 @endsection

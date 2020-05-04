@@ -42,14 +42,16 @@ FilePond.setOptions({
     },
 });
 
-
+const pond = document.querySelector('.filepond');
+pond.addEventListener('FilePond:processfile', e => {
+    submitButton.disabled = false;
+});
+pond.addEventListener('FilePond:removefile', e => {
+    submitButton.disabled = true;
+});
 
 
 //input validation
-password = document.querySelector("#password");
-passwordRepeat = document.querySelector("#password-repeat");
-
-
 function validateTextFields(field) {
     if(/^[\S\s]{1,100}$/.test(field.value)){
         fieldIsValid(field);
@@ -62,7 +64,7 @@ function validateTextFields(field) {
     }
 }
 
-function validateTextArea(field) {
+function validateTewextArea(field) {
     if(/^[\S\s]{1,500}$/.test(field.value)){
         fieldIsValid(field);
         return true;
@@ -75,7 +77,7 @@ function validateTextArea(field) {
 }
 
 function validateNumberField(field) {
-    if(/^[0-9]{0,6}$/.test(field.value)){
+    if(/^[0-9]{1,6}$/.test(field.value)){
         fieldIsValid(field);
         return true;
     }
@@ -100,14 +102,11 @@ function fieldIsNeutral(field){
 }
 function validateInputs() {
     namef = document.querySelector("#name");
-    price = document.querySelector("#phone");
-    genre = document.querySelector("#email");
-    about = document.querySelector("#about");
+    price = document.querySelector("#price");
+    about = document.querySelector("#description");
     if (
         validateTextFields(namef) &&
         validateNumberField(price) &&
-        validateTextFields(genre) &&
-        validateTextFields(genre) &&
         validateTextArea(about)) {
         return true;
     } else {
@@ -118,26 +117,16 @@ inputFields = document.querySelectorAll('.form-control');
 for(let i = 0; i < inputFields.length; i++){
     switch (inputFields[i].id) {
         case 'name':
-        case 'position':
-        case 'location':
-        case 'twitter':
-        case 'linkedin':
-        case 'facebook':
             inputFields[i].onfocusout = function () {
                 validateTextFields(inputFields[i]);
             };
             break;
-        case 'phone':
+        case 'price':
             inputFields[i].onfocusout = function () {
                 validateNumberField(inputFields[i]);
             };
             break;
-        case 'email':
-            inputFields[i].onfocusout = function () {
-                validateEmail(inputFields[i]);
-            };
-            break;
-        case 'about':
+        case 'description':
             inputFields[i].onfocusout = function () {
                 validateTextArea(inputFields[i]);
             };
@@ -146,11 +135,11 @@ for(let i = 0; i < inputFields.length; i++){
 }
 
 
-// submitButton = document.querySelector('#btnsubmit');
-// form = document.querySelector('#form');
-// submitButton.onclick = function (e) {
-//     e.preventDefault();
-//     if (validateInputs()) {
-//         form.submit();
-//     }
-// };
+submitButton = document.querySelector('#btnsubmit');
+form = document.querySelector('#form');
+submitButton.onclick = function (e) {
+    e.preventDefault();
+    if (validateInputs()) {
+        form.submit();
+    }
+};

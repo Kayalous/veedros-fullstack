@@ -1,9 +1,8 @@
 @extends('layout')
 
 @section('libraryCSS')
-     <!-- video js CSS  -->
-{{--    <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />--}}
-     <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
+     <!-- Plyr CSS  -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
     <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
 
 @endsection
@@ -420,9 +419,7 @@
 @endsection
 
 @section('libraryJS')
-    <!-- video js -->
-{{--    <script src="https://vjs.zencdn.net/7.6.6/video.min.js"></script>--}}
-{{--    <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>--}}
+    <!-- Plyr js -->
     <script src="https://cdn.plyr.io/3.5.10/plyr.polyfilled.js"></script>
     <!-- Axios JS -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
