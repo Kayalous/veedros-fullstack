@@ -147,7 +147,7 @@
                                                 <div class="my-4">
                                                     <h2 class="mb-3">Video preview</h2>
                                                     <div class="video-wrapper m-auto" style="width: 100%">
-                                                        <video id="player" class="" controls preload="auto"
+                                                        <video id="player" class="plyrs" controls preload="auto"
                                                                width="640" height="264"
                                                                controls data-plyr-config="{ 'settings': '['captions', 'quality', 'speed', 'loop']' }">
                                                             <source src="{{$session->video->link_720}}" type="video/mp4" size="720" default>
@@ -255,5 +255,6 @@
         let slug = `{{$course->slug}}`;
     </script>
     <script src="{{asset('scripts')}}/manage-course-advanced.js"></script>
-    <script src="{{asset('scripts')}}/player.js"></script>
+{{--    <script src="{{asset('scripts')}}/player.js"></script>--}}
+
 @endsection

@@ -302,3 +302,10 @@ async function deleteChapter(id) {
     }
 
 }
+
+let players = document.querySelectorAll('.plyrs');
+
+for(let i = 0; i<players.length; i++){
+new Plyr(players[i]);
+}
+
