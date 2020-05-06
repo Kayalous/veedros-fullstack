@@ -332,31 +332,29 @@
             @if(Auth::user())
                 @if(!Auth::user()->isEnrolledInCourse($controllerCourse))
                     <br>
-                    <div class="w-100 text-center my-5">
-                        <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
-                            Enroll now<i class="fas fa-shopping-cart ml-3"></i></a>
+                    <div class="row my-5">
+
+                        <a href="{{asset('cart/add') . '/' . $controllerCourse->id}}" class="btn d-inline btn-veedros-new btn-veedros-cart-red   border-0 mx-auto">
+                            <span>Add to cart <i class="fas fa-cart-plus" class="ml-3"></i></span>
+                        </a>
+
+                        <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn d-inline btn-veedros-new btn-veedros-cart border-0 mx-auto">
+                            <span>Buy now <i class="fas fa-shopping-cart" class="ml-3"></i></span>
+                        </a>
                     </div>
 
                 @endif
             @else
                 <br>
-                <div class="w-100 text-center my-5">
-                    <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn btn-veedros-new btn-veedros-xl border-0">
-                        Enroll now<i class="fas fa-shopping-cart ml-3"></i></a>
-                </div>
                 <div class="row my-5">
 
-            <a href="" class="btn d-inline btn-veedros-new btn-veedros-cart-red   border-0 mx-auto">
-                <span>Add to cart <i data-feather="shopping-cart" class="ml-3"></i></span>
-            </a>
+                <a href="{{asset('cart/add') . '/' . $controllerCourse->id}}" class="btn d-inline btn-veedros-new btn-veedros-cart-red   border-0 mx-auto">
+                    <span>Add to cart <i class="fas fa-cart-plus" class="ml-3"></i></span>
+                </a>
 
-
-            <a href="" class="btn d-inline btn-veedros-new btn-veedros-cart border-0 mx-auto">
-                <span>Buy now</span>
-            </a>
-
-
-
+                <a href="{{asset('enroll/') . '/' . $controllerCourse->id}}" class="btn d-inline btn-veedros-new btn-veedros-cart border-0 mx-auto">
+                    <span>Buy now <i class="fas fa-shopping-cart" class="ml-3"></i></span>
+                </a>
         </div>
             @endif
 
