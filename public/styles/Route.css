@@ -228,3 +228,61 @@
 .id-icon:hover .icon-overlay {
     background-color: rgba(73, 72, 72, 0.05);
 }
+
+.add-cycle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    right: 35px;
+    bottom: 50px;
+    animation: shadow-pulse 1s infinite;
+}
+
+.add-cycle:hover {
+    animation: scale-pulse 1s infinite;
+}
+
+.add-cycle i {
+    color: #65D3BF !important;
+    cursor: pointer;
+    moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.add-cycle i:hover {
+    color: rgb(87, 179, 162);
+}
+
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes scale-pulse {
+    0% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    80% {
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+    }
+}
