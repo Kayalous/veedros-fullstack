@@ -10,8 +10,8 @@
         <div class="content">
             <h1>Welcome to Route</h1>
             <img src="{{asset('images')}}/Route_logo.png" alt="">
-            <div class="mt-3">
-            <a href="" class="add-cycle" data-toggle="modal" data-target="#exampleModalCenter">
+            <div class="mt-4">
+            <a href="" class="add-cycle m-auto" data-toggle="modal" data-target="#exampleModalCenter">
                 <i class="fas fa-plus"></i>
             </a>
 
@@ -69,9 +69,9 @@
         </div> -->
 
       
-    <a href="" class="add-cycle" data-toggle="modal" data-target="#exampleModalCenter">
+    <!-- <a href="" class="add-cycle" data-toggle="modal" data-target="#exampleModalCenter">
     <i class="fas fa-plus"></i>
-    </a>
+    </a> -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
