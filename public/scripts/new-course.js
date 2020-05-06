@@ -64,7 +64,7 @@ function validateTextFields(field) {
     }
 }
 
-function validateTewextArea(field) {
+function validateTextArea(field) {
     if(/^[\S\s]{1,500}$/.test(field.value)){
         fieldIsValid(field);
         return true;
