@@ -51,7 +51,7 @@ class AdminController extends Controller
 
     public function transcodeAll()
     {
-        $backlog = $this->returnApiAsJSON('https://veedros.dev/api/transcoding-backlog');
+        $backlog = $this->returnApiAsJSON('veedros.com/api/transcoding-backlog');
         dd($backlog);
         foreach ($backlog as $videoToEncode) {
             //Dispatch the encode job
@@ -71,6 +71,7 @@ class AdminController extends Controller
     private function returnApiAsJSON($link){
         $client = new Client();
         $res = $client->get($link);
+        dd($res);
         if($res->getStatusCode() === 200)
             return $res->getBody();
         return $res->getStatusCode();
