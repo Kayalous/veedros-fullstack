@@ -16,7 +16,7 @@
             </a>
 
             </div>
-            
+
         </div>
     </div>
 
@@ -68,7 +68,7 @@
             </div>
         </div> -->
 
-      
+
     <!-- <a href="" class="add-cycle" data-toggle="modal" data-target="#exampleModalCenter">
     <i class="fas fa-plus"></i>
     </a> -->
@@ -77,25 +77,17 @@
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Join cycle</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+      <div class="modal-body py-5">
       <div class="btn-redeem-veedros m-auto ">
-            <form method="POST" action="/promo/redeem">
-                <input type="hidden" name="_token" value="ptBO1JyGWqEb9ZGu0SY7hGSFpLRKvgDnl3WcQbKV">
+          <h2 class="modal-title text-muted text-center mb-3">Join cycle</h2>
+          <form method="POST" action="/promo/redeem">
+              @csrf
                 <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Enter cycle passcode..." type="text" name="code">
                 <button type="submit" class="btn-redeem-icon border-0">
                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </button>
             </form>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

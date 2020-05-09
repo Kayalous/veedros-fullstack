@@ -7,9 +7,8 @@ use App\Session;
 use App\SocialProvider;
 use App\User;
 use App\VideosToTranscode;
-use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Storage;
-use Psy\Util\Str;
 
 class AdminController extends Controller
 {
@@ -52,8 +51,8 @@ class AdminController extends Controller
 
     public function transcodeAll()
     {
-        $backlog = VideosToTranscode::where('transcoded_at', null)->get();
-
+        $backlog = $this->returnApiAsJSON('https://veedros.dev/api/transcoding-backlog');
+        dd($backlog);
         foreach ($backlog as $videoToEncode) {
             //Dispatch the encode job
             $session = Session::where('id', $videoToEncode->session_id)->first();
@@ -68,6 +67,13 @@ class AdminController extends Controller
             $message = 'Nothing to transcode!';
 
         return redirect('/')->with('success', $message);
+    }
+    private function returnApiAsJSON($link){
+        $client = new Client();
+        $res = $client->get($link);
+        if($res->getStatusCode() === 200)
+            return $res->getBody();
+        return $res->getStatusCode();
     }
 }
 //dd($s3_file);

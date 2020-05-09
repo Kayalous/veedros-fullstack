@@ -130,8 +130,6 @@ Route::get('/manage/instructor/courses/{courseSlug}/advanced', function ($course
 )->name('manage.course.content.advanced');
 
 Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', function (\Illuminate\Http\Request $request,$courseSlug, $sessionId){
-
-
     $session = \App\Session::where('id', $sessionId)->first();
     $chapter = $session->chapter;
     $course = $chapter->course;

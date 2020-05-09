@@ -2703,6 +2703,7 @@ img {
 
 .rating label:hover~label,
 .rating input:focus~label,
+.rating input:checked~label,
 .rating label:hover,
 .rating a:hover,
 .rating a:hover~a,
@@ -2741,6 +2742,7 @@ img {
 
 .course-rating label:hover~label,
 .course-rating input:focus~label,
+.course-rating input:checked~label,
 .course-rating label:hover,
 .course-rating a:hover,
 .course-rating a:hover~a,
