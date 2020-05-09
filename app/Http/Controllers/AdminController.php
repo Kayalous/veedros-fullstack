@@ -53,7 +53,6 @@ class AdminController extends Controller
     {
         $backlog = $this->returnApiAsJSON('https://veedros.com/api/transcoding-backlog');
         foreach ($backlog as $videoToEncode) {
-            dd($videoToEncode);
             //Dispatch the encode job
                 \App\Jobs\ConvertVideoForUploading::dispatch($videoToEncode->path .'/raw.mp4', $videoToEncode->path, $videoToEncode->session_id);
         }

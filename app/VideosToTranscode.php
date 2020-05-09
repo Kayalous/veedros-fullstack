@@ -37,15 +37,12 @@ class VideosToTranscode extends Model
         $transcoded->save();
     }
     public static function markAsTranscodedAPI($session_id){
-        returnApiAsJSON('https://veedros.com/api/mark/transcoded/' . $session_id);
+        $client = new Client();
+        $res = $client->get('https://veedros.com/api/mark/transcoded/' . $session_id);
+        if($res->getStatusCode() === 200)
+            return true;
+        return false;
     }
 
-    private function returnApiAsJSON($link){
-        $client = new Client();
-        $res = $client->get($link);
-        if($res->getStatusCode() === 200)
-            return json_decode($res->getBody()->getContents());
-        return $res->getStatusCode();
-    }
 
 }
