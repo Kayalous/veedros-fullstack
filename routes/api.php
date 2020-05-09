@@ -22,3 +22,6 @@ Route::get('/transcoding-backlog', function (){
     $backlog = VideosToTranscode::where('transcoded_at', null)->get()->toJson();
     return $backlog;
 });
+Route::get('/mark/transcoded/{session_id}', function ($session_id){
+    VideosToTranscode::markAsTranscoded($session_id);
+});

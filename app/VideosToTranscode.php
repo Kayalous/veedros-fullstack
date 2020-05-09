@@ -2,6 +2,7 @@
 
 namespace App;
 
+use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
 
 class VideosToTranscode extends Model
@@ -29,12 +30,22 @@ class VideosToTranscode extends Model
     }
 
 
-    public static function markAsTranscoded($video_id){
-        $video = Video::where('id', $video_id)->firstOrFail();
-        $session = $video->session;
+    public static function markAsTranscoded($session_id){
+        $session = Session::where('id', $session_id)->firstOrFail();
         $transcoded = VideosToTranscode::where('session_id', $session->id)->firstOrFail();
         $transcoded->transcoded_at = \Carbon\Carbon::now()->toDateTimeString();
         $transcoded->save();
+    }
+    public static function markAsTranscodedAPI($session_id){
+        returnApiAsJSON('https://veedros.com/api/mark/transcoded/' . $session_id);
+    }
+
+    private function returnApiAsJSON($link){
+        $client = new Client();
+        $res = $client->get($link);
+        if($res->getStatusCode() === 200)
+            return json_decode($res->getBody()->getContents());
+        return $res->getStatusCode();
     }
 
 }

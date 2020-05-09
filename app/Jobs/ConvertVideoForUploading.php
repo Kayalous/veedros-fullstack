@@ -15,17 +15,17 @@ class ConvertVideoForUploading implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public $rawVideoFilePath, $videoUrlSavePath, $video_id;
+    public $rawVideoFilePath, $videoUrlSavePath, $session_id;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($rawVideoFilePath, $videoUrlSavePath, $video_id)
+    public function __construct($rawVideoFilePath, $videoUrlSavePath, $session_id)
     {
         $this->rawVideoFilePath = $rawVideoFilePath;
         $this->videoUrlSavePath = $videoUrlSavePath;
-        $this->video_id = $video_id;
+        $this->session_id = $session_id;
     }
 
     /**
@@ -45,6 +45,6 @@ class ConvertVideoForUploading implements ShouldQueue
             $fmpeg = $rawVideo->export()->toDisk('s3')->inFormat($lowBitrate)->save($this->videoUrlSavePath . '/360p.mp4')
             ->export()->toDisk('s3')->inFormat($midBitrate)->save($this->videoUrlSavePath . '/480p.mp4')
             ->export()->toDisk('s3')->inFormat($highBitrate)->save($this->videoUrlSavePath . '/720p.mp4');
-            VideosToTranscode::markAsTranscoded($this->video_id);
+            VideosToTranscode::markAsTranscodedAPI($this->session_id);
     }
 }

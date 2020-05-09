@@ -52,14 +52,10 @@ class AdminController extends Controller
     public function transcodeAll()
     {
         $backlog = $this->returnApiAsJSON('https://veedros.com/api/transcoding-backlog');
-        dd($backlog);
         foreach ($backlog as $videoToEncode) {
+            dd($videoToEncode);
             //Dispatch the encode job
-            $session = Session::where('id', $videoToEncode->session_id)->first();
-            if($session !== null)
-                \App\Jobs\ConvertVideoForUploading::dispatch($videoToEncode->path .'/raw.mp4', $videoToEncode->path, $session->video->id);
-            else
-                $videoToEncode->delete();
+                \App\Jobs\ConvertVideoForUploading::dispatch($videoToEncode->path .'/raw.mp4', $videoToEncode->path, $videoToEncode->session_id);
         }
         if(count($backlog) > 0)
             $message = 'All good boss, processing now!';
