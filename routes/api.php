@@ -20,5 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/transcoding-backlog', function (){
     $backlog = VideosToTranscode::where('transcoded_at', null)->get()->toJson();
-    return ['backlog' => $backlog];
+    return $backlog;
 });
