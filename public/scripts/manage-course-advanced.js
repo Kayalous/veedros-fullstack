@@ -9,7 +9,8 @@ FilePond.registerPlugin(
 
 // Select the file input and use
 // create() to turn it into a pond
-let filePonds = document.querySelectorAll('.filepond');
+const filePonds = document.querySelectorAll('.filepond');
+let uploadButtons = document.querySelectorAll('.video-upload-btn');
 for(let i = 0; i < filePonds.length; i++)
 FilePond.create(
     filePonds[i],
@@ -18,6 +19,19 @@ FilePond.create(
         acceptedFileTypes: ['video/mp4'],
     }
 );
+
+
+
+for(let i = 0; i <  uploadButtons.length; i++){
+    console.log(filePonds[i], uploadButtons[i])
+    const pond = document.querySelector(`.filepond${i}`);
+    pond.addEventListener('FilePond:processfile', e => {
+        uploadButtons[i].disabled = false;
+    });
+    pond.addEventListener('FilePond:removefile', e => {
+        uploadButtons[i].disabled = true;
+    });
+}
 
 
 FilePond.setOptions({

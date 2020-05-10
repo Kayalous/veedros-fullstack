@@ -17,7 +17,7 @@
 
 @section('content')
     <div class="new-bg" style="z-index: -1; opacity: 0.25"></div>
-
+    <?php $pondCounter = 0;?>
     <section class="container my-5 py-5" id="course-info">
         <nav class="mt-5 pt-5" aria-label="breadcrumb">
             <ol class="breadcrumb" style="background-color: transparent">
@@ -135,10 +135,11 @@
                                                 <h2 class="mb-3">Session's video</h2>
                                                 @csrf
                                                 <input type="file"
-                                                       class="filepond"
+                                                       class="filepond filepond<?php echo $pondCounter;?>"
                                                        name="vid"/>
+                                                <?php $pondCounter++;?>
                                                 <div class="row text-center mt-5">
-                                                    <button type="submit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto">
+                                                    <button type="submit" class="btn btn-veedros-new btn-veedros-lg border-0 mx-auto video-upload-btn" disabled>
                                                         <h4 class="my-0 mx-5">Upload video</h4>
                                                     </button>
                                                 </div>
