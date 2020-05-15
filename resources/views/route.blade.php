@@ -8,8 +8,8 @@
 
     <div class="route-header">
         <div class="content">
-            <h1>Welcome to Route</h1>
-            <img src="{{asset('images')}}/Route_logo.png" alt="">
+            <h1>Welcome to Academies</h1>
+            
             <div class="mt-4">
             <a href="" class="add-cycle m-auto" data-toggle="modal" data-target="#exampleModalCenter">
                 <i class="fas fa-plus"></i>

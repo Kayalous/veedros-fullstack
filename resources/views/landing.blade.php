@@ -21,11 +21,7 @@
                        >
                        <span>Explore now</span>
                     </a>
-                    <div class="trusted-Route">
-                        <small>Trusted by</small>
-                        <img class="img-fluid" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Route_logo.png" alt="">
-                        <small class="click-route">If you're Route's student please <a href="{{asset('route')}}">click here</a></small>
-                    </div>
+                    
                 </div>
                 <div class="col-lg-6 hero-illustrations mx-auto">
                     <div class="illustration-container illustration-container-lg d-md-flex-center "
