@@ -19,7 +19,6 @@ class Comment extends Model
 
     }
     public function isLikedBy(User $user){
-
         $like = Like::where(['user_id' => $user->id, 'comment_id' => $this->id])->first();
         if($like !== null)
             return true;

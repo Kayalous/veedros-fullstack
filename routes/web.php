@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Storage;
 use Pbmedia\LaravelFFMpeg\FFMpegFacade as FFMpeg;
 
 Route::get('/', function () {
+
     $courses = \App\Course::all()->take(6);
+
     return view('landing', ['courses' => $courses]);
 })->name('landing');
 
