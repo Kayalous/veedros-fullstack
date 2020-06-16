@@ -25,7 +25,11 @@ class InstructorController extends Controller
             ->groupBy(function($date) {
                 return Carbon::parse($date->created_at)->format('W');
             });
-        $viewsToReturn = [];
+        $viewsToReturn = [[['count']=>0, ['date']=> 0],
+            [['count']=>0, ['date']=> 0],
+            [['count']=>0, ['date']=> 0],
+            [['count']=>0, ['date']=> 0],
+            [['count']=>0, ['date']=> 0]];
         $i = 0;
         foreach ($viewsFromLastMonth as $viewsInAWeek){
             $viewsToReturn[$i]['count'] = count($viewsInAWeek);
@@ -46,7 +50,11 @@ class InstructorController extends Controller
             ->groupBy(function($date) {
                 return Carbon::parse($date->created_at)->format('W');
             });
-        $enrollsToReturn = [];
+        $enrollsToReturn = [[['count']=>0, ['date']=> 0],
+            [['count']=>0, ['date']=> 0],
+            [['count']=>0, ['date']=> 0],
+            [['count']=>0, ['date']=> 0],
+            [['count']=>0, ['date']=> 0]];
         $i = 0;
         foreach ($enrollsFromLastMonth as $enrollsInAWeek){
             $enrollsToReturn[$i]['count'] = count($enrollsInAWeek);
