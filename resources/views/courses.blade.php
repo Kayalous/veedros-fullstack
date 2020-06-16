@@ -78,17 +78,28 @@
 @endsection
 @section('customJS')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
     <script>
+        let views = {!! $views !!};
+        let enrolls = {!! $enrolls !!};
         var ctx = document.getElementById('subscriptions').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'line',
             responsive:true,
             maintainAspectRatio: false,
             data: {
-                labels: ['4/28/2020', '4/29/2020', '4/30/2020', '5/1/2020', '5/2/2020', '5/3/2020'],
+                labels: [moment(enrolls[0].date).startOf('week').format('DD/M/YYYY'),
+                    moment(enrolls[1].date).startOf('week').format('DD/M/YYYY'),
+                    moment(enrolls[2].date).startOf('week').format('DD/M/YYYY'),
+                    moment(enrolls[3].date).startOf('week').format('DD/M/YYYY'),
+                    moment(enrolls[4].date).startOf('week').format('DD/M/YYYY')],
                 datasets: [{
-                    label: 'Subscriptions',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Total views this week',
+                    data: [enrolls[0].count,
+                        enrolls[1].count,
+                        enrolls[2].count,
+                        enrolls[3].count,
+                        enrolls[4].count],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                     ],
@@ -115,29 +126,26 @@
             responsive:true,
             maintainAspectRatio: false,
             data: {
-                labels: ['4/28/2020', '4/29/2020', '4/30/2020', '5/1/2020', '5/2/2020', '5/3/2020'],
+                labels: [moment(views[0].date).startOf('week').format('DD/M/YYYY'),
+                    moment(views[1].date).startOf('week').format('DD/M/YYYY'),
+                    moment(views[2].date).startOf('week').format('DD/M/YYYY'),
+                    moment(views[3].date).startOf('week').format('DD/M/YYYY'),
+                    moment(views[4].date).startOf('week').format('DD/M/YYYY')],
                 datasets: [{
-                    label: 'Enrolled',
-                    data: [30, 56, 12, 84, 70, 158],
+                    label: 'Total views this week',
+                    data: [views[0].count,
+                        views[1].count,
+                        views[2].count,
+                        views[3].count,
+                        views[4].count],
                     backgroundColor: [
-                        '#8C00F122',
+                        '#65D3BF22',
                     ],
                     borderColor: [
-                        '#8C00F1',
+                        '#65D3BF',
                     ],
                     borderWidth: 2
-                },
-                    {
-                        label: 'Not enrolled',
-                        data: [30, 65, 22, 156, 345, 370],
-                        backgroundColor: [
-                            '#65D3BF22',
-                        ],
-                        borderColor: [
-                            '#65D3BF',
-                        ],
-                        borderWidth: 2
-                    }
+                }
                 ]
             },
             options: {

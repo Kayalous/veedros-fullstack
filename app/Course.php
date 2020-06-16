@@ -35,7 +35,7 @@ class Course extends Model
     }
 
     public function users(){
-        return $this->belongsToMany('App\User', 'enrolls', 'course_id', 'user_id');
+        return $this->belongsToMany('App\User', 'enrolls', 'course_id', 'user_id')->withPivot('created_at');
     }
 
     public function saves(){

@@ -91,7 +91,7 @@ Route::get('/dashboard', function () {
 
 //instructor routes
 Route::group(['middleware' => ['instructor']], function () {
-Route::get('/manage/instructor/courses', 'CourseController@courses')->name('manage.courses');
+Route::get('/manage/instructor/courses', 'InstructorController@courses')->name('manage.courses');
 Route::get('/manage/instructor/courses/new', function (){
     return view('new-course');
 })->name('manage.courses.new');
@@ -182,5 +182,7 @@ Route::get('/admin/manage/delete', 'AdminController@delete')->name('veedros.admi
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('payment/test', 'PaymentController@payRequest');
 
 

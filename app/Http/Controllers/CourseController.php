@@ -104,10 +104,7 @@ class CourseController extends Controller
 
     }
 
-    public function courses(){
-        $courses = Auth::user()->instructor->courses;
-        return view('courses',['courses' => $courses]);
-    }
+
 
     public function editAbout(Request $request){
         $validatedData = $request->validate([
