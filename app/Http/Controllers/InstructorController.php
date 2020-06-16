@@ -16,6 +16,7 @@ class InstructorController extends Controller
     }
 
     private function getViews($courses){
+        if(count($courses) == 0) return null;
         $viewsFromLastMonth = $courses[0]->views()
             ->where(
                 'created_at', '>=', Carbon::now()->subDays(30)->toDateTimeString())
@@ -25,22 +26,22 @@ class InstructorController extends Controller
             ->groupBy(function($date) {
                 return Carbon::parse($date->created_at)->format('W');
             });
-        $viewsToReturn = [[['count']=>0, ['date']=> 0],
-            [['count']=>0, ['date']=> 0],
-            [['count']=>0, ['date']=> 0],
-            [['count']=>0, ['date']=> 0],
-            [['count']=>0, ['date']=> 0]];
+        $viewsToReturn = [
+            ['count'=>0, 'date'=> Carbon::now()->subDays(30)->toDateTimeString()],
+            ['count'=>0, 'date'=> Carbon::now()->subDays(23)->toDateTimeString()],
+            ['count'=>0, 'date'=> Carbon::now()->subDays(16)->toDateTimeString()],
+            ['count'=>0, 'date'=> Carbon::now()->subDays(9)->toDateTimeString()],
+            ['count'=>0, 'date'=> Carbon::now()->subDays(2)->toDateTimeString()]];
         $i = 0;
         foreach ($viewsFromLastMonth as $viewsInAWeek){
             $viewsToReturn[$i]['count'] = count($viewsInAWeek);
-            $viewsToReturn[$i]['date'] = $viewsInAWeek[0]->created_at;
             $i++;
         }
         return json_encode($viewsToReturn);
     }
 
     private function getEnrollments($courses){
-//        dd($courses[0]->users);
+        if(count($courses) == 0) return null;
         $enrollsFromLastMonth = $courses[0]->users()
             ->where(
                 'enrolls.created_at', '>=', Carbon::now()->subDays(30)->toDateTimeString())
@@ -50,15 +51,14 @@ class InstructorController extends Controller
             ->groupBy(function($date) {
                 return Carbon::parse($date->created_at)->format('W');
             });
-        $enrollsToReturn = [[['count']=>0, ['date']=> 0],
-            [['count']=>0, ['date']=> 0],
-            [['count']=>0, ['date']=> 0],
-            [['count']=>0, ['date']=> 0],
-            [['count']=>0, ['date']=> 0]];
+        $enrollsToReturn = [['count'=>0, 'date'=> Carbon::now()->subDays(30)->toDateTimeString()],
+            ['count'=>0, 'date'=> Carbon::now()->subDays(23)->toDateTimeString()],
+            ['count'=>0, 'date'=> Carbon::now()->subDays(16)->toDateTimeString()],
+            ['count'=>0, 'date'=> Carbon::now()->subDays(9)->toDateTimeString()],
+            ['count'=>0, 'date'=> Carbon::now()->subDays(2)->toDateTimeString()]];
         $i = 0;
         foreach ($enrollsFromLastMonth as $enrollsInAWeek){
             $enrollsToReturn[$i]['count'] = count($enrollsInAWeek);
-            $enrollsToReturn[$i]['date'] = $enrollsInAWeek[0]->created_at;
             $i++;
         }
         return json_encode($enrollsToReturn);
