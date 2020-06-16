@@ -15,7 +15,7 @@ class CreatePendingEnrollmentsTable extends Migration
     {
         Schema::create('pending_enrollments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('merchant_order_id')->unique();
+            $table->string('merchant_order_id', 11)->unique();
             $table->bigInteger('user_id')->unsigned()->references('id')->on('users');
             $table->bigInteger('course_id')->unsigned()->references('id')->on('courses');
             $table->timestamps();
