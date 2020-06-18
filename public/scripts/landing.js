@@ -48,12 +48,12 @@ function createTippyTemplates() {
           <div class="row">
             <div class="col-6">
               <div class="badge tip-badge">
-                <div class="tip-badge-item">  <i class="fas fa-hand-holding-usd"></i> <span>${courses[i].price} EGP</span></div>
+                <div class="tip-badge-item">  <i class="fas fa-hand-holding-usd"></i> <span class="font-weight-bold">${courses[i].price} EGP</span></div>
               </div>
             </div>
             <div class="col-6">
               <div class="badge tip-badge">
-                <h5 class="tip-badge-item">  <i class="far fa-clock"></i>  <span>${courses[i].duration}</span></h5>
+                <h5 class="tip-badge-item">  <i class="far fa-clock"></i>  <span class="font-weight-bold">${courses[i].duration}</span></h5>
               </div>
             </div>
           </div>

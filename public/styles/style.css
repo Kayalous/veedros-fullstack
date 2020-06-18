@@ -1853,8 +1853,8 @@ ul {
 }
 
 .tip-badge-item span {
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 900 !important;
     opacity: 0.6;
 }
 

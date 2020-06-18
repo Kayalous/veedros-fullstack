@@ -27,7 +27,7 @@ class CoursesTableSeeder extends Seeder
                 'name' => $name,
                 'instructor_id' => 1,
                 'img' => "https://veedros.s3.eu-central-1.amazonaws.com/courses/2/hellloo/images/tdzHq4nTU7zkOOmjoTEXVq8ZFlpqoTBAxIljBlhl.jpeg",
-                'price' => rand(1,9999),
+                'price' => rand(1,200),
                 'about' => $faker->address,
                 'slug' => $slug
             ]);
