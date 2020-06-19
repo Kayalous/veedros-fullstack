@@ -18,7 +18,7 @@ class CreateCoursesTable extends Migration
             $table->bigInteger('instructor_id')->unsigned()->references('id')->on('instructors');
             $table->string('name');
             $table->string('img')->nullable();
-            $table->string('duration')->default('00:00');
+            $table->string('duration')->default('0 Hours and 0 Minutes');
             $table->string('duration_seconds')->default('0');
             $table->string('slug');
             $table->double('price');

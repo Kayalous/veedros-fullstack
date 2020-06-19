@@ -16,6 +16,8 @@
         <h1>
             Hey, {{explode(' ',Auth::user()->name)[0]}}!
         </h1>
+        @if(Auth::user()->instructor->courses->count() > 0)
+
         <div class="my-5 py-5">
             <h2>Here are some stats about your courses!</h2>
             <div class="row">
@@ -33,6 +35,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <div class="w-100 my-5">
             <div class="card course-card development-card noJquery mx-auto">
                 <div class="card-body m-0">
@@ -76,7 +79,8 @@
 
 </section>
 @endsection
-@section('customJS')
+@if(Auth::user()->instructor->courses->count() > 0)
+    @section('customJS')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
     <script>
@@ -200,3 +204,4 @@
         });
     </script>
 @endsection
+@endif

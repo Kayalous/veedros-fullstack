@@ -63,16 +63,16 @@ class CourseController extends Controller
                 'img' => $request['img']
             ]
         );
-        //create the first recommendation
-        Recommendation::create([
-            'course_id' => $course->id,
-            'recommendation' => ''
-        ]);
-        //create the first objective
-        Objective::create([
-            'course_id' => $course->id,
-            'objective' => ''
-        ]);
+//        //create the first recommendation
+//        Recommendation::create([
+//            'course_id' => $course->id,
+//            'recommendation' => ''
+//        ]);
+//        //create the first objective
+//        Objective::create([
+//            'course_id' => $course->id,
+//            'objective' => ''
+//        ]);
         //create the first chapter
         $chapter = Chapter::create([
             'course_id' => $course->id,
@@ -99,9 +99,10 @@ class CourseController extends Controller
             'title' => $title,
             'objective' => $body
         ]);
+        //Enroll the Instructor in their course
+        EnrollController::enrollUser(Auth::user(), $course);
         //return the new course page
         return redirect('/manage/instructor/courses/'.$slug);
-
     }
 
 

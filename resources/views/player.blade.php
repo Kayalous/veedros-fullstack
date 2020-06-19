@@ -68,7 +68,6 @@
             </div>
         </div>
     </div>
-
     <section class="player-container my-5 pt-5 px-3">
         <div class="video-wrapper my-auto">
             <video id="player" class="" controls preload="auto"

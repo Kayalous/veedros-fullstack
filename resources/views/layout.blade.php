@@ -244,7 +244,7 @@
             </li>
             @if(Auth::user()->instructor)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('manage.courses')}}">Manage my courses</a>
+                            <a class="nav-link" href="{{route('manage.courses')}}">Instructor dashboard</a>
                         </li>
                     @else
             <li class="nav-item">
@@ -302,7 +302,7 @@
                     </li>
                         @if(Auth::user()->instructor)
                             <li class="nav-item">
-                                <a class="nav-link dot-hover dot-hover-black" href="{{route('manage.courses')}}">Manage my courses</a>
+                                <a class="nav-link dot-hover dot-hover-black" href="{{route('manage.courses')}}">Instructor dashboard</a>
                             </li>
                             @endif
                 @endif

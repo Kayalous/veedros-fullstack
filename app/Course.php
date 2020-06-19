@@ -132,6 +132,7 @@ class Course extends Model
     }
 
     public function hoursOnly(){
+
         $exploded = explode(' ', $this->duration);
         $hours = $exploded[0] . ' ' . $exploded[1];
         return $hours;
