@@ -8,7 +8,7 @@ use App\SocialProvider;
 use App\User;
 use App\VideosToTranscode;
 use GuzzleHttp\Client;
-use App\http\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
