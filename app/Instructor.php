@@ -18,4 +18,14 @@ class Instructor extends Model
     public function courses(){
         return $this->hasMany(Course::class);
     }
+    public function views(){
+        $viewCount = 0;
+        foreach ($this->courses as $course) $viewCount += $course->views()->count();
+        return $viewCount;
+    }
+    public function enrollments(){
+        $enrollmentCount = 0;
+        foreach ($this->courses as $course) $enrollmentCount += $course->users()->count();
+        return $enrollmentCount;
+    }
 }

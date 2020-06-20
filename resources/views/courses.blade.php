@@ -19,19 +19,38 @@
         @if(Auth::user()->instructor->courses->count() > 0)
 
         <div class="my-5 py-5">
-            <h2>Here are some stats about your courses!</h2>
+            <h2>Here are some stats about your courses:</h2>
+            <h2 class="mb-2">Lifetime:</h2>
+            <table class="table table-borderless">
+                <thead>
+                <tr>
+                    <th scope="col" class="text-muted text-left"><h3><i class="mr-2" data-feather="trending-up"></i> Enrollments</h3> </th>
+                    <th scope="col" class="text-muted text-left"><h3><i class="mr-2" data-feather="eye"></i> Views</h3> </th>
+                    <th scope="col" class="text-muted text-left"><h3><i class="mr-2" data-feather="dollar-sign"></i> Revenue</h3> </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-left"> <h5 class="text-muted">{{Auth::user()->instructor->enrollments()}} Students</h5> </td>
+                    <td class="text-left"> <h5 class="text-muted">{{Auth::user()->instructor->views()}} Views</h5> </td>
+                    <td class="text-left"> <h5 class="text-muted">20,000 EGP</h5> </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h2 class="mt-5 mb-2">This month:</h2>
             <div class="row">
                 <div class="col-sm-4">
                     <canvas id="subscriptions" width="30px" height="30px"></canvas>
-                    <h3 class="text-muted mt-3 text-center">Subscriptions</h3>
+                    <h3 class="text-muted mt-3 text-center">Enrollments: {{$enrollSum}}</h3>
                 </div>
                 <div class="col-sm-4">
                     <canvas id="views" width="30px" height="30px"></canvas>
-                    <h3 class="text-muted mt-3 text-center">Total views</h3>
+                    <h3 class="text-muted mt-3 text-center">Views: {{$viewSum}}</h3>
                 </div>
                 <div class="col-sm-4">
                     <canvas id="revenue" width="30px" height="30px"></canvas>
-                    <h3 class="text-muted mt-3 text-center">Revenue in EGP</h3>
+                    <h3 class="text-muted mt-3 text-center">Revenue: 4,500 EGP</h3>
                 </div>
             </div>
         </div>
@@ -98,7 +117,7 @@
                     moment(enrolls[3].date).startOf('week').format('DD/M/YYYY'),
                     moment(enrolls[4].date).startOf('week').format('DD/M/YYYY')],
                 datasets: [{
-                    label: 'Total views this week',
+                    label: 'Total enrollments this week',
                     data: [enrolls[0].count,
                         enrolls[1].count,
                         enrolls[2].count,
