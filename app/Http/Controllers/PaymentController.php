@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
+use http\Env\Request;
+use Illuminate\Support\Facades\Log;
 
 class PaymentController extends Controller
 {
@@ -64,7 +66,7 @@ class PaymentController extends Controller
                 "state"=> "Ut5ah"
             ] ,
             'currency' => 'EGP',
-            'integration_id' => 21811];
+            'integration_id' => 23294];
         $query = json_encode($query);
         $client = new Client([
             'headers' => ['Content-Type' => 'application/json']
@@ -89,5 +91,10 @@ class PaymentController extends Controller
         $res = $client->post('https://accept.paymobsolutions.com/api/acceptance/payments/pay',
             ['body' => $query]);
         dd(json_decode($res->getBody()));
+    }
+
+    public function weacceptCallback(Request $request){
+        Log::info("Received callback", $request->input());
+        die();
     }
 }
