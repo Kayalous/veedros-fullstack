@@ -184,6 +184,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('payment/test', 'PaymentController@payRequest');
+Route::get('token', 'PaymentController@showToken');
 Route::post('payment/weaccept/callback', 'PaymentController@weacceptCallback');
 
 
