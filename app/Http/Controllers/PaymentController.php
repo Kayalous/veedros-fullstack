@@ -90,9 +90,9 @@ class PaymentController extends Controller
         ]);
         $res = $client->post('https://accept.paymobsolutions.com/api/acceptance/payments/pay',
             ['body' => $query]);
-        dd(json_decode($res->getBody()));
-//        Log::info("Received callback", json_decode($res->getBody(),true));
-//        die();
+//        dd(json_decode($res->getBody()));
+        Log::info("Received callback", json_decode($res->getBody(),true));
+        die();
     }
 
     public function weacceptCallback(Request $request){
