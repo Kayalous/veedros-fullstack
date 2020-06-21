@@ -20,7 +20,6 @@ class InstructorController extends Controller
     }
 
     private function getViews($courses){
-        if(count($courses) == 0) return null;
         $viewsToReturn = [
             ['count'=>0, 'date'=> Carbon::now()->subDays(30)->toDateTimeString()],
             ['count'=>0, 'date'=> Carbon::now()->subDays(23)->toDateTimeString()],
@@ -28,6 +27,8 @@ class InstructorController extends Controller
             ['count'=>0, 'date'=> Carbon::now()->subDays(9)->toDateTimeString()],
             ['count'=>0, 'date'=> Carbon::now()->subDays(2)->toDateTimeString()],
             'total' => 0];
+        if(count($courses) == 0) return $viewsToReturn;
+
         foreach ($courses as $course){
         $viewsFromLastMonth = $course->views()
             ->where(
@@ -50,13 +51,14 @@ class InstructorController extends Controller
     }
 
     private function getEnrollments($courses){
-        if(count($courses) == 0) return null;
         $enrollsToReturn = [['count'=>0, 'date'=> Carbon::now()->subDays(30)->toDateTimeString()],
             ['count'=>0, 'date'=> Carbon::now()->subDays(23)->toDateTimeString()],
             ['count'=>0, 'date'=> Carbon::now()->subDays(16)->toDateTimeString()],
             ['count'=>0, 'date'=> Carbon::now()->subDays(9)->toDateTimeString()],
             ['count'=>0, 'date'=> Carbon::now()->subDays(2)->toDateTimeString()],
             'total' => 0];
+        if(count($courses) == 0) return $enrollsToReturn;
+
         foreach ($courses as $course) {
 
             $enrollsFromLastMonth = $course->users()
