@@ -71,11 +71,15 @@
                     </div>
                 </form>
 
-
+                <div class="d-none" id="login-alt-cont">
+                    <h6>Want to sign in using your email and password?</h6>
+                    <a class="dot-hover dot-hover-red" href="#">Regular sign in</a>
+                </div>
                 <div class="register-prompt magic-link mb-3" id="login-magic-link">
                     <h6>Want to sign in using just your email?</h6>
                     <a class="login-with-password dot-hover dot-hover-red" href="#">Sign in with magic link</a>
                 </div>
+
                 <div class="d-flex justify-content-center flex-column align-items-center w-100">
                     <h6>Or you can login with:</h6>
                     <div class="d-flex flex-wrap justify-content-around align-items-center w-100 mt-3 border-0">
@@ -133,7 +137,10 @@
                     <h6>Already have an account?</h6>
                     <a class="signin-toggle dot-hover dot-hover-red" href="#">Sign in</a>
                 </div>
-                <div id="signup-alt-cont"></div>
+                <div class="d-none" id="signup-alt-cont">
+                    <h6>Want to sign up using your email and password?</h6>
+                    <a class="signup-with-password dot-hover dot-hover-red" href="#">Regular sign up</a>
+                </div>
                 <div class="register-prompt magic-link mb-3" id="signup-magic-link">
                     <h6>Want to sign up using just your email?</h6>
                     <a class="signup-with-password dot-hover dot-hover-red" href="#">Sign up with just email</a>
