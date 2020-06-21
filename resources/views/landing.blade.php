@@ -21,7 +21,7 @@
                        >
                        <span>Explore now</span>
                     </a>
-                    
+
                 </div>
                 <div class="col-lg-6 hero-illustrations mx-auto">
                     <div class="illustration-container illustration-container-lg d-md-flex-center "
@@ -149,7 +149,7 @@
             </div>
         </div>
     </section>
-    <section class="our_services">
+    <section class="our_services py-5">
             <div class="container">
                 <div class="row d-block my-5">
                     <h1>Get a team of experts</h1>
@@ -183,8 +183,8 @@
                                     <h4>Data ownership</h4>
                                 </li>
                                 <li class="description ">
-                                    <p>Own and control all of the content and
-                                         student data from your Veedros account.</p>
+                                    <p>You own and control all of the content and
+                                         data on your Veedros account.</p>
                                 </li>
                             </ul>
                             </div>
