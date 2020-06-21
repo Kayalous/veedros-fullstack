@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
-use http\Env\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Http\Request;
+
 
 class PaymentController extends Controller
 {
@@ -90,9 +91,7 @@ class PaymentController extends Controller
         ]);
         $res = $client->post('https://accept.paymobsolutions.com/api/acceptance/payments/pay',
             ['body' => $query]);
-//        dd(json_decode($res->getBody()));
-        Log::info("Received callback", json_decode($res->getBody(),true));
-        die();
+        dd(json_decode($res->getBody()));
     }
 
     public function weacceptCallback(Request $request){
