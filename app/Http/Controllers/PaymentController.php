@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PendingEnrollment;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
@@ -91,16 +92,26 @@ class PaymentController extends Controller
         ]);
         $res = $client->post('https://accept.paymobsolutions.com/api/acceptance/payments/pay',
             ['body' => $query]);
-        dd(json_decode($res->getBody()));
+        $res = json_decode($res->getBody());
+
+        $enrollment = PendingEnrollment::where('merchant_order_id', $res->order->merchant_order_id)->firstOrFail();
+        $enrollment->payment_id = $res->id;
+        $enrollment->save();
+        Log::info("Received callback", [$res]);
+
     }
 
     public function weacceptCallback(Request $request){
         Log::info("Received callback", $request->all());
-        die();
+        $enrollment = PendingEnrollment::where('payment_id', $request['obj']['id'])->firstOrFail();
+        if($request['obj']['success'] == true){
+            $user = $enrollment->user();
+            $course = $enrollment->course();
+            EnrollController::enrollUser($user,$course);
+        }
     }
 
     public function showToken() {
-//        echo csrf_token();
-
+        echo csrf_token();
     }
 }
