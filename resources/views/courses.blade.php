@@ -73,12 +73,11 @@
                 <div class="col-12">
                     <div class="course-cards-container row py-3">
                         @foreach(Auth::user()->instructor->courses as $course)
-                            <div class="col-lg-4">
-
+                            <div class="col-lg-6">
                                 <div class="card course-card development-card noJquery"
-                                     style="background-image: url('{{$course->img}}'); max-height: 750px;">
+                                     style="background-image: url('{{$course->img}}'); max-height: none !important; max-width: none !important;">
                                     <div class="card-header border-bottom-0 bg-white text-muted">
-                                        <h2 class="mb-3 text-center">
+                                        <h2 class="mb-3">
                                             {{$course->name}}
                                         </h2>
                                         <h5 class="font-weight-bold"><i class="mr-2" data-feather="trending-up" style="color: #65D3BF"></i> Enrollments: <span class="ml-auto"> {{$course->users()->count()}} </span></h5>
