@@ -381,19 +381,34 @@ class CourseController extends Controller
     }
 
     public function deleteSession($id){
+
         $session = Session::where('id', $id)->first();
-        $session->delete();
-        return back()->with('success', 'Session deleted successfully.');
+        $course = $session->chapter->course;
+        if(Course::getTotalSessionCount($course) > 1){
+            $session->delete();
+            return back()->with('success', 'Session deleted successfully.');
+        }
+        else{
+            return back()->with('failure', 'You need to have at least one session in your course.');
+        }
+
     }
 
     public function deleteChapter($id){
         $chapter = Chapter::where('id', $id)->first();
+        $course = $chapter->course;
+        if($course->chapters()->count() > 1 && Course::getTotalSessionCount($course) > $chapter->sessions()->count()){
         $sessions = $chapter->sessions;
         foreach ($sessions as $session){
             $session->delete();
         }
         $chapter->delete();
         return back()->with('success', "This chapter and all it's sessions were deleted successfully.");
+        }
+        else{
+            return back()->with('failure', 'You need to have at least one chapter with at least one session in your course.');
+
+        }
     }
 
     public function updateVideoData(Request $request, $videoId, $courseId){

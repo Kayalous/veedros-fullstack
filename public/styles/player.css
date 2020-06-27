@@ -510,3 +510,6 @@
     margin-top: -10px;
     margin-left: -10px;
 }
+#course-info button h2 {
+    font-size: 25px;
+}
