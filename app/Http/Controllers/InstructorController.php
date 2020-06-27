@@ -39,10 +39,11 @@ class InstructorController extends Controller
             ->groupBy(function($date) {
                 return Carbon::parse($date->created_at)->format('W');
             });
-        $i = 0;
-        foreach ($viewsFromLastMonth as $viewsInAWeek){
-            $viewsToReturn[$i]['count'] += count($viewsInAWeek);
-            $viewsToReturn['total'] += count($viewsInAWeek);
+            $viewsFromLastMonth = $viewsFromLastMonth->values()->all();
+            $i = 4;
+            for($j = count($viewsFromLastMonth) - 1; $j >= 0; $j--) {
+            $viewsToReturn[$i]['count'] += count($viewsFromLastMonth[$j]);
+            $viewsToReturn['total'] += count($viewsFromLastMonth[$j]);
             $i++;
         }
         }
@@ -71,12 +72,14 @@ class InstructorController extends Controller
                     return Carbon::parse($date->created_at)->format('W');
                 });
 
-            $i = 0;
-            foreach ($enrollsFromLastMonth as $enrollsInAWeek) {
-                $enrollsToReturn[$i]['count'] += count($enrollsInAWeek);
-                $enrollsToReturn['total'] += count($enrollsInAWeek);
-                $i++;
+            $enrollsFromLastMonth = $enrollsFromLastMonth->values()->all();
+            $i = 4;
+            for($j = count($enrollsFromLastMonth) - 1; $j >= 0; $j--) {
+                $enrollsToReturn[$i]['count'] += count($enrollsFromLastMonth[$j]);
+                $enrollsToReturn['total'] += count($enrollsFromLastMonth[$j]);
+                $i--;
             }
+
         }
         return $enrollsToReturn;
     }

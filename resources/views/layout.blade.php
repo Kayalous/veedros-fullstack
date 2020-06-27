@@ -12,6 +12,7 @@
         gtag('config', 'UA-158058878-2');
     </script>
     <title>Veedros</title>
+
     <link rel="icon" href="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros_Logo.png">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
