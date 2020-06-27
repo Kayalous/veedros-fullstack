@@ -24,9 +24,9 @@
             <table class="table table-borderless">
                 <thead>
                 <tr>
-                    <th scope="col" class="text-muted text-left"><h3><i class="mr-2" data-feather="trending-up"></i> Enrollments</h3> </th>
-                    <th scope="col" class="text-muted text-left"><h3><i class="mr-2" data-feather="eye"></i> Views</h3> </th>
-                    <th scope="col" class="text-muted text-left"><h3><i class="mr-2" data-feather="dollar-sign"></i> Revenue</h3> </th>
+                    <th scope="col" class="text-muted text-left"><h3><i class="mr-2" data-feather="trending-up" style="color: #65D3BF"></i> Enrollments</h3> </th>
+                    <th scope="col" class="text-muted text-left"><h3><i class="mr-2" data-feather="eye" style="color: #65D3BF"></i> Views</h3> </th>
+                    <th scope="col" class="text-muted text-left"><h3><i class="mr-2" data-feather="dollar-sign" style="color: #65D3BF"></i> Revenue</h3> </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -76,14 +76,45 @@
                             <div class="col-lg-4">
 
                                 <div class="card course-card development-card noJquery"
-                                     style="background-image: url('{{$course->img}}')">
+                                     style="background-image: url('{{$course->img}}'); max-height: 750px;">
+                                    <div class="card-header border-bottom-0 bg-white text-muted">
+                                        <h2 class="mb-3 text-center">
+                                            {{$course->name}}
+                                        </h2>
+                                        <h5 class="font-weight-bold"><i class="mr-2" data-feather="trending-up" style="color: #65D3BF"></i> Enrollments: <span class="ml-auto"> {{$course->users()->count()}} </span></h5>
+                                        <h5 class="font-weight-bold"><i class="mr-2" data-feather="eye" style="color: #65D3BF"></i> Views: <span class="ml-auto"> {{$course->views()->count()}} </span></h5>
+                                    </div>
                                     <div class="card-body m-0">
-                                        <a href="{{asset('/manage/instructor/courses/') ."/" . $course->slug}}" class="card-body-inner noscroll card-bg-img"  >
-                                            <div class="play-circle play-circle-0"> <i data-feather="edit" style="stroke: white; stroke-width: 2; width: 35px; height: 35px"></i> </div>
-                                            <h4 class="card-title title-mine">
-                                                {{$course->name}}
-                                            </h4>
+
+                                        <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
+                                            <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="/images/Play_button.svg" alt=""/> </div>
+
                                         </a>
+
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <div class="row py-3">
+                                            <a href="{{asset('/manage/instructor/courses/') ."/" . $course->slug . "/advanced"}}" class="col-4 d-flex justify-content-start align-items-center flex-column text-center">
+                                                <i data-feather="plus-square"></i>
+                                                <span class="text-muted">
+                                                   Add <br> Chapters & Sessions
+                                                </span>
+
+                                            </a>
+                                            <a href="{{asset('/manage/instructor/courses/') ."/" . $course->slug}}" class="col-4 d-flex justify-content-start align-items-center flex-column text-center">
+                                                <i data-feather="edit"></i>
+                                                <span class="text-muted">
+                                                    Edit Basic Information
+                                                </span>
+
+                                            </a>
+                                            <a href="#" class="col-4 d-flex justify-content-start align-items-center flex-column text-center">
+                                                <i data-feather="share"></i>
+                                                <span class="text-muted">
+                                                   Share
+                                                </span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

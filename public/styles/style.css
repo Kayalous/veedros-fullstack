@@ -1268,7 +1268,6 @@ ul {
     background-position: center center;
     -webkit-box-shadow: 0 4px 0.8px -8.5px rgba(0, 0, 0, 0.056), 0 4px 1.9px -8.5px rgba(0, 0, 0, 0.081), 0 4px 3.6px -8.5px rgba(0, 0, 0, 0.1), 0 4px 6.5px -8.5px rgba(0, 0, 0, 0.119), 0 4px 12.1px -8.5px rgba(0, 0, 0, 0.144), 0 4px 29px -8.5px rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 0.8px -8.5px rgba(0, 0, 0, 0.056), 0 4px 1.9px -8.5px rgba(0, 0, 0, 0.081), 0 4px 3.6px -8.5px rgba(0, 0, 0, 0.1), 0 4px 6.5px -8.5px rgba(0, 0, 0, 0.119), 0 4px 12.1px -8.5px rgba(0, 0, 0, 0.144), 0 4px 29px -8.5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
 }
 
 .course-card:hover {
