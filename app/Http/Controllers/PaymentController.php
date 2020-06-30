@@ -102,7 +102,7 @@ class PaymentController extends Controller
     }
 
     public function weacceptCallback(Request $request){
-        Log::info("Received callback", $request->all()]);
+        Log::info("Received callback", $request->all());
         $enrollment = PendingEnrollment::where('payment_id', $request['obj']['id'])->firstOrFail();
         if($request['obj']['success'] == "true"){
             $user = $enrollment->user;
