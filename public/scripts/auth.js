@@ -81,13 +81,13 @@ function userFieldsValidation(
             passwordField.classList.remove("is-invalid");
             passwordField.classList.add("is-valid");
         }
-    }
+    };
     emailField.oninput =  () => {
         if (/\S+@\S+\.\S+/.test(emailField.value)) {
             emailField.classList.remove("is-invalid");
             emailField.classList.add("is-valid");
         }
-    }
+    };
   passwordToggle.onclick = function () {
     passwordCont.classList.add("d-none");
     passwordField.value = '';
@@ -96,7 +96,7 @@ function userFieldsValidation(
     altCont.classList.add("d-none");
     magicLink.classList.add("d-none");
     if(form.classList.contains('login'))
-        modalHeader.innerHTML = "Just enter your email and we'll send you a magic link to your email to login with. <br/>"
+        modalHeader.innerHTML = "Just enter your email and we'll send you a magic link to your email to login with. <br/>";
     else
         modalHeader.innerHTML = "Just enter your email to sign up. It's easier and more secure! <br/> You'll receive an email each time you want to login with a magic link that will log you in."
 

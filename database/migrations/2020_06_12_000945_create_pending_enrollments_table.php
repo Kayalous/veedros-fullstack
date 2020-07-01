@@ -15,10 +15,11 @@ class CreatePendingEnrollmentsTable extends Migration
     {
         Schema::create('pending_enrollments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('merchant_order_id', 12)->unique();
+            $table->string('merchant_order_id', 15)->unique();
             $table->bigInteger('payment_id')->unsigned()->unique()->nullable();
             $table->bigInteger('user_id')->unsigned()->references('id')->on('users');
-            $table->bigInteger('course_id')->unsigned()->references('id')->on('courses');
+            $table->timestamp('paid_at')->nullable();
+            $table->double('subtotal');
             $table->timestamps();
         });
     }

@@ -1,14 +1,19 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/** @var Factory $factory */
 
+use App\Course;
+use App\Enroll;
 use App\Model;
+use App\User;
+use Carbon\Carbon;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
 
-$factory->define(\App\Enroll::class, function (Faker $faker) {
+$factory->define(Enroll::class, function (Faker $faker) {
     return [
-        'created_at' => \Carbon\Carbon::now()->subDays(rand(1, 30)),
-        'user_id' => \App\User::all()->random()->id,
-        'course_id' => \App\Course::all()->random()->id,
+        'created_at' => Carbon::now()->subDays(rand(1, 30)),
+        'user_id' => User::all()->random()->id,
+        'course_id' => Course::all()->random()->id,
     ];
 });

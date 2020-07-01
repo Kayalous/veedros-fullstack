@@ -5,15 +5,17 @@ namespace App\Http\Middleware;
 use App\Enroll;
 use App\View;
 use Closure;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Session;
 
 class Enrolled
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  Request  $request
+     * @param Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -71,7 +73,7 @@ class Enrolled
                     return $next($request);
             //if not then prompt them to enroll and redirect them to the first video
             else{
-                \Session::flash('message','You need to be enrolled in this course to watch that session.');
+                Session::flash('message','You need to be enrolled in this course to watch that session.');
                 return redirect('watch/' . $instructorDisplayName . '/' . $courseSlug . '/' . $course->chapters[0]->slug . '/' .$firstSessions[0]->slug);
             }
         }

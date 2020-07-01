@@ -89,7 +89,7 @@ function validateEmail(emailField) {
         return true;
     }
     else {
-        fieldIsInvalid(emailField)
+        fieldIsInvalid(emailField);
         return false;
     }
 }

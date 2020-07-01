@@ -3,14 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', () => {
             $('.sidebar').height($('.video-wrapper').height());
         });
-        let progressContainer = document.querySelector('.plyr__progress')
+        let progressContainer = document.querySelector('.plyr__progress');
         for (let i = 0; i < 4; i++) {
             let dot = document.createElement('div');
             dot.classList.add('player-dot');
             dot.classList.add(`p${i}`);
 
 
-            let randomOffset = Math.ceil(Math.random() * 100)
+            let randomOffset = Math.ceil(Math.random() * 100);
             dot.style.left = `${randomOffset}%`;
             let tprToCurrentDot = 0;
             dot.onclick = () => {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 player.currentTime = tprToCurrentDot;
                 // player.pause();
                 window.location = '#comments';
-            }
+            };
 
             let tip = tippy(dot, {
                 allowTitleHTML: true,
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         feather.replace();
-    })
+    });
     // var options, player;
     //
     // options = {

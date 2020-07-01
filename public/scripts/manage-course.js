@@ -96,7 +96,7 @@ editAboutButton.onclick = () => {
         });
     }
     feather.replace();
-}
+};
 
 
 //Edit price
@@ -145,7 +145,7 @@ editPriceButton.onclick = () => {
             });
     }
     feather.replace();
-}
+};
 
 //Edit img
 let editImgButton = document.querySelector('#edit-img');
@@ -155,13 +155,13 @@ let imgSubmit = document.querySelector('#img-submit');
 let imgForm = document.querySelector('#img-form');
 
 editImgButton.onclick = () => {
-    editImgButton.classList.add('d-none')
+    editImgButton.classList.add('d-none');
     imgField.classList.remove('d-none');
-}
+};
 imgCancel.onclick = () => {
-    imgField.classList.add('d-none')
+    imgField.classList.add('d-none');
     editImgButton.classList.remove('d-none');
-}
+};
 
 
 //Manage objectives
@@ -174,7 +174,7 @@ let delObjButtons = document.querySelectorAll('.del-obj');
 let singleObjectives = document.querySelectorAll('.single-obj');
 
 let objectiveUrl = `${baseUrl}manage/instructor/course/objective`;
-stageButtonsAndInputsToController(editObjButtons, editObjFields, objectiveUrl, "objective")
+stageButtonsAndInputsToController(editObjButtons, editObjFields, objectiveUrl, "objective");
 stageDel(delObjButtons, singleObjectives, `${objectiveUrl}/delete`, 'objective' );
 let lastObjSubmitted = true;
 addObjButton.onclick = async () => {
@@ -215,7 +215,7 @@ addObjButton.onclick = async () => {
         showAlertMessage('You need to submit the last objective before adding a new one.')
     }
 
-}
+};
 
 
 //Manage recommendations
@@ -227,7 +227,7 @@ let delRecButtons = document.querySelectorAll('.del-rec');
 let singleRecommendation = document.querySelectorAll('.single-rec');
 let recommendationUrl = `${baseUrl}manage/instructor/course/recommendation`;
 stageDel(delRecButtons, singleRecommendation, `${recommendationUrl}/delete`, 'recommendation' );
-stageButtonsAndInputsToController(editRecButtons, editRecFields, recommendationUrl, "recommendation")
+stageButtonsAndInputsToController(editRecButtons, editRecFields, recommendationUrl, "recommendation");
 let lastRecSubmitted = true;
 addRecButton.onclick = async () => {
     if(lastRecSubmitted){
@@ -254,7 +254,7 @@ addRecButton.onclick = async () => {
         editRecFields = document.querySelectorAll('.rec');
         //focus on last element;
         editRecFields[editRecFields.length-1].focus();
-        stageButtonsAndInputsToController(editRecButtons, editRecFields, recommendationUrl, "recommendation")
+        stageButtonsAndInputsToController(editRecButtons, editRecFields, recommendationUrl, "recommendation");
         addRecButton.disabled = true;
         lastRecSubmitted = false;
         delRecButtons = document.querySelectorAll('.del-rec');
@@ -267,7 +267,7 @@ addRecButton.onclick = async () => {
         showAlertMessage('You need to submit the last recommendation before adding a new one.')
     }
 
-}
+};
 
 
 function stageButtonsAndInputsToController(buttons, fields, url, valueToUpdate){
@@ -296,9 +296,9 @@ function stageButtonsAndInputsToController(buttons, fields, url, valueToUpdate){
                 let id = field.id;
                 let idName;
                 if(valueToUpdate === "objective")
-                    idName = "objId"
+                    idName = "objId";
                 else
-                    idName = "recId"
+                    idName = "recId";
 
                 if(id !== 'new'){
                     ax = new axios({
@@ -323,7 +323,7 @@ function stageButtonsAndInputsToController(buttons, fields, url, valueToUpdate){
                     })
                 }
                     ax.then(data=>{
-                        showSuccessMessage(data.data.status)
+                        showSuccessMessage(data.data.status);
                         field.id = data.data.id;
                         button.innerHTML = '<i data-feather="edit"></i>';
                         button.children[0].style.stroke = "#1565C0";
@@ -340,7 +340,7 @@ function stageButtonsAndInputsToController(buttons, fields, url, valueToUpdate){
                         }
                     })
                     .catch(err=>{
-                        showFailureMessage(`Failed to update ${valueToUpdate}. Please try again.`)
+                        showFailureMessage(`Failed to update ${valueToUpdate}. Please try again.`);
                         button.innerHTML = '<i data-feather="x"></i>';
                         button.children[0].style.stroke = "#FF9494";
                     })
@@ -367,7 +367,7 @@ async function stageDel(buttons, wrappers, url, valToDelete){
                     confirmButtonText: 'Yes.',
                     showCancelButton:true,
                     cancelButtonText: "No."
-                })
+                });
                 if(answer.value ===true){
                     if(button.id.length > 0){
                         ax = new axios({
@@ -377,7 +377,7 @@ async function stageDel(buttons, wrappers, url, valToDelete){
                                 'id': button.id,
                                 'slug': slug
                             }
-                        })
+                        });
                         ax.then(data=>{
                         wrapper.parentElement.removeChild(wrapper);
                         })

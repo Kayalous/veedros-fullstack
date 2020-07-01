@@ -1,5 +1,6 @@
 <?php
 
+use App\Instructor;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use TCG\Voyager\Models\Role;
@@ -22,7 +23,7 @@ class UsersTableSeeder extends Seeder
                 'email'          => $faker->email,
                 'password'       => bcrypt('password')
             ]);
-            \App\Instructor::create([
+            Instructor::create([
                 'user_id' => 1,
                 'display_name' => Str::slug($faker->name, '-')
             ]);
@@ -30,7 +31,7 @@ class UsersTableSeeder extends Seeder
             'name'           => 'Abdulrhman Elkayal',
             'email'          => 'aelkayal88@gmail.com'
         ]);
-        \App\Instructor::create([
+        Instructor::create([
             'user_id' => 51,
             'display_name' => Str::slug('Abdulrhman Elkayal', '-')
         ]);

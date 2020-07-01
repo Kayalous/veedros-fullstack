@@ -55,11 +55,11 @@ function validateEmail(emailField) {
         return true;
     }
     else if (emailField.value.length === 0) {
-        fieldIsNeutral(emailField)
+        fieldIsNeutral(emailField);
         return true;
     }
     else {
-            fieldIsInvalid(emailField)
+            fieldIsInvalid(emailField);
             return false;
     }
 }
@@ -70,7 +70,7 @@ function validateTextFields(field) {
         return true;
     }
     else if (field.value.length === 0) {
-        fieldIsNeutral(field)
+        fieldIsNeutral(field);
         return true;
     }
     else
@@ -85,7 +85,7 @@ function validateTextArea(field) {
         return true;
     }
     else if (field.value.length === 0) {
-        fieldIsNeutral(field)
+        fieldIsNeutral(field);
         return true;
     }
     else
@@ -100,7 +100,7 @@ function validateNumberField(field) {
         return true;
     }
     else if (field.value.length === 0) {
-        fieldIsNeutral(field)
+        fieldIsNeutral(field);
         return true;
     }
     else
@@ -242,5 +242,5 @@ showPasswordButton.onclick = function (e) {
 let aboutField = document.querySelector("#about");
 aboutField.oninput = () => {
 document.querySelector('#about-counter').innerHTML = aboutField.value.length;
-}
+};
 

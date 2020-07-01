@@ -23,7 +23,7 @@ FilePond.create(
 
 
 for(let i = 0; i <  uploadButtons.length; i++){
-    console.log(filePonds[i], uploadButtons[i])
+    console.log(filePonds[i], uploadButtons[i]);
     const pond = document.querySelector(`.filepond${i}`);
     pond.addEventListener('FilePond:processfile', e => {
         uploadButtons[i].disabled = false;
@@ -60,9 +60,9 @@ let editMilestoneBodyButtons = document.querySelectorAll('.edit-objective-body')
 let editMilestoneBodyFields = document.querySelectorAll('.session-objective-body-field');
 let editMilestoneUrl = `${baseUrl}manage/instructor/course/editMilestone`;
 //Edit chapter name staging
-stageButtonsAndInputsToController(editMilestoneTitleButtons, editMilestoneTitleFields, editMilestoneUrl, 'objective', 'title')
+stageButtonsAndInputsToController(editMilestoneTitleButtons, editMilestoneTitleFields, editMilestoneUrl, 'objective', 'title');
 //edit chapter desc staging
-stageButtonsAndInputsToController(editMilestoneBodyButtons, editMilestoneBodyFields, editMilestoneUrl, 'objective', 'objective')
+stageButtonsAndInputsToController(editMilestoneBodyButtons, editMilestoneBodyFields, editMilestoneUrl, 'objective', 'objective');
 let lastMilestoneSubmitted = true;
 for(let i = 0; i<addMilestoneButtons.length; i++){
     let addMilestoneButton = addMilestoneButtons[i];
@@ -107,9 +107,9 @@ let editSessionDescButtons = document.querySelectorAll('.edit-session-desc');
 let editSessionDescFields = document.querySelectorAll('.session-desc-field');
 let editSessionUrl = `${baseUrl}manage/instructor/course/editSession`;
 //Edit chapter name staging
-stageButtonsAndInputsToController(editSessionNameButtons, editSessionNameFields, editSessionUrl, 'session', 'name')
+stageButtonsAndInputsToController(editSessionNameButtons, editSessionNameFields, editSessionUrl, 'session', 'name');
 //edit chapter desc staging
-stageButtonsAndInputsToController(editSessionDescButtons, editSessionDescFields, editSessionUrl, 'session', 'about')
+stageButtonsAndInputsToController(editSessionDescButtons, editSessionDescFields, editSessionUrl, 'session', 'about');
 let lastSessionSubmitted = true;
 for(let i = 0; i<addSessionButtons.length; i++){
     let addSessionButton = addSessionButtons[i];
@@ -154,9 +154,9 @@ let editChapterDescButtons = document.querySelectorAll('.edit-chapter-desc');
 let editChapterDescFields = document.querySelectorAll('.chapter-desc-field');
 let editChapterUrl = `${baseUrl}manage/instructor/course/editChapter`;
 //Edit chapter name staging
-stageButtonsAndInputsToController(editChapterNameButtons, editChapterNameFields, editChapterUrl, 'chapter', 'name')
+stageButtonsAndInputsToController(editChapterNameButtons, editChapterNameFields, editChapterUrl, 'chapter', 'name');
 //edit chapter desc staging
-stageButtonsAndInputsToController(editChapterDescButtons, editChapterDescFields, editChapterUrl, 'chapter', 'about')
+stageButtonsAndInputsToController(editChapterDescButtons, editChapterDescFields, editChapterUrl, 'chapter', 'about');
 let lastChapterSubmitted = true;
 addChapterButton.onclick = () => {
     if(lastChapterSubmitted){
@@ -183,7 +183,7 @@ addChapterButton.onclick = () => {
     {
         showAlertMessage('You need to submit the last Chapter before adding a new one.')
     }
-}
+};
 
 
 function stageButtonsAndInputsToController(buttons, fields, url, tableToUpdate , valueToUpdate){
@@ -211,11 +211,11 @@ function stageButtonsAndInputsToController(buttons, fields, url, tableToUpdate ,
                 let id = field.id;
                 let idName;
                 if(tableToUpdate === "chapter")
-                    idName = "chapterId"
+                    idName = "chapterId";
                 else if(tableToUpdate === "objective")
-                    idName = 'objectiveId'
+                    idName = 'objectiveId';
                 else
-                    idName = "sessionId"
+                    idName = "sessionId";
 
                     ax = new axios({
                         method:'post',
@@ -225,16 +225,16 @@ function stageButtonsAndInputsToController(buttons, fields, url, tableToUpdate ,
                             slug: slug,
                             [idName]: id
                         }
-                    })
+                    });
 
                 ax.then(data=>{
-                    showSuccessMessage(data.data.status)
+                    showSuccessMessage(data.data.status);
                     button.innerHTML = '<i data-feather="edit"></i> Edit';
                     button.children[0].style.stroke = "rgba(0,0,0,.7)";
                     field.innerHTML = field.value;
                 })
                     .catch(err=>{
-                        showFailureMessage(`Failed to update ${valueToUpdate}. Please try again.`)
+                        showFailureMessage(`Failed to update ${valueToUpdate}. Please try again.`);
                         button.innerHTML = '<i data-feather="x"></i> Error';
                         button.children[0].style.stroke = "#FF9494";
                     })
@@ -292,7 +292,7 @@ async function deleteSession(id) {
         confirmButtonText: 'Yes.',
         showCancelButton:true,
         cancelButtonText: "No."
-    })
+    });
 
     if(answer.value ===true){
         window.location.href = `${baseUrl}manage/instructor/course/deleteSession/${id}`;
@@ -309,7 +309,7 @@ async function deleteChapter(id) {
         confirmButtonText: 'Yes.',
         showCancelButton:true,
         cancelButtonText: "No."
-    })
+    });
 
     if(answer.value ===true){
         window.location.href = `${baseUrl}manage/instructor/course/deleteChapter/${id}`;

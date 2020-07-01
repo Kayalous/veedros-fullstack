@@ -90,7 +90,7 @@
                 confirmButtonText: 'Yes.',
                 showCancelButton:true,
                 cancelButtonText: "No."
-            })
+            });
             if(answer.value ===true){
                 window.location.href = `{{route('veedros.admin.remove')}}?id=${id}`;
             }
@@ -104,7 +104,7 @@
                 confirmButtonText: 'Yeah.',
                 showCancelButton:true,
                 cancelButtonText: "Nope."
-            })
+            });
             if(answer.value ===true){
                 window.location.href = `{{route('veedros.admin.add')}}?id=${id}`;
             }
@@ -119,7 +119,7 @@
                 confirmButtonText: 'Yes.',
                 showCancelButton:true,
                 cancelButtonText: "No."
-            })
+            });
             if(answer.value ===true){
                 window.location.href = `{{route('veedros.admin.delete')}}?id=${id}`;
             }

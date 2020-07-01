@@ -105,8 +105,6 @@ class CourseController extends Controller
         return redirect('/manage/instructor/courses/'.$slug);
     }
 
-
-
     public function editAbout(Request $request){
         $validatedData = $request->validate([
             'about' => 'required|max:500',
@@ -194,7 +192,7 @@ class CourseController extends Controller
         $course = Auth::user()->instructor->courses->where('slug', $request['slug'])->first();
 
         if($request['recId'] !== null){
-            $recommendation = $course->recommendations->where('id', $request['recId'])->first();;
+            $recommendation = $course->recommendations->where('id', $request['recId'])->first();
             $recommendation->update(['recommendation' => $request['recommendation']]);
             return response(['status'=>'recommendation has been updated successfully.','id'=> $recommendation->id], 200);
         }

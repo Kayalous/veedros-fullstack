@@ -560,6 +560,7 @@
 
 @yield('customJS')
 
+
 @if(Session::has('success'))
     <script>
         Swal.fire({
@@ -583,7 +584,6 @@
         })
     </script>
 @endif
-
 @if(Session::has('failure'))
     <script>
         Swal.fire({
@@ -598,7 +598,6 @@
         })
     </script>
 @endif
-
 @if(Session::has('message'))
     <script>
         Swal.fire({

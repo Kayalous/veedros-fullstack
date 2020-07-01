@@ -10,6 +10,8 @@ use App\SocialProvider;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\File;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -76,7 +78,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return User
      */
     protected function create(array $data)
     {
@@ -109,7 +111,7 @@ class RegisterController extends Controller
     /**
      * Redirect the user to the facebook authentication page.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function redirectToProviderFacebook()
     {
@@ -120,7 +122,7 @@ class RegisterController extends Controller
     /**
      * Obtain the user information from facebook.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function handleProviderCallbackFacebook()
     {
@@ -138,7 +140,7 @@ class RegisterController extends Controller
                 Storage::disk('profileImages')->put($name, $contents);
                 //retrieve image
                 $image = Storage::disk('profileImages')->get($name);
-                $file = new \Illuminate\Http\File(public_path('uploads/profilePictures'). '/' . $name);
+                $file = new File(public_path('uploads/profilePictures'). '/' . $name);
                 //upload to amazon
                 $fileUrl = Storage::disk('s3')->put('users/profile-images', $file);
                 $fileUrl = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $fileUrl;
@@ -203,7 +205,7 @@ class RegisterController extends Controller
     /**
      * Obtain the user information from google.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function handleProviderCallbackGoogle()
     {
@@ -220,7 +222,7 @@ class RegisterController extends Controller
                 Storage::disk('profileImages')->put($name, $contents);
                 //retrieve image
                 $image = Storage::disk('profileImages')->get($name);
-                $file = new \Illuminate\Http\File(public_path('uploads/profilePictures'). '/' . $name);
+                $file = new File(public_path('uploads/profilePictures'). '/' . $name);
                 //upload to amazon
                 $fileUrl = Storage::disk('s3')->put('users/profile-images', $file);
                 $fileUrl = 'https://veedros.s3.eu-central-1.amazonaws.com/' . $fileUrl;

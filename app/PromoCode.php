@@ -11,4 +11,7 @@ class PromoCode extends Model
     public function courses(){
         return $this->belongsToMany('App\Course', 'course_promo_code', 'promo_code_id', 'course_id');
     }
+    public function hasCourse(Course $course) {
+        return $this->courses->contains($course);
+    }
 }

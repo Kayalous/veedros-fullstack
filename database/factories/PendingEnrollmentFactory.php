@@ -1,14 +1,18 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/** @var Factory $factory */
 
+use App\Course;
 use App\Model;
+use App\PendingEnrollment;
+use App\User;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
 
-$factory->define(\App\PendingEnrollment::class, function (Faker $faker) {
+$factory->define(PendingEnrollment::class, function (Faker $faker) {
     return [
-        'user_id' => \App\User::all()->random()->id,
-        'course_id' => \App\Course::all()->random()->id,
-        'merchant_order_id' => 'veedpay' .  Str::random(5)
+        'user_id' => User::all()->random()->id,
+        'subtotal' => Course::all()->random()->price,
+        'merchant_order_id' => 'veedpay' .  Str::random(8)
     ];
 });

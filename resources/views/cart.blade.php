@@ -20,15 +20,14 @@
                             </div>
                         </li>
                         <li>
-                            <h2>{{Auth::user()->carted->sum('price')}} EGP</h2>
+                            <h2>{{$total}} EGP</h2>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-veedros-new btn-veedros-red m-auto btn-veedros-md border-0">Check out </a>
-
+                            <a href="/cart/checkout{{$code ? '?code=' . $code : ''}}" class="btn btn-veedros-new btn-veedros-red m-auto btn-veedros-md border-0">Check out </a>
                         </li>
                         <li>
                             <div class="btn-redeem-veedros m-auto pt-3">
-                                <form method="POST" action="/cart/promo-code">
+                                <form method="GET" action="/cart">
                                     <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Add Coupon" type="text" name="code">
                                     <button class="btn-redeem-icon border-0">
                                     <i class="fas fa-arrow-right" aria-hidden="true"></i>

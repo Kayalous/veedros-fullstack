@@ -11,9 +11,7 @@ use Illuminate\Http\Request;
 class PaymentController extends Controller
 {
 
-    public $authToken;
-
-    public function init(){
+    public static function init(){
         $query = ['api_key' => env('WEACCEPT_KEY')];
         $query = json_encode($query);
         $client = new Client([
@@ -24,15 +22,14 @@ class PaymentController extends Controller
         return json_decode($res->getBody());
     }
 
-    public function registerRequest(){
-        $data = $this->init();
-        $enrollment = \App\PendingEnrollment::all()->random();
-        $this->authToken = $data->token;
+    public static function registerRequest(PendingEnrollment $enrollment){
+        $data = PaymentController::init();
+        $authToken = $data->token;
         $query =
             ['auth_token' => $data->token,
             'delivery_needed' => false,
             'merchant_id'=> $data->profile->id,
-            'amount_cents' => intval($enrollment->course->price) * 100,
+            'amount_cents' => intval($enrollment->subtotal) * 100,
             'currency' => 'EGP',
             'merchant_order_id' => $enrollment->merchant_order_id,
             'items' => []];
@@ -42,13 +39,16 @@ class PaymentController extends Controller
         ]);
         $res = $client->post('https://accept.paymobsolutions.com/api/ecommerce/orders',
             ['body' => $query]);
-        return json_decode($res->getBody());
+        return ['data'=>json_decode($res->getBody()),
+            'authToken' => $authToken];
     }
 
-    public function keyRequest()
+    public static function keyRequest(PendingEnrollment $enrollment)
     {
-        $data = $this->registerRequest();
-        $query = ['auth_token' => $this->authToken,
+        $registeredRequest = PaymentController::registerRequest($enrollment);
+        $authToken = $registeredRequest['authToken'];
+        $data = $registeredRequest['data'];
+        $query = ['auth_token' => $authToken,
             'amount_cents' => $data->amount_cents,
             'expiration' => 3600,
             'order_id' => $data->id,
@@ -78,8 +78,8 @@ class PaymentController extends Controller
         return json_decode($res->getBody());
     }
 
-    public function payRequest(){
-        $token = $this->keyRequest()->token;
+    public static function payRequest(PendingEnrollment $enrollment){
+        $token = PaymentController::keyRequest($enrollment)->token;
         $query = [
             'source' => [
                 'identifier' => 'AGGREGATOR',
@@ -97,8 +97,7 @@ class PaymentController extends Controller
         $enrollment = PendingEnrollment::where('merchant_order_id', $res->order->merchant_order_id)->firstOrFail();
         $enrollment->payment_id = $res->id;
         $enrollment->save();
-        Log::info("Received callback", [$res]);
-
+        return $res->data->bill_reference;
     }
 
     public function weacceptCallback(Request $request){

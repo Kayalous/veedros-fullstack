@@ -77,7 +77,7 @@ if (document.querySelector('#singleElement'))
         boundary: 'viewport'
     });
 var input = document.querySelector('.search-form');
-var search = document.querySelector('.search-input')
+var search = document.querySelector('.search-input');
 var button = document.querySelector('.btn-nav-search');
 if (button) {
 
@@ -91,10 +91,10 @@ if (button) {
             search.classList.toggle('shadow-lg');
         }
 
-    })
+    });
     search.addEventListener('focus', function() {
         input.classList.add('focus');
-    })
+    });
 
     search.addEventListener('blur', function() {
         search.value.length != 0 ? input.classList.add('focus') : input.classList.remove('focus');

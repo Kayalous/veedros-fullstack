@@ -11,13 +11,18 @@
 |
 */
 
+use App\Course;
+use App\Jobs\UploadRawVideo;
+use App\Session;
+use Illuminate\Http\File;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Pbmedia\LaravelFFMpeg\FFMpegFacade as FFMpeg;
 
 Route::get('/', function () {
 
-    $courses = \App\Course::all()->take(6);
+    $courses = Course::all()->take(6);
 
     return view('landing', ['courses' => $courses]);
 })->name('landing');
@@ -26,10 +31,8 @@ Route::get('/teach', function () {
     return view('teach');
 })->name('teach');
 
-Route::get('/cart', function () {
-
-    return view('cart');
-});
+Route::get('/cart','CartController@show')->middleware('auth');
+Route::get('/cart/checkout','CartController@checkout')->middleware('auth');
 
 Route::get('/cart/add/{course_id}', 'CartController@add')->middleware('auth');
 Route::get('/cart/remove/{course_id}', 'CartController@remove')->middleware('auth');
@@ -69,13 +72,13 @@ Route::post('/review','ReviewController@review')->middleware('auth');
 Route::post('/review/course','ReviewController@courseReview')->middleware('auth');
 
 Route::get('/courses', function () {
-    $courses = \App\Course::paginate(6);
+    $courses = Course::paginate(6);
     return view('allCourses', ['courses' => $courses]);
 })->name('courses');
 
 //User pages
 Route::get('/profile', function () {
-    return view('profile',['user' => \Illuminate\Support\Facades\Auth::user(), 'courses' => null]);
+    return view('profile',['user' => Auth::user(), 'courses' => null]);
 })->name('profile')->middleware('auth');
 Route::get('/profile/{id}','ProfileController@visit')->name('profile.id');
 Route::get('/manage', function () {
@@ -131,17 +134,17 @@ Route::get('/manage/instructor/courses/{courseSlug}/advanced', function ($course
     return view("courseManagementAdvanced", ['course'=>$course]);}
 )->name('manage.course.content.advanced');
 
-Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', function (\Illuminate\Http\Request $request,$courseSlug, $sessionId){
-    $session = \App\Session::where('id', $sessionId)->first();
+Route::post('/manage/instructor/courses/{courseSlug}/{sessionId}/upload-video', function (Request $request, $courseSlug, $sessionId){
+    $session = Session::where('id', $sessionId)->first();
     $chapter = $session->chapter;
     $course = $chapter->course;
     $instructor = $course->instructor;
     $videoUrlSavePath = 'courses/uploads/' .  $instructor->display_name . '/' . $course->slug . '/' . $chapter->slug . '/' . $session->slug;
     $filepond = app(Sopamo\LaravelFilepond\Filepond::class);
     $tempVideoPath = $filepond->getPathFromServerId($request['filepond']);
-    $rawVideoFile = new \Illuminate\Http\File($tempVideoPath);
-    $rawVideoFilePath = \Illuminate\Support\Facades\Storage::disk('temp')->putFileAs($videoUrlSavePath, $rawVideoFile, 'raw.mp4');
-    \App\Jobs\UploadRawVideo::dispatch(storage_path('app/temp'). '/' .$rawVideoFilePath, $videoUrlSavePath, $session);
+    $rawVideoFile = new File($tempVideoPath);
+    $rawVideoFilePath = Storage::disk('temp')->putFileAs($videoUrlSavePath, $rawVideoFile, 'raw.mp4');
+    UploadRawVideo::dispatch(storage_path('app/temp'). '/' .$rawVideoFilePath, $videoUrlSavePath, $session);
     return back()->with('success', 'The video is being processed and will be available shortly!');
 })->name('manage.upload.raw');
 });

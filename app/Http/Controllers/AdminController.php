@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Instructor;
+use App\Jobs\ConvertVideoForUploading;
 use App\Session;
 use App\SocialProvider;
 use App\User;
@@ -10,6 +11,7 @@ use App\VideosToTranscode;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -23,9 +25,9 @@ class AdminController extends Controller
     public function add(Request $request)
     {
         $user = User::where('id', $request["id"])->firstOrFail();
-        $random = \Illuminate\Support\Str::random(5);
+        $random = Str::random(5);
         $displayName = $user->name . ' ' . $random;
-        $displayName = \Illuminate\Support\Str::slug($displayName, '-');
+        $displayName = Str::slug($displayName, '-');
         Instructor::firstOrCreate([
             'user_id' => $request["id"],
             'display_name' => $displayName
@@ -55,7 +57,7 @@ class AdminController extends Controller
         $backlog = $this->returnApiAsJSON('https://veedros.com/api/transcoding-backlog');
         foreach ($backlog as $videoToEncode) {
             //Dispatch the encode job
-                \App\Jobs\ConvertVideoForUploading::dispatch($videoToEncode->path .'/raw.mp4', $videoToEncode->path, $videoToEncode->session_id);
+                ConvertVideoForUploading::dispatch($videoToEncode->path .'/raw.mp4', $videoToEncode->path, $videoToEncode->session_id);
         }
         if(count($backlog) > 0)
             $message = 'All good boss, processing now!';

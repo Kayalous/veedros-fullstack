@@ -1,5 +1,6 @@
 <?php
 
+use App\PromoCode;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use Illuminate\Support\Str;
@@ -15,13 +16,13 @@ class PromoCodesTableSeeder extends Seeder
         $faker = Faker::create();
         for($i = 1; $i<=10; $i++){
             $code = 'CODE-TEST-' . $i * 10;
-            $promoCode = \App\PromoCode::create([
+            $promoCode = PromoCode::create([
                 'code' =>$code,
                 'discount_percentage' => $i * 10,
                 'number_of_uses' => (11 - $i)]);
             $promoCode->courses()->attach(1);
         }
-        $promoCode = \App\PromoCode::create([
+        $promoCode = PromoCode::create([
             'code' => 'MULTIPLE-COURSES-100',
             'discount_percentage' => 100,
             'number_of_uses' => (3),

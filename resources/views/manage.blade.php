@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('customCSS')
-    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="/styles/profile.css">
 @endsection
 
 @section('libraryCSS')

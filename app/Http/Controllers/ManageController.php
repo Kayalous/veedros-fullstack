@@ -80,9 +80,9 @@ class ManageController extends Controller
         return $filePath;
     }
     private function deleteOldAvatar($user){
-        if(\File::exists(public_path("uploads/profilePictures/") . $user->img) && $user->img !== 'default-avatar.png')
+        if(File::exists(public_path("uploads/profilePictures/") . $user->img) && $user->img !== 'default-avatar.png')
         {
-            \File::delete(public_path("uploads/profilePictures/") . $user->img);
+            File::delete(public_path("uploads/profilePictures/") . $user->img);
         }
     }
 
