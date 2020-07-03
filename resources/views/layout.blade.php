@@ -13,7 +13,9 @@
     </script>
     <title>Veedros</title>
 
-    <link rel="icon" href="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros_Logo.png">
+    <link rel="icon" href="{{asset('images')}}/veedros_play_dark.svg" media="(prefers-color-scheme:no-preference)">
+    <link rel="icon" href="{{asset('images')}}/veedros_play_dark.svg" media="(prefers-color-scheme:light)">
+    <link rel="icon" href="{{asset('images')}}/veedros_play_light.svg" media="(prefers-color-scheme:dark)">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

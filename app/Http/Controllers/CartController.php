@@ -10,6 +10,7 @@ use App\PromoCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -75,9 +76,24 @@ class CartController extends Controller
     }
     public function showCheckout(Request $request){
         $total = $this->calculateTotal($request['code'], Auth::user());
+
         $courses = $total['courses'];
         $total = $total['total'];
-
+        if($total == 0){
+            $enrollment = PendingEnrollment::create([
+                'user_id'=>Auth::user()->id,
+                'merchant_order_id' => PendingEnrollment::generateMerchantOrderId(),
+                'subtotal' => $total
+            ]);
+            $enrollment->courses()->sync(Auth::user()->carted);
+            $user = $enrollment->user;
+            if(count($enrollment->courses) > 1)
+                Session::flash('success',"Awesome! You're now enrolled in " . $enrollment->courses[0]->name .  ", and " . (count($enrollment->courses) - 1) . " more courses!");
+            else
+                Session::flash('success',"Awesome! You're now enrolled in " . $enrollment->courses[0]->name .  ".");
+            EnrollController::enrollInMultipleCourses($user,$enrollment);
+            return redirect('dashboard');
+        }
         return view('checkout',
             ['total'=>$total,
             'code' => $request['code'],
