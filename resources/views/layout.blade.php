@@ -13,9 +13,8 @@
     </script>
     <title>Veedros</title>
 
-    <link rel="icon" href="{{asset('images')}}/veedros_play_dark.svg" media="(prefers-color-scheme:no-preference)">
-    <link rel="icon" href="{{asset('images')}}/veedros_play_dark.svg" media="(prefers-color-scheme:light)">
-    <link rel="icon" href="{{asset('images')}}/veedros_play_light.svg" media="(prefers-color-scheme:dark)">
+    <link rel="icon" href="{{asset('images')}}/veedros_play.svg">
+
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
