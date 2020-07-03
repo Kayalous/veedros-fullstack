@@ -4,9 +4,22 @@ namespace App\Http\Controllers;
 
 use App\PendingEnrollment;
 use GuzzleHttp\Client;
+use http\Client\Curl\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\URL;
+use PayPal\Api\Amount;
+use PayPal\Api\Details;
+use PayPal\Api\Item;
+use PayPal\Api\ItemList;
+use PayPal\Api\Payer;
+use PayPal\Api\Payment;
+use PayPal\Api\PaymentExecution;
+use PayPal\Api\RedirectUrls;
+use PayPal\Api\Transaction;
+use PayPal\Auth\OAuthTokenCredential;
+use PayPal\Rest\ApiContext;
 
 class PaymentController extends Controller
 {
@@ -54,9 +67,9 @@ class PaymentController extends Controller
             'order_id' => $data->id,
             'billing_data' => [
                 "apartment"=> "8503",
-                "email"=> "clau5dette09@exa.com",
+                "email"=> $enrollment->user->email,
                 "floor"=> "452",
-                "first_name"=> "Clif5ford",
+                "first_name"=> $enrollment->user->name,
                 "street"=> "Ethan L5and",
                 "building"=> "80528",
                 "phone_number"=> "+865(8)9135210487",
@@ -64,7 +77,7 @@ class PaymentController extends Controller
                 "postal_code"=> "018598",
                 "city"=> "Jaskolski5burgh",
                 "country"=> "C5R",
-                "last_name"=> "Ni5colas",
+                "last_name"=> $enrollment->user->name,
                 "state"=> "Ut5ah"
             ] ,
             'currency' => 'EGP',
@@ -101,19 +114,132 @@ class PaymentController extends Controller
     }
 
     public function weacceptCallback(Request $request){
-        Log::info("Received callback", $request->all());
         $enrollment = PendingEnrollment::where('payment_id', $request['obj']['id'])->firstOrFail();
         if($request['obj']['success'] == "true"){
             $user = $enrollment->user;
-            $course = $enrollment->course;
-            EnrollController::enrollUser($user,$course);
+            EnrollController::enrollInMultipleCourses($user,$enrollment);
             //send email notification to user
 
             //send email notification to Admin
+
         }
     }
 
     public function showToken() {
         echo csrf_token();
+    }
+
+    public function paypalCreatePayment($user_id, $code){
+        $user = \App\User::where('id', $user_id)->firstOrFail();
+        $total = CartController::calculateTotal($code, $user)['total'];
+
+        $enrollment = PendingEnrollment::create([
+            'user_id'=> $user->id,
+            'merchant_order_id' => PendingEnrollment::generateMerchantOrderId(),
+            'subtotal' => $total
+        ]);
+
+        $enrollment->courses()->sync($user->carted);
+
+
+        $apiContext = new ApiContext(
+          new OAuthTokenCredential(
+              env('PAYPAL_SANDBOX_API_ID'),
+              env('PAYPAL_SANDBOX_API_SECRET')
+          )
+        );
+        $payer = new Payer();
+        $payer->setPaymentMethod("paypal");
+
+        $amount = new Amount();
+        $amount->setCurrency("USD")
+            ->setTotal(PaymentController::convertCurrency($enrollment->subtotal, 'EGP', 'USD'));
+
+        $transaction = new Transaction();
+        $transaction->setAmount($amount)
+            ->setInvoiceNumber(uniqid());
+
+        $baseUrl = URL::to('/');
+        $redirectUrls = new RedirectUrls();
+        $redirectUrls->setReturnUrl("$baseUrl/cart/checkout")
+            ->setCancelUrl("$baseUrl/cart/checkout");
+
+        $payment = new Payment();
+        $payment->setIntent("sale")
+            ->setPayer($payer)
+            ->setRedirectUrls($redirectUrls)
+            ->setTransactions(array($transaction));
+
+        $request = clone $payment;
+        try {
+            $payment->create($apiContext);
+            $payment->enrollment_id = $enrollment->id;
+        } catch (\Exception $ex) {
+            exit(1);
+        }
+        $approvalUrl = $payment->getApprovalLink();
+        return $payment;
+
+    }
+
+    public function paypalExecutePayment(Request $request){
+        $apiContext = new ApiContext(
+            new OAuthTokenCredential(
+                env('PAYPAL_SANDBOX_API_ID'),
+                env('PAYPAL_SANDBOX_API_SECRET')
+            )
+        );
+        $paymentId = $request->paymentID;
+        $payment = Payment::get($paymentId, $apiContext);
+
+        $execution = new PaymentExecution();
+        $execution->setPayerId($request->payerID);
+
+        try {
+            $result = $payment->execute($execution, $apiContext);
+        } catch (\Exception $ex) {
+            exit(1);
+        }
+        if($result->state == 'approved'){
+            $enrollment = PendingEnrollment::where('id', $request->enrollmentID)->firstOrFail();
+            $user = $enrollment->user;
+            EnrollController::enrollInMultipleCourses($user,$enrollment);
+
+            //send email notification to user
+
+            //send email notification to Admin
+        }
+        return $result;
+    }
+
+    public static function convertCurrency($amount,$from_currency,$to_currency){
+        $apikey = env('CURRENCY_CONVERTER_API_KEY');
+
+        $from_Currency = urlencode($from_currency);
+        $to_Currency = urlencode($to_currency);
+        $query =  "{$from_Currency}_{$to_Currency}";
+
+        // change to the free URL if you're using the free version
+        $json = file_get_contents("https://free.currconv.com/api/v7/convert?q={$query}&compact=ultra&apiKey={$apikey}");
+        $obj = json_decode($json, true);
+
+        $val = floatval($obj["$query"]);
+
+
+        $total = $val * $amount;
+        return number_format($total, 2, '.', '');
+    }
+
+    public static function getEGPtoUSD(){
+        $apikey = env('CURRENCY_CONVERTER_API_KEY');
+
+        $query =  "EGP_USD";
+
+        // change to the free URL if you're using the free version
+        $json = file_get_contents("https://free.currconv.com/api/v7/convert?q={$query}&compact=ultra&apiKey={$apikey}");
+        $obj = json_decode($json, true);
+
+        return floatval($obj["$query"]);
+
     }
 }

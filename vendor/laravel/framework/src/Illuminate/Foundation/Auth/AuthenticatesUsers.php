@@ -2,14 +2,8 @@
 
 namespace Illuminate\Foundation\Auth;
 
-use App\Http\Controllers\AuthController;
-use App\LoginToken;
-use App\Mail\LoginVerificationMail;
-use App\Mail\WelcomeVerificationMail;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
 
 trait AuthenticatesUsers
@@ -21,6 +15,10 @@ trait AuthenticatesUsers
      *
      * @return \Illuminate\Http\Response
      */
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
 
     /**
      * Handle a login request to the application.
@@ -30,17 +28,10 @@ trait AuthenticatesUsers
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-
     public function login(Request $request)
     {
-        $passwordless = $this->validateLogin($request);
-        if($passwordless === true){
-            if($this->getEmailProvider($request['email']) !== 'unknown')
-                \Session::flash('inbox-link', $this->getEmailProvider($request['email']));
-            \Session::flash('success','An email was sent to you at ' . $request['email'] . ' with a link to login.');
+        $this->validateLogin($request);
 
-            return redirect(url()->previous());
-        }
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
@@ -60,8 +51,8 @@ trait AuthenticatesUsers
         // user surpasses their maximum number of attempts they will get locked out.
         $this->incrementLoginAttempts($request);
 
-        \Session::flash('failure','The email or password you entered were incorrect. Please try again.');
-        return redirect(url()->previous());    }
+        return $this->sendFailedLoginResponse($request);
+    }
 
     /**
      * Validate the user login request.
@@ -73,45 +64,11 @@ trait AuthenticatesUsers
      */
     protected function validateLogin(Request $request)
     {
-        $user = User::where('email', $request['email'])->first();
-        if($user === null){
-            \Session::flash('failure','The email or password you entered were incorrect. Please try again.');
-            return redirect(url()->previous());
-        }
-        if(strlen($request['password']) === 0){
-            $request->validate([
-                $this->username() => 'required|string'
-            ]);
-            $token = LoginToken::generateFor($user);
-            $url = url('/auth/token', $token);
-
-            Mail::to("$user->email")->send(new LoginVerificationMail($user, $url));
-            return true;
-        }
-        else
-            $request->validate([
-                $this->username() => 'required|string',
-                'password' => 'required|string',
-            ]);
+        $request->validate([
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+        ]);
     }
-
-    public function getEmailProvider($email){
-        //Try to guess the user's email provider to get a link to their inbox.
-        $emailProvider = explode("@",$email)[1];
-        $emailProvider = explode('.', $emailProvider)[0];
-
-        //gmail
-        if($emailProvider == 'gmail')
-            return 'mail.google.com/mail/';
-        //yahoo
-        if ($emailProvider == 'yahoo'){
-            return 'mail.yahoo.com/mb/';
-        }
-
-        return 'unknown';
-    }
-
-
 
     /**
      * Attempt to log the user into the application.
@@ -150,7 +107,7 @@ trait AuthenticatesUsers
         $this->clearLoginAttempts($request);
 
         return $this->authenticated($request, $this->guard()->user())
-            ?: redirect()->intended($this->redirectPath());
+                ?: redirect()->intended($this->redirectPath());
     }
 
     /**
@@ -162,7 +119,7 @@ trait AuthenticatesUsers
      */
     protected function authenticated(Request $request, $user)
     {
-        return back();
+        //
     }
 
     /**

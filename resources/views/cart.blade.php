@@ -30,7 +30,7 @@
                                 <form method="GET" action="/cart">
                                     <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Add Coupon" type="text" name="code">
                                     <button class="btn-redeem-icon border-0">
-                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                     </button>
                                 </form>
                             </div>
@@ -50,11 +50,8 @@
                             <div class="container ">
                                 <div class="">
 
-                                    <div class=" expend-description">
+                                    <div>
 
-                                        <input class="menu-btn" type="checkbox" id="pass-menu-btn" />
-                                        <label class="menu-text" for="pass-menu-btn">
-                                </label>
                                         <p class="p-title">{{$course->name}}</p>
                                         <ul class="menu">
                                             <p class="p-description d-none-mine">{{$course->about}}
@@ -118,6 +115,5 @@
 
     </div>
 </section>
-
 @endsection
 

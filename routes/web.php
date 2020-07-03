@@ -32,7 +32,9 @@ Route::get('/teach', function () {
 })->name('teach');
 
 Route::get('/cart','CartController@show')->middleware('auth');
-Route::get('/cart/checkout','CartController@checkout')->middleware('auth');
+Route::get('/cart/checkout', 'CartController@showCheckout')->middleware('auth');
+Route::get('/cart/checkout/accept', 'CartController@acceptCheckout')->middleware('auth');
+Route::get('/cart/checkout/paypal', 'CartController@paypalCheckout')->middleware('auth');
 
 Route::get('/cart/add/{course_id}', 'CartController@add')->middleware('auth');
 Route::get('/cart/remove/{course_id}', 'CartController@remove')->middleware('auth');
@@ -188,6 +190,11 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('payment/test', 'PaymentController@payRequest');
 Route::get('token', 'PaymentController@showToken');
+Route::get('currency', function (){
+    $course = Course::all()->random();
+    $usd = \App\Http\Controllers\PaymentController::convertCurrency($course->price, 'EGP','USD');
+    return 'hi...' . $course->name . ' costs ' . $course->price .' EGP, and ' . $usd . ' USD (Supposedly)';
+});
 Route::post('payment/weaccept/callback', 'PaymentController@weacceptCallback');
 
 

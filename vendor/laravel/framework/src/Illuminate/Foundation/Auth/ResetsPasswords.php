@@ -134,7 +134,8 @@ trait ResetsPasswords
      */
     protected function sendResetResponse(Request $request, $response)
     {
-        return redirect('/')->with('success', 'Password reset successfully!');
+        return redirect($this->redirectPath())
+                            ->with('status', trans($response));
     }
 
     /**
@@ -147,7 +148,8 @@ trait ResetsPasswords
     protected function sendResetFailedResponse(Request $request, $response)
     {
         return redirect()->back()
-                    ->with('failure', trans($response));
+                    ->withInput($request->only('email'))
+                    ->withErrors(['email' => trans($response)]);
     }
 
     /**

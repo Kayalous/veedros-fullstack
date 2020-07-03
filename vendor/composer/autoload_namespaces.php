@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'PayPal' => array($vendorDir . '/paypal/rest-api-sdk-php/lib'),
     'Neutron' => array($vendorDir . '/neutron/temporary-filesystem/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
     'Highlight\\' => array($vendorDir . '/scrivo/highlight.php'),

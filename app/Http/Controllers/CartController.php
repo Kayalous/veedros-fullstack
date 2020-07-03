@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Mail;
 
 class CartController extends Controller
 {
-    public function calculateTotal($code){
-        $carted = Auth::user()->carted;
+    public static function calculateTotal($code, $user){
+        $carted = $user->carted;
         $total = $carted->sum('price');
+        $courses = $user->carted()->get(['name','price'])->toArray();
+
         if($code){
             //check if discount valid
             $promo = PromoCode::where('code', $code)->first();
@@ -26,17 +28,26 @@ class CartController extends Controller
                     //If the code is global
                     if($promo->global) {
                         $total = $carted->sum('price') * (1 - $promo->discount_percentage/100);
+                        foreach ($courses as $course){
+                            $course['price'] = $course['price'] * (1 - $promo->discount_percentage/100);
+                        }
                         $used = true;
                     }
                     //If the code isn't global, check each
                     else{
                         $total = 0;
+                        $i = 0;
                         foreach ($carted as $course) {
                             if($promo->hasCourse($course)) {
-                                $total += $course->price * (1 - $promo->discount_percentage/100);
+                                $newPrice = $course->price * (1 - $promo->discount_percentage/100);
+                                $total += $newPrice;
+
+                                $courses[$i]['price'] = $newPrice;
+
                                 $used = true;
                             }
                             else $total += $course->price;
+                            $i++;
                         }
                     }
 //                        //Promo code used
@@ -46,15 +57,31 @@ class CartController extends Controller
 //                        }
                     session()->now('success','Promo code applied!');
                 }
-                elseif(!($promo->unlimited || $promo->number_of_uses > 0)) session()->now('failure','The promo code you entered is invalid or expired.');
+                elseif(!($promo->unlimited || $promo->number_of_uses > 0)) {
+                    session()->now('failure','The promo code you entered is invalid or expired.');
+
+                }
             }
-            elseif(!$promo) session()->now('failure','The promo code you entered is invalid or expired.');
+            elseif(!$promo) {
+                session()->now('failure','The promo code you entered is invalid or expired.');
+
+            }
         }
-        return $total;
+        return ['total' => $total, 'courses' => $courses];
     }
     public function show(Request $request){
-        $total = $this->calculateTotal($request['code']);
+        $total = $this->calculateTotal($request['code'], Auth::user())['total'];
         return view('cart',['total'=>$total, 'code' => $request['code']]);
+    }
+    public function showCheckout(Request $request){
+        $total = $this->calculateTotal($request['code'], Auth::user());
+        $courses = $total['courses'];
+        $total = $total['total'];
+
+        return view('checkout',
+            ['total'=>$total,
+            'code' => $request['code'],
+            'courses' => $courses]);
     }
     public function add($course_id){
         $course = Course::where('id', $course_id)->firstOrFail();
@@ -75,8 +102,9 @@ class CartController extends Controller
         }
         return back()->with('success', 'Course removed from cart!');
     }
-    public function checkout(Request $request){
-        $total = $this->calculateTotal($request['code']);
+
+    public function setupCart(Request $request){
+        $total = $this->calculateTotal($request['code'], Auth::user())['total'];
         $request->session()->forget(['failure', 'success']);
         $enrollment = PendingEnrollment::create([
             'user_id'=>Auth::user()->id,
@@ -84,10 +112,18 @@ class CartController extends Controller
             'subtotal' => $total
         ]);
         $enrollment->courses()->sync(Auth::user()->carted);
+
+        return $enrollment;
+    }
+
+    public function acceptCheckout(Request $request){
+        $enrollment = $this->setupCart($request);
+
         if($enrollment->subtotal == 0){
             EnrollController::enrollInMultipleCourses(Auth::user(), $enrollment);
             return redirect('/dashboard')->with(['success' => "Thank you for your purchase! Enjoy your courses."]);
         }
+
         $code = PaymentController::payRequest($enrollment);
         Mail::to(Auth::user())->send(new PendingPaymentMail($enrollment,$code));
         return view('weaccept-code')->with(
@@ -96,4 +132,15 @@ class CartController extends Controller
                     'isMail' => false]);
     }
 
+    public function paypalCheckout(Request $request){
+        $enrollment = $this->setupCart($request);
+
+        if($enrollment->subtotal == 0){
+            EnrollController::enrollInMultipleCourses(Auth::user(), $enrollment);
+            return redirect('/dashboard')->with(['success' => "Thank you for your purchase! Enjoy your courses."]);
+        }
+
+        $payment = PaymentController::paypalCreatePayment($enrollment);
+        return $payment;
+    }
 }
