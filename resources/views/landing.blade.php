@@ -15,10 +15,10 @@
                     <h1 class="mb-3">
                         Learn, easily
                     </h1>
-                    <p class="">With Veedros learning's as easy as it gets.</p>
 
-                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-md border-0 mt-5 mr-auto"
-                       >
+                    <p style="color: #4C616B;">With Veedros learning's as easy as it gets.</p>
+
+                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-md border-0 mt-5 mr-auto">
                        <span>Explore now</span>
                     </a>
 
@@ -331,5 +331,6 @@
     <script>
         let courses = {!! json_encode($courses->toArray()) !!};
     </script>
-    <script src="scripts/landing.js"></script>
+    <script src="{{asset('scripts')}}/landing.js"></script>
+    <script src="{{asset('scripts')}}/course-tooltips.js"></script>
 @endsection

@@ -28,20 +28,29 @@
     <section class="my-5">
         <div class="container">
 
-            <div class="card-columns">
-                @foreach($courses as $course)
-                    <div class="card course-card development-card noJquery" style="background-image: url({{$course->img}})">
-                        {{--                                . $course->instructor_id . '/' . $course->slug . '/images/' . $course->img--}}
-                        <div class="card-body m-0">
-                            <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
-                                <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="{{asset("images")}}/Play_button.svg" alt=""/> </div>
-                                <h4 class="card-title title-mine w-100">
-                                    {{$course->name}}
-                                </h4>
-                            </a>
+            <script>
+                var instructors = [];
+                var recommendations = [];
+            </script>
+            <div class="col-12">
+                <div class="course-cards-container card-columns my-5 py-3">
+                    @foreach($courses as $course)
+                        <div class="card course-card development-card noJquery a{{$loop->index}}" style="background-image: url({{$course->img}})">
+                            <div class="card-body m-0">
+                                <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
+                                    <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
+                                    <h4 class="card-title title-mine w-100">
+                                        {{$course->name}}
+                                    </h4>
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                        <script>
+                            instructors.push({!! json_encode($course->instructor->user->toArray()) !!});
+                            recommendations.push({!! json_encode($course->recommendations->toArray()) !!})
+                        </script>
                     @endforeach
+                </div>
             </div>
 
             {!! $courses->render() !!}
@@ -49,4 +58,14 @@
         </div>
     </section>
 
+@endsection
+
+@section('customJS')
+    <script>
+        let courses = [];
+        @foreach($courses as $course)
+            courses.push({!! json_encode($course->toArray()) !!});
+        @endforeach
+    </script>
+    <script src="{{asset('scripts')}}/course-tooltips.js"></script>
 @endsection
