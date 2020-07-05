@@ -21,9 +21,7 @@ use Illuminate\Support\Facades\Storage;
 use Pbmedia\LaravelFFMpeg\FFMpegFacade as FFMpeg;
 
 Route::get('/', function () {
-
     $courses = Course::all()->take(6);
-
     return view('landing', ['courses' => $courses]);
 })->name('landing');
 
@@ -56,6 +54,8 @@ Route::get('/search/{query?}', 'SearchController@search')->name('search');
 Route::get('/testing', function () {
     return view('testing');
 })->name('testing');
+
+
 Route::post('/testing/upload', function () {
     dd(request()->file('file')->store('hello-aws', 's3'));
     return back();
@@ -125,6 +125,8 @@ Route::get('/manage/instructor/courses/{courseSlug}', function ($courseSlug){
     $course = $instructor->courses()->where('slug', $courseSlug)->firstOrFail();
     return view("courseManagement", ['course'=>$course]);}
     )->name('manage.course.content');
+
+
 Route::get('/manage/instructor/courses/{courseSlug}/advanced', function ($courseSlug){
     $instructor = Auth::user()->instructor;
 
@@ -188,13 +190,6 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('payment/test', 'PaymentController@payRequest');
-Route::get('token', 'PaymentController@showToken');
-Route::get('currency', function (){
-    $course = Course::all()->random();
-    $usd = \App\Http\Controllers\PaymentController::convertCurrency($course->price, 'EGP','USD');
-    return 'hi...' . $course->name . ' costs ' . $course->price .' EGP, and ' . $usd . ' USD (Supposedly)';
-});
 Route::post('payment/weaccept/callback', 'PaymentController@weacceptCallback');
 
 

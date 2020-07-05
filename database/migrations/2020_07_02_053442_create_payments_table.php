@@ -15,11 +15,11 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('course_id')->unsigned()->references('id')->on('courses');
+            $table->bigInteger('promo_code_id')->unsigned()->references('id')->on('promo_codes')->nullable();
             $table->bigInteger('user_id')->unsigned()->references('id')->on('users');
             $table->double('amount');
-            $table->timestamp('paid_at')->nullable();
-            $table->timestamp('paid_to_instructor_at')->nullable();
+            $table->string('method');
+//            $table->timestamp('paid_to_instructor_at')->nullable();
             $table->timestamps();
         });
     }

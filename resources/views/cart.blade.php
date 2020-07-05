@@ -3,7 +3,10 @@
 @section('customCSS')
     <link rel="stylesheet" href="{{asset('styles/cart.css')}}">
 @endsection
-
+@php
+    if(Auth::user()->carted()->count() > 0)
+        $percentOff = round(100 - $total / Auth::user()->carted->sum('price') * 100, 0);
+@endphp
 @section('content')
 
 <div class="new-bg"></div>
@@ -14,14 +17,37 @@
             <div class="col-12 col-lg-4">
                 <div class="cart-sammery shadow-sm p-3 my-3 rounded">
                     <ul>
-                        <li>
-                            <div class="">
+                        @if(count(Auth::user()->carted) > 0)
+                            @foreach(Auth::user()->carted as $course)
+                                <li
+                                    class="d-flex justify-content-between mb-3">
+                                    <p class="p-title my-0 text-muted"
+                                       style="width: 200px; white-space: nowrap; overflow: hidden;
+                                        text-overflow: ellipsis;">{{$course['name']}}</p>
+                                    <span class="font-weight-bolder" style="color: #65D3BF">
+                                        {{$course['price'] == 0 ? 'FREE' :$course['price'] . ' EGP' }}
+                                    </span>
+                                </li>
+
+                            @endforeach
+
+                            <li class="mt-3">
                                 <p class="total text-muted">Sub total:</p>
-                            </div>
-                        </li>
-                        <li>
-                            <h2>{{$total}} EGP</h2>
-                        </li>
+                            </li>
+                            @if($percentOff > 0)
+                                <li>
+                                    <h3 class="font-weight-bold strike-through d-inline-block" style="color: #D36565;">{{Auth::user()->carted->sum('price')}} EGP</h3>
+                                </li>
+                                <li class="d-flex align-items-baseline">
+                                    <h3 class="font-weight-bold" style="color: #65D3BF">{{number_format($total, 2, '.', '')}} EGP</h3>
+                                    <span class="font-weight-bold text-muted ml-2">({{$percentOff}}% off)</span>
+                                </li>
+                            @else
+                                <li class="d-flex">
+                                    <h3 class="font-weight-bold" style="color: #65D3BF">{{$total}} EGP</h3>
+                                </li>
+                            @endif
+                            @endif
                         <li>
                             <a href="/cart/checkout{{$code ? '?code=' . $code : ''}}" class="btn btn-veedros-new btn-veedros-red m-auto btn-veedros-md border-0">Check out </a>
                         </li>
@@ -66,7 +92,7 @@
 
                             </div>
                         </div>
-                        <div class="col-4 vertical-border align-self-center ">
+                        <div class="col-4 align-self-center ">
                             <div class="cart-options">
                                 <ul class="px-2">
                                     <div class="">
@@ -84,10 +110,9 @@
                                 <ul class="px-2">
                                     <div class="">
                                         <li>
-                                            <span>Price</span>
-                                        </li>
-                                        <li>
-                                            <span class="Price">{{$course->price}} EGP</span>
+                                            <span class="font-weight-bolder" style="color: #65D3BF">
+                                        {{$course->price}} EGP
+                                        </span>
                                         </li>
                                     </div>
 

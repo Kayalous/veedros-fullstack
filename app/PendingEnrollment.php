@@ -15,8 +15,21 @@ class PendingEnrollment extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function promo_code(){
+        return $this->belongsTo(PromoCode::class);
+    }
+    public function addPromoCode($code){
+        if($code){
+            $promoCode = PromoCode::where('code', $code)->first();
+            if($promoCode){
+                $this->promo_code_id = $promoCode->id;
+                $this->save();
+            }
+        }
+    }
     public static function generateMerchantOrderId(){
         return 'veedpay' .  Str::random(8);
     }
+
 
 }

@@ -37,6 +37,10 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
     );
 
     public static $prefixLengthsPsr4 = array (
+        'q' => 
+        array (
+            'qoraiche\\mailEclipse\\' => 21,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -90,6 +94,7 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         ),
         'R' => 
         array (
+            'ReeceM\\Mocker\\' => 14,
             'Ramsey\\Uuid\\' => 12,
         ),
         'P' => 
@@ -193,6 +198,10 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
     );
 
     public static $prefixDirsPsr4 = array (
+        'qoraiche\\mailEclipse\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/qoraiche/laravel-mail-editor/src',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
@@ -338,6 +347,10 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'Seld\\JsonLint\\' => 
         array (
             0 => __DIR__ . '/..' . '/seld/jsonlint/src/Seld/JsonLint',
+        ),
+        'ReeceM\\Mocker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/reecem/mocker/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -768,6 +781,7 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'App\\LoginToken' => __DIR__ . '/../..' . '/app/LoginToken.php',
         'App\\Mail\\LoginVerificationMail' => __DIR__ . '/../..' . '/app/Mail/LoginVerificationMail.php',
         'App\\Mail\\PendingPaymentMail' => __DIR__ . '/../..' . '/app/Mail/PendingPaymentMail.php',
+        'App\\Mail\\StudentInvoice' => __DIR__ . '/../..' . '/app/Mail/StudentInvoice.php',
         'App\\Mail\\WelcomeVerificationMail' => __DIR__ . '/../..' . '/app/Mail/WelcomeVerificationMail.php',
         'App\\Objective' => __DIR__ . '/../..' . '/app/Objective.php',
         'App\\Payment' => __DIR__ . '/../..' . '/app/Payment.php',
@@ -5906,6 +5920,12 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'Ramsey\\Uuid\\UuidFactory' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactory.php',
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
+        'ReeceM\\Mocker\\Exceptions\\VarStoreMissingException' => __DIR__ . '/..' . '/reecem/mocker/src/Exceptions/VarStoreMissingException.php',
+        'ReeceM\\Mocker\\Mocked' => __DIR__ . '/..' . '/reecem/mocker/src/Mocked.php',
+        'ReeceM\\Mocker\\ReflectionMockery' => __DIR__ . '/..' . '/reecem/mocker/src/ReflectionMockery.php',
+        'ReeceM\\Mocker\\Traits\\ArrayMagic' => __DIR__ . '/..' . '/reecem/mocker/src/Traits/ArrayMagic.php',
+        'ReeceM\\Mocker\\Traits\\ObjectMagic' => __DIR__ . '/..' . '/reecem/mocker/src/Traits/ObjectMagic.php',
+        'ReeceM\\Mocker\\Utils\\VarStore' => __DIR__ . '/..' . '/reecem/mocker/src/Utils/VarStore.php',
         'RolesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/RolesTableSeeder.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
@@ -7124,6 +7144,11 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\True_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/True_.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'qoraiche\\mailEclipse\\Facades\\mailEclipse' => __DIR__ . '/..' . '/qoraiche/laravel-mail-editor/src/Facades/mailEclipse.php',
+        'qoraiche\\mailEclipse\\Http\\Controllers\\MailablesController' => __DIR__ . '/..' . '/qoraiche/laravel-mail-editor/src/Http/Controllers/MailablesController.php',
+        'qoraiche\\mailEclipse\\Http\\Controllers\\TemplatesController' => __DIR__ . '/..' . '/qoraiche/laravel-mail-editor/src/Http/Controllers/TemplatesController.php',
+        'qoraiche\\mailEclipse\\mailEclipse' => __DIR__ . '/..' . '/qoraiche/laravel-mail-editor/src/mailEclipse.php',
+        'qoraiche\\mailEclipse\\mailEclipseServiceProvider' => __DIR__ . '/..' . '/qoraiche/laravel-mail-editor/src/mailEclipseServiceProvider.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

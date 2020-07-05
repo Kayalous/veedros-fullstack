@@ -16,7 +16,6 @@ class CreateCoursePendingEnrollmentTable extends Migration
         Schema::create('course_pending_enrollment', function (Blueprint $table) {
             $table->bigInteger('course_id')->unsigned()->references('id')->on('courses');
             $table->bigInteger('pending_enrollment_id')->unsigned()->references('id')->on('pending_enrollments');
-            $table->timestamps();
         });
     }
 

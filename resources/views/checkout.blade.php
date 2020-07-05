@@ -99,7 +99,7 @@
                                    style="width: 200px; white-space: nowrap; overflow: hidden;
                                         text-overflow: ellipsis;">{{$course['name']}}</p>
                                 <span class="font-weight-bolder" style="color: #65D3BF">
-                                        {{$course['price'] == 0 ? 'FREE' :$course['price'] . ' EGP' }}
+                                        {{$course['price'] == 0 ? 'FREE' : $course['price'] . ' EGP' }}
                                     </span>
                             </li>
 
@@ -113,7 +113,7 @@
                             <h3 class="font-weight-bold strike-through d-inline-block" style="color: #D36565;">{{Auth::user()->carted->sum('price')}} EGP</h3>
                         </li>
                         <li class="d-flex align-items-baseline">
-                            <h3 class="font-weight-bold" style="color: #65D3BF">{{$total}} EGP</h3>
+                            <h3 class="font-weight-bold" style="color: #65D3BF">{{number_format($total, 2, '.', '')}} EGP</h3>
                             <span class="font-weight-bold text-muted ml-2">({{$percentOff}}% off)</span>
                         </li>
                     @else

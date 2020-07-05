@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Course;
 use App\Mail\PendingPaymentMail;
+use App\Payment;
 use App\PendingEnrollment;
 use App\PromoCode;
 use Illuminate\Http\Request;
@@ -70,10 +71,12 @@ class CartController extends Controller
         }
         return ['total' => $total, 'courses' => $courses];
     }
+
     public function show(Request $request){
         $total = $this->calculateTotal($request['code'], Auth::user())['total'];
         return view('cart',['total'=>$total, 'code' => $request['code']]);
     }
+
     public function showCheckout(Request $request){
         $total = $this->calculateTotal($request['code'], Auth::user());
 
@@ -99,6 +102,7 @@ class CartController extends Controller
             'code' => $request['code'],
             'courses' => $courses]);
     }
+
     public function add($course_id){
         $course = Course::where('id', $course_id)->firstOrFail();
         if(Auth::user()->courses->contains($course)) return back()->with('message', 'You already own this course.');
@@ -108,6 +112,7 @@ class CartController extends Controller
             'course_id' => $course->id]);
         return back()->with('success', 'Course added to cart!');
     }
+
     public function remove($course_id){
         $course = Course::where('id', $course_id)->firstOrFail();
         $cartItem = Cart::where([
@@ -129,6 +134,7 @@ class CartController extends Controller
         ]);
         $enrollment->courses()->sync(Auth::user()->carted);
 
+        $enrollment->addPromoCode($request['code']);
         return $enrollment;
     }
 
@@ -139,7 +145,7 @@ class CartController extends Controller
             EnrollController::enrollInMultipleCourses(Auth::user(), $enrollment);
             return redirect('/dashboard')->with(['success' => "Thank you for your purchase! Enjoy your courses."]);
         }
-
+        \App\Payment::createPayment($enrollment, 'accept');
         $code = PaymentController::payRequest($enrollment);
         Mail::to(Auth::user())->send(new PendingPaymentMail($enrollment,$code));
         return view('weaccept-code')->with(

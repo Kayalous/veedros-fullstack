@@ -117,11 +117,14 @@ class PaymentController extends Controller
         $enrollment = PendingEnrollment::where('payment_id', $request['obj']['id'])->firstOrFail();
         if($request['obj']['success'] == "true"){
             $user = $enrollment->user;
+
+            //Enroll user
             EnrollController::enrollInMultipleCourses($user,$enrollment);
-            //send email notification to user
 
-            //send email notification to Admin
+            //create payment and send email notifications to user and admin
+            $veedrosPayment = \App\Payment::createPayment($enrollment, 'accept');
 
+            $veedrosPayment->notifyUser();
         }
     }
 
@@ -141,6 +144,8 @@ class PaymentController extends Controller
 
         $enrollment->courses()->sync($user->carted);
 
+        $enrollment->addPromoCode($code);
+
 
         $apiContext = new ApiContext(
           new OAuthTokenCredential(
@@ -148,6 +153,8 @@ class PaymentController extends Controller
               env('PAYPAL_SANDBOX_API_SECRET')
           )
         );
+
+
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
 
@@ -189,6 +196,8 @@ class PaymentController extends Controller
                 env('PAYPAL_SANDBOX_API_SECRET')
             )
         );
+
+
         $paymentId = $request->paymentID;
         $payment = Payment::get($paymentId, $apiContext);
 
@@ -200,15 +209,22 @@ class PaymentController extends Controller
         } catch (\Exception $ex) {
             exit(1);
         }
+
+
         if($result->state == 'approved'){
             $enrollment = PendingEnrollment::where('id', $request->enrollmentID)->firstOrFail();
             $user = $enrollment->user;
+
+            //Enroll user
             EnrollController::enrollInMultipleCourses($user,$enrollment);
 
-            //send email notification to user
-
-            //send email notification to Admin
+            //create payment and send email notifications to user, admins, and instructors
+            $veedrosPayment = \App\Payment::createPayment($enrollment, 'paypal');
+            $veedrosPayment->notifyUser();
+//            $veedrosPayment->notifyInstructors();
+//            $veedrosPayment->notifyAdmins();
         }
+
         return $result;
     }
 
