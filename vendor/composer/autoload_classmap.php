@@ -134,6 +134,7 @@ return array(
     'App\\Jobs\\UploadRawVideo' => $baseDir . '/app/Jobs/UploadRawVideo.php',
     'App\\Like' => $baseDir . '/app/Like.php',
     'App\\LoginToken' => $baseDir . '/app/LoginToken.php',
+    'App\\Mail\\AdminInvoice' => $baseDir . '/app/Mail/AdminInvoice.php',
     'App\\Mail\\LoginVerificationMail' => $baseDir . '/app/Mail/LoginVerificationMail.php',
     'App\\Mail\\PendingPaymentMail' => $baseDir . '/app/Mail/PendingPaymentMail.php',
     'App\\Mail\\StudentInvoice' => $baseDir . '/app/Mail/StudentInvoice.php',

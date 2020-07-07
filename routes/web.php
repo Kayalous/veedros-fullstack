@@ -193,3 +193,8 @@ Route::group(['prefix' => 'admin'], function () {
 Route::post('payment/weaccept/callback', 'PaymentController@weacceptCallback');
 
 
+Route::get('/admin-mail-test', function (){
+    \App\Payment::all()->random()->notifyAdmins();
+    dd(\App\User::admins());
+
+});

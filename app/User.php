@@ -48,7 +48,9 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
     public function comments(){
         return $this->hasMany(Comment::class);
     }
-
+    public static function admins(){
+        return User::where('role_id', 1)->get();
+    }
     public function likes(){
         return $this->belongsToMany('App\Comment', 'likes', 'user_id', 'comment_id');
     }

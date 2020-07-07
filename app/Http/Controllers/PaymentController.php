@@ -125,6 +125,8 @@ class PaymentController extends Controller
             $veedrosPayment = \App\Payment::createPayment($enrollment, 'accept');
 
             $veedrosPayment->notifyUser();
+
+            $veedrosPayment->notifyAdmins();
         }
     }
 
@@ -222,7 +224,7 @@ class PaymentController extends Controller
             $veedrosPayment = \App\Payment::createPayment($enrollment, 'paypal');
             $veedrosPayment->notifyUser();
 //            $veedrosPayment->notifyInstructors();
-//            $veedrosPayment->notifyAdmins();
+            $veedrosPayment->notifyAdmins();
         }
 
         return $result;

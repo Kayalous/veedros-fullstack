@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Mail\AdminInvoice;
 use App\Mail\PendingPaymentMail;
 use App\Mail\StudentInvoice;
 use Illuminate\Database\Eloquent\Model;
@@ -35,6 +36,10 @@ class Payment extends Model
     public function notifyUser(){
         Mail::to($this->user)
             ->send(new StudentInvoice($this));
+    }
+    public function notifyAdmins(){
+        Mail::to(User::admins())
+            ->send(new AdminInvoice($this));
     }
 
 }

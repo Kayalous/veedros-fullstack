@@ -779,6 +779,7 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'App\\Jobs\\UploadRawVideo' => __DIR__ . '/../..' . '/app/Jobs/UploadRawVideo.php',
         'App\\Like' => __DIR__ . '/../..' . '/app/Like.php',
         'App\\LoginToken' => __DIR__ . '/../..' . '/app/LoginToken.php',
+        'App\\Mail\\AdminInvoice' => __DIR__ . '/../..' . '/app/Mail/AdminInvoice.php',
         'App\\Mail\\LoginVerificationMail' => __DIR__ . '/../..' . '/app/Mail/LoginVerificationMail.php',
         'App\\Mail\\PendingPaymentMail' => __DIR__ . '/../..' . '/app/Mail/PendingPaymentMail.php',
         'App\\Mail\\StudentInvoice' => __DIR__ . '/../..' . '/app/Mail/StudentInvoice.php',
