@@ -30,7 +30,7 @@ Route::get('/teach', function () {
 })->name('teach');
 
 Route::get('/cart','CartController@show')->middleware('auth');
-Route::get('/cart/checkout', 'CartController@showCheckout')->middleware('auth');
+Route::get('/cart/checkout', 'CartController@showCheckout')->middleware('auth', 'PaymentReady');
 Route::get('/cart/checkout/accept', 'CartController@acceptCheckout')->middleware('auth');
 Route::get('/cart/checkout/paypal', 'CartController@paypalCheckout')->middleware('auth');
 
@@ -166,7 +166,7 @@ Route::post('/like/{comment_id}', 'CommentController@like');
 
 
 //Auth routes
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 //verification routes
 Route::get('auth/token/{token}', 'AuthController@passwordlessAuthenticate');

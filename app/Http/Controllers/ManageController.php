@@ -62,9 +62,11 @@ class ManageController extends Controller
             Mail::to("$user->email")->send(new WelcomeVerificationMail($user));
         }
 
-        return redirect()
+        if(str_replace(url('/'), '', url()->previous()) == '/manage')
+            return redirect()
             ->route('profile')
             ->with('success', 'Information updated successfully!');
+        return back()->with('success', 'Information updated successfully!');
 
     }
 

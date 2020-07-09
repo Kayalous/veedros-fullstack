@@ -173,7 +173,7 @@ class RegisterController extends Controller
         }
 
 
-    public function getEmailProvider($email){
+    public static function getEmailProvider($email){
         //Try to guess the user's email provider to get a link to their inbox.
         $emailProvider = explode("@",$email)[1];
         $emailProvider = explode('.', $emailProvider)[0];

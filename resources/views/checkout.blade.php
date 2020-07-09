@@ -132,8 +132,6 @@
                     @endif
                 </div>
             </div>
-
-
                             <div class="btn-redeem-veedros m-auto pt-3">
                                 <form method="GET" action="/cart/checkout">
                                     <input class="btn-redeem form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Add Coupon" type="text" name="code">
@@ -146,7 +144,6 @@
                     </ul>
                 </div>
             </div>
-
         </div>
 
 

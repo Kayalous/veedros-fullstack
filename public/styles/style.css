@@ -110,6 +110,16 @@ hr {
     overflow: visible;
 }
 
+.dot-hover-red{
+    color: #65D3BF !important;
+    font-weight: 500;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+.dot-hover-red:hover{
+    color: #65D3BF !important;
+}
+
 .dot-hover::before {
     position: absolute;
     top: 60%;
@@ -126,13 +136,13 @@ hr {
 }
 
 .dot-hover-red:hover::before {
-    color: #fc6472;
-    text-shadow: 10px 0 #fc6472, -10px 0 #fc6472;
+    color: #65D3BF;
+    text-shadow: 10px 0 #65D3BF, -10px 0 #65D3BF;
 }
 
 .dot-hover-red:active::before {
-    color: #fc6472;
-    text-shadow: 15px 0 #fc6472, -15px 0 #fc6472;
+    color: #65D3BF;
+    text-shadow: 15px 0 #65D3BF, -15px 0 #65D3BF;
 }
 
 .main-navbar {
@@ -239,17 +249,6 @@ hr {
     margin: 0;
 }
 
-.register-prompt a {
-    color: #fc6472;
-    font-weight: 500;
-    -webkit-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
-}
-
-.register-prompt a:hover {
-    text-shadow: 0 0px 15px rgba(252, 104, 110, 0.75);
-    text-decoration: none;
-}
 
 .invalid-feedback {
     margin-top: 3px;

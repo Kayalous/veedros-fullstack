@@ -168,7 +168,9 @@ function validateInputs() {
         return false;
     }
 }
+
 inputFields = document.querySelectorAll('.form-control');
+
 for(let i = 0; i < inputFields.length; i++){
     switch (inputFields[i].id) {
         case 'name':
@@ -207,12 +209,19 @@ passwordRepeat.onfocusout = function () {
     validatePassword(password,passwordRepeat);
 };
 
-submitButton = document.querySelector('#btnsubmit');
-form = document.querySelector('#form');
-submitButton.onclick = function (e) {
+submitButton = document.querySelectorAll('.btnsubmit');
+form = document.querySelectorAll('.form');
+
+submitButton[0].onclick = function (e) {
     e.preventDefault();
     if (validateInputs()) {
-        form.submit();
+        form[0].submit();
+    }
+};
+submitButton[1].onclick = function (e) {
+    e.preventDefault();
+    if (validateInputs()) {
+        form[0].submit();
     }
 };
 showPasswordButton = document.querySelector('#show-password-btn');

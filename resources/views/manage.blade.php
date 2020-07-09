@@ -29,7 +29,7 @@
                 <div class="">
                     <div class="card profile-card px-4 py-5">
                         <div class="card-body">
-                            <form id="form" action="{{route('manage')}}" method="POST" enctype="multipart/form-data">
+                            <form class="form" action="{{route('manage')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <h2 class="text-center" style="font-size: 35px;font-weight: 700;color: #313c8b;">Edit your profile</h2>
                                 <h5 class="text-center">Fill in any details you want to edit and leave other fields blank</h5>
@@ -108,7 +108,7 @@
 
 
                                 <div class="w-100 text-center mt-5">
-                                    <button type="submit" id="btnsubmit" class="btn btn-veedros-new btn-veedros-md mx-auto border-0">
+                                    <button type="submit" class="btn btn-veedros-new btn-veedros-md mx-auto border-0 btnsubmit">
                                 <h4 class="my-0 mx-5">Save</h4>
                             </button>
                                 </div>
@@ -121,7 +121,8 @@
                 <div class="">
                     <div class="card profile-card px-4 py-5">
                         <div class="card-body">
-                            <form id="form" action="{{route('manage')}}" method="POST" enctype="multipart/form-data">
+                            <form class="form" action="{{route('manage')}}"
+                                  method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <h2 class="text-center mb-5" style="font-size: 35px;font-weight: 700;color: #313c8b;">Change Email or Password</h2>
                                 <div class="mx-auto text-center">
@@ -129,7 +130,11 @@
                                         <div class="col-12 mx-auto">
                                             <div class="input-group mb-2">
                                                 <h5>Email</h5>
-                                                <input type="text" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com">
+
+                                                <input type="text"
+                                                       autocomplete="new-email"
+                                                       id="email"
+                                                       class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="example@example.com">
                                             </div>
                                         </div>
                                     </div>
@@ -156,7 +161,9 @@
                                                                 <div class="input-group mb-2">
                                                                     <h5>New password</h5>
                                                                     <div class="d-flex w-100">
-                                                                        <input type="password" name="password" id="password" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="● ● ● ● ● ● ● ●">
+                                                                        <input type="password"
+                                                                               autocomplete="new-password"
+                                                                               name="password" id="password" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="● ● ● ● ● ● ● ●">
                                                                         <button
                                                                             class="btn btn-secondary-veedros ml-2" id="show-password-btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                                                 class="feather feather-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg></button>
@@ -167,7 +174,9 @@
                                                             <div class="input-group mb-2">
                                                                     <h5>Repeat password</h5>
                                                                     <div class="d-flex w-100">
-                                                                        <input type="password" name="password-repeat" id="password-repeat" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="● ● ● ● ● ● ● ●">
+                                                                        <input type="password"
+                                                                               autocomplete="new-password"
+                                                                               name="password-repeat" id="password-repeat" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="● ● ● ● ● ● ● ●">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -176,7 +185,7 @@
                                                 </div>
                                     </div>
                                 <div class="w-100 text-center mt-5">
-                                    <button type="submit" id="btnsubmit" class="btn btn-veedros-new btn-veedros-md mx-auto border-0">
+                                    <button type="submit" class="btn btn-veedros-new btn-veedros-md mx-auto border-0 btnsubmit">
                                 <h4 class="my-0 mx-5">Save</h4>
                             </button>
                                 </div>
