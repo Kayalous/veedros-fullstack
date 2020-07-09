@@ -34,7 +34,7 @@
 
             </li>
             @endif
-            @if(!Auth::user()->phone || Auth::user()->name)
+            @if(!Auth::user()->phone || count($name) < 2)
                     <form id="form" action="{{route('manage')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
