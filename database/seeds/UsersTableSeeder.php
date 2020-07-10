@@ -29,11 +29,12 @@ class UsersTableSeeder extends Seeder
             ]);
         User::create([
             'name'           => 'Abdulrhman Elkayal',
-            'email'          => 'aelkayal88@gmail.com'
+            'email'          => 'aelkayal88@gmail.com',
+            'password'       => bcrypt('123456789')
         ]);
         Instructor::create([
             'user_id' => 51,
-            'display_name' => Str::slug('Abdulrhman Elkayal', '-')
+            'display_name' => Str::slug('Abdulrhman Elkayal الجياص', '-')
         ]);
     }
 }

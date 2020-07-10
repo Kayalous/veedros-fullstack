@@ -6,11 +6,6 @@
     }
 @endphp
 
-@if($comments->count() < 1)
-    <div class="alert alert-warning">There are no comments yet.</div>
-@endif
-
-
 @auth
     @include('comments::_form')
 @elseif(Config::get('comments.guest_commenting') == true)
@@ -22,7 +17,6 @@
         <div class="my-2 px-1 row">
             <div class="col-12 m-0 pl-4 p-0">
                 <h2 class="mt-5 mb-5 text-center">You have to be signed in to make a comment</h2>
-{{--                <p class="card-text">You must sign in to post a comment.</p>--}}
                 <a href="#" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" data-toggle="modal" data-target="#loginModal">Sign in</a>
             </div>
         </div>

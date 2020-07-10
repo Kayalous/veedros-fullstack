@@ -50,7 +50,9 @@
                         <input class="d-none" id="session-id" name="session_id" value="{{$controllerSession->id}}">
                     </div>
                 </div>
-                @if($errors->has('message'))
+                <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>
+
+            @if($errors->has('message'))
                     <div class="invalid-feedback" style="display: block; text-align: left !important;">
                         Your message is required.
                     </div>
