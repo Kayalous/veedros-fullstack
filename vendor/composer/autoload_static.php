@@ -88,6 +88,7 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\Honeypot\\' => 16,
             'Sopamo\\LaravelFilepond\\' => 23,
             'Seld\\PharUtils\\' => 15,
             'Seld\\JsonLint\\' => 14,
@@ -127,6 +128,7 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
             'League\\Flysystem\\AwsS3v3\\' => 25,
             'League\\Flysystem\\' => 17,
             'League\\CommonMark\\' => 18,
+            'Laravelista\\Comments\\' => 21,
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Socialite\\' => 18,
@@ -336,6 +338,10 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Spatie\\Honeypot\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-honeypot/src',
+        ),
         'Sopamo\\LaravelFilepond\\' => 
         array (
             0 => __DIR__ . '/..' . '/sopamo/laravel-filepond/src',
@@ -419,6 +425,10 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'League\\CommonMark\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
+        ),
+        'Laravelista\\Comments\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelista/comments/src',
         ),
         'Laravel\\Ui\\' => 
         array (
@@ -601,6 +611,10 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
             array (
                 0 => __DIR__ . '/..' . '/paypal/rest-api-sdk-php/lib',
             ),
+            'Parsedown' => 
+            array (
+                0 => __DIR__ . '/..' . '/erusev/parsedown',
+            ),
         ),
         'N' => 
         array (
@@ -770,6 +784,7 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\Enrolled' => __DIR__ . '/../..' . '/app/Http/Middleware/Enrolled.php',
         'App\\Http\\Middleware\\Instructor' => __DIR__ . '/../..' . '/app/Http/Middleware/Instructor.php',
+        'App\\Http\\Middleware\\PaymentReady' => __DIR__ . '/../..' . '/app/Http/Middleware/PaymentReady.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
@@ -4246,6 +4261,16 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
         'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
         'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
+        'Laravelista\\Comments\\Comment' => __DIR__ . '/..' . '/laravelista/comments/src/Comment.php',
+        'Laravelista\\Comments\\CommentController' => __DIR__ . '/..' . '/laravelista/comments/src/CommentController.php',
+        'Laravelista\\Comments\\CommentControllerInterface' => __DIR__ . '/..' . '/laravelista/comments/src/CommentControllerInterface.php',
+        'Laravelista\\Comments\\CommentPolicy' => __DIR__ . '/..' . '/laravelista/comments/src/CommentPolicy.php',
+        'Laravelista\\Comments\\Commentable' => __DIR__ . '/..' . '/laravelista/comments/src/Commentable.php',
+        'Laravelista\\Comments\\Commenter' => __DIR__ . '/..' . '/laravelista/comments/src/Commenter.php',
+        'Laravelista\\Comments\\Events\\CommentCreated' => __DIR__ . '/..' . '/laravelista/comments/src/Events/CommentCreated.php',
+        'Laravelista\\Comments\\Events\\CommentDeleted' => __DIR__ . '/..' . '/laravelista/comments/src/Events/CommentDeleted.php',
+        'Laravelista\\Comments\\Events\\CommentUpdated' => __DIR__ . '/..' . '/laravelista/comments/src/Events/CommentUpdated.php',
+        'Laravelista\\Comments\\ServiceProvider' => __DIR__ . '/..' . '/laravelista/comments/src/ServiceProvider.php',
         'League\\CommonMark\\Block\\Element\\AbstractBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractBlock.php',
         'League\\CommonMark\\Block\\Element\\AbstractStringContainerBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractStringContainerBlock.php',
         'League\\CommonMark\\Block\\Element\\BlockQuote' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/BlockQuote.php',
@@ -5145,6 +5170,7 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PagesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PagesTableSeeder.php',
+        'Parsedown' => __DIR__ . '/..' . '/erusev/parsedown/Parsedown.php',
         'PayPal\\Api\\Address' => __DIR__ . '/..' . '/paypal/rest-api-sdk-php/lib/PayPal/Api/Address.php',
         'PayPal\\Api\\Agreement' => __DIR__ . '/..' . '/paypal/rest-api-sdk-php/lib/PayPal/Api/Agreement.php',
         'PayPal\\Api\\AgreementDetails' => __DIR__ . '/..' . '/paypal/rest-api-sdk-php/lib/PayPal/Api/AgreementDetails.php',
@@ -6053,6 +6079,13 @@ class ComposerStaticInite831bcad32bab2265d4d98d210fd0fb4
         'Sopamo\\LaravelFilepond\\Filepond' => __DIR__ . '/..' . '/sopamo/laravel-filepond/src/Filepond.php',
         'Sopamo\\LaravelFilepond\\Http\\Controllers\\FilepondController' => __DIR__ . '/..' . '/sopamo/laravel-filepond/src/Http/Controllers/FilepondController.php',
         'Sopamo\\LaravelFilepond\\LaravelFilepondServiceProvider' => __DIR__ . '/..' . '/sopamo/laravel-filepond/src/LaravelFilepondServiceProvider.php',
+        'Spatie\\Honeypot\\EncryptedTime' => __DIR__ . '/..' . '/spatie/laravel-honeypot/src/EncryptedTime.php',
+        'Spatie\\Honeypot\\HoneypotServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-honeypot/src/HoneypotServiceProvider.php',
+        'Spatie\\Honeypot\\HoneypotViewComposer' => __DIR__ . '/..' . '/spatie/laravel-honeypot/src/HoneypotViewComposer.php',
+        'Spatie\\Honeypot\\ProtectAgainstSpam' => __DIR__ . '/..' . '/spatie/laravel-honeypot/src/ProtectAgainstSpam.php',
+        'Spatie\\Honeypot\\SpamDetected' => __DIR__ . '/..' . '/spatie/laravel-honeypot/src/SpamDetected.php',
+        'Spatie\\Honeypot\\SpamResponder\\BlankPageResponder' => __DIR__ . '/..' . '/spatie/laravel-honeypot/src/SpamResponder/BlankPageResponder.php',
+        'Spatie\\Honeypot\\SpamResponder\\SpamResponder' => __DIR__ . '/..' . '/spatie/laravel-honeypot/src/SpamResponder/SpamResponder.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',

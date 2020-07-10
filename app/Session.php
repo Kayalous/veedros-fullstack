@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
 use Laravel\Scout\Searchable;
+use Laravelista\Comments\Commentable;
 
 class Session extends Model
 {
-    use Searchable;
+    use Searchable, Commentable;
 
     protected $fillable = ['name', 'chapter_id', 'link', 'slug', 'about', 'duration'];
 
@@ -18,10 +19,6 @@ class Session extends Model
     }
     public function trans(){
         return $this->belongsTo(VideosToTranscode::class);
-    }
-
-    public function comments(){
-        return $this->hasMany(Comment::class);
     }
 
     public function objectives(){

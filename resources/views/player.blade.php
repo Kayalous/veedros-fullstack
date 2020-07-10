@@ -347,7 +347,7 @@
                 <br>
                 <div class="row my-5">
 
-                <a href="{{asset('cart/add') . '/' . $controllerCourse->id}}" class="btn d-inline btn-veedros-new btn-veedros-cart-red   border-0 mx-auto">
+                <a href="{{asset('cart/add') . '/' . $controllerCourse->id}}" class="btn d-inline btn-veedros-new btn-veedros-cart-red border-0 mx-auto">
                     <span>Add to cart <i class="fas fa-cart-plus" class="ml-3"></i></span>
                 </a>
 
@@ -360,57 +360,7 @@
         </div>
         @if($controllerSession->isFirstSession())
         <br>
-        <h2 class="mt-5">Leave a comment</h2>
-        <form action="{{asset("/comment")}}" method="POST" class="row mt-4 px-4" id="comments">
-            @csrf
-            <div class="col-12 profile-form-field  border-light border-radius-sm py-3 px-4">
-                <div class="my-2 px-1 row">
-                    <div class="col-12 m-0 pl-4 p-0">
-                                    <textarea class="border-0 w-100 outline-0 text-muted" rows="5" cols="50" id="comment-textarea"
-                                              name="body"
-                                              maxlength="1000" style="resize: none;"
-                                              placeholder="Your comment on this session."></textarea>
-                        <input class="d-none" id="session-id" name="session_id" value="{{$controllerSession->id}}">
-                    </div>
-                </div>
-                <div class="row">
-                    <button class="btn btn-secondary-veedros ml-auto submit" id="comment-submit" type="submit"><i
-                            data-feather="arrow-right"></i></button>
-                </div>
-            </div>
-        </form>
-        <br>
-        <hr>
-        <h2 class="mb-5">Comments ({{$controllerSession->comments->count()}})</h2>
-        <div class="container mb-5 pb-5">
-            @foreach($controllerSession->comments as $comment)
-                <div class="row mb-4">
-                    <div class="tip-instructor-avatar align-items-start col-2">
-                        <img src="{{$comment->user->img}}" alt="comment avatar" class="round round-sm" />
-                    </div>
-                    <div class="col-10 d-flex align-items-center w-100">
-                        <div class="card card-comment border-0">
-                            <div class="card-body row">
-                                <div class="col-9">
-                                    <a href="{{asset('profile') . '/' . $comment->user->id}}">{{$comment->user->name}}</a>
-                                    <p class="mt-2">{!! nl2br(e($comment->body)) !!}</p>
-                                </div>
-                                <div class="col-3 d-flex flex-column justify-content-end">
-                                    <div class="likes d-flex justify-content-center align-items-center">
-                                    <button class="btn btn-secondary-veedros like-btn more {{Auth::user() ?  $comment->isLikedBy(Auth::user()) ? 'liked' : '' : ''}}" id="{{$comment->id}}"><i
-                                            data-feather="heart"></i>
-                                        <span class="ml-2 text-muted">{{$comment->likes()->count()}}</span>
-                                    </button>
-
-                                    </div>
-                                    <h6><i data-feather="globe" class="mr-1"></i>{{$comment->created_at->diffForHumans()}}</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+        @comments(['model' => $controllerSession])
         @endif
     </section>
 @endsection

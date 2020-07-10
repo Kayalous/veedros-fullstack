@@ -8,10 +8,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
+use Laravelista\Comments\Commenter;
 
 class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Auth\Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Commenter;
 
     /**
      * The attributes that are mass assignable.
@@ -43,10 +44,6 @@ class User extends \TCG\Voyager\Models\User implements \Illuminate\Contracts\Aut
 
     public function instructor(){
         return $this->hasOne(Instructor::class);
-    }
-
-    public function comments(){
-        return $this->hasMany(Comment::class);
     }
     public static function admins(){
         return User::where('role_id', 1)->get();
