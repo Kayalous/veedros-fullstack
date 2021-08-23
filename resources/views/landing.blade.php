@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="anti-lo2">
-    <section class="hero py-5 overflow-hidden">
+    <section class="py-5 overflow-hidden hero">
         <div class="container my-5 mt-5">
             <div class="row ">
                 <div class="col-lg-6 hero-header-text ">
@@ -18,28 +18,28 @@
 
                     <p style="color: #4C616B;">With Veedros learning's as easy as it gets.</p>
 
-                    <a href="#featured-courses" class="btn btn-veedros-new btn-veedros-md border-0 mt-5 mr-auto">
+                    <a href="#featured-courses" class="mt-5 mr-auto border-0 btn btn-veedros-new btn-veedros-md">
                        <span>Explore now</span>
                     </a>
 
                 </div>
-                <div class="col-lg-6 hero-illustrations mx-auto">
+                <div class="mx-auto col-lg-6 hero-illustrations">
                     <div class="illustration-container illustration-container-lg d-md-flex-center "
                          >
                         <canvas id="blob"> </canvas>
-                        <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/hero-01-withoutbg.png" alt=""
+                        <img src="/images/hero-01-withoutbg.png" alt=""
                              class="img-fluid illustration illustration-lg illustration-anim-1" />
                     </div>
                     <div class="row w-100 d-md-flex-center">
-                        <div class="illustration-container illustration-container-sm  " data-wow-delay="0.4s">
+                        <div class="illustration-container illustration-container-sm " data-wow-delay="0.4s">
                             <canvas id="blob2" class="blob-position-md "> </canvas>
-                            <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/hero-02-withoutbg.png" alt=""
+                            <img src="/images/hero-02-withoutbg.png" alt=""
                                  class="img-fluid illustration illustration-md illustration-position-md illustration-anim-2" />
                         </div>
-                        <div class="illustration-container col-4 illustration-container-sm mt-illustration  "
+                        <div class="illustration-container col-4 illustration-container-sm mt-illustration "
                              data-wow-delay="0.6s">
                             <canvas id="blob3"> </canvas>
-                            <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/hero-03.png" alt=""
+                            <img src="/images/hero-03.png" alt=""
                                  class="img-fluid illustration illustration-sm illustration-position-sm illustration-anim-3" />
                         </div>
                     </div>
@@ -48,43 +48,43 @@
         </div>
 
     </section>
-    <section class="partners-logo mb-3">
+    <section class="mb-3 partners-logo">
 
-    <div class="row justify-content-center py-3">
+    <div class="py-3 row justify-content-center">
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
-                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/ACCA.png" alt="ACCA">
-            </div>
-            <div class="col-lg-1 col-md-2 col-sm-3 col-5">
-                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/DME.png" alt="DME">
-            </div>
-            <div class="col-lg-1  col-md-2 col-sm-3 col-5">
-                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/edexcel.png" alt="edexcel">
-            </div>
-            <div class="col-lg-1  col-md-2 col-sm-3 col-5">
-                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/Northampton.png" alt="Northampton">
+                <img class="" src="/images/partners/ACCA.png" alt="ACCA">
             </div>
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
-                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/OTRAC.png" alt="OTRAC">
+                <img class="" src="/images/partners/DME.png" alt="DME">
             </div>
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
-                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/Pearson.png" alt="Pearson">
+                <img class="" src="/images/partners/edexcel.png" alt="edexcel">
             </div>
             <div class="col-lg-1 col-md-2 col-sm-3 col-5">
-                <img class="" src="https://veedros.s3.eu-central-1.amazonaws.com/images/partners/Trade.png" alt="Trade">
+                <img class="" src="/images/partners/Northampton.png" alt="Northampton">
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-5">
+                <img class="" src="/images/partners/OTRAC.png" alt="OTRAC">
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-5">
+                <img class="" src="/images/partners/Pearson.png" alt="Pearson">
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-5">
+                <img class="" src="/images/partners/Trade.png" alt="Trade">
             </div>
 
         </div>
     </section>
     <section class="happy-users">
         <div>
-            <h1 class="text-center mb-0">6K<span>+</span></h1>
-            <h2 class="text-center mt-0">Happy students</h2>
+            <h1 class="mb-0 text-center">6K<span>+</span></h1>
+            <h2 class="mt-0 text-center">Happy students</h2>
         </div>
     </section>
-    <section class="featured-courses mb-5 pb-5" style="overflow-y: visible" id="featured-courses">
-        <div class="container container-mine pt-3">
+    <section class="pb-5 mb-5 featured-courses" style="overflow-y: visible" id="featured-courses">
+        <div class="container pt-3 container-mine">
             <div class="row">
-                <div class="header-text d-block mb-2 ">
+                <div class="mb-2 header-text d-block ">
                     <h4 style="color: #4C616B;"> A powerful</h4>
                     <h1>
                         set of courses
@@ -96,10 +96,10 @@
                     var recommendations = [];
                 </script>
                 <div class="col-12">
-                    <div class="course-cards-container card-columns my-5 py-3">
+                    <div class="py-3 my-5 course-cards-container card-columns">
                         @foreach($courses as $course)
-                            <div class="card course-card development-card noJquery a{{$loop->index}}" style="background-image: url({{$course->img}})">
-                                 <div class="card-body m-0">
+                            <div class="card course-card development-card noJquery a{{$loop->index}}" style="background-image: url({{$course->img}});">
+                                 <div class="m-0 card-body">
                                        <a href="{{\App\Course::getFirstSession($course)}}" class="card-body-inner noscroll card-bg-img"  >
                                              <div class="play-circle play-circle-{{$loop->iteration % 6}}"> <img style="height:40px; width:40px " src="images/Play_button.svg" alt=""/> </div>
                                              <h4 class="card-title title-mine w-100">
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="row">
-                <a href="courses/" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto">
+                <a href="courses/" class="mx-auto border-0 btn btn-veedros-new btn-veedros-md">
                     <span >All courses</span>
                 </a>
             </div>
@@ -125,22 +125,22 @@
     </section>
     <section class="mt-5">
         <div class="row">
-            <div class="col-lg-6 m-0 px-0 overflow-hidden teach-img">
+            <div class="px-0 m-0 overflow-hidden col-lg-6 teach-img">
 {{--                <img class="teach-img" src="{{asset('images/')}}/Teach-960x775.jpg" alt="Teach with us image">--}}
             </div>
-            <div class="col-lg-6 m-0 py-5 teach-with-us-container d-flex flex-column justify-content-center align-items-center">
+            <div class="py-5 m-0 col-lg-6 teach-with-us-container d-flex flex-column justify-content-center align-items-center">
                 <div class="teach-with-us-content">
                     <div class="container">
                         <h1>Have <br> content?</h1>
                         <br>
                         <h2>If you...</h2>
-                        <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to organize your content.</h4>
-                        <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how/where to start.</h4>
-                        <h4><img class=" mr-2" src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to promote your vision.</h4>
+                        <h4><img class="mr-2 " src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to organize your content.</h4>
+                        <h4><img class="mr-2 " src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how/where to start.</h4>
+                        <h4><img class="mr-2 " src="{{('images/Icons/Correct.svg')}}" alt="">Don't know how to promote your vision.</h4>
                         <br>
                         <h4>We can give you a hand with that!</h4>
-                        <div class="row mt-5">
-                            <a href="{{asset("teach")}}" class="btn btn-veedros-new btn-veedros-md border-0  ">
+                        <div class="mt-5 row">
+                            <a href="{{asset("teach")}}" class="border-0 btn btn-veedros-new btn-veedros-md ">
                                 <span class="mx-3">Okay, Let's talk!</span>
                             </a>
                         </div>
@@ -149,20 +149,20 @@
             </div>
         </div>
     </section>
-    <section class="our_services py-5">
+    <section class="py-5 our_services">
             <div class="container">
-                <div class="row d-block my-5">
+                <div class="my-5 row d-block">
                     <h1>Get a team of experts</h1>
                     <p>looking out for your content</p>
                 </div>
                 <div class="row ">
-                    <div class="col-12 col-md-4 my-3">
+                    <div class="my-3 col-12 col-md-4">
                         <div class="content">
                             <div class="card d-inline-block">
                                 <div>
                                     <img src="{{('images/our_services/icon_features_hosting.svg')}}" alt="">
                                 </div>
-                                <div class="content-header my-3">
+                                <div class="my-3 content-header">
                                     <h4>Seamless hosting</h4>
                                 </div>
                                 <div class="description ">
@@ -172,14 +172,14 @@
                                 </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 my-3 ">
+                    <div class="my-3 col-12 col-md-4 ">
                         <div class="content">
                             <div class="card d-inline-block">
                             <ul>
                                 <li>
                                     <img src="{{('images/our_services/icon_features_data.svg')}}" alt="">
                                 </li>
-                                <li class="content-header my-3">
+                                <li class="my-3 content-header">
                                     <h4>Data ownership</h4>
                                 </li>
                                 <li class="description ">
@@ -190,14 +190,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 my-3 ">
+                    <div class="my-3 col-12 col-md-4 ">
                         <div class="content">
                         <div class="card d-inline-block">
                             <ul>
                                 <li>
                                     <img src="{{('images/our_services/icon_features_marketing.svg')}}" alt="">
                                 </li>
-                                <li class="content-header my-3">
+                                <li class="my-3 content-header">
                                     <h4>24/7 monitoring</h4>
                                 </li>
                                 <li class="description ">
@@ -208,14 +208,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 my-3 ">
+                    <div class="my-3 col-12 col-md-4 ">
                         <div class="content">
                         <div class="card d-inline-block">
                             <ul>
                                 <li>
                                     <img src="{{('images/our_services/icon_features_upgrades.svg')}}" alt="">
                                 </li>
-                                <li class="content-header my-3">
+                                <li class="my-3 content-header">
                                     <h4>Instant upgrades</h4>
                                 </li>
                                 <li class="description ">
@@ -226,14 +226,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 my-3 ">
+                    <div class="my-3 col-12 col-md-4 ">
                         <div class="content">
                         <div class="card d-inline-block">
                             <ul>
                                 <li>
                                     <img src="{{('images/our_services/icon_features_payments.svg')}}" alt="">
                                 </li>
-                                <li class="content-header my-3">
+                                <li class="my-3 content-header">
                                     <h4>Secured payment data</h4>
                                 </li>
                                 <li class="description ">
@@ -249,16 +249,16 @@
                 </div>
             </div>
         </section>
-    <section class="testimonials my-5 py-5">
+    <section class="py-5 my-5 testimonials">
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-4 mx-auto pl-5">
+            <div class="pl-5 mx-auto col-lg-4">
                 <div class="container">
                 <h1>Hey, you <br> help us<br>too.</h1>
                 <br>
                 <h4>We really appreciate your feedback. Don't hesitate to let us know what you think, it really helps.</h4>
                 <br>
                 <div class="row bt-5">
-                <a class="btn btn-veedros-new btn-veedros-md border-0" data-toggle="modal" data-target="#rateModal"
+                <a class="border-0 btn btn-veedros-new btn-veedros-md" data-toggle="modal" data-target="#rateModal"
                        >
                        <span class="text-white">Give us a review</span>
                     </a>
@@ -273,19 +273,19 @@
                                 @for($i = 0; $i<5; $i++)
                                 <div class="carousel-column">
                                     @for($j = 0; $j<2; $j++)
-                                        <div class="review p-3 mx-2 my-4 ">
-                                        <div class="user-info row py-3">
-                                        <div class="tip-instructor-avatar col-lg-2 ml-4 ">
-                                            <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/05.jpg" alt="" class="round">
+                                        <div class="p-3 mx-2 my-4 review ">
+                                        <div class="py-3 user-info row">
+                                        <div class="ml-4 tip-instructor-avatar col-lg-2 ">
+                                            <img src="/images/05.jpg" alt="" class="round">
                                         </div>
-                                            <div class="rating-container ml-2 col-lg-8 d-flex flex-column justify-content-center">
+                                            <div class="ml-2 rating-container col-lg-8 d-flex flex-column justify-content-center">
                                                 <h6 class="m-0">Ahmed Zakii</h6>
-                                                <div class="d-flex ratings col-6 px-0 m-0">
-                                                    <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Star.svg" alt="star">
-                                                    <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Star.svg" alt="star">
-                                                    <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Star.svg" alt="star">
-                                                    <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Star.svg" alt="star">
-                                                    <img src="https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Star.svg" alt="star">
+                                                <div class="px-0 m-0 d-flex ratings col-6">
+                                                    <img src="/images/Icons/Star.svg" alt="star">
+                                                    <img src="/images/Icons/Star.svg" alt="star">
+                                                    <img src="/images/Icons/Star.svg" alt="star">
+                                                    <img src="/images/Icons/Star.svg" alt="star">
+                                                    <img src="/images/Icons/Star.svg" alt="star">
                                                 </div>
                                             </div>
                                         </div>
@@ -306,13 +306,13 @@
     </section>
     <section class="academies">
         <div class="container h-100">
-            <div class="d-flex justify-content-center align-items-center flex-column h-50 w-100 my-5">
+            <div class="my-5 d-flex justify-content-center align-items-center flex-column h-50 w-100">
                 <h1 class="text-center">We help Academies to expand online</h1>
                 <br>
                 <h4 class="text-center ">We can help you reach a broader audience and increase your passive income.</h4>
                 <br>
                 <div class="row">
-                    <a href="{{asset('academic')}}" class="btn btn-veedros btn-veedros-md border-0 mx-auto ">
+                    <a href="{{asset('academic')}}" class="mx-auto border-0 btn btn-veedros btn-veedros-md ">
                         <span class="mx-3">Let's help you</span>
                     </a>
                 </div>

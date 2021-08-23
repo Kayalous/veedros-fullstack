@@ -1,5 +1,5 @@
 .teach-header {
-    background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/images/helpSection-1920x800.jpg);
+    background-image: url(/images/helpSection-1920x800.jpg);
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
@@ -76,7 +76,7 @@
 
 @media (max-width: 992px) {
     .form-bg::after {
-        background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/images/Teach-960x775.jpg);
+        background-image: url(/images/Teach-960x775.jpg);
         content: '';
         background-repeat: no-repeat;
         background-position: center center;

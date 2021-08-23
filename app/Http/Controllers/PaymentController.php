@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CoursePurchase;
 use App\PendingEnrollment;
 use GuzzleHttp\Client;
 use http\Client\Curl\User;
@@ -121,13 +122,19 @@ class PaymentController extends Controller
         if($request['obj']['success'] == "true"){
             $user = $enrollment->user;
 
+            //create payment and purchase.
+            $veedrosPayment = \App\Payment::createPayment($enrollment, 'accept');
+
+
+            $veedrosPayment->createPurchases($enrollment);
+
             //Enroll user
             EnrollController::enrollInMultipleCourses($user,$enrollment);
 
-            //create payment and send email notifications to user and admin
-            $veedrosPayment = \App\Payment::createPayment($enrollment, 'accept');
-
+            //send email notifications to user, admins, and instructors
             $veedrosPayment->notifyUser();
+
+//            $veedrosPayment->notifyInstructors();
 
             $veedrosPayment->notifyAdmins();
         }
@@ -220,13 +227,20 @@ class PaymentController extends Controller
             $enrollment = PendingEnrollment::where('id', $request->enrollmentID)->firstOrFail();
             $user = $enrollment->user;
 
+            //create payment and purchase.
+            $veedrosPayment = \App\Payment::createPayment($enrollment, 'paypal');
+
+
+            CoursePurchase::createPurchases($veedrosPayment, $enrollment);
+
             //Enroll user
             EnrollController::enrollInMultipleCourses($user,$enrollment);
 
-            //create payment and send email notifications to user, admins, and instructors
-            $veedrosPayment = \App\Payment::createPayment($enrollment, 'paypal');
+            //send email notifications to user, admins, and instructors
             $veedrosPayment->notifyUser();
+
 //            $veedrosPayment->notifyInstructors();
+
             $veedrosPayment->notifyAdmins();
         }
 

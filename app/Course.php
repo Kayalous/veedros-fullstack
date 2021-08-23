@@ -34,6 +34,10 @@ class Course extends Model
         return $this->hasMany(CourseReview::class);
     }
 
+    public function purchases(){
+        return $this->hasMany(CoursePurchase::class);
+    }
+
     public function users(){
         return $this->belongsToMany('App\User', 'enrolls', 'course_id', 'user_id')->withPivot('created_at');
     }
@@ -150,5 +154,12 @@ class Course extends Model
             'title' => $this->name,
             'description' => $this->about,
         ];
+    }
+
+    public function priceAfterPromo($promo){
+        if($promo)
+            if($promo->global || $promo->hasCourse($this))
+                return $this->price * (1 - $promo->discount_percentage/100);
+        return $this->price;
     }
 }

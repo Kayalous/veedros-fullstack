@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\CoursePurchase;
 use App\Enroll;
 use App\Http\Controllers\Controller;
 use App\PendingEnrollment;
@@ -39,9 +40,12 @@ class EnrollController extends Controller
     }
     public static function enrollInMultipleCourses(User $user, PendingEnrollment $enrollment){
         $courses = $enrollment->courses;
-        foreach ($courses as $course)
+        foreach ($courses as $course){
             $newEnroll = Enroll::firstOrCreate(['user_id'=>$user->id,
                 'course_id' => $course->id]);
+
+        }
+
         $enrollment->paid_at = Carbon::now();
         $enrollment->save();
         $user->carted()->detach();

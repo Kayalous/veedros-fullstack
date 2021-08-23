@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
         ]);
         Instructor::create([
             'user_id' => 51,
-            'display_name' => Str::slug('Abdulrhman Elkayal الجياص', '-')
+            'display_name' => Str::slug('Abdulrhman Elkayal', '-')
         ]);
     }
 }

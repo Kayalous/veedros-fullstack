@@ -32,7 +32,7 @@ class CoursesTableSeeder extends Seeder
             $course = Course::create([
                 'name' => $name,
                 'instructor_id' => 1,
-                'img' => "https://veedros.s3.eu-central-1.amazonaws.com/courses/2/hellloo/images/tdzHq4nTU7zkOOmjoTEXVq8ZFlpqoTBAxIljBlhl.jpeg",
+                'img' => "/images/course-example.jpg",
                 'price' => rand(1,200),
                 'about' => $faker->address,
                 'slug' => $slug

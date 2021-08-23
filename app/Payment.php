@@ -16,12 +16,19 @@ class Payment extends Model
     {
         return $this->belongsToMany('App\Course', 'course_payment');
     }
+
     public function user(){
         return $this->belongsTo(User::class);
     }
+
     public function promo_code(){
         return $this->belongsTo(PromoCode::class);
     }
+
+    public function purchases(){
+        return $this->hasMany(CoursePurchase::class);
+    }
+
     public static function createPayment(PendingEnrollment $enrollment, $paymentMethod){
         $payment = Payment::create(
             ['user_id' => $enrollment->user->id,
@@ -42,4 +49,13 @@ class Payment extends Model
             ->send(new AdminInvoice($this));
     }
 
+    public function createPurchases(PendingEnrollment $enrollment){
+        $payment = $this;
+        foreach ($enrollment->courses as $course)
+            $purchase = CoursePurchase::create([
+                'course_id' => $course->id,
+                'amount' => $course->priceAfterPromo($enrollment->promo_code),
+                'payment_id' => $payment->id,
+            ]);
+    }
 }

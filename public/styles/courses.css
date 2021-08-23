@@ -112,7 +112,7 @@ h2 {
 }
 
 .Courses-header {
-    background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/images/courses-1920x800.jpg);
+    background-image: url(/images/courses-1920x800.jpg);
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;

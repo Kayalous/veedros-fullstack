@@ -80,7 +80,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-image: url(https://veedros.s3.eu-central-1.amazonaws.com/images/course-header-1920x300.jpg);
+    background-image: url(/images/course-header-1920x300.jpg);
     /* background-position: right; */
     background-size: cover;
     background-repeat: no-repeat;
@@ -277,7 +277,7 @@ hr {
 
 .hero:after {
     content: "";
-    background: url(https://veedros.s3.eu-central-1.amazonaws.com/images/hero1920x800.jpg);
+    background: url(/images/hero1920x800.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.5;
@@ -2240,7 +2240,7 @@ ul {
 .happy-users::after {
     content: '';
     position: absolute;
-    background: url(https://veedros.s3.eu-central-1.amazonaws.com/images/Icons/Heart.svg);
+    background: url(/images/Icons/Heart.svg);
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
@@ -2353,7 +2353,7 @@ h2 {
 .academies {
     min-height: 800px;
     width: 100%;
-    background: url(https://veedros.s3.eu-central-1.amazonaws.com/images/Acadmic-1920x800.jpg);
+    background: url(/images/Acadmic-1920x800.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -2521,7 +2521,7 @@ img {
 .teach-img {
     width: 100%;
     height: auto;
-    background: url(https://veedros.s3.eu-central-1.amazonaws.com/images/Teach-960x775.jpg) center center;
+    background: url(/images/Teach-960x775.jpg) center center;
     background-size: cover;
     background-repeat: no-repeat;
 }

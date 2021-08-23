@@ -41,7 +41,7 @@ class CartController extends Controller
                         $i = 0;
                         foreach ($carted as $course) {
                             if($promo->hasCourse($course)) {
-                                $newPrice = $course->price * (1 - $promo->discount_percentage/100);
+                                $newPrice = $course->priceAfterPromo($promo);
                                 $total += $newPrice;
 
                                 $courses[$i]['price'] = $newPrice;

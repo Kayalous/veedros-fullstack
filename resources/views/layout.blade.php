@@ -40,34 +40,34 @@
 <div class="modal fade" id="loginModal" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content login-body">
-            <div class="modal-body px-5">
+            <div class="px-5 modal-body">
                 <form class="login" action="{{ route('login') }}" method="POST" novalidate>
                     @csrf
-                    <h1 class="text-center mb-0 mt-3 text-muted">Sign in</h1>
-                    <p class="text-center login-modal-header mt-5">
+                    <h1 class="mt-3 mb-0 text-center text-muted">Sign in</h1>
+                    <p class="mt-5 text-center login-modal-header">
                         Enter your email and password to sign in. <br />
                     </p>
                     <div class="input-group">
                         <input type="email"
-                               class="form-control email-input email-field email-field-props modal-field-props border-0 mx-auto"
+                               class="mx-auto border-0 form-control email-input email-field email-field-props modal-field-props"
                                placeholder="johndoe@gmail.com" aria-label="email" name="email" id="login-email-field" />
                         <div class="invalid-feedback">
                             Please enter a valid email.
                         </div>
                     </div>
-                    <div class="input-group password-cont mt-3" id="login-password-cont">
+                    <div class="mt-3 input-group password-cont" id="login-password-cont">
                         <input type="password"
-                               class="form-control email-input password-field email-field-props modal-field-props border-0 mx-auto mt-"
+                               class="mx-auto border-0 form-control email-input password-field email-field-props modal-field-props mt-"
                                placeholder="● ● ● ● ● ● ● ●" aria-label="password" name="password" id="login-password-field" />
                         <div class="invalid-feedback">
                             Your password must be more than 8 characters long.
                         </div>
                     </div>
-                    <div class="register-prompt align-items-end forgot-password mt-2" id="login-alt-cont">
+                    <div class="mt-2 register-prompt align-items-end forgot-password" id="login-alt-cont">
                     <a class="dot-hover dot-hover-red" href="{{asset('/password/reset')}}">Forgot password?</a>
                     </div>
-                    <div class="d-flex jusift-content-center mt-2 mb-4">
-                        <button type="submit" id="login-button" class="btn btn-veedros-new btn-veedros-md mx-auto btn-submit">
+                    <div class="mt-2 mb-4 d-flex jusift-content-center">
+                        <button type="submit" id="login-button" class="mx-auto btn btn-veedros-new btn-veedros-md btn-submit">
                             Sign in
                         </button>
                     </div>
@@ -77,20 +77,20 @@
                     <h6>Want to sign in using your email and password?</h6>
                     <a class="dot-hover dot-hover-red" href="#">Regular sign in</a>
                 </div>
-                <div class="register-prompt magic-link mb-3" id="login-magic-link">
+                <div class="mb-3 register-prompt magic-link" id="login-magic-link">
                     <h6>Want to sign in using just your email?</h6>
                     <a class="login-with-password dot-hover dot-hover-red" href="#">Sign in with magic link</a>
                 </div>
 
                 <div class="d-flex justify-content-center flex-column align-items-center w-100">
                     <h6>Or you can login with:</h6>
-                    <div class="d-flex flex-wrap justify-content-around align-items-center w-100 mt-3 border-0">
-                        <a href="{{ route('login.facebook') }}" title="Facebook" class="btn btn-facebook btn-lg border-0 my-2"><i class="fab fa-facebook-f mr-2"></i>Facebook</a>
-                        <a href="{{ route('login.google') }}" title="Google" class="btn btn-google btn-lg border-0 my-2"><i class="fab fa-google mr-2"></i>Google</a>
+                    <div class="flex-wrap mt-3 border-0 d-flex justify-content-around align-items-center w-100">
+                        <a href="{{ route('login.facebook') }}" title="Facebook" class="my-2 border-0 btn btn-facebook btn-lg"><i class="mr-2 fab fa-facebook-f"></i>Facebook</a>
+                        <a href="{{ route('login.google') }}" title="Google" class="my-2 border-0 btn btn-google btn-lg"><i class="mr-2 fab fa-google"></i>Google</a>
                     </div>
                 </div>
                 <hr>
-                <div class="register-prompt mb-3">
+                <div class="mb-3 register-prompt">
                     <h6>Don't have an account?</h6>
                     <a class="signup-toggle dot-hover dot-hover-red" href="#">Sign up
                         instead</a>
@@ -103,39 +103,39 @@
 <div class="modal fade" id="signupModal" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content login-body">
-            <div class="modal-body px-5">
+            <div class="px-5 modal-body">
                 <form class="signup" action="{{ route('register') }}" method="POST" novalidate>
                     @csrf
-                    <h1 class="text-center mb-0 mt-3 text-muted">Sign up</h1>
-                    <p class="text-center signup-modal-header mt-5">
+                    <h1 class="mt-3 mb-0 text-center text-muted">Sign up</h1>
+                    <p class="mt-5 text-center signup-modal-header">
                         Sign up by entering your email and password. <br />
                     </p>
                     <div class="input-group">
                         <input type="email"
-                               class="form-control email-input email-field email-field-props modal-field-props border-0 mx-auto"
+                               class="mx-auto border-0 form-control email-input email-field email-field-props modal-field-props"
                                placeholder="johndoe@gmail.com" aria-label="email" name="email" id="signup-email-field" />
                         <div class="invalid-feedback">
                             Please enter a valid email.
                         </div>
                     </div>
-                    <div class="input-group password-cont mt-4" id="signup-password-cont">
+                    <div class="mt-4 input-group password-cont" id="signup-password-cont">
 
                         <input type="password"
-                               class="form-control email-input password-field email-field-props modal-field-props border-0 mx-auto mt-"
+                               class="mx-auto border-0 form-control email-input password-field email-field-props modal-field-props mt-"
                                placeholder="● ● ● ● ● ● ● ●" aria-label="password" name="password" id="signup-password-field" />
                         <div class="invalid-feedback">
                             Your password must be more than 8 characters long.
                         </div>
                     </div>
 
-                    <div class="d-flex jusift-content-center mt-3 mb-3">
-                        <button type="submit" class="btn btn-veedros-new btn-veedros-md mx-auto btn-submit" id="signup-button">
+                    <div class="mt-3 mb-3 d-flex jusift-content-center">
+                        <button type="submit" class="mx-auto btn btn-veedros-new btn-veedros-md btn-submit" id="signup-button">
                             Sign up
                         </button>
                     </div>
                 </form>
 
-                <div class="register-prompt mb-4">
+                <div class="mb-4 register-prompt">
                     <h6>Already have an account?</h6>
                     <a class="signin-toggle dot-hover dot-hover-red" href="#">Sign in</a>
                 </div>
@@ -143,16 +143,16 @@
                     <h6>Want to sign up using your email and password?</h6>
                     <a class="signup-with-password dot-hover dot-hover-red" href="#">Regular sign up</a>
                 </div>
-                <div class="register-prompt magic-link mb-3" id="signup-magic-link">
+                <div class="mb-3 register-prompt magic-link" id="signup-magic-link">
                     <h6>Want to sign up using just your email?</h6>
                     <a class="signup-with-password dot-hover dot-hover-red" href="#">Sign up with just email</a>
                 </div>
                 <hr>
                 <div class="d-flex justify-content-center flex-column align-items-center w-100">
                     <h6>Or you can sign up with:</h6>
-                    <div class="d-flex justify-content-around align-items-center w-100 mt-3 border-0">
-                        <a href="{{ route('login.facebook') }}" title="Facebook" class="btn btn-facebook btn-lg border-0"><i class="fab fa-facebook-f mr-2"></i>Facebook</a>
-                        <a href="{{ route('login.google') }}" title="Google" class="btn btn-google btn-lg border-0"><i class="fab fa-google mr-2"></i>Google</a>
+                    <div class="mt-3 border-0 d-flex justify-content-around align-items-center w-100">
+                        <a href="{{ route('login.facebook') }}" title="Facebook" class="border-0 btn btn-facebook btn-lg"><i class="mr-2 fab fa-facebook-f"></i>Facebook</a>
+                        <a href="{{ route('login.google') }}" title="Google" class="border-0 btn btn-google btn-lg"><i class="mr-2 fab fa-google"></i>Google</a>
                     </div>
                 </div>
             </div>
@@ -167,30 +167,30 @@
 <div class="modal fade" id="rateModal" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content login-body">
-            <div class="modal-body px-5">
+            <div class="px-5 modal-body">
                 @if(Auth::check())
                 <form class="signup" action="{{asset('review')}}" method="POST" novalidate>
                     @csrf
                     <div class="container">
                     <h3 class="text-center text-muted">We really appreciate your feedback!</h3>
                     <br>
-                        <div class="row mb-3">
-                        <div class="tip-instructor-avatar col-lg-2 ml-4 ">
+                        <div class="mb-3 row">
+                        <div class="ml-4 tip-instructor-avatar col-lg-2 ">
                             <img src="{{Auth::user()->img}}" alt="User avatar" class="round">
                         </div>
-                            <h4 class="text-muted my-auto">{{Auth::user()->name}}</h4>
+                            <h4 class="my-auto text-muted">{{Auth::user()->name}}</h4>
                         </div>
                         <br>
                     <h5 class="text-muted">What do you think about our service?</h5>
-                    <div class="row my-2">
+                    <div class="my-2 row">
                         <div class="col-12">
-                            <div class="input-group mb-2">
+                            <div class="mb-2 input-group">
                                 <textarea id="review-body" rows="5" cols="50" maxlength="500" name="body" class="form-control profile-form-field email-field-props border-light border-radius-sm" placeholder="Let us know what you think about Veedros! (Optional)" style="resize: none"></textarea>
-                                <h6 class="ml-auto mt-1 text-muted">500 characters</h6>
+                                <h6 class="mt-1 ml-auto text-muted">500 characters</h6>
                             </div>
                         </div>
                     </div>
-                        <h5 class="text-muted text-center">How would you rate our service?</h5>
+                        <h5 class="text-center text-muted">How would you rate our service?</h5>
 
                         <div class="rating">
                         <input name="rating" value="5" id="e5" type="radio"></a><label for="e5">★</label>
@@ -200,7 +200,7 @@
                         <input name="rating" value="1" id="e1" type="radio"></a><label for="e1">★</label>
                     </div>
                     <div class="row bt-5">
-                        <button type="submit" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" data-toggle="modal" data-target="#rateModal"
+                        <button type="submit" class="mx-auto border-0 btn btn-veedros-new btn-veedros-md" data-toggle="modal" data-target="#rateModal"
                         >
                             <span class="text-white">Send</span>
                         </button>
@@ -212,7 +212,7 @@
                         <h3 class="text-center text-muted">You need to sign in to review us.</h3>
                         <br>
                         <li class="nav-item d-flex align-items-center justify-content-center">
-                            <a href="{{asset('login')}}" class="btn btn-veedros-new btn-veedros-md border-0">Sign in now</a> </li>
+                            <a href="{{asset('login')}}" class="border-0 btn btn-veedros-new btn-veedros-md">Sign in now</a> </li>
                     </div>
                 @endif
             </div>
@@ -221,9 +221,9 @@
 </div>
 <!-- Navbar  -->
 <nav class="navbar navbar-expand-lg fixed-top main-navbar navbar-light">
-    <a class="navbar-brand logo" href="{{route('landing')}}"><img class="img-fluid" style="width: 120px; stroke: #0D984F" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
+    <a class="navbar-brand logo" href="{{route('landing')}}"><img class="img-fluid" style="width: 120px; stroke: #0D984F" src="/images/Veedros Logo.svg"
                                                alt="Logo"></a>
-    <button class="navbar-toggler border-0 d-lg-none" type="button" data-toggle="collapse"
+    <button class="border-0 navbar-toggler d-lg-none" type="button" data-toggle="collapse"
             data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
             aria-label="Toggle navigation">
         <div class="burger burger-rotate open">
@@ -267,7 +267,7 @@
             @endif
             @else
                 <li class="nav-item d-none d-lg-block">
-                    <div class="search-form my-auto">
+                    <div class="my-auto search-form">
                         <form method="GET" action="{{route('search')}}">
                             <input class="search-input" type="text" name="q" placeholder="Search">
                             <button class="btn-nav-search">
@@ -276,10 +276,10 @@
                         </form>
                     </div>
                 </li>
-                <li class="nav-item d-block d-lg-none my-3">
-                    <div class="search-form my-auto active">
+                <li class="my-3 nav-item d-block d-lg-none">
+                    <div class="my-auto search-form active">
                         <form method="GET" action="{{route('search')}}">
-                            <input class="search-input shadow-lg" type="text" name="q" placeholder="Search">
+                            <input class="shadow-lg search-input" type="text" name="q" placeholder="Search">
                             <button class="btn-nav-search">
                                 <i data-feather="search" style="stroke-width: 3"></i>
                             </button>
@@ -303,7 +303,7 @@
 
             @if(!Auth::check())
                 <li class="nav-item d-flex align-items-center justify-content-center">
-                    <a href="#" class="btn btn-veedros-new btn-veedros-sm border-0" data-toggle="modal" data-target="#loginModal">Sign in </a> </li>
+                    <a href="#" class="border-0 btn btn-veedros-new btn-veedros-sm" data-toggle="modal" data-target="#loginModal">Sign in </a> </li>
                 @else
                 @if (Auth::user()->hasRole('admin'))
                     <li class="nav-item">
@@ -324,23 +324,23 @@
                     </div>
                 </li>
 
-                    <li id="fixed-cart" class="nav-item tip pb-4 mx-auto d-flex flex-column d-lg-none align-items-center justify-content-around">
+                    <li id="fixed-cart" class="pb-4 mx-auto nav-item tip d-flex flex-column d-lg-none align-items-center justify-content-around">
                         <div class="row">
                             <div class="col-6">
                                 <img class="nav-photo" src="{{Auth::user()->img}}" alt="profile picture">
                             </div>
                         </div>
-                        <a class="w-100 mx-auto" href="/profile">
+                        <a class="mx-auto w-100" href="/profile">
                             <div class="row w-100">
                                 <div class="col-8">
                                     <h6 class="text-left">My profile</h6>
                                 </div>
-                                <div class=" text-center col-4">
+                                <div class="text-center  col-4">
                                     <i class="far iconsize-mine fa-user-circle"></i>
                                 </div>
                             </div>
                         </a>
-                        <a class="w-100 mx-auto" href="/dashboard">
+                        <a class="mx-auto w-100" href="/dashboard">
                             <div class="row w-100">
                                 <div class="col-8">
 
@@ -352,13 +352,13 @@
                             </div>
                         </a>
                         <br>
-                        <button class=" btn btn-veedros-new btn-veedros-sm border-0 m-auto" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <button class="m-auto border-0  btn btn-veedros-new btn-veedros-sm" type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Log out
                         </button>                    </li>
                     <li class="nav-item d-none d-lg-flex align-items-center justify-content-around">
                         <div class="row">
                             <div class="col-6">
-                                <div id="cartTip" class="nav-photo text-white d-flex justify-content-center align-items-center" style="background-color: #65D3BF" alt="Cart icon"><i class="fas fa-shopping-cart"></i></div>
+                                <div id="cartTip" class="text-white nav-photo d-flex justify-content-center align-items-center" style="background-color: #65D3BF" alt="Cart icon"><i class="fas fa-shopping-cart"></i></div>
                             </div>
                         </div>
                     </li>
@@ -374,7 +374,7 @@
             <div class="row">
                 <div class="col-12 col-lg-4 align-self-center">
                     <div class="footer-img-media">
-                        <img class="img-fluid-mine" src="https://veedros.s3.eu-central-1.amazonaws.com/images/Veedros Logo.svg"
+                        <img class="img-fluid-mine" src="/images/Veedros Logo.svg"
                                                alt="Logo">
                      </div>
 
@@ -387,13 +387,13 @@
                                     <li class="footer-list-header ">
                                         <p>LINKS</p>
                                     </li>
-                                    <li class="w-33-mine my-3">
+                                    <li class="my-3 w-33-mine">
                                     <a class="" href="{{asset("courses")}}">Courses</a>
                                     </li >
-                                    <li class="w-33-mine my-3">
+                                    <li class="my-3 w-33-mine">
                                     <a class="" href="{{asset("teach")}}">Teach</a>
                                     </li >
-                                    <li class="w-33-mine my-3">
+                                    <li class="my-3 w-33-mine">
                                     <a class="" href="{{asset("academic")}}">Academic</a>
                                     </li>
                                 </ul>
@@ -404,10 +404,10 @@
                                     <li class="footer-list-header">
                                         <p>KNOWLEDGE</p>
                                     </li>
-                                    <li class="w-50-mine my-3">
+                                    <li class="my-3 w-50-mine">
                                     <a class="" href="{{asset("privacy")}}">Privacy Policy</a>
                                     </li>
-                                    <li class="w-50-mine my-3">
+                                    <li class="my-3 w-50-mine">
                                     <a class="" href="#" data-toggle="modal" data-target="#rateModal">Review Us</a>
                                     </li>
                                 </ul>
@@ -425,7 +425,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 mb-3 mt-5 copyrights">
+                <div class="mt-5 mb-3 col-12 copyrights">
                     <div class="d-flex justify-content-between">
                         <p>Veedros copyrights reserved 2020</p>
                         <div>
@@ -497,25 +497,25 @@
             let cartItems = {!! json_encode(Auth::user()->carted->toArray()) !!};
             for(let i = 0; i < cartItems.length; i++){
                 subtotal += cartItems[i].price;
-                cartItemContainer += `<div class="row cart-card my-3 ">
-                        <div class="col-4 m-0 p-0 align-self-start ">
-                            <div class="card course-card  development-card noJquery" style="background-image: url(${cartItems[i].img})">
+                cartItemContainer += `<div class="my-3 row cart-card ">
+                        <div class="p-0 m-0 col-4 align-self-start ">
+                            <div class="card course-card development-card noJquery" style="background-image: url(${cartItems[i].img})">
                             </div>
                         </div>
-                        <div class="col-8 m-0 p-0 align-self-center ">
+                        <div class="p-0 m-0 col-8 align-self-center ">
 
                                 <div class="tip-cart-content">
 
-                                        <p class="P-title text-left pr-4">${cartItems[i].name}</p>
+                                        <p class="pr-4 text-left P-title">${cartItems[i].name}</p>
 
-                                            <p class="P-description text-left pr-4">${cartItems[i].about}
+                                            <p class="pr-4 text-left P-description">${cartItems[i].about}
                                             </p>
 
                                 </div>
-                                <div class="tip-meta p-0">
+                                <div class="p-0 tip-meta">
               <div class="row justify-content-start">
-                <div class="col-6 p-0">
-                  <div class="badge tip-badge shadow-sm">
+                <div class="p-0 col-6">
+                  <div class="shadow-sm badge tip-badge">
                     <div class="tip-badge-item">  <i class="fas fa-hand-holding-usd"></i> <span>${cartItems[i].price} EGP</span></div>
                   </div>
                 </div>
@@ -525,8 +525,8 @@
             </div>`
             }
         @else
-            cartItemContainer = `<div class="d-flex w-100 h-100 justify-content-center align-items-center px-3">
-<h2 class="text-muted text-center my-auto">You don't have any courses in your cart yet.</h2>
+            cartItemContainer = `<div class="px-3 d-flex w-100 h-100 justify-content-center align-items-center">
+<h2 class="my-auto text-center text-muted">You don't have any courses in your cart yet.</h2>
 </div>`;
         @endif
         let cart_tip_content = `<div class="tip">
@@ -537,8 +537,8 @@
         <div class="container">
             <p class="text-left font-weight-bold text-muted">Sub total: <span>${subtotal}</span> EGP</p>
         </div>
-        <div class="d-flex w-100 px-3">
-            <a href="/cart" class="btn btn-veedros-new btn-veedros-md border-0 mx-auto" style="max-width: 100%">
+        <div class="px-3 d-flex w-100">
+            <a href="/cart" class="mx-auto border-0 btn btn-veedros-new btn-veedros-md" style="max-width: 100%">
                                 Go to cart</a>
         </div>
     </div>
